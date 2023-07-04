@@ -24,16 +24,16 @@
 <p>在李杨定理提出之前，当我们需要研究相变问题时，我们可以尝试直接求出系统热力学量的精确解（不得不说，这非常麻烦，甚至经常找不到解）。或者用朗道的相变理论，尝试找出自由能（或者说热力学势）的不可导点，从而找出相变点。这个方法比上一个稍好一些，因为它把研究的重点从热力学量变成了热力学量的一阶导。李杨定理提出了更加本质的方法，也就是研究配分函数。自由能可以表述为一个与配分函数相关的自然对数函数，当自由能不可导时，配分函数为0.将配分函数的这些零点都画在复平面上，就是我们所说的李杨零。李杨零点对应的，就是我们要找的相变点。</p>
 <h3 id="李杨定理"><a href="#李杨定理" class="headerlink" title="李杨定理"></a>李杨定理</h3><p>李政道与杨振宁在1952年的著名论文（Statistical theory of equations of state and phase transitions. I. Theory of condensation）中提出李杨定理的前两条：</p>
 <blockquote>
-<p>Th.1    对所有的正实数逸度z，当系统处于热力学极限情况下时，$V^{-1} \ln \Xi$（$\Xi$是配分函数）的极限存在，且极限函数是z的连续、单调递增函数，与容器的形状无关（除非容器的形状特别奇怪，使得容器的表面积增加得比$V^{2/3}$还快）</p>
-<p>Th.2    若在z的复平面中，包含一段正实轴的区域R内不包含$\Xi=0$的根，则对区域R中的各z，极限</p>
+<p>Th. 1    对所有的正实数逸度z，当系统处于热力学极限情况下时，$V^{-1} \ln \Xi$（$\Xi$是配分函数）的极限存在，且极限函数是z的连续、单调递增函数，与容器的形状无关（除非容器的形状特别奇怪，使得容器的表面积增加得比$V^{2/3}$还快）</p>
+<p>Th. 2    若在z的复平面中，包含一段正实轴的区域R内不包含$\Xi=0$的根，则对区域R中的各z，极限</p>
 <script type="math/tex; mode=display">
 \lim _{V \rightarrow \infty} V^{-1} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1} \frac{\partial}{\partial \ln z} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1}\left(\frac{\partial}{\partial \ln z}\right)^{2} \ln \Xi \cdots</script><p>均存在，它们是z的解析函数，且在R中$\frac{\partial }{\partial \ln{z} } $与$\lim _{V \rightarrow \infty}$互易</p>
 <script type="math/tex; mode=display">
 \lim _{V \rightarrow \infty}\left(\frac{\partial}{\partial \ln z} V^{-1} \ln \Xi\right)=\frac{\partial}{\partial \ln z}\left(\lim _{V \rightarrow \infty} V^{-1} \ln \Xi\right)</script></blockquote>
-<p>Th.1提出在z的复平面上，不论正实轴上是否存在零点，$\lim _{V \rightarrow \infty} V^{-1} \ln \Xi$永远存在且是一个==连续的==单调递增函数。从物理学上来说，$V^{-1} \ln \Xi$可以理解为自由能F或者热力学势。</p>
-<p>Th.2则说明，当区域R内正实轴上不存在零点时，相变不存在。在Th.2中解释说，$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$是自由能的一阶导，它们一般是一些我们熟悉的热力学量。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$存在极限时，自由能可导。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) ^2\ln \Xi$存在极限时，热力学量也可导。我们知道可导必然连续，则热力学量不存在奇点。奇点不存在时，相变也不存在。</p>
+<p>Th. 1提出在z的复平面上，不论正实轴上是否存在零点，$\lim _{V \rightarrow \infty} V^{-1} \ln \Xi$永远存在且是一个==连续的==单调递增函数。从物理学上来说，$V^{-1} \ln \Xi$可以理解为自由能F或者热力学势。</p>
+<p>Th. 2则说明，当区域R内正实轴上不存在零点时，相变不存在。在Th.2中解释说，$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$是自由能的一阶导，它们一般是一些我们熟悉的热力学量。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$存在极限时，自由能可导。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) ^2\ln \Xi$存在极限时，热力学量也可导。我们知道可导必然连续，则热力学量不存在奇点。奇点不存在时，相变也不存在。</p>
 <p>当正实轴上存在零点时，根据Th.1我们知道自由能F连续，但根据Th.2，自由能不可导，因此热力学量在这一点存在一个奇点，也就是相变点。根据我们对于相变的特征论述，我们知道这是一阶相变。若想直观地了解这些图像，我们可以查看图一。</p>
-<p><img src="\images\李杨定理1.png" alt="气液固相变" style="zoom:60%;" /></p>
+<p><img src="/李杨定理1.png" style="zoom:60%;" /></p>
 <div style="text-align: center;">图一</div>
 
 <p>图一(a)展示的是逸度z的复平面下李杨零点的分布，我们可以在图中找到两个位于正实轴上的李杨零点（t~1~,t~2~），在这两点系统发生相变。为什么要找正实轴上的李杨零点呢？因为我们知道现实世界中的物理量是不可能为虚数或者复数的，当这些值为虚数或者复数时，我们称它们为“非物理的”。只有正实轴上的李杨零点才对我们有意义。</p>
@@ -69,7 +69,32 @@ p=\frac{k T}{V} \ln \Xi</script><script type="math/tex; mode=display">
 <p>在热力学极限下，压强和粒子数密度的表达式如下：</p>
 <script type="math/tex; mode=display">
 \frac{p}{k T}=\lim _{V \rightarrow \infty} \frac{k T}{V} \ln \Xi</script><script type="math/tex; mode=display">
-\rho=\lim _{V \rightarrow \infty} \frac{N}{V}=\lim _{V \rightarrow \infty} \frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi</script><h3 id="Ising-模型下的李杨定理"><a href="#Ising-模型下的李杨定理" class="headerlink" title="Ising 模型下的李杨定理"></a>Ising 模型下的李杨定理</h3><h3 id="李杨零的实验测定"><a href="#李杨零的实验测定" class="headerlink" title="李杨零的实验测定"></a>李杨零的实验测定</h3>]]></content>
+\rho=\lim _{V \rightarrow \infty} \frac{N}{V}=\lim _{V \rightarrow \infty} \frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi</script><h3 id="Ising-模型下的李杨定理"><a href="#Ising-模型下的李杨定理" class="headerlink" title="Ising 模型下的李杨定理"></a>Ising 模型下的李杨定理</h3><p>李杨在他们的第二篇论文（ T. D. Lee and C. N. Yang (1952) Statistical theory of equations of state and phase transitions. II. Lattice gas and Ising model. Phys. Rev. 87 410.）中证明了Ising模型中李杨定理的适用性。</p>
+<blockquote>
+<p>Th. 3 在晶格气体模型中，如果任意两个气体原子占据同一点阵时相互作用能$u=+\infty $，其他情况$u\le 0$，则巨配分函数的所有零点都在z的复平面的单位圆上。</p>
+</blockquote>
+<h3 id="李杨零的实验测定"><a href="#李杨零的实验测定" class="headerlink" title="李杨零的实验测定"></a>李杨零的实验测定</h3><p>李杨零点作为处于复平面上的零点，实验测定具有本质上的困难性（因为它是非物理的）PRL 2015年发表了一篇文章提出使用三甲基亚磷酸盐分子做一个spin-bath耦合，在三甲基亚磷酸盐分子中央的^31^P原子（图二，蓝色）作为探针(spin)，周围的九个^1^H原子（图二，橙色）共同组成被测定系统(bath)。我们由探针去测定系统的退相干现象，构建相关性与时间的函数关系，得到相干性函数。相干性函数与我们要讨论的系统的配分函数具有一一对应关系。</p>
+<p><img src="/三甲基亚磷酸盐分子.png" style="zoom:48%;" /></p>
+<div style="text-align: center;">图二 三甲基亚磷酸盐（TMP）分子</div>
+
+<p>首先，我们讨论一下探针的相干性函数。我们设初态探针自旋为：$\left | \psi\left ( 0 \right )   \right \rangle =\left | \uparrow   \right \rangle +\left | \downarrow  \right \rangle$</p>
+<p>探针自旋随时间变化：$\left | \psi\left ( t \right )   \right \rangle =\left | \uparrow   \right \rangle +exp \left (-ibt  \right ) \left | \downarrow  \right \rangle$</p>
+<p>探针和浴之间的耦合产生了一个局部磁场b，局域场b的随机分布导致了探针的自旋退相干。</p>
+<p><img src="/李杨定理实验测定.png" style="zoom:60%;" /></p>
+<div style="text-align: center;">图三 Lee-Yang零的实验测定</div>
+
+<p>上图蓝色圆圈表示李杨零的理论值，红叉代表测定值。</p>
+<h3 id="根据零点分布判断相变类型"><a href="#根据零点分布判断相变类型" class="headerlink" title="根据零点分布判断相变类型"></a>根据零点分布判断相变类型</h3><p>一阶相变的零点曲线通过正实轴上，且零点曲线切线与正实轴呈现90度角（图三，β=1/3）。二阶相变趋近于正实轴但并不通过正实轴，零点曲线切线与正实轴呈45度夹角（图三，β=1）。总的来说，高阶相变两点曲线切线与正实轴角度为：π/(2·相变阶数)</p>
+<p><img src="/零点曲线.png" style="zoom:60%;" /></p>
+<div style="text-align: center;">图四 零点曲线</div>
+
+<h3 id="非平衡态下的李杨定理"><a href="#非平衡态下的李杨定理" class="headerlink" title="非平衡态下的李杨定理"></a>非平衡态下的李杨定理</h3><p>前文我们大部分介绍的是平衡态下李杨定理的应用，比如说硬球模型或者Ising 模型，接下来我会简要介绍一下非平衡态中一些会运用到李杨定理的模型。</p>
+<h4 id="KLS模型"><a href="#KLS模型" class="headerlink" title="KLS模型"></a>KLS模型</h4><p>KLS模型是由Sheldon Katz, ‘Joel L. Lebowitz, 和H. Spohn在1983年的论文（ S. Katz, J. L. Lebowitz and H. Spohn (1983) Phase transitions in stationary non-equilibrium states of model lattice systems. Phys. Rev. B 28 1655.）中提出。它描述的是一种受外界驱动的晶格气体模型。它在原始的晶格气体模型上添加了一个单向外部磁场，气体粒子在外部场方向上的跳跃速率增强。</p>
+<p><img src="/KLS.PNG" style="zoom:60%;" /></p>
+<div style="text-align: center;">图五 KLS模型</div>
+
+<p>图五左图表述了没有添加外磁场的晶格气体模型，右图描绘了添加外磁场的晶格气体模型。添加磁场后晶格气体模型明显出现了一个隔离相变现象。</p>
+<h4 id="ASEP过程"><a href="#ASEP过程" class="headerlink" title="ASEP过程"></a>ASEP过程</h4><h4 id="AHR模型"><a href="#AHR模型" class="headerlink" title="AHR模型"></a>AHR模型</h4><h4 id="反应扩散模型"><a href="#反应扩散模型" class="headerlink" title="反应扩散模型"></a>反应扩散模型</h4><h4 id="DP模型"><a href="#DP模型" class="headerlink" title="DP模型"></a>DP模型</h4>]]></content>
       <categories>
         <category>统计物理</category>
       </categories>
@@ -106,6 +131,85 @@ p=\frac{k T}{V} \ln \Xi</script><script type="math/tex; mode=display">
       </categories>
       <tags>
         <tag>相变</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023.7摸鱼日志</title>
+    <url>/2023-7%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h4 id="7-3"><a href="#7-3" class="headerlink" title="7.3"></a>7.3</h4><p>上午交经费申报表</p>
+<p>下午交集群博弈SF网络一阶导图及ER网络合作者人数图及一阶导图</p>
+<p>报告：<a href="https://www.koushare.com/lives/room/574601（要听，但下次一定）">https://www.koushare.com/lives/room/574601（要听，但下次一定）</a></p>
+<p>集群博弈原来还有两篇文献没读（别太离谱了你小子）</p>
+<p>李杨零汇报回顾：</p>
+<p>稍微回顾一下BrazJPjys那篇文章</p>
+<p>PRL114：实验性证据</p>
+<p>JStatPhys102：有限大小+回顾（The Strength of First and Second Order Phase Transitions from Partition Function Zeroes）</p>
+<p>0607257：有限大小的LY zeros（Fisher zeros）Density of Yang-Lee zeros for the Ising ferromagnet</p>
+<p>可以在LY zeros 后面的扩展里再加一点 finite size 的结果</p>
+<p>1312.5984：一阶相变的Fisher zeros+finite size effect，可以仔细读读Non-Standard Finite-Size Scaling at First-Order Phase Transitions</p>
+<p>暑期学校是7.9开始（这种事情，不要啊————我不要去上学！！！）</p>
+<p>导师今日任务节选：</p>
+<p>ic. 还剩下lattice的几个图了吧？（后又反悔说说错了，这么多图够了）ovo算了，我还是先给您算一遍备着吧，一会要哥从哪给你找这数据去</p>
+<p>现在这些结论差不多足够了，再加上“相图”（不要啊！！！相图又是什么图啊！！！）</p>
+<h5 id="今日学习知识点："><a href="#今日学习知识点：" class="headerlink" title="今日学习知识点："></a>今日学习知识点：</h5><h6 id="相关长度的概念："><a href="#相关长度的概念：" class="headerlink" title="相关长度的概念："></a>相关长度的概念：</h6><p>当讨论临界现象和相变时，相关长度（correlation length）是指在物质中，相互作用产生的局域效应能够延伸的尺度范围。</p>
+<p>在临界点附近，物质的性质会出现剧烈的变化，同时存在大范围的长程相互关联。这些相互关联的尺度就是相关长度。相关长度可以解释为在临界点附近，当两个物理量之间的空间间隔小于相关长度时，它们之间存在明显的相互关联；而当它们之间的空间间隔大于相关长度时，它们之间的相互关联变得微弱甚至消失。</p>
+<p>相关长度与相变的临界行为密切相关。在临界点附近，相关长度会显示出奇异的行为，通常呈现出幂律增长。这意味着相关长度随着临界点的临近而变得非常大，甚至可以无限大。这种无限大的相关长度是相变临界行为的一个关键特征，也是相变临界指数的重要基础。</p>
+<p>在实际研究中，相关长度常常通过物理量的相关函数来表征。相关函数描述了不同位置处物理量之间的关联程度。在临界点附近，相关函数的衰减行为与相关长度有密切关系。</p>
+<p>总之，相关长度是描述临界现象和相变中长程相互关联的尺度范围。它是临界行为的重要特征之一，与相变临界指数密切相关。通过研究相关长度，我们可以深入理解相变的特性及其在物质中的重要性。</p>
+<h6 id="长程有序："><a href="#长程有序：" class="headerlink" title="长程有序："></a>长程有序：</h6><p>在物理学中，长程有序指的是物质中存在着在宏观尺度上延伸的有序结构或性质。具体来说，当物质的基本单元（如原子或分子）在空间上展现出远距离的规律排列或关联时，我们称之为长程有序。这种有序结构可以以各种形式出现，如晶体中的周期性排列、磁性材料中的磁性域排列等。</p>
+<p>与长程有序相关的是相变中的临界行为和相变点附近的临界指数。临界现象通常伴随着长程相互关联的出现。在相变点附近，相关长度可以变得非常大，这意味着物质在更远的距离上表现出有序性。因此，长程有序和相关长度在相变研究中是密不可分的。</p>
+<h6 id="临界指数："><a href="#临界指数：" class="headerlink" title="临界指数："></a>临界指数：</h6><p>当物质经历相变时，例如从液体到气体或从无序状态到有序状态的转变，往往伴随着一些物理量的剧烈变化。这些物理量可能是密度、磁化强度、比热等，它们在相变点附近表现出非常特殊的行为。临界指数就是用来描述这种行为的指数。</p>
+<p>临界指数反映了物理量在临界点附近随着温度、压力或其他相关参数的变化方式。它们描述了物理量与相变点的关系，并提供了有关相变性质的重要信息。临界指数通常通过幂律行为来描述，即物理量随临界点的临近而发生的量级变化。</p>
+<p>常见的临界指数包括：</p>
+<ol>
+<li>临界指数β：描述了物质在临界点附近的磁化强度（或其他有序参量）与温度（或其他参数）之间的关系。它表示磁化强度随温度变化的幂律行为。</li>
+<li>临界指数γ：描述了物质在临界点附近的比热与温度（或其他参数）之间的关系。它表示比热随温度变化的幂律行为。</li>
+<li>临界指数α：描述了物质在临界点附近的热膨胀系数与温度（或其他参数）之间的关系。它表示热膨胀系数随温度变化的幂律行为。</li>
+<li>临界指数ν：描述了物质在临界点附近的相关长度与温度（或其他参数）之间的关系。它表示相关长度随温度变化的幂律行为。</li>
+</ol>
+<p>这些临界指数提供了有关相变行为的重要信息。它们通常与物质的对称性、维度、相变类型等因素密切相关。通过实验测量或理论计算，我们可以获得这些临界指数的数值，并通过比较不同系统或不同相变类型的临界指数来研究相变的普适性和类别。</p>
+<h4 id="7-4"><a href="#7-4" class="headerlink" title="7.4"></a>7.4</h4><p>困——死——</p>
+<h5 id="今日学习知识点：-1"><a href="#今日学习知识点：-1" class="headerlink" title="今日学习知识点："></a>今日学习知识点：</h5><h6 id="gonihedric-Ising-model："><a href="#gonihedric-Ising-model：" class="headerlink" title="gonihedric Ising model："></a>gonihedric Ising model：</h6><p>Goni-hedric Ising模型（广义hedric伊辛模型）中自旋的角度取向可以是0、π/2、π、3π/2等（具有四自旋的Goni-hedric Ising模型）。这种角度限制导致了模型的特殊性质和相变行为。</p>
+<p>Gonihedric Ising模型最初是在研究自旋冰系统时引入的，这是一种由水分子组成的系统，其中自旋类似于冰晶格点上的氢原子。自旋冰系统具有丰富的相变现象和低温行为，而Gonihedric Ising模型被用来描述其中的一些特性。</p>
+<p>“广义hedric（gonihedric）伊辛模型”是一种在统计物理学中研究自旋系统的模型。它是一种扩展的伊辛模型，其中自旋在晶格上被赋予了额外的规则。这些规则使得自旋在晶格上形成特定的组合，称为”hedra”。广义hedric伊辛模型可以用于研究复杂材料中的相变行为和自旋玻璃等问题。</p>
+<p>在广义hedric伊辛模型中，自旋可以采取两个可能的取向（通常为+1和-1），并与相邻自旋相互作用。除此之外，自旋还受到形成hedra的附加规则的约束。hedra是一种由相邻自旋组成的集合，它们具有特定的几何形状。hedra的形成规则可以根据具体问题而变化，因此模型的具体定义可以有所不同。</p>
+<p>gonihedric 模型是各向异性耦合的 Ashkin-Teller 模型，具有类似的退化性。</p>
+<h6 id="Ashkin-Teller-模型"><a href="#Ashkin-Teller-模型" class="headerlink" title="Ashkin-Teller 模型"></a>Ashkin-Teller 模型</h6><p>Ashkin-Teller模型是一种描述自旋系统的统计物理模型，具有重要的退化性质。它是由Elliott H. Lieb、Theodore D. Schultz和Daniel C. Mattis于1970年提出的。</p>
+<p>Ashkin-Teller模型是一个二维格点模型，其中每个格点上有两个自旋变量。每个自旋可以处于两个离散的状态，通常用+1和-1表示。模型的Hamiltonian（哈密顿量）包含了两种不同的交互作用：同种自旋之间的交互作用和异种自旋之间的交互作用。</p>
+<p>具体来说，Ashkin-Teller模型的Hamiltonian可以写为：</p>
+<script type="math/tex; mode=display">
+H = -J\sum (σ_{i}σ_{j} + τ_{i}τ_{j}) - K\sum (σ_{i}τ_{j} + τ_{i}σ_{j})</script><p>其中，J和K分别是同种自旋和异种自旋之间的耦合常数，σ~i~和τ~i~分别表示第i个格点上的两个自旋变量。</p>
+<p>Ashkin-Teller模型的退化性质指的是当J=K时，模型具有额外的对称性。在这种情况下，模型的相变行为可以进一步简化，并且具有更多的解析性质。</p>
+<p>退化性质使得Ashkin-Teller模型在理论研究中具有一定的优势。它可以通过不同的方法进行精确求解，包括Bethe ansatz、自洽场方法、临界点解析等。这些解析结果对于研究模型的临界行为、相变点、临界指数等提供了重要的理论基础。</p>
+<h6 id="q-state-Potts-model"><a href="#q-state-Potts-model" class="headerlink" title="q-state Potts model"></a>q-state Potts model</h6><p>q态波茨模型（q-state Potts model）是一种统计物理模型，描述了具有离散自旋变量的系统。它是对伊辛模型的一种推广，引入了更多的自旋状态。</p>
+<p>在q态波茨模型中，每个格点上的自旋可以处于q个离散的状态，通常用整数值（从0到q-1）表示。模型的Hamiltonian（哈密顿量）包含了两种类型的交互作用：同种自旋之间的交互作用和异种自旋之间的交互作用。</p>
+<p>具体来说，q态波茨模型的Hamiltonian可以写为：</p>
+<script type="math/tex; mode=display">
+H = -J\sum(δ(s_i, s_j) - 1)</script><p>其中，s~i~和s~j~分别表示第i个格点和第j个格点上的自旋状态，δ(s~i~, s~j~)是Kronecker delta函数，J是交互作用常数。</p>
+<p>当q = 2时，q态波茨模型就退化成了伊辛模型。伊辛模型是一种描述自旋系统的二状态（+1和-1）模型。它的Hamiltonian可以写为：</p>
+<script type="math/tex; mode=display">
+H = -J \sum s_i s_j</script><h6 id="Abelian-Surface-Gauge-Model"><a href="#Abelian-Surface-Gauge-Model" class="headerlink" title="Abelian Surface Gauge Model"></a>Abelian Surface Gauge Model</h6><p>Abelian Surface Gauge模型（ASG模型）是一种量子自旋模型，用于描述二维自旋系统的性质和行为。它是对Potts模型的一种推广，并且与波茨模型存在密切的关系。</p>
+<p>ASG模型的基本构建是在二维晶格上引入了额外的规范场变量，这些规范场变量与自旋之间有相互作用。在ASG模型中，自旋变量可以取多个离散的值，通常用整数表示。</p>
+<p>模型的Hamiltonian包含两个部分：规范场的能量和自旋之间的相互作用。规范场的能量由规范场的离散变量构成，可以通过耦合常数来控制。自旋之间的相互作用可以是各向同性的或者具有一定的规范对称性。</p>
+<p>与波茨模型的关系在于，当ASG模型中的规范场变量被固定时，模型退化成了相应的Potts模型。具体而言，当规范场变量的自由度被限制在离散的值上时，ASG模型的自旋部分与Potts模型的自旋部分相对应。</p>
+<h6 id="李杨奇点边"><a href="#李杨奇点边" class="headerlink" title="李杨奇点边"></a>李杨奇点边</h6><p>李杨零点密度的散度</p>
+]]></content>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>李杨零/Fisher零-文献速记</title>
+    <url>/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/</url>
+    <content><![CDATA[<h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1/L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1/L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
+<p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
+<h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>introduction回顾了一下前人对于李杨零及Fisher零的研究。对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L = 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
+<p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨奇点边，并提出了李杨奇点边可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
+]]></content>
+      <tags>
+        <tag>文献速记</tag>
+        <tag>李杨零</tag>
+        <tag>Fisher零</tag>
       </tags>
   </entry>
 </search>

@@ -21,30 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="从气液固开始当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。">
+    <meta name="description" content="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）Non-Standard Finite-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相变理论基础">
-<meta property="og:url" content="http://example.com/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="李杨零&#x2F;Fisher零-文献速记">
+<meta property="og:url" content="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="兀孀的个人博客">
-<meta property="og:description" content="从气液固开始当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。">
+<meta property="og:description" content="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）Non-Standard Finite-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/%E6%B0%94%E6%B6%B2%E5%9B%BA%E7%9B%B8%E5%8F%98.png">
-<meta property="article:published_time" content="2023-06-19T10:53:38.000Z">
-<meta property="article:modified_time" content="2023-06-21T12:51:39.080Z">
+<meta property="article:published_time" content="2023-07-04T08:55:58.000Z">
+<meta property="article:modified_time" content="2023-07-04T11:51:29.431Z">
 <meta property="article:author" content="babel">
-<meta property="article:tag" content="相变">
+<meta property="article:tag" content="文献速记">
+<meta property="article:tag" content="李杨零">
+<meta property="article:tag" content="Fisher零">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/%E6%B0%94%E6%B6%B2%E5%9B%BA%E7%9B%B8%E5%8F%98.png">
 
 
-<link rel="canonical" href="http://example.com/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/","path":"相变理论基础/","title":"相变理论基础"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/","path":"李杨零Fisher零-文献速记/","title":"李杨零/Fisher零-文献速记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>相变理论基础 | 兀孀的个人博客</title>
+<title>李杨零/Fisher零-文献速记 | 兀孀的个人博客</title>
   
 
 
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E6%B0%94%E6%B6%B2%E5%9B%BA%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">从气液固开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E7%9B%B8%E5%8F%98"><span class="nav-number">2.</span> <span class="nav-text">一阶相变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E7%9B%B8%E5%8F%98"><span class="nav-number">3.</span> <span class="nav-text">二阶相变</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes%EF%BC%882000%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field%EF%BC%882005%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions%EF%BC%882014%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet%EF%BC%882018%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">Density of Yang-Lee zeros for the Ising ferromagnet（2018）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -214,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="相变理论基础 | 兀孀的个人博客">
+      <meta itemprop="name" content="李杨零/Fisher零-文献速记 | 兀孀的个人博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          相变理论基础
+          李杨零/Fisher零-文献速记
         </h1>
 
         <div class="post-meta-container">
@@ -229,24 +229,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-06-19 18:53:38" itemprop="dateCreated datePublished" datetime="2023-06-19T18:53:38+08:00">2023-06-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-21 20:51:39" itemprop="dateModified" datetime="2023-06-21T20:51:39+08:00">2023-06-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">统计物理</span></a>
-        </span>
+      <time title="创建时间：2023-07-04 16:55:58 / 修改时间：19:51:29" itemprop="dateCreated datePublished" datetime="2023-07-04T16:55:58+08:00">2023-07-04</time>
     </span>
 
   
@@ -258,8 +243,8 @@
     </span>
     <span class="post-meta-item-text">Valine：</span>
   
-    <a title="valine" href="/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -270,14 +255,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
+      <span>826</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -287,26 +272,11 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="从气液固开始"><a href="#从气液固开始" class="headerlink" title="从气液固开始"></a>从气液固开始</h3><p>当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。</p>
-<span id="more"></span>
+    <div class="post-body" itemprop="articleBody"><h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1/L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1/L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
+<p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
+<h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>introduction回顾了一下前人对于李杨零及Fisher零的研究。对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L = 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
+<p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨奇点边，并提出了李杨奇点边可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
 
-<p>从直观词义上来说，我们知道相变是一种变化，从一种相变成另一种相的物理过程就称之为相变。最常见且令人熟悉的相变现象是水的气液固相变，在一个标准大气压下，100℃时水会汽化成水蒸气（从液态变为气态），而0℃时，液态的水则凝固成固态的冰。</p>
-<p>我们都知道在水沸腾的过程中，锅里的水总是保持在100℃，而在冰融化的过程中，冰水混合物的温度总保持在0℃。实际上，我们可以用这两个温度来为一个简易温度计定标（印象中初中或者高中物理会提到这个小实验）。</p>
-<p>为什么煮沸水的过程中，水明明在被加热却依然保持温度不变？印象中基础物理会这样解释：这部分能量被用于做功，使得水分子从分子间距较近的液态变为分子间距较远的气态。这似乎不太对，但印象中初中老师们似乎确实会这么告诉小朋友。要稍微专业一些来说，这涉及到相变潜热的概念（在下面一节：一阶相变中再说）。毕竟说这些概念什么——光是说到做功我就已经头大了，更别提什么潜热。我们或许可以先谈一些直观的，比如说图一。</p>
-<img src="\images\气液固相变.png" alt="气液固相变" style="zoom:60%;" />
-
-<div style="text-align: center;">图一：气液固相变</div>
-
-<p>图一是一张横坐标是温度纵坐标是压强的图像（废话！），在这张图中我们把气液固三相用不同的颜色标示出来，分别是蓝色的固相，紫色的液相，以及橙色的气相。这些相之间非常泾渭分明，除了最右上角那一块黄昏主题眼影一样的晕染。</p>
-<p>相与相之间的交界线代表相变的发生，这时两相（甚至三相）可以共存，比如说冰水混合物，这些不同的相之间处于一种微妙的平衡状态。而当条件稍稍改变一些，我们的共存体系就会无可挽回地向着单一相的情况发展了。共存体系的条件如此苛刻，以至于我们观察到的系统总是从一种相的极端迅速走向另一种相的极端，也就是相变。</p>
-<p>这里我不得不说，统计学家们对相变如此好奇可能就是因为这些变化非常不稳定而且剧烈。就像蝴蝶振翅，原本平衡的体系会瞬间打破，演变成一场风暴。蝴蝶振翅对人们来说当然算不上什么，但一场风暴就很不妙。</p>
-<p>说回图一，在右上角这个特别的边界模糊处，液相和气相的区别消失了，物质变成了一种超临界流体（听上去很吓人，但只需要知道它是一种液相和气相之间的界限消失，两者无法区分的特殊相就行了）。这东西要详细研究起来非常有趣，可以单独作为一个课题，叫做超临界流体。不过我们在这里只讨论相变——没错，这里也发生了相变。前一种界线分明的相变叫做一阶相变，这里叫做二阶相变，也叫连续相变。</p>
-<h3 id="一阶相变"><a href="#一阶相变" class="headerlink" title="一阶相变"></a>一阶相变</h3><p>物理学家通常会说，一阶相变是指那些涉及潜热的相变（所以潜热到底是什么？）。在这种相变过程中，系统吸收或释放固定的能量（这个能量通常很大），系统的温度随热量的增加而保持不变：系统处于“混合阶段”，其中系统的某些部分已经完成了过渡，而其他部分则没有。比如说在水的蒸发过程中（说通俗点，在烧开水），水温总是维持在100℃不变，而随着加热的进行，越来越多的水转换为水蒸气，锅里的水越来越少了。</p>
-<p>若我们要系统地阐述相变问题，使用“水越来越少”这样的话实在不能令人信服。当我们描述相变时，我们总是需要一些准确的可测量的物理量。比如说我们熟悉的热力学量：温度，压强等等。当我们烧开水时，虽然水的温度并没有变化，但压强却在短期内发生了极为剧烈的改变。</p>
-<p>一阶相变的经典图像是一个阶梯函数，大概长这样：▁|▔（你是懂作图的）虽然一阶相变很好理解也很好观察，但它却很难求得精确解。因为它涉及到相变潜热的问题（非常麻烦）为什么起名叫做潜热（latent heat），据说是因为系统吸热但温度没有上升，吸收的热量不能直接观察到，因此得名潜热，也就是隐藏的热量。在某些基础热力学课本中，潜热也被称之为“焓的变化”。</p>
-<p>我们回到在第一节中提到的，加热过程中吸收的热量到底到哪去了？化学家会说，它用于提高“位能”。当冰熔化成水时，它吸收热量用于打断水分子间的键结，破坏分子间相互作用力。这就是“熔化热”。而当水蒸发为水蒸气时，分子间相互作用力被进一步破坏，这就称之为“汽化热”。（当然我从来不管什么熔化热和汽化热，这段是从别处抄来的。）</p>
-<p>现在。我们大概了解了我们最熟悉的一阶相变，熔化和汽化（反过来作为凝固和液化也是一阶相变）。我们知道了它们从物理学定量描述来看的直观特征，也就是那个阶梯函数。也知道了什么是潜热。有趣的是，一阶相变绝不仅仅存在于热力学，在经典的磁化现象以及复杂网络中也存在相变，这是热力学统计物理的推广，我们只需要把之前讨论的热力学量换成与之相对应的其他物理量，就可以用相同的方式理解其他系统中的相变问题。</p>
-<h3 id="二阶相变"><a href="#二阶相变" class="headerlink" title="二阶相变"></a>二阶相变</h3>
     </div>
 
     
@@ -315,21 +285,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%9B%B8%E5%8F%98/" rel="tag"><i class="fa fa-tag"></i> 相变</a>
+              <a href="/tags/%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 文献速记</a>
+              <a href="/tags/%E6%9D%8E%E6%9D%A8%E9%9B%B6/" rel="tag"><i class="fa fa-tag"></i> 李杨零</a>
+              <a href="/tags/Fisher%E9%9B%B6/" rel="tag"><i class="fa fa-tag"></i> Fisher零</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="prev" title="测试">
-                  <i class="fa fa-chevron-left"></i> 测试
+                <a href="/2023-7%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/" rel="prev" title="2023.7摸鱼日志">
+                  <i class="fa fa-chevron-left"></i> 2023.7摸鱼日志
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Ising-%E6%A8%A1%E5%9E%8B/" rel="next" title="Ising 模型">
-                  Ising 模型 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -424,7 +393,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"1I6Knr9w99gheUM29tvmbRUi-MdYXbMMI","appKey":"voG1mDLnin3ATNYJpAuEcu88","serverURLs":"https://1i6knr9w.api.lncldglobal.com","placeholder":"请在这里留言吧！","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"el":"#valine-comments","path":"/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"1I6Knr9w99gheUM29tvmbRUi-MdYXbMMI","appKey":"voG1mDLnin3ATNYJpAuEcu88","serverURLs":"https://1i6knr9w.api.lncldglobal.com","placeholder":"请在这里留言吧！","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"el":"#valine-comments","path":"/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
