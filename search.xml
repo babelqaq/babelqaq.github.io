@@ -264,7 +264,13 @@ p=\frac{k T}{V} \ln \Xi</script><script type="math/tex; mode=display">
     <content><![CDATA[<p>在这里整理一些做LaTeX PPT常用的代码以便复制</p>
 <span id="more"></span>
 
-<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><h3 id="头文件加载包："><a href="#头文件加载包：" class="headerlink" title="头文件加载包："></a>头文件加载包：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125; <span class="comment">% 文档类型为beamer,即幻灯片</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;beamerthemesplit&#125; <span class="comment">% 加载主题宏包</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;Warsaw&#125;<span class="comment">%主题（行名）</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;dolphin&#125;<span class="comment">%配色（列名）</span></span><br><span class="line"><span class="comment">% 导入所需的宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>[utf8]&#123;inputenc&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex&#125;<span class="comment">%中文字体设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;tikz&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;subfigure&#125;<span class="comment">%子图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;<span class="comment">%图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[numbers,longnamesfirst]&#123;natbib&#125;<span class="comment">%修改参考文献显示格式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\defbeamertemplate</span>&#123;footline&#125;&#123;NGEGFootlineTemplate&#125;&#123;<span class="comment">%设置页脚</span></span><br><span class="line">	<span class="keyword">\leavevmode</span><span class="comment">% 离开vmode，也就是离开竖直模式，进入水平模式</span></span><br><span class="line">	<span class="keyword">\hbox</span>&#123; <span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;author in head/foot&#125;<span class="keyword">\insertshortauthor</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.6<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;title in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;title in head/foot&#125;<span class="keyword">\insertshorttitle</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\fi</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;beamercolorbox&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="comment">%	\vskip0pt%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;[NGEGFootlineTemplate]</span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;caption&#125;&#123;size=<span class="keyword">\footnotesize</span>&#125;<span class="comment">%定义图例标题大小</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]  <span class="comment">%让插入的图片自动编号(beamer默认不编号)</span></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;   <span class="comment">%在公式中使用使用标准的Latex字体(有衬线的字体)，区分小的L和大写的I</span></span><br><span class="line"><span class="comment">%beamer中默认使用Sans Serif字体，即没有衬线的字体</span></span><br></pre></td></tr></table></figure>
+<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><h3 id="头文件加载包："><a href="#头文件加载包：" class="headerlink" title="头文件加载包："></a>头文件加载包：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125; <span class="comment">% 文档类型为beamer,即幻灯片</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;beamerthemesplit&#125; <span class="comment">% 加载主题宏包</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;Warsaw&#125;<span class="comment">%主题（行名）</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;dolphin&#125;<span class="comment">%配色（列名）</span></span><br><span class="line"><span class="comment">% 导入所需的宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>[utf8]&#123;inputenc&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex&#125;<span class="comment">%中文字体设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;tikz&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;subfigure&#125;<span class="comment">%子图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;<span class="comment">%图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[style=verbose-ibid,backend=biber]&#123;biblatex&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\addbibresource</span>&#123;XXX.bib&#125; <span class="comment">% 指定参考文献数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;caption&#125;&#123;size=<span class="keyword">\footnotesize</span>&#125;<span class="comment">%定义图例标题大小</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]  <span class="comment">%让插入的图片自动编号(beamer默认不编号)</span></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;   <span class="comment">%在公式中使用使用标准的Latex字体(有衬线的字体)，区分小的L和大写的I，beamer中默认使用Sans Serif字体，即没有衬线的字体</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="页脚："><a href="#页脚：" class="headerlink" title="页脚："></a>页脚：</h3><h4 id="三段式页脚"><a href="#三段式页脚" class="headerlink" title="三段式页脚"></a>三段式页脚</h4><p>包含：作者，标题，页码</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\defbeamertemplate</span>&#123;footline&#125;&#123;NGEGFootlineTemplate&#125;&#123;<span class="comment">%设置页脚</span></span><br><span class="line">	<span class="keyword">\leavevmode</span><span class="comment">% 离开vmode，也就是离开竖直模式，进入水平模式</span></span><br><span class="line">	<span class="keyword">\hbox</span>&#123; <span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;author in head/foot&#125;<span class="keyword">\insertshortauthor</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.6<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;title in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;title in head/foot&#125;<span class="keyword">\insertshorttitle</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\fi</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;beamercolorbox&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="comment">%	\vskip0pt%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;[NGEGFootlineTemplate]</span><br></pre></td></tr></table></figure>
+
+<h4 id="简介页脚"><a href="#简介页脚" class="headerlink" title="简介页脚"></a>简介页脚</h4><p>只含右下角页码，以便给脚注留出空间</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\footnotesize</span>&#125;&#123;<span class="keyword">\tiny</span>&#125;<span class="comment">% 重新定义脚注的字体大小</span></span><br><span class="line"><span class="comment">% 自定义底部导航栏</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;&#123;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\hfill</span><span class="comment">%</span></span><br><span class="line">  <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\hspace</span>*&#123;2ex&#125;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\vskip</span>6pt <span class="comment">% 调整此处的距离来改变页码与底部的间距</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="文档开始："><a href="#文档开始：" class="headerlink" title="文档开始："></a>文档开始：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125; </span><br></pre></td></tr></table></figure>
 
@@ -286,13 +292,110 @@ p=\frac{k T}{V} \ln \Xi</script><script type="math/tex; mode=display">
 
 <h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&#123;<span class="keyword">\tiny</span> 小小&#125;</span><br><span class="line">&#123;<span class="keyword">\scriptsize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\footnotesize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\small</span> 小&#125;</span><br><span class="line">&#123;<span class="keyword">\normalsize</span> 正常&#125;</span><br><span class="line">&#123;<span class="keyword">\large</span> 大&#125;</span><br><span class="line">&#123;<span class="keyword">\Large</span> 更大&#125;</span><br><span class="line">&#123;<span class="keyword">\LARGE</span> 极大&#125;</span><br><span class="line">&#123;<span class="keyword">\huge</span> 巨大&#125;</span><br><span class="line">&#123;<span class="keyword">\Huge</span> 宇宙&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="结尾文档"><a href="#结尾文档" class="headerlink" title="结尾文档"></a>结尾文档</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%引用代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\appendix</span><span class="comment">%附录（附录不在前面的页头标题栏中显示）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[allowframebreaks]&#123;References&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\small</span><span class="comment">%修改参考文献字号</span></span><br><span class="line"><span class="keyword">\bibliography</span>&#123;XXX&#125;<span class="comment">%引用文献文件XXX.bib，这个文件放在和本文件同一目录</span></span><br><span class="line"><span class="keyword">\bibliographystyle</span>&#123;plain&#125;<span class="comment">%定义参考文献类型</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结尾文档"><a href="#结尾文档" class="headerlink" title="结尾文档"></a>结尾文档</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\textsuperscript</span>&#123;<span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;&#125;<span class="comment">%上标引文</span></span><br><span class="line"><span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%齐平引文</span></span><br><span class="line"><span class="keyword">\footfullcite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%脚注引文</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\appendix</span><span class="comment">%附录（附录不在前面的页头标题栏中显示）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t, allowframebreaks]&#123;References&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\small</span><span class="comment">%修改参考文献字号</span></span><br><span class="line"><span class="keyword">\printbibliography</span><span class="comment">% 生成参考文献列表</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
         <tag>PPT</tag>
         <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(1)：专栏大纲与帮助网站整合</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1-%EF%BC%9A%E4%B8%93%E6%A0%8F%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B8%AE%E5%8A%A9%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/</url>
+    <content><![CDATA[<p>本专栏读书笔记，我想从《唐氏综合征儿童的父母指南（The Parent’s Guide to Down Syndrome）》这本书开始。这本书在淘宝或是京东可以搜到英文原版书，如果感兴趣的话可以买来看一看。如果想要免费的电子版，这本书也可以在zliabary的国内镜像网站上直接搜索英文书名下载。</p>
+<span id="more"></span>
+
+<p>在这里提供一个我使用的zliabary的国内镜像网站：<a href="https://zbook.lol/">https://zbook.lol/</a></p>
+<p>《唐氏综合征儿童的父母指南》这本书涵盖了对唐氏综合征的一些基础介绍，以及对于从唐氏儿出生到成年，甚至成年以后，给唐氏儿父母的一系列建议。我的专栏会大致按照这本书的行文脉络，尽可能简洁清晰地整理这本书中我认为的有益内容并补充一些相关资料，包括相关学术论文、相关科普资料及视频的内容整理。我会在每篇文章的最后附上相关参考文献。</p>
+<p>我并非唐氏综合征相关方面的专家，也没有任何医学基础，本专栏仅为个人对书籍或资料的分享与解读。</p>
+<p>若有对我的建议、相关读物&#x2F;资料推荐，请在评论区留言。</p>
+<p>以下是专栏目录（随专栏更新）</p>
+<ol>
+<li>为唐氏综合征儿童父母提供的读书笔记(1)：专栏大纲与帮助网站整合</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(2)：唐氏综合征简介</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(3)：产检及出生检查</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(4)：0-6个月</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(5)：6个月-2岁</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(6)：3-5岁</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(7)：小到初中</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(8)：青少年期</li>
+<li>为唐氏综合征儿童父母提供的读书笔记(9)：成年</li>
+</ol>
+<p>以下提供一些网站，他们包括一些唐氏综合征的相关资料，以及社区互助集群（若读者有其他有帮助的相关资料网站或国内的社区互助集群，也请在评论区分享。也请读者注意甄别网站，谨防诈骗。）</p>
+<ol>
+<li>一个关于唐氏儿的网上交流论坛，全英文，国内可访问：<a href="http://community.babycenter.com/groups/a315/down_syndrome">http://community.babycenter.com/groups/a315/down_syndrome</a></li>
+<li>一个关于唐氏儿的线上网络社群，全英文，国内可访问。主要面对三岁以下唐氏综合征儿童，为他们建立线上的帮助社群以及帮忙联系线下本地最近的帮助组织。网站中也有一些文字帮助资源（需科学上网）：<a href="https://www.dsdiagnosisnetwork.org/">https://www.dsdiagnosisnetwork.org/</a></li>
+</ol>
+<p>以下提供一些关于唐氏综合征的读物：</p>
+<ol>
+<li>《唐氏综合征儿童的父母指南（The Parent’s Guide to Down Syndrome）》作者：Jen Jacob, Mardra Sikora. 全英文。一本给唐氏综合征儿童的父母指导书籍。本读书笔记的主要文献。</li>
+<li>《虽然等的不是你》作者：法比安·图尔梅（Fabien Toulmé）有中文译本，可直接在网购平台搜索购买。一本关于唐氏儿父亲的心路历程的绘本。</li>
+<li>《小爱的秘密》作者：竹山美奈子 &#x2F; 江头路子。有中文译本，可直接在网购平台搜索购买。一本从一个唐氏儿母亲的角度讲述关于唐氏综合征的科普绘本。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(2)：唐氏综合征简介</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-2-%EF%BC%9A%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<p>唐氏综合征即21-三体综合征，又称先天愚型或Down综合征。主要由于21号染色体多出一条导致。</p>
+<span id="more"></span>
+
+<h2 id="唐氏综合征的三种类别"><a href="#唐氏综合征的三种类别" class="headerlink" title="唐氏综合征的三种类别"></a>唐氏综合征的三种类别</h2><h3 id="1-标准型（Trisomy-21）"><a href="#1-标准型（Trisomy-21）" class="headerlink" title="1.标准型（Trisomy 21）"></a>1.标准型（Trisomy 21）</h3><p>标准型占唐氏综合征的绝大多数（约占患者的95%），患者具有一个额外的21号染色体。</p>
+<h3 id="2-易位型（Translocation-Down-syndrome）"><a href="#2-易位型（Translocation-Down-syndrome）" class="headerlink" title="2.易位型（Translocation Down syndrome）"></a>2.易位型（Translocation Down syndrome）</h3><p>易位型占唐氏综合征的2.5%-5%，患者并没有多出一条染色体，而是染色体发生易位（多为14号染色体与21号染色体易位）一般情况下唐氏综合征并不遗传，只是因为胎儿在受孕或发育过程中的染色体分裂异常产生。但易位型唐氏综合征可能源自遗传（父母的染色体具有罗伯逊易位，但父母表征正常，有可能产下易位型唐氏儿）</p>
+<p>这里提供一个关于罗伯逊易位的百度百科链接：<a href="https://baike.baidu.com/item/%E7%BD%97%E4%BC%AF%E9%80%8A%E6%98%93%E4%BD%8D/148968?fromModule=lemma_inlink">https://baike.baidu.com/item/%E7%BD%97%E4%BC%AF%E9%80%8A%E6%98%93%E4%BD%8D/148968?fromModule=lemma_inlink</a></p>
+<h3 id="3-嵌合型（Mosaic-Down-syndrome）"><a href="#3-嵌合型（Mosaic-Down-syndrome）" class="headerlink" title="3.嵌合型（Mosaic Down syndrome）"></a>3.嵌合型（Mosaic Down syndrome）</h3><p>嵌合型占唐氏综合征的2%-4%，他们不像标准型，全身所有的细胞都携带一条额外的21号染色体。他们全身有一部分是正常细胞，一部分是21三体细胞。因此嵌合型的唐氏儿病症可能比标准型更轻。正常细胞所占百分比越多，则症状越轻。</p>
+<p>在《唐氏综合征儿童的父母指南》这本书里提到了一个有趣的例子，来自一个名为杰瑞德（Jared）的小男孩。他是嵌合型唐氏综合征的患者，但因为他在面容上没有丝毫特殊表征，只是在学说话方面遇到了很大的困难。直到七岁他才被确诊为唐氏综合征患者。</p>
+<h3 id="附：如何确定孩子的唐氏综合征类别？确定孩子的唐氏综合征类别重要吗？"><a href="#附：如何确定孩子的唐氏综合征类别？确定孩子的唐氏综合征类别重要吗？" class="headerlink" title="附：如何确定孩子的唐氏综合征类别？确定孩子的唐氏综合征类别重要吗？"></a>附：如何确定孩子的唐氏综合征类别？确定孩子的唐氏综合征类别重要吗？</h3><p>你可以通过在医院做血液检查及染色体核型分析报告确定孩子的唐氏综合征类别。而确定唐氏综合征类别的意义在于：</p>
+<ol>
+<li>如果你的孩子是嵌合型，那么他的症状很可能取决于他的哪些细胞是21三体细胞。通过了解这些你或许可以进一步针对性治疗与训练。并且嵌合型的孩子或许治疗训练的效果预期更好。</li>
+<li>标准型和易位型的病症表现区别并不大。但如果你的孩子是易位型，那么他的病症有可能是源自遗传。如果你接下来继续打算要孩子，他可能也会是唐氏患儿。请在专业医生的指导下慎重考虑。</li>
+</ol>
+<h2 id="唐氏综合征的可能并发症或影响"><a href="#唐氏综合征的可能并发症或影响" class="headerlink" title="唐氏综合征的可能并发症或影响"></a>唐氏综合征的可能并发症或影响</h2><h3 id="1-出生极轻体重"><a href="#1-出生极轻体重" class="headerlink" title="1.出生极轻体重"></a>1.出生极轻体重</h3><p>唐氏综合征患儿的出生体重平均值为3斤左右，而普通新生儿为5-8斤。</p>
+<h3 id="2-智力障碍"><a href="#2-智力障碍" class="headerlink" title="2.智力障碍"></a>2.智力障碍</h3><p>唐氏综合征患儿可能患有轻度（IQ为50-69）或中度（IQ为35-50）的智力障碍。成年期智龄不超过八岁。对唐氏综合征患儿来说，他们的语言沟通能力一般要落后于其他生活技能的发展。</p>
+<h3 id="3-免疫问题"><a href="#3-免疫问题" class="headerlink" title="3.免疫问题"></a>3.免疫问题</h3><p>唐氏综合征患儿的免疫力更弱，导致他们无论处在哪个年龄段都容易被感染生病。同时他们也更容易遭到肿瘤与癌症的侵扰。</p>
+<h3 id="4-先天性心脏病"><a href="#4-先天性心脏病" class="headerlink" title="4.先天性心脏病"></a>4.先天性心脏病</h3><p>唐氏综合征患者有较高可能伴有心血管畸形、心脏房间隔缺损、室间隔缺损等等不同的先天性心脏病。需要及时检查并就医，必要时手术治疗。在《唐氏综合征与先天性心脏病的关系》一文中回顾性分析了1997年1月至2013年3月重庆医科大学附属儿童医院收治的575例唐氏综合征患儿的临床资料，这575例患儿中有370例患有先天性心脏病，患病比例为64.35%。</p>
+<h3 id="5-呼吸问题"><a href="#5-呼吸问题" class="headerlink" title="5.呼吸问题"></a>5.呼吸问题</h3><p>唐氏综合征患儿可能会容易呼吸暂停，或罹患喉软骨软化病。在婴儿时期他们可能会容易胃食管反流，被食物噎住，从而造成喂养困难，体重增加不足。</p>
+<h3 id="5-胃肠道畸形"><a href="#5-胃肠道畸形" class="headerlink" title="5.胃肠道畸形"></a>5.胃肠道畸形</h3><h3 id="6-手脚指畸形"><a href="#6-手脚指畸形" class="headerlink" title="6.手脚指畸形"></a>6.手脚指畸形</h3><p>一些唐氏综合症患儿可能合并有六指或者其他手脚指畸形。</p>
+<h3 id="7-癫痫"><a href="#7-癫痫" class="headerlink" title="7.癫痫"></a>7.癫痫</h3><h3 id="8-过敏"><a href="#8-过敏" class="headerlink" title="8.过敏"></a>8.过敏</h3><p>一些唐氏综合征患儿可能遭遇过敏问题，因此饮食结构需要进行合理调整。</p>
+<h3 id="9-视力问题"><a href="#9-视力问题" class="headerlink" title="9.视力问题"></a>9.视力问题</h3><p>38%-80%的唐氏综合征患者可能有视力问题，他们可能一出生就有白内障、Brushfield斑、泪管阻塞，或是患有近视、远视、以及散光。</p>
+<h3 id="10-听力问题"><a href="#10-听力问题" class="headerlink" title="10.听力问题"></a>10.听力问题</h3><p>超过60%的唐氏综合征患者存在听力问题，部分婴儿在出生后短时间内耳道就会遭遇感染，需要定期检查与配合抗生素治疗。</p>
+<h3 id="11-口腔问题"><a href="#11-口腔问题" class="headerlink" title="11.口腔问题"></a>11.口腔问题</h3><p>唐氏综合征患者更易患牙龈炎，龋齿，牙周病甚至出现牙齿脱落，牙齿磨损率也高于常人。</p>
+<h3 id="12-精神疾病"><a href="#12-精神疾病" class="headerlink" title="12.精神疾病"></a>12.精神疾病</h3><p>30%的唐氏综合征患者可能患上精神疾病，出现抑郁、焦虑、幻视或幻听。</p>
+<h3 id="13-痴呆"><a href="#13-痴呆" class="headerlink" title="13.痴呆"></a>13.痴呆</h3><p>研究表明几乎所有唐氏综合征患者在35-40岁神经系统都出现了淀粉样斑块和神经元缠结等，可能造成行为改变与语言障碍，甚至和阿兹海默症类似的痴呆症状。</p>
+<p><strong>注：我会把唐氏综合征患儿在每个年龄段需要进行的检查按照年龄顺序放在之后的章节中</strong></p>
+<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ol>
+<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
+<li>颀思诺想. 把人列入强制绝育计划名单，什么是21三体综合征？_哔哩哔哩_bilibili. <a href="http://www.bilibili.com/">www.bilibili.com</a>. Accessed November 30, 2023. <a href="https://www.bilibili.com/video/BV1Es4y1h7b9/?spm_id_from=333.880.my_history.page.click&vd_source=1961009ab88f35b929695a835564a6e3">https://www.bilibili.com/video/BV1Es4y1h7b9/?spm_id_from=333.880.my_history.page.click&amp;vd_source=1961009ab88f35b929695a835564a6e3</a></li>
+<li>谢雪,张静.唐氏综合征与先天性心脏病的关系[J].中华实用儿科临床杂志, 2014.</li>
+<li>王艳霞.唐氏综合征儿童社会适应能力和执行功能研究[D].导师：赵正言.浙江大学,2007.</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记：写在前面</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>我是一位理论物理学专业的研究生，也是一名唐氏儿的姐姐。我想读并整理一些关于唐氏儿的教育相关书籍，发布在公共平台，是因为我注意到在互联网搜索唐氏综合征的相关关键词条中，大部分都是对唐氏综合征的科普以及强调唐筛的重要性。很少有一段视频或者一个帖子来告诉我们，如果唐氏儿的确出生了，我们该怎么做。</p>
+<span id="more"></span>
+
+<p>我会在这个合集里分享一些我阅读的唐氏综合征相关的资料，图书，以及英文书或文献相关的读书笔记与整理。我找到的大部分唐氏综合征相关的书籍或资料都是英文版，缺乏中文译本。而大部分真正需要帮助的唐氏综合征患儿的父母，他们是读不懂英文原版的。我希望我的整理可以为这些父母提供一些帮助。</p>
+<p>其实在我弟弟出生后很长一段时间里，我都对一个问题颇有困惑：作为唐氏儿的弟弟，应该被生出来吗？我父亲曾经说过一段故事：我弟弟出生时，医院的医生对他非常漠视，甚至有希望他自己夭折的嫌疑（我并不知道是真事还是我父亲过度猜测后的版本）。我父亲对医生大加斥责，坚持从医院将弟弟带回家抚养。</p>
+<p>前不久我想起这件事，突然想我父亲是对的。因为我小时候患有很严重的先天性心脏病，那时候我们的家庭条件并不太好，若我的父母没有本着像救助我弟弟一样的人道主义精神来救助我，他们确实是可以放任我自己夭折的。</p>
+<p>我希望我的读书笔记及整理可以帮助一些有需要的家庭及唐氏患儿。如果可以的话，也希望读我文章的人可以点赞或转发，将文章尽可能地推送给有需要的人。</p>
+<p>万分感谢。</p>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
       </tags>
   </entry>
 </search>
