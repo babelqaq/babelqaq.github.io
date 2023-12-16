@@ -14,37 +14,26 @@
     <url>/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<p>在这里整理一些做LaTeX PPT常用的代码以便复制</p>
 <span id="more"></span>
-
-<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><h3 id="头文件加载包："><a href="#头文件加载包：" class="headerlink" title="头文件加载包："></a>头文件加载包：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125; <span class="comment">% 文档类型为beamer,即幻灯片</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;beamerthemesplit&#125; <span class="comment">% 加载主题宏包</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;Warsaw&#125;<span class="comment">%主题（行名）</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;dolphin&#125;<span class="comment">%配色（列名）</span></span><br><span class="line"><span class="comment">% 导入所需的宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>[utf8]&#123;inputenc&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex&#125;<span class="comment">%中文字体设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;tikz&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;subfigure&#125;<span class="comment">%子图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;<span class="comment">%图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[style=verbose-ibid,backend=biber]&#123;biblatex&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\addbibresource</span>&#123;XXX.bib&#125; <span class="comment">% 指定参考文献数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;caption&#125;&#123;size=<span class="keyword">\footnotesize</span>&#125;<span class="comment">%定义图例标题大小</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]  <span class="comment">%让插入的图片自动编号(beamer默认不编号)</span></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;   <span class="comment">%在公式中使用使用标准的Latex字体(有衬线的字体)，区分小的L和大写的I，beamer中默认使用Sans Serif字体，即没有衬线的字体</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><h3 id="头文件加载包："><a href="#头文件加载包：" class="headerlink" title="头文件加载包："></a>头文件加载包：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125; <span class="comment">% 文档类型为beamer,即幻灯片</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;beamerthemesplit&#125; <span class="comment">% 加载主题宏包</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;Warsaw&#125;<span class="comment">%主题（行名）</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;dolphin&#125;<span class="comment">%配色（列名）</span></span><br><span class="line"><span class="comment">% 导入所需的宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>[utf8]&#123;inputenc&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex&#125;<span class="comment">%中文字体设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;tikz&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;subfigure&#125;<span class="comment">%子图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;<span class="comment">%图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[style=verbose-ibid,backend=biber]&#123;biblatex&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\addbibresource</span>&#123;XXX.bib&#125; <span class="comment">% 指定参考文献数据库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamerfont</span>&#123;caption&#125;&#123;size=<span class="keyword">\footnotesize</span>&#125;<span class="comment">%定义图例标题大小</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]  <span class="comment">%让插入的图片自动编号(beamer默认不编号)</span></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;   <span class="comment">%在公式中使用使用标准的Latex字体(有衬线的字体)，区分小的L和大写的I，beamer中默认使用Sans Serif字体，即没有衬线的字体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\AtBeginSubsection</span>[]<span class="comment">%在每个章节前显示目录</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">		<span class="keyword">\transfade</span><span class="comment">%淡入淡出效果</span></span><br><span class="line"><span class="keyword">\tableofcontents</span>[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]</span><br><span class="line">		<span class="keyword">\addtocounter</span>&#123;framenumber&#125;&#123;-1&#125;  <span class="comment">%目录页不计算页码</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]<span class="comment">%在每个章节前显示目录</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">		<span class="keyword">\transfade</span><span class="comment">%淡入淡出效果</span></span><br><span class="line"><span class="keyword">\tableofcontents</span>[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]</span><br><span class="line">		<span class="keyword">\addtocounter</span>&#123;framenumber&#125;&#123;-1&#125;  <span class="comment">%目录页不计算页码</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="页脚："><a href="#页脚：" class="headerlink" title="页脚："></a>页脚：</h3><h4 id="三段式页脚"><a href="#三段式页脚" class="headerlink" title="三段式页脚"></a>三段式页脚</h4><p>包含：作者，标题，页码</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\defbeamertemplate</span>&#123;footline&#125;&#123;NGEGFootlineTemplate&#125;&#123;<span class="comment">%设置页脚</span></span><br><span class="line">	<span class="keyword">\leavevmode</span><span class="comment">% 离开vmode，也就是离开竖直模式，进入水平模式</span></span><br><span class="line">	<span class="keyword">\hbox</span>&#123; <span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;author in head/foot&#125;<span class="keyword">\insertshortauthor</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.6<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;title in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;title in head/foot&#125;<span class="keyword">\insertshorttitle</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\fi</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;beamercolorbox&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="comment">%	\vskip0pt%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;[NGEGFootlineTemplate]</span><br></pre></td></tr></table></figure>
-
 <h4 id="简介页脚"><a href="#简介页脚" class="headerlink" title="简介页脚"></a>简介页脚</h4><p>只含右下角页码，以便给脚注留出空间</p>
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\footnotesize</span>&#125;&#123;<span class="keyword">\tiny</span>&#125;<span class="comment">% 重新定义脚注的字体大小</span></span><br><span class="line"><span class="comment">% 自定义底部导航栏</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;&#123;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\hfill</span><span class="comment">%</span></span><br><span class="line">  <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\hspace</span>*&#123;2ex&#125;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\vskip</span>6pt <span class="comment">% 调整此处的距离来改变页码与底部的间距</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="文档开始："><a href="#文档开始：" class="headerlink" title="文档开始："></a>文档开始：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125; </span><br></pre></td></tr></table></figure>
-
 <h3 id="个人信息："><a href="#个人信息：" class="headerlink" title="个人信息："></a>个人信息：</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\title</span>&#123;XXX&#125; <span class="comment">%标题</span></span><br><span class="line"><span class="keyword">\author</span>[XXX]&#123;XXX&#125;<span class="comment">%作者 中括号里写的内容&quot;[]&quot;会呈现在页面左下角；大括号里写的内容&quot;&#123;&#125;&quot;会呈现在标题下面</span></span><br><span class="line"><span class="keyword">\institute</span>[*]&#123;XX大学XX系&#125;<span class="comment">%单位和邮箱，用&quot;\institute[]&#123;&#125;&quot;命令,&quot;\\&quot;为换行</span></span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"><span class="comment">%%%%生成首页</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">  <span class="keyword">\titlepage</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="comment">%%%%生成目录页</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">  <span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="文档内部常用代码"><a href="#文档内部常用代码" class="headerlink" title="文档内部常用代码"></a>文档内部常用代码</h2><h3 id="新建PPT页面"><a href="#新建PPT页面" class="headerlink" title="新建PPT页面"></a>新建PPT页面</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;XXX&#125;<span class="comment">%一级标题</span></span><br><span class="line"><span class="keyword">\subsection</span>&#123;XXX&#125;<span class="comment">%次级标题</span></span><br><span class="line"><span class="keyword">\frametitle</span>&#123;XXX&#125;<span class="comment">%该页PPT标题</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="插入定理块"><a href="#插入定理块" class="headerlink" title="插入定理块"></a>插入定理块</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;block&#125;&#123;XX定理&#125;</span><br><span class="line"> 定理内容</span><br><span class="line"><span class="keyword">\end</span>&#123;block&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=1<span class="keyword">\columnwidth</span>]&#123;figure1.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">可选：</span><br><span class="line">	<span class="comment">% 原图</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;test&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;logo&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定缩放</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.3]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.03]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度比例 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度比例 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 同时指定旋转角度、宽度</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%插入子图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;<span class="comment">%插入子图</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=0.45<span class="keyword">\columnwidth</span>]&#123;figure1.png&#125;<span class="comment">%定义图片高度（height）栏长占比（0.45\columnwidth） 插入图片figure1.png（这个图片和该文档一个目录，如果建立子目录文件夹需要引用子目录）</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=0.45<span class="keyword">\columnwidth</span>]&#123;figure4.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=1<span class="keyword">\columnwidth</span>]&#123;figure1.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">可选：</span><br><span class="line">	<span class="comment">% 原图</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;test&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;logo&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定缩放</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.3]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.03]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度比例 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度比例 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 同时指定旋转角度、宽度</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%插入子图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;<span class="comment">%插入子图</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=0.45<span class="keyword">\columnwidth</span>]&#123;figure1.png&#125;<span class="comment">%定义图片高度（height）栏长占比（0.45\columnwidth） 插入图片figure1.png（这个图片和该文档一个目录，如果建立子目录文件夹需要引用子目录）</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[height=0.45<span class="keyword">\columnwidth</span>]&#123;figure4.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">插入子图：</span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>1D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>2D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>3D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">\caption</span>&#123;图标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+<p>常用词汇：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\text</span></span><br><span class="line"><span class="keyword">\column</span></span><br><span class="line">height</span><br><span class="line">width</span><br></pre></td></tr></table></figure>
+<p>脚注</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="comment">%脚注标记</span></span><br><span class="line"><span class="keyword">\footnotemark</span></span><br><span class="line"><span class="comment">%脚注内容</span></span><br><span class="line"><span class="keyword">\footnotetext</span></span><br><span class="line"><span class="comment">%脚注显示引用</span></span><br><span class="line"><span class="keyword">\footnotetext</span>&#123;<span class="keyword">\fullcite</span>&#123;XXX&#125;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="PPT排版与调整"><a href="#PPT排版与调整" class="headerlink" title="PPT排版与调整"></a>PPT排版与调整</h3><h4 id="页面顶格开始书写"><a href="#页面顶格开始书写" class="headerlink" title="页面顶格开始书写"></a>页面顶格开始书写</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
 <h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;setspace&#125;<span class="comment">%行间距宏包</span></span><br><span class="line"><span class="keyword">\singlespacing</span><span class="comment">% 单倍行距</span></span><br><span class="line"><span class="keyword">\onehalfspacing</span><span class="comment">% 1.5倍行距</span></span><br><span class="line"><span class="keyword">\doublespacing</span><span class="comment">% 双倍行距</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\linespread</span>&#123;1.5&#125;<span class="comment">% 全局设置1.5倍行距</span></span><br><span class="line"><span class="keyword">\vspace</span>&#123;20pt&#125;<span class="comment">%插入行距</span></span><br><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\baselineskip</span>&#125;&#123;1.5<span class="keyword">\baselineskip</span>&#125;<span class="comment">% 设定整段行距为1.5</span></span><br></pre></td></tr></table></figure>
-
 <h4 id="分栏"><a href="#分栏" class="headerlink" title="分栏"></a>分栏</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;<span class="comment">%分栏 0.5是文本宽度（textwidth）的1/2</span></span><br><span class="line"><span class="keyword">\end</span>&#123;columns&#125;</span><br></pre></td></tr></table></figure>
-
 <h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&#123;<span class="keyword">\tiny</span> 小小&#125;</span><br><span class="line">&#123;<span class="keyword">\scriptsize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\footnotesize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\small</span> 小&#125;</span><br><span class="line">&#123;<span class="keyword">\normalsize</span> 正常&#125;</span><br><span class="line">&#123;<span class="keyword">\large</span> 大&#125;</span><br><span class="line">&#123;<span class="keyword">\Large</span> 更大&#125;</span><br><span class="line">&#123;<span class="keyword">\LARGE</span> 极大&#125;</span><br><span class="line">&#123;<span class="keyword">\huge</span> 巨大&#125;</span><br><span class="line">&#123;<span class="keyword">\Huge</span> 宇宙&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="结尾文档"><a href="#结尾文档" class="headerlink" title="结尾文档"></a>结尾文档</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\textsuperscript</span>&#123;<span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;&#125;<span class="comment">%上标引文</span></span><br><span class="line"><span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%齐平引文</span></span><br><span class="line"><span class="keyword">\footfullcite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%脚注引文</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\appendix</span><span class="comment">%附录（附录不在前面的页头标题栏中显示）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t, allowframebreaks]&#123;References&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\small</span><span class="comment">%修改参考文献字号</span></span><br><span class="line"><span class="keyword">\printbibliography</span><span class="comment">% 生成参考文献列表</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
@@ -144,12 +133,11 @@
     <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1-%EF%BC%9A%E4%B8%93%E6%A0%8F%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B8%AE%E5%8A%A9%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<p>本专栏笔记，我想从《唐氏综合征儿童的父母指南（The Parent’s Guide to Down Syndrome）》这本书开始。这本书在淘宝或是京东可以搜到英文原版书，如果感兴趣的话可以买来看一看。如果想要免费的电子版，这本书也可以在zliabary的国内镜像网站上直接搜索英文书名下载。</p>
 <span id="more"></span>
-
 <p>在这里提供一个我使用的zliabary的国内镜像网站：<a href="https://zbook.lol/">https://zbook.lol/</a></p>
-<p>下载文件格式为epub格式，在电脑上可使用WPS打开查看。在移动端可导入微信读书APP，微信读书APP提供自动的机翻英译中。本专栏只提供读书笔记，如果有条件可以自己阅读这本书，这本书里不仅包括干货知识，也包括很多唐氏综合征家长与他们的孩子的故事。</p>
+<p>下载文件格式为epub格式，在电脑上可使用WPS打开查看。在移动端可导入微信读书APP查看。本专栏只提供读书笔记，如果有条件可以自己阅读这本书，这本书里不仅包括干货知识，也包括很多唐氏综合征家长与他们的孩子的故事。</p>
 <p>《唐氏综合征儿童的父母指南》涵盖了对唐氏综合征的一些基础介绍，以及对于从唐氏儿出生到成年，甚至成年以后，给唐氏儿父母的一系列建议。我的专栏会大致按照这本书的行文脉络，尽可能简洁清晰地整理这本书中我认为的有益内容并补充相关资料，包括相关学术论文、相关科普资料及视频的内容整理。我会在每篇文章的最后附上相关参考文献。</p>
 <p>我并非唐氏综合征相关方面的专家，也没有任何医学基础，本专栏仅为个人对书籍或资料的分享与解读。</p>
-<p>若有对我的建议、相关读物&#x2F;资料推荐，请在评论区留言。</p>
+<p>若有对我的建议、相关读物/资料推荐，请在评论区留言。</p>
 <h2 id="以下是专栏目录（随专栏更新）"><a href="#以下是专栏目录（随专栏更新）" class="headerlink" title="以下是专栏目录（随专栏更新）"></a>以下是专栏目录（随专栏更新）</h2><ol>
 <li>为唐氏综合征儿童父母提供的读书笔记(1)：专栏大纲与帮助网站整合</li>
 <li>为唐氏综合征儿童父母提供的读书笔记(2)：唐氏综合征简介</li>
@@ -163,7 +151,7 @@
 <li>为唐氏综合征儿童父母提供的读书笔记(10)：成年</li>
 </ol>
 <h2 id="心智障碍者生命周期概览"><a href="#心智障碍者生命周期概览" class="headerlink" title="心智障碍者生命周期概览"></a>心智障碍者生命周期概览</h2><p>下图来自由壹基金提供的《心智障碍者家庭支持资源手册：总册》，用于帮助父母们了解孩子在不同年龄阶段的个人需求。</p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1-%EF%BC%9A%E4%B8%93%E6%A0%8F%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B8%AE%E5%8A%A9%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/%E5%9B%BE2.PNG"></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-1-：专栏大纲与帮助网站整合/图2.PNG" alt=""></p>
 <h2 id="以下提供一些网站，他们包括一些唐氏综合征的相关资料，以及社区互助集群"><a href="#以下提供一些网站，他们包括一些唐氏综合征的相关资料，以及社区互助集群" class="headerlink" title="以下提供一些网站，他们包括一些唐氏综合征的相关资料，以及社区互助集群"></a>以下提供一些网站，他们包括一些唐氏综合征的相关资料，以及社区互助集群</h2><p><strong>若读者有其他有帮助的相关资料网站或国内的社区互助集群，也请在评论区分享。也请读者注意甄别网站，谨防诈骗。</strong></p>
 <ul>
 <li>中国残疾人联合会官网，包含残疾人证办理、国内相关法律及政策信息公开，以及相关助残服务：<a href="https://www.cdpf.org.cn/">https://www.cdpf.org.cn/</a></li>
@@ -178,6 +166,7 @@
 <li>微信公众号：相约十年我的唐宝。唐氏综合征家长互助会，主要发布相关信息资讯、活动通知以及唐宝故事。</li>
 <li>联合国世界唐氏综合征日（WDSD）官网，全英文，国内可访问，包含大量资料及活动信息：<a href="https://www.worlddownsyndromeday.org/">https://www.worlddownsyndromeday.org/</a></li>
 <li>唐氏综合征医学权益组织官网，全英文，国内可访问，包含唐氏综合征儿童医疗监控要点及建议，以及其他相关信息：<a href="https://www.dsmig.org.uk/">https://www.dsmig.org.uk/</a></li>
+<li>美国国家唐氏综合征协会官网，全英文，国内可访问，包含大量唐氏综合征相关信息资料：<a href="https://www.ndsccenter.org/">https://www.ndsccenter.org/</a></li>
 <li>一个关于唐宝的网上交流论坛，全英文，国内可访问：<a href="http://community.babycenter.com/groups/a315/down_syndrome">http://community.babycenter.com/groups/a315/down_syndrome</a></li>
 <li>一个关于唐氏儿的线上网络社群，全英文，国内可访问。主要面对三岁以下唐氏综合征儿童，为他们建立线上的帮助社群以及帮忙联系线下本地最近的帮助组织。网站中也有一些文字帮助资源（需科学上网）：<a href="https://www.dsdiagnosisnetwork.org/">https://www.dsdiagnosisnetwork.org/</a></li>
 <li>唐氏综合征婴儿母亲孕期指南，全英文，包含一些相关书籍资料（在这里对唐氏综合征婴儿是否应该被生下不做任何评价，仅提供资料）：<a href="http://downsyndromepregnancy.org/">http://downsyndromepregnancy.org/</a></li>
@@ -198,7 +187,7 @@
 </li>
 <li><p>《虽然等的不是你》作者：法比安·图尔梅（Fabien Toulmé）有中文译本，可直接在网购平台搜索购买。一本关于唐宝父亲的心路历程的绘本。</p>
 </li>
-<li><p>《小爱的秘密》作者：竹山美奈子 &#x2F; 江头路子。有中文译本，可直接在网购平台搜索购买。一本从一个唐宝母亲的角度讲述关于唐氏综合征的科普绘本。</p>
+<li><p>《小爱的秘密》作者：竹山美奈子 / 江头路子。有中文译本，可直接在网购平台搜索购买。一本从一个唐宝母亲的角度讲述关于唐氏综合征的科普绘本。</p>
 </li>
 <li><p>《期待亚当:一个关于出生、重生和日常的不可思议的真实故事(Expecting Adam: A True Story of Birth, Rebirth, and Everyday Magic)》作者：Martha Beck.  无中译本，可在孔夫子旧书网购买。关于一对哈佛父母在知道自己第二个孩子是唐宝后依然坚持生下孩子并陪他成长的故事。</p>
 </li>
@@ -211,7 +200,7 @@
 <li><p>英文博文：What to Say When Your Friend’s Baby Has Down Syndrome（当你朋友的宝宝患有唐氏综合症时该说什么）:<a href="https://katrinastonoff.wordpress.com/2007/10/09/what-to-say-when-your-friends-baby-has-down-syndrome/">https://katrinastonoff.wordpress.com/2007/10/09/what-to-say-when-your-friends-baby-has-down-syndrome/</a></p>
 </li>
 <li><p>由壹基金公益项目提供的<strong>心智障碍者家庭支持资源手册</strong>，包含资源总册、幼年及青年分册及针对唐氏综合征的分册。扫描以下二维码免费下载：</p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1-%EF%BC%9A%E4%B8%93%E6%A0%8F%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B8%AE%E5%8A%A9%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/%E5%9B%BE1.PNG"></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-1-：专栏大纲与帮助网站整合/图1.PNG" alt=""></p>
 </li>
 </ul>
 ]]></content>
@@ -359,7 +348,6 @@
     <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-5-%EF%BC%9A0-6%E4%B8%AA%E6%9C%88/</url>
     <content><![CDATA[<h2 id="稳定自己的情绪"><a href="#稳定自己的情绪" class="headerlink" title="稳定自己的情绪"></a>稳定自己的情绪</h2><p>在孩子确诊有唐氏综合征之后，父母们的情绪可能非常沮丧，焦虑，甚至是愤怒。稳定自己的情绪是第一步。这里提供一些参考性解决方案（仅供参考）</p>
 <span id="more"></span>
-
 <ul>
 <li>允许自己大哭，允许自己感觉不知所措</li>
 <li>给自己一段时间作为缓冲期</li>
@@ -380,14 +368,20 @@
 <li>当地残疾人联合会(后简称残联)网站：残联网站上会公布残疾人相关福利政策和享受要求，照顾者需要了解清楚孩子可以享受哪些补贴，有怎样的办理流程。</li>
 <li>残疾人证的用处：如果没有残疾人证， 某些福利政策和补贴无法享受。残疾人证的办理方式详见残疾人联合会官方网站或由壹基金提供的《心智障碍者家庭支持资源手册：总册》P32-34</li>
 </ol>
-<h2 id="基本健康检查时间表"><a href="#基本健康检查时间表" class="headerlink" title="基本健康检查时间表"></a>基本健康检查时间表</h2><p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-5-%EF%BC%9A0-6%E4%B8%AA%E6%9C%88/%E5%9B%BE1.jpg"></p>
+<h2 id="基本健康检查时间表"><a href="#基本健康检查时间表" class="headerlink" title="基本健康检查时间表"></a>基本健康检查时间表</h2><p><img src="为唐氏综合征儿童父母提供的读书笔记-5-：0-6个月/图1.jpg" alt=""></p>
 <p>图1 唐氏综合征医学研究小组（英国及爱尔兰）唐宝最基本健康检查时间表</p>
+<p>或参考《心智障碍者家庭支持资源手册：唐氏综合征》分册提供的建议唐氏综合征人定期进行的医疗检查：</p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-5-：0-6个月/图1.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-5-：0-6个月/图2.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-5-：0-6个月/图3.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-5-：0-6个月/图4.PNG" alt=""></p>
 <p><strong>注意：如果父母有其他方面的担心，任何时候都要进行检查。</strong></p>
 <p>你可能会涉及到的检查方面有：心脏及心血管（心胸外科、心内科）、眼科、耳鼻喉科、呼吸科、消化科、儿科、皮肤科等</p>
 <p>上图只是给父母们了解一个大概，以便父母们对孩子的进一步检查进行合理规划。在接下来的内容里我还会反复提及这些检查内容。</p>
 <h2 id="给孩子做一个健康笔记本"><a href="#给孩子做一个健康笔记本" class="headerlink" title="给孩子做一个健康笔记本"></a>给孩子做一个健康笔记本</h2><p>作为唐宝的父母，你的孩子可能需要做各种各样的检查，从这个科室到那个科室，甚至从这个医院到那个医院。自制一个健康笔记本记录你孩子的基本状况、你做过的检查、检查时间、检查内容，配合病历本有助于你更方便地把握孩子下一步计划，也让医生快速了解孩子的情况并做出诊断。</p>
 <h2 id="第一次检查"><a href="#第一次检查" class="headerlink" title="第一次检查"></a>第一次检查</h2><p>孩子们应该在出生后不久完成第一次全面检查，检查最好包括以下内容：</p>
-<h3 id="1-心脏"><a href="#1-心脏" class="headerlink" title="1.心脏"></a>1.心脏</h3><p>无论你是否做过了胎儿心脏超声检查，你都应该在宝宝出生后6周内给宝宝再做一次全面的心脏评估检测。孩子们患有先天性心脏病的可能性在50%以上。如果宝宝确诊有心脏问题，需要立刻与专业医生商量进一步治疗方案。当前先天性心脏病预后较好，如果发现宝宝有心脏问题，最好尽快积极治疗。</p>
+<h3 id="1-心脏"><a href="#1-心脏" class="headerlink" title="1.心脏"></a>1.心脏</h3><p>无论是否做过胎儿心脏超声检查，都应该在宝宝出生后6周内给宝宝再做一次全面的心脏评估检测。孩子们患有先天性心脏病的可能性在50%以上。</p>
+<p>如果宝宝确诊有心脏问题，立刻与专业医生商量进一步治疗方案。当前先天性心脏病预后较好，不必过于担心。</p>
 <h3 id="2-眼睛"><a href="#2-眼睛" class="headerlink" title="2.眼睛"></a>2.眼睛</h3><p>宝宝出生后应该进行常规眼睛检查，包括判定是否有<strong>先天性白内障</strong>。部分宝宝可能患有<strong>泪管阻塞</strong>（泪道狭窄），你可能会发现他们眼睛发粘，眼垢过多，会引起宝宝的不适。若症状轻微，你可以用温热的毛巾轻擦宝宝闭上的眼睑，一天数次。还可以轻轻按摩宝宝的内眼角。如果随着宝宝的长大，这种症状一直存在没有好转，可能需要咨询眼科医生，通过手术打开泪管。</p>
 <h3 id="3-听力"><a href="#3-听力" class="headerlink" title="3.听力"></a>3.听力</h3><p>宝宝出生后后应进行新生儿听力普查。60%以上的唐宝可能有听力问题。听力问题一般分为两种，一种是声音传导受阻导致的听力问题。这可能是由于宝宝耳朵的感染、积水、或是耳道狭窄引起的耳垢堆积，导致宝宝听力受阻。这种情况可以通过清理、药物、置管、助听器等一系列治疗方式改善宝宝听力。另一种是宝宝的内耳或内耳到大脑的神经通路有损伤。这种情况无法用药物或手术治疗。</p>
 <p>在新生儿从医院回家之前，你除了需要进行新生儿听力普查，可能还需要进行脑干听觉诱发反应 (BAER)测试或耳声发射（OAE）。根据检查结果，你在出院后可能还需要专门前往耳鼻喉科检查听觉脑干反应（ABR）。通过这些检查，医生会进行诊断并制定医疗方案。</p>
@@ -464,18 +458,34 @@
 <li>增加深度睡眠时间</li>
 <li>让宝宝有更多安静清醒的时间而不是哭闹</li>
 </ul>
+<h2 id="喂食"><a href="#喂食" class="headerlink" title="喂食"></a>喂食</h2><p>具有唐氏综合征的新生儿宝宝受感染的风险较高，母亲的身体产生的抗体可以通过母乳喂养传递给宝宝。抗体有助于保护宝宝免受感染。但并不是所有宝宝都能顺利地接受母乳喂养，宝宝可能因为舌头突出等原因吸奶困难。</p>
+<p>每个宝宝的喂养方式都不尽相同。用奶瓶喂养也可能会遇到与母乳喂养相同的吮吸问题。家长们可能需要尝试不同类型的奶瓶奶嘴，包括一些特殊的减缓液体流动的奶嘴，然后才能找到最适合宝宝的奶瓶奶嘴。</p>
+<h2 id="早期干预与技能训练"><a href="#早期干预与技能训练" class="headerlink" title="早期干预与技能训练"></a>早期干预与技能训练</h2><h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><p>由于唐宝们的嘴唇、舌头和下颚的肌肉张力较低，孩子们可能在口腔运动方面存在困难。口腔运动是掌握口腔肌肉力量和发展有效咀嚼技能所必需的。</p>
+<p>孩子处于5-6个月龄时，有一个咬合反射期，父母们要抓住这个时期开始给孩子做咬合训练，这样训练起来会容易些。如果孩子还没有长牙，可以用咬咬乐，软牙胶手套，还有ARK婴儿纹理胶头。这些工具都是给孩子提供咬合训练的。</p>
+<p>当孩子上下大牙各长出一颗的时候，就可以开始练习咬合tp棒了。</p>
+<p>这里提供一些帮助性线上课程网址：</p>
+<ol>
+<li>【微课回顾】tp棒的使用方法及注意事项<a href="http://www.jinkangts.com/h-nd-5.html">http://www.jinkangts.com/h-nd-5.html</a></li>
+<li>【微课回顾】影响孩子开口说话及清晰度的口腔感知觉问题<a href="http://www.jinkangts.com/h-nd-9.html">http://www.jinkangts.com/h-nd-9.html</a></li>
+<li>【微课回顾】吸管的使用方法及注意事项<a href="http://www.jinkangts.com/h-nd-6.html">http://www.jinkangts.com/h-nd-6.html</a></li>
+<li>【微课回顾】语言组织能力和词汇积累后的自我需求语言表述<a href="http://www.jinkangts.com/h-nd-7.html">http://www.jinkangts.com/h-nd-7.html</a></li>
+<li>【微课回顾】孩子语言从无到有的训练方法<a href="https://mp.weixin.qq.com/s/XRuWjjD_rH_GEF3TRdWSmA">https://mp.weixin.qq.com/s/XRuWjjD_rH_GEF3TRdWSmA</a></li>
+</ol>
+<h3 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h3><p>唐宝们在某种程度上都存在肌肉张力低下的问题。让宝宝经常有机会锻炼肌肉非常重要。最好经常让宝宝经常练习不同的姿势，以帮助他们控制运动。强壮的背部肌肉可以让宝宝最终学会翻滚、坐、爬和站立。</p>
+<h3 id="洗澡"><a href="#洗澡" class="headerlink" title="洗澡"></a>洗澡</h3><p>洗温水澡可以锻炼宝宝的触觉系统，并且能让宝宝平静下来，帮助宝宝放松，为睡眠做好准备。</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
 <li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
 <li>DSA. 英国唐氏组织授权翻译——给初为父母者的宣传册<a href="https://mp.weixin.qq.com/s/Gb38bCsB-9IG0X7MK9PvpA">https://mp.weixin.qq.com/s/Gb38bCsB-9IG0X7MK9PvpA</a></li>
 <li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
 <li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
+<li>美国国家唐氏综合征协会：0-2岁. <a href="https://www.ndsccenter.org/programs-resources/as/birthto2/">https://www.ndsccenter.org/programs-resources/as/birthto2/</a></li>
 <li>百度百科. 先天性喉软化症. <a href="https://baike.baidu.com/item/%E5%85%88%E5%A4%A9%E6%80%A7%E5%96%89%E8%BD%AF%E5%8C%96%E7%97%87/12677028?fr=ge_ala#2">https://baike.baidu.com/item/%E5%85%88%E5%A4%A9%E6%80%A7%E5%96%89%E8%BD%AF%E5%8C%96%E7%97%87/12677028?fr=ge_ala#2</a></li>
 <li>百度百科. 新生儿多血症. <a href="https://baike.baidu.com/item/%E6%96%B0%E7%94%9F%E5%84%BF%E5%A4%9A%E8%A1%80%E7%97%87/22466886">https://baike.baidu.com/item/%E6%96%B0%E7%94%9F%E5%84%BF%E5%A4%9A%E8%A1%80%E7%97%87/22466886</a></li>
 <li>百度百科. 新生儿血小板减少症. <a href="https://baike.baidu.com/item/%E6%96%B0%E7%94%9F%E5%84%BF%E8%A1%80%E5%B0%8F%E6%9D%BF%E5%87%8F%E5%B0%91%E7%97%87/15463310?fr=ge_ala">https://baike.baidu.com/item/%E6%96%B0%E7%94%9F%E5%84%BF%E8%A1%80%E5%B0%8F%E6%9D%BF%E5%87%8F%E5%B0%91%E7%97%87/15463310?fr=ge_ala</a></li>
-<li>March of Dimes. <a href="http://www.marchofdimes.org/baby/becoming-a-parent-in-the-nicu.aspx">www.marchofdimes.org/baby/becoming-a-parent-in-the-nicu.aspx</a></li>
-<li><a href="http://www.childrenshospital.org/conditions-and%20treatments/conditions/h/hypothyroidism/overview">www.childrenshospital.org/conditions-and%20treatments/conditions/h/hypothyroidism/overview</a></li>
-<li><a href="http://pediatrics.aappublications.org/content/128/2/393.full.pdf">http://pediatrics.aappublications.org/content/128/2/393.full.pdf</a></li>
-<li>March of Dimes. kangaroo care. <a href="http://www.marchofdimes.org/baby/kangaroo-care.aspx">www.marchofdimes.org/baby/kangaroo-care.aspx</a></li>
+<li>March of Dimes. www.marchofdimes.org/baby/becoming-a-parent-in-the-nicu.aspx</li>
+<li>波士顿儿童医院. www.childrenshospital.org/conditions-and%20treatments/conditions/h/hypothyroidism/overview</li>
+<li>Marilyn J. Bull, MD, and the COMMITTEE ON GENETICS. Clinical Report—Health Supervision for Children WithDown Syndrome. 2011. <a href="http://pediatrics.aappublications.org/content/128/2/393.full.pdf">http://pediatrics.aappublications.org/content/128/2/393.full.pdf</a></li>
+<li>March of Dimes. kangaroo care. www.marchofdimes.org/baby/kangaroo-care.aspx</li>
 </ol>
 ]]></content>
       <tags>
@@ -716,6 +726,166 @@
         <tag>文献速记</tag>
         <tag>李杨零</tag>
         <tag>Fisher零</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(7)：3-5岁</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/</url>
+    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>3-5岁的唐宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
+<span id="more"></span>
+<h3 id="1-听力"><a href="#1-听力" class="headerlink" title="1.听力"></a>1.听力</h3><p>每年进行一次听觉测试，直至18岁成年。</p>
+<h3 id="2-甲状腺功能"><a href="#2-甲状腺功能" class="headerlink" title="2.甲状腺功能"></a>2.甲状腺功能</h3><p>每年进行一次甲状腺功能检查，直至成年。</p>
+<h3 id="3-心脏"><a href="#3-心脏" class="headerlink" title="3.心脏"></a>3.心脏</h3><p>如果宝宝出生时患有心血管方面的疾病，需要定时复查。</p>
+<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>每1-2年应进行一次视力检查。特别注意白内障、角膜炎、屈光不正。</p>
+<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>每年进行一次牙科检查。</p>
+<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑宝宝存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
+<h2 id="幼儿园升小学转衔准备"><a href="#幼儿园升小学转衔准备" class="headerlink" title="幼儿园升小学转衔准备"></a>幼儿园升小学转衔准备</h2><p>时间：最晚在幼儿园大班的下半年，完成幼儿园升小学转衔计划的制定</p>
+<p>参与人员：父母、学前与小学普教及特教老师，及医生、治疗师等必要相关专业人员</p>
+<p>为什么需要幼儿园升小学转衔准备？</p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/1.PNG" alt=""></p>
+<p>（《让残障孩子成为最重要的自己》，P40）</p>
+<p>幼儿园升小学的转衔准备中主要涉及哪些内容？</p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/2.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/3.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/4.PNG" alt=""></p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/5.PNG" alt=""></p>
+<p>（奇色花福利幼儿园，2022；广州市扬爱特殊孩子家长俱乐部；周玲，2022）</p>
+<h2 id="初步择校准备"><a href="#初步择校准备" class="headerlink" title="初步择校准备"></a>初步择校准备</h2><p>在孩子们进入小学阶段之前，家长应该着手初步了解学校方面的相关知识，初步得到几个可以选择的目标小学。</p>
+<h3 id="融合教育是什么？"><a href="#融合教育是什么？" class="headerlink" title="融合教育是什么？"></a>融合教育是什么？</h3><p>融合教育又称全纳教育，由联合国教科文组织在1994年6月于西班牙萨拉曼卡召开的“世界特殊需要教育大会：入学和质量（World Conference on Special Needs Education:Access and Quality）”主题会议上提出。本次大会颁布的《萨拉曼卡宣言》首次提出了融合教育的理念，强调每个人都有受教育的基本权利，提出每个人都有其独特的个性、兴趣、能力和学习需要，学校要接纳全体儿童，并满足他们的特殊教育需要。融合教育将残障视为孩子的特点而非缺陷，教育需要包容与接纳每个孩子的特点，并因材施教。需要注意的是融合教育所提出的“平等”并非让所有孩子接受整齐划一的教育，而是强调包容与接纳。</p>
+<p>融合教育理念的提出使得残障儿童也可以进入普通学校学习，教育需要而非在独立的特殊学校学习。这一教育模式大大加强了孩子们的社会融合度，使得孩子们更有可能在未来脱离父母，进入社会独立社会。</p>
+<p>这一教育理念目前还在普及及逐步实施的过程中，部分普通学校不支持融合教育。孩子们及父母在入学及入学后依然面临诸多挑战。</p>
+<h3 id="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"><a href="#目前唐宝有哪些接受教育的方式？它们的优缺点是什么？" class="headerlink" title="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"></a>目前唐宝有哪些接受教育的方式？它们的优缺点是什么？</h3><p>目前我国唐宝接受教育的方式大体分为四种：</p>
+<ol>
+<li>在普通学校随班就读，与其他同龄非特需学生同校同班</li>
+<li>在普通学校附设特教班，与其他同龄非特需学生同校不同班</li>
+<li>在特殊教育学校就读，与其他同龄非特需学生不同校</li>
+<li>送教上门，在特需学生家中进行教育</li>
+</ol>
+<p>这些教育方式各有利弊，在普通学校随班就读的融合力度最大，理论上更利于孩子融入社会。但随班就读也可能遇到歧视、特殊需求无法解决等问题，需要综合自己孩子的情况进行考量，选择合适的受教育方式。</p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-7-：3-5岁/6.PNG" alt=""></p>
+<h3 id="理论择校原则基础"><a href="#理论择校原则基础" class="headerlink" title="理论择校原则基础"></a>理论择校原则基础</h3><p>理论上以融合为先，现实中结合自身与环境情况综合考量。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
+<li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
+<li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
+<li>崔凤鸣，蔡聪，傅高山，许家成(2015)，《让残障孩子成为最重要的自己——给家长的支持手册》，p40</li>
+<li>河南省郑州市管城回族区奇色花福利幼儿园 (2022) ，“幼小衔接”，孩子究竟需要什么?</li>
+<li>周玲 (2020)，心智障碍的发展历程和研究现状，《中国心智障碍者保障状况蓝皮书》，中国社会出版社，p181</li>
+<li>许家成主编(2020)，特殊教育安置概述，《特殊教育概论》，国家开放大学出版社，p47</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(6)：6个月-2岁</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-6-%EF%BC%9A6%E4%B8%AA%E6%9C%88-2%E5%B2%81/</url>
+    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>6个月-2岁的宝宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
+<span id="more"></span>
+<h3 id="1-听力"><a href="#1-听力" class="headerlink" title="1.听力"></a>1.听力</h3><p>新生儿唐宝的耳朵极易出现感染，即使出生时经过了听觉测试，不管有没有通过，都应该每年进行一次听觉测试，直至18岁成年。若发现感染，当即使就医处理。部分宝宝可能出生时没有通过听觉测试，但随着宝宝的长大，有可能通过听觉测试。</p>
+<h3 id="2-甲状腺功能"><a href="#2-甲状腺功能" class="headerlink" title="2.甲状腺功能"></a>2.甲状腺功能</h3><p>在宝宝12个月时应当进行甲状腺功能检测。此后每年都进行一次检查，直至成年。</p>
+<h3 id="3-心脏"><a href="#3-心脏" class="headerlink" title="3.心脏"></a>3.心脏</h3><p>如果宝宝出生时患有心血管方面的疾病，需要定时复查。</p>
+<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>宝宝每1-2年应进行一次视力检查。</p>
+<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>唐宝的牙齿问题较为普遍，包括各类龋齿、牙齿畸形及各类牙周病，需要每年进行一次牙科检查。</p>
+<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑宝宝存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
+<h2 id="唐宝的学习里程碑"><a href="#唐宝的学习里程碑" class="headerlink" title="唐宝的学习里程碑"></a>唐宝的学习里程碑</h2><p>大多数唐宝都能达到和其他孩子一样的学习里程碑，比如说爬行，走路或者说第一个词，但他们达成这些里程碑的时间可能稍慢。以下提供由美国唐氏综合征协会提供的唐宝与普通孩子学习里程碑达成时间的比对表（仅供参考）：</p>
+<p><img src="为唐氏综合征儿童父母提供的读书笔记-6-：6个月-2岁/里程碑比对表.jpg" alt=""></p>
+<p>如果你的宝宝正在练习坐着时转动躯干，即在上半身转动的同时下半身保持稳定，那么你可以将他们喜欢的玩具放在宝宝两侧，鼓励他们在转动时伸手。如果您的孩子正在学习爬台阶，鼓励他每次上楼午睡时先爬最后几级台阶，然后再逐渐爬完整个楼梯。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
+<li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
+<li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
+</ol>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(10)：成年</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-10-%EF%BC%9A%E6%88%90%E5%B9%B4/</url>
+    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>成年后应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
+<span id="more"></span>
+<h3 id="1-心脏"><a href="#1-心脏" class="headerlink" title="1.心脏"></a>1.心脏</h3><p>每年进行一次复查，儿童时期做过心脏方面手术的人需要格外注意</p>
+<h3 id="2-听力"><a href="#2-听力" class="headerlink" title="2.听力"></a>2.听力</h3><p>每两年进行一次听觉测试。</p>
+<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>每2年应进行一次视力检查。特别注意白内障、角膜炎、屈光不正。</p>
+<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>每年进行一次牙科检查。</p>
+<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(8)：小到初中</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-8-%EF%BC%9A%E5%B0%8F%E5%88%B0%E5%88%9D%E4%B8%AD/</url>
+    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>6-18岁的唐宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
+<span id="more"></span>
+<h3 id="1-心脏"><a href="#1-心脏" class="headerlink" title="1.心脏"></a>1.心脏</h3><p>如果具有有心血管方面病史，需要定时复查。</p>
+<h3 id="2-甲状腺功能"><a href="#2-甲状腺功能" class="headerlink" title="2.甲状腺功能"></a>2.甲状腺功能</h3><p>每年进行一次甲状腺功能检查，直至成年。</p>
+<h3 id="3-听力"><a href="#3-听力" class="headerlink" title="3.听力"></a>3.听力</h3><p>每年进行一次听觉测试，直至成年。</p>
+<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>每1-2年应进行一次视力检查。特别注意白内障、角膜炎、屈光不正。</p>
+<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>每年进行一次牙科检查。</p>
+<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
+<h2 id="教育"><a href="#教育" class="headerlink" title="教育"></a>教育</h2><h3 id="如何择校？"><a href="#如何择校？" class="headerlink" title="如何择校？"></a>如何择校？</h3><h4 id="1-择校原则"><a href="#1-择校原则" class="headerlink" title="1.择校原则"></a>1.择校原则</h4><p>关键要考虑三点：</p>
+<ol>
+<li>我的孩子目前各方面的能力能否适应普通学校？</li>
+<li>普通学校的老师能否在某些情况给予我们孩子一些关注和帮助？</li>
+<li>特校学校对于孩子康复是否有利，是否有利于孩子未来更容易融入社会？</li>
+</ol>
+<h4 id="2-普通学校与特殊学校基本情况比对"><a href="#2-普通学校与特殊学校基本情况比对" class="headerlink" title="2.普通学校与特殊学校基本情况比对"></a>2.普通学校与特殊学校基本情况比对</h4><h4 id="3-选择普通学校需要考虑哪些因素？"><a href="#3-选择普通学校需要考虑哪些因素？" class="headerlink" title="3.选择普通学校需要考虑哪些因素？"></a>3.选择普通学校需要考虑哪些因素？</h4><h3 id="学前准备工作"><a href="#学前准备工作" class="headerlink" title="学前准备工作"></a>学前准备工作</h3><h4 id="1-入学相关政策"><a href="#1-入学相关政策" class="headerlink" title="1.入学相关政策"></a>1.入学相关政策</h4><h4 id="2-入学申请流程"><a href="#2-入学申请流程" class="headerlink" title="2.入学申请流程"></a>2.入学申请流程</h4><h4 id="3-学前能力评估与准备"><a href="#3-学前能力评估与准备" class="headerlink" title="3.学前能力评估与准备"></a>3.学前能力评估与准备</h4><p>孩子入学前可以找专业的机构或专家做专业的评估，除了智力测评，还需要家长基于对孩子的了解以及专业督导老师的评估，评估孩子目前的基本能力、自理能力、课堂适应能力如常规、执行、指令；核心障碍如语言、动作、感知觉、情绪、行为等，可以基本了解孩子现在的能力情况，知道哪些能力需要加强，这样在入学前加强该能力的训练，尽可能减少孩子在入学后因为能力不足而导致问题。</p>
+<h4 id="4-与校方沟通及获取校方支持"><a href="#4-与校方沟通及获取校方支持" class="headerlink" title="4.与校方沟通及获取校方支持"></a>4.与校方沟通及获取校方支持</h4><p>家长在入学前需要进行校方沟通，获取校方支持。部分家长可能担心孩子遭到学校拒绝，因此不与校方沟通。但如果家长不提前与学校沟通，学校没有预先的心理准备，或因为没有接触过此类学生，不具备专业的能力处理学生的问题，容易出现“劝退”的情况。</p>
+<p>提前与校方沟通可能从校方得到专门详细的校园介绍，校内场景图片或视频，甚至得到开放校园日的参观机会，有利于家长判断该校是否适合自己的孩子。</p>
+<p>家长需要坦诚沟通，尽量为孩子争取到更好的条件，帮孩子打好环境基础。比如说申请分配到资历更深，更有经验耐心，比较愿意接纳的班主任班上。部分学校如果提前得知有几个特殊孩子入学，可以安排到有经验的、耐心的老师班上，暑假给一些老师安排培训。如果家长不与学校提前沟通，不利于学校提前做好资源配置和师资安排。</p>
+<p>同时，家长们也可以与老师甚至孩子的同班同学进行沟通，让孩子周围的人尽可能全面地了解孩子的基本情况、教育经历和现状、有可能会出现的情况以及应对措施。</p>
+<h4 id="5-帮助孩子提前了解学校"><a href="#5-帮助孩子提前了解学校" class="headerlink" title="5.帮助孩子提前了解学校"></a>5.帮助孩子提前了解学校</h4><h4 id="6-随班就读"><a href="#6-随班就读" class="headerlink" title="6.随班就读"></a>6.随班就读</h4><p>随班就读是政府支持的教育政策，可在小学二年级由家长提出申请。家长可以向孩子所在学校提出申请，根据要求填写随班就读学生申报确认表并提供相应材料如诊断书，后由学校向有关部门办理即可。各地对随班就读的政策支持可能并不统一，家长需要自行了解当地情况。此处只以广州随班就读政策为例，广州对随班就读学生的政策支持包括：</p>
+<ul>
+<li>考试分数不纳入班平均分统计</li>
+<li>主科老师有随班就读津贴</li>
+<li>教育局按5-10倍生均经费拨款给学校</li>
+<li>为随班就读学生建立成长档案</li>
+<li>为随班就读学生的老师和家长提供培训</li>
+</ul>
+<p>申请随班就读可以降低孩子的学习压力，减少老师的分数压力。需要强调的是，办理随班就读也有可能因为对老师没有了分数压力和绩效压力，会出现老师更加忽略孩子的情况。因此，申请随班就读的同时也需要充分考虑学校和老师的态度。</p>
+<h4 id="7-陪读支持"><a href="#7-陪读支持" class="headerlink" title="7.陪读支持"></a>7.陪读支持</h4><h5 id="7-1什么是陪读支持？"><a href="#7-1什么是陪读支持？" class="headerlink" title="7.1什么是陪读支持？"></a>7.1什么是陪读支持？</h5><p>如果孩子障碍程度高且学校支持程度低，可以考虑聘请特教助理进行陪读。陪读支持旨在帮助孩子适应学校生活，养成良好的学习习惯，并不是“保姆”或者“生活助理”。</p>
+<h5 id="7-2什么是特教助理？"><a href="#7-2什么是特教助理？" class="headerlink" title="7.2什么是特教助理？"></a>7.2什么是特教助理？</h5><p>特教助理不是保姆和文化课补习老师，他们是孩子适应学校生活的辅助，是经过专业培训的“影子老师”，被派遣到到普通学校去，辅助特殊儿童逐步适应普通学校的校园生活，养成良好的学习习惯，积极发展与学校老师、学生的沟通与交往，满足其特殊教育需求，提高随班就读教育质量。</p>
+<p>最好选择有一定特殊教育背景或经验的特教助理。</p>
+<h5 id="7-3特教助理会一直陪读吗？"><a href="#7-3特教助理会一直陪读吗？" class="headerlink" title="7.3特教助理会一直陪读吗？"></a>7.3特教助理会一直陪读吗？</h5><p>不会。特教助理的定位是过渡性支持，有减退计划。如果安排了特教助理，父母应该和特教助理一起规划孩子的支持过渡计划，包括确立目标、支持的内容、如何协调好各方的沟通等等。家长们需要正确认识特教助理和学校及班级教师的关系。</p>
+<h5 id="7-4如果本地学校没有特教助理该怎么办？"><a href="#7-4如果本地学校没有特教助理该怎么办？" class="headerlink" title="7.4如果本地学校没有特教助理该怎么办？"></a>7.4如果本地学校没有特教助理该怎么办？</h5><p>呼吁政府为学校配备特教助理。</p>
+<p>根据《残疾人教育条例》、《义务教育法》，学校在义务教育阶段应对残疾儿童做到“零拒绝”，学校不能劝退残疾学生，这是父母与校方沟通的法律依据。根据《教育部关于加强残疾儿童少年义务教育阶段随班就读指导意见》，政府鼓励学校引入专业人士陪读。</p>
+<p>当特教资源中心对学校指导不足，父母可以向校长申请，由校方邀请特教资源中心的专业人士来学校指导。父母要学会利用政策为孩子争取权益，在学校对孩子支持不足的情况下，懂得向上向外要资源。</p>
+<h5 id="7-5实在找不到专业的特教助理，父母可以自己陪读吗？"><a href="#7-5实在找不到专业的特教助理，父母可以自己陪读吗？" class="headerlink" title="7.5实在找不到专业的特教助理，父母可以自己陪读吗？"></a>7.5实在找不到专业的特教助理，父母可以自己陪读吗？</h5><p>不建议父母为自己的孩子当陪读。家长陪读的好处在于至少孩子身边有个亲近的人可以照顾并及时引导和处理问题，弊端在于老师会对家长有所戒备，介意有人“监督”，同时亲近的人在旁边，孩子会比较依赖。</p>
+<p>值得注意的是，家长在校陪读会带有比较主观的想法看待孩子在学校发生的问题，较容易焦虑。家长在校是陪读，回家还要辅导功课，每天大部分的时间聚焦在孩子身上，这对家长和孩子都有比较大的心理压力，因此不建议家长陪读。</p>
+<p>如果实在难以找到专业特教助理，且父母也自学过一些特教知识，父母可以尝试寻找另一位心智障碍儿童家长，两人易子而教。如果前期孩子在校没有支持，出现比较严重的问题，家长可以暂时入校陪读支持，先尽量控制孩子在校的情况，减少因为孩子的问题而产生的麻烦，但不宜长期家长陪读。</p>
+<h4 id="8-资源教室"><a href="#8-资源教室" class="headerlink" title="8.资源教室"></a>8.资源教室</h4><p>教育部在2016年1月专门颁布《普通学校特殊教育资源教室建设指南》（以下简称《建设指南》），《建设指南》中明确指出，“资源教室是为随班就读的残疾学生及其他有特殊需要的学生、教师和家长，提供特殊教育专业服务的场所”。</p>
+<p>资源教室是随班就读的辅助机构，是为了让更多残疾儿童顺利融入普通学校而采取的设置于普通学校中的支持方式，是随班就读支持保障体系建设的一个环节，而不是一种单独的教育安置方式。建设资源教室本身不是目的，通过资源教室让残疾儿童更好地融入普通班级才是目的。如果在实践中将资源教室片面理解为教育安置方式，那么很容易就使残疾儿童在普通学校中重新陷入被隔离的境地，这与融合教育的理念也是背道而驰的。</p>
+<p>资源教室可视为普通教育与特殊教育之间的桥梁，可以满足各类随班就读学生的特殊需要，最大限度挖掘他们的潜能，促使他们健康成长，正常参与社会活动，能在普通中小学里与普通学生一起学习，提高随班就读的质量。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
+<li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
+<li>扬爱家长俱乐部. 幼小衔接Q&amp;A | 我的孩子应该读普校还是特校？<a href="https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138524&amp;idx=1&amp;sn=2dc10e7342b5b53eb059a3c28b3f8e1d&amp;chksm=8bf7c91ebc804008954ce35fb936038214bcfe8dd1bbfdfc4769fcd74eb9b40e8088923f011a&amp;scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138524&amp;idx=1&amp;sn=2dc10e7342b5b53eb059a3c28b3f8e1d&amp;chksm=8bf7c91ebc804008954ce35fb936038214bcfe8dd1bbfdfc4769fcd74eb9b40e8088923f011a&amp;scene=21#wechat_redirect</a></li>
+<li>扬爱家长俱乐部. 幼小衔接Q&amp;A | 入学时家长是否需要向学校交底 ？<a href="https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138904&amp;idx=2&amp;sn=07d06500764d2d62204f2ceb16a8c52f&amp;chksm=8bf7cb9abc80428c62fcbdaf0413f94b171310ec87896a15bcdc171ccf342cb5df98ba8c49ff&amp;scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138904&amp;idx=2&amp;sn=07d06500764d2d62204f2ceb16a8c52f&amp;chksm=8bf7cb9abc80428c62fcbdaf0413f94b171310ec87896a15bcdc171ccf342cb5df98ba8c49ff&amp;scene=21#wechat_redirect</a></li>
+<li>扬爱家长俱乐部. 幼小衔接Q&amp;A | 家长陪读还是聘请“影子老师”？<a href="https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138939&amp;idx=2&amp;sn=f181465756f76acd58d2e302ed67289f&amp;chksm=8bf7cbb9bc8042affddf6099188efcc5bc628a3fc4df8d31d96ba5c3fb048465946de71795fa&amp;scene=27">https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138939&amp;idx=2&amp;sn=f181465756f76acd58d2e302ed67289f&amp;chksm=8bf7cbb9bc8042affddf6099188efcc5bc628a3fc4df8d31d96ba5c3fb048465946de71795fa&amp;scene=27</a></li>
+<li>扬爱家长俱乐部. 幼小衔接Q&amp;A | 什么是随班就读和陪读？<a href="https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138736&amp;idx=2&amp;sn=bcd76004b6a87d899e0392f859d1977a&amp;chksm=8bf7ca72bc804364bdd0eacfcc2739401e54eeb81e9c37d708104c51c84c15b69e12c6fe72b0&amp;scene=27">https://mp.weixin.qq.com/s?__biz=MzA5MDc5MDMxNw==&amp;mid=2651138736&amp;idx=2&amp;sn=bcd76004b6a87d899e0392f859d1977a&amp;chksm=8bf7ca72bc804364bdd0eacfcc2739401e54eeb81e9c37d708104c51c84c15b69e12c6fe72b0&amp;scene=27</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(9)：青少年期</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-9-%EF%BC%9A%E9%9D%92%E5%B0%91%E5%B9%B4%E6%9C%9F/</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
       </tags>
   </entry>
 </search>
