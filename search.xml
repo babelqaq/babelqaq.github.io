@@ -974,7 +974,9 @@
   <entry>
     <title>小说素材收录</title>
     <url>/%E5%B0%8F%E8%AF%B4%E7%B4%A0%E6%9D%90%E6%94%B6%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
 <h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h3 id="域界门纲目"><a href="#域界门纲目" class="headerlink" title="域界门纲目"></a>域界门纲目</h3><p>生物用域（Domain）、界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）加以分类。</p>
 <p>种是最基本的分类单位，科是最常用的分类单位</p>
 <p>五界法：原核生物界、原生生物界、菌物界、植物界以及动物界</p>
@@ -998,7 +1000,9 @@
   <entry>
     <title>无限流小说设（3）</title>
     <url>/%E6%97%A0%E9%99%90%E6%B5%81%E5%B0%8F%E8%AF%B4%E8%AE%BE%EF%BC%883%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="新月学会（Jaunatis-Acad）"><a href="#新月学会（Jaunatis-Acad）" class="headerlink" title="新月学会（Jaunatis Acad）"></a>新月学会（Jaunatis Acad）</h1><h3 id="身份构成"><a href="#身份构成" class="headerlink" title="身份构成"></a>身份构成</h3><h4 id="学者（Academia）"><a href="#学者（Academia）" class="headerlink" title="学者（Academia）"></a>学者（Academia）</h4><p>学者是学会最重要的资产及构成，他们全部由科学家组成，专业涵盖所有科学领域，主要用于解释并利用异常</p>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="新月学会（Jaunatis-Acad）"><a href="#新月学会（Jaunatis-Acad）" class="headerlink" title="新月学会（Jaunatis Acad）"></a>新月学会（Jaunatis Acad）</h1><h3 id="身份构成"><a href="#身份构成" class="headerlink" title="身份构成"></a>身份构成</h3><h4 id="学者（Academia）"><a href="#学者（Academia）" class="headerlink" title="学者（Academia）"></a>学者（Academia）</h4><p>学者是学会最重要的资产及构成，他们全部由科学家组成，专业涵盖所有科学领域，主要用于解释并利用异常</p>
 <p>大部分学者不参与探索，部分学者临时参与探索。当学者处于探索小队，将是该探索小队的首要保护对象。</p>
 <p>学者是学会中最主要的委托发布者。</p>
 <h4 id="探索者（Explorer）"><a href="#探索者（Explorer）" class="headerlink" title="探索者（Explorer）"></a>探索者（Explorer）</h4><p>学会内部最普遍的成员。探索者内部以1-5分级，此分级不保存在员工身份编码中。</p>
@@ -1013,17 +1017,19 @@
 <p>招募人：招募新员工的人</p>
 <p>信使：将探索者送往委托目的地者及沟通委托双方者</p>
 <p>资料管理员：管理成员资料的人</p>
-<h3 id="成员编号规则"><a href="#成员编号规则" class="headerlink" title="成员编号规则"></a>成员编号规则</h3><p>E-HG097-H-AD002000</p>
+<h3 id="成员编号规则"><a href="#成员编号规则" class="headerlink" title="成员编号规则"></a>成员编号规则</h3><p>E-HG097-H-AD002000（此编码根据持有者所处世界有改动。）</p>
 <p>第1位：身份编码 A（学者）E（探索者）S（实验者）L（后勤人员）</p>
 <p>第2位：世界大区，按占主导地位的文明分类，H代表human</p>
-<p>第3-6位：世界编码。字母代表母世界，数字代表子世界编号</p>
+<p>第3-6位：持有者所处世界编码。字母代表母世界，数字代表子世界编号</p>
 <p>第7位：持有者种族，H代表人类，A代表其他动物，P代表植物，F代表真菌，B代表细菌，V代表病毒，E代表电子生命</p>
-<p>第8-16位：生存年代 AD代表公元，BC代表公元前</p>
+<p>第8-16位：生存年代。AD代表公元，BC代表公元前。</p>
 <h3 id="小队"><a href="#小队" class="headerlink" title="小队"></a>小队</h3><p>2人以上10人以下的探索者可成立小队，接受面向小队的委托。</p>
 <p>小队每月需额外缴纳30点贡献，否则小队失效。</p>
 <h3 id="贡献规则"><a href="#贡献规则" class="headerlink" title="贡献规则"></a>贡献规则</h3><p>探索者每参与一次探索即可获得相应贡献点。贡献点可用于保持自身探索者身份及购买部分由贸易行提供的特殊商品。</p>
 <p>面向单人的委托贡献点必定≤10. 由学会官方发布的特殊委托除外。</p>
-<h3 id="学会成员手册"><a href="#学会成员手册" class="headerlink" title="学会成员手册"></a>学会成员手册</h3><p>封面上印有学会会徽及成员编号的手册，根据成员所处文明具有自适应外貌。持有成员手册者将保留成员身份，失去成员手册则丧失相应记忆。成员离开学会，成员手册将在资料库封存。成员手册如若转交，被转交者将得到成员手册原持有者的部分记忆及人格。</p>
+<h3 id="学会成员手册"><a href="#学会成员手册" class="headerlink" title="学会成员手册"></a>学会成员手册</h3><p>封面上印有学会会徽及成员编号的手册，根据成员所处文明具有自适应外貌。</p>
+<p>手册内自动持有者完成委托类型、时间、所处世界编号及有关该委托的简要记述。</p>
+<p>持有成员手册者保留成员身份，失去成员手册则丧失相应记忆。成员离开学会，成员手册将在资料库封存。成员手册如若转交，被转交者将得到成员手册原持有者的部分记忆及人格。</p>
 <p>成员手册在一般情况下无法被损毁、偷盗。</p>
 <p>成员可上交成员手册，申请主动离开学会。</p>
 <h3 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h3><p>绝大部分委托由学者提供，少部分由学会官方发布。委托将展示于学会官网-委托页。学者&#x2F;探索者可自行登录账号，发布及接受委托。委托将展示：委托简介，委托地点，完成报酬，意向成员&#x2F;要求，危险程度，及有无保险。（p.s. 自带保险的委托项目一般默认会出现伤亡）</p>
