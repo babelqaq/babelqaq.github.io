@@ -24,15 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ising 模型</title>
-    <url>/Ising-%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>相变</tag>
-        <tag>Ising 模型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024.04摸鱼日志</title>
     <url>/2024-04%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="你才不是人家的主人啦QAQ." data-whm="这个文章不能被校验, 不过你还是能看看解密后的内容.">
@@ -53,6 +44,15 @@
       </categories>
       <tags>
         <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ising 模型</title>
+    <url>/Ising-%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>相变</tag>
+        <tag>Ising 模型</tag>
       </tags>
   </entry>
   <entry>
@@ -113,62 +113,6 @@
         <tag>LaTeX</tag>
         <tag>PPT</tag>
         <tag>代码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-next博客建站经验</title>
-    <url>/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</url>
-    <content><![CDATA[<p>随便堆堆建站技巧</p>
-<p><a href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
-<span id="more"></span>
-
-<h1 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h1><h2 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h2><p>把图标放进<code>hexo/themes/主题/source/img/</code>里</p>
-<p>在<code>/themes/主题/_config.yml</code>中修改成自己的图标</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/apple_71925917/article/details/135886528">hexo更改网站图标</a></li>
-</ol>
-<h2 id="修改主题-x2F-链接-x2F-文本颜色"><a href="#修改主题-x2F-链接-x2F-文本颜色" class="headerlink" title="修改主题&#x2F;链接&#x2F;文本颜色"></a>修改主题&#x2F;链接&#x2F;文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
-<p>修改Color system中的颜色</p>
-<p>链接：link</p>
-<p>按钮：btn</p>
-<h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
-<p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.进入next主题下的config配置文件，找到custom file paths，取消对styles的注释</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>4.找到social link对小图标进行修改</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">Lofter:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-lofter</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mail</span> <span class="string">to:填自己的邮箱</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon</a></li>
-<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235%5Ev43%5Epc_blog_bottom_relevance_base1&spm=1001.2101.3001.4242.1&utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
-</ol>
-<h2 id="浏览文本显示进度"><a href="#浏览文本显示进度" class="headerlink" title="浏览文本显示进度"></a>浏览文本显示进度</h2><p>打开 <code>themes/next/_config.yml</code> ,搜索关键字 <code>scrollpercent</code> ,把 <code>false</code> 改为<code>true</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>然后打开<code>themes/next/_config.yml</code> ,搜索关键字<code>b2t</code> ,把<code>false</code> 改为<code>true</code>，在<code>top</code>按钮上加上进度显示。</p>
-<p>如果想让<code>top</code>按钮显示在底部，把<code>b2t</code>属性设置为<code>false</code>即</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> <span class="attr">b2t:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
-</ol>
-<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
-<p>valine更新后参量改变，详情参见<a href="https://valine.js.org/avatar.html">valine官方文档</a>，在_config.yml文件下修改参量名称后问题解决。</p>
-]]></content>
-      <categories>
-        <category>代码工具</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -253,6 +197,62 @@
       <tags>
         <tag>唐氏综合征</tag>
         <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-next博客建站经验</title>
+    <url>/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<p>随便堆堆建站技巧（适用于next 8.17.0）</p>
+<p><a href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
+<span id="more"></span>
+
+<h1 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h1><h2 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h2><p>把图标放进<code>hexo/themes/主题/source/img/</code>里</p>
+<p>在<code>/themes/主题/_config.yml</code>中修改成自己的图标</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
+
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/apple_71925917/article/details/135886528">hexo更改网站图标</a></li>
+</ol>
+<h2 id="修改主题-x2F-链接-x2F-文本颜色"><a href="#修改主题-x2F-链接-x2F-文本颜色" class="headerlink" title="修改主题&#x2F;链接&#x2F;文本颜色"></a>修改主题&#x2F;链接&#x2F;文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
+<p>修改Color system中的颜色</p>
+<p>链接请检索：link</p>
+<p>按钮请检索：btn</p>
+<h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
+<p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.进入next主题下的config配置文件，找到custom file paths，取消对styles的注释</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4.找到social link对小图标进行修改</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">Lofter:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-lofter</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mail</span> <span class="string">to:填自己的邮箱</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br></pre></td></tr></table></figure>
+
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon</a></li>
+<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235%5Ev43%5Epc_blog_bottom_relevance_base1&spm=1001.2101.3001.4242.1&utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
+</ol>
+<h2 id="浏览文本显示进度"><a href="#浏览文本显示进度" class="headerlink" title="浏览文本显示进度"></a>浏览文本显示进度</h2><p>打开 <code>themes/next/_config.yml</code> ,搜索关键字 <code>scrollpercent</code> ,把 <code>false</code> 改为<code>true</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>然后打开<code>themes/next/_config.yml</code> ,搜索关键字<code>b2t</code> ,把<code>false</code> 改为<code>true</code>，在<code>top</code>按钮上加上进度显示。</p>
+<p>如果想让<code>top</code>按钮显示在底部，把<code>b2t</code>属性设置为<code>false</code>即</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> <span class="attr">b2t:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
+</ol>
+<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
+<p>valine更新后参量改变，详情参见<a href="https://valine.js.org/avatar.html">valine官方文档</a>，在_config.yml文件下修改参量名称后问题解决。</p>
+]]></content>
+      <categories>
+        <category>代码工具</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -896,144 +896,6 @@
       <tags>
         <tag>唐氏综合征</tag>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小说素材收录</title>
-    <url>/%E5%B0%8F%E8%AF%B4%E7%B4%A0%E6%9D%90%E6%94%B6%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
-<span id="more"></span>
-
-<h3 id="水波与折射"><a href="#水波与折射" class="headerlink" title="水波与折射"></a>水波与折射</h3><p>水的折射率与温度密切相关。随着水温的升高，折射率也会发生变化。</p>
-<p>局地对流是指在某一个密闭区域内，由于温度差异而引起的流动。当热水进入杯子时，与周围的相对冷水发生对流，形成了局地对流。这种局地对流一方面加速了热水的冷却，另一方面也导致了温度和折射率的变化。</p>
-<p>在局部对流的区域内，由于温度和折射率的变化，光线的传播路径也发生了改变。具体来说，从高温的热水流向相对较冷的杯底杯壁时，光线被折射，其传播的方向发生改变。这样，在杯子内部形成了两种不同的光线路径，从而产生了两种不同的影子。</p>
-<p>当我们观察热水倒入杯子的过程时，实际上是在观察光线在不同折射率区域中的传播和交错。由于折射率的差异，我们看到了仿佛有两种不同的液体在杯子中流动，并形成了交错的影子。</p>
-<h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h3 id="域界门纲目"><a href="#域界门纲目" class="headerlink" title="域界门纲目"></a>域界门纲目</h3><p>生物用域（Domain）、界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）加以分类。</p>
-<p>种是最基本的分类单位，科是最常用的分类单位</p>
-<p>五界法：原核生物界、原生生物界、菌物界、植物界以及动物界</p>
-<p>十界法：</p>
-<p>未专属域：1.病毒界（Euvirus）2.亚病毒因子（Subvirus）：包括类病毒viroid、朊病毒prion、拟病毒virusoid</p>
-<p>古菌域：3.古细菌界(paleobacterial)</p>
-<p>细菌域：4.细菌界(bacterial)</p>
-<p>真核生物域：5.囊泡藻界(vesicular alga)、6.古虫界(paleosphere)、7.有孔虫界(foramanifera)、8.真菌界(fungus)、9.植物界(Plantae)、10.动物界(animal)</p>
-<h3 id="蚁后"><a href="#蚁后" class="headerlink" title="蚁后"></a>蚁后</h3><p>工蚁，兵蚁，雄蚁，公主蚁</p>
-<p>当巢穴发展到一定的规模后，蚁后发出指令让公主蚁飞出巢穴。同时，远超公主蚁数量的大群雄蚁会追随她们飞出巢穴。这一过程大概是每年一次。    </p>
-<p> 飞出巢穴的公主蚁会在飞行中遇到雄蚁的追求。公主蚁此时会轮番和每只雄蚁进行空中交欢（婚飞），然后在身体中储存足够一生使用的精子，而雄蚁则会死亡</p>
-<p>携带了大量精子的公主蚁会降落在地面上，脱去翅膀，选择树缝或者洞穴中开始产第一批卵，建造新的蚁巢，而她也就成为了这个蚁巢的女王。</p>
-<p>单后和多后的蚂蚁巢群在非常多方面都有不同，不同的物种的蚁后数量差异是由不同的遗传机制造成的，这里我只简单讲红火蚁，相对于多后型的蚁后，单后型的蚁后 - 新后脂肪储量更大，婚飞的时候飞得更高更远，多倾向于入侵新领域建巢，由于她们脂肪储量更大，建巢的存活率更高（多后型的蚁后更倾向于加入已经成熟的多后蚁巢），单后型的蚁后寿命也被认为更长；然后相对来说，单后型的工蚁 -  体型更大，更具有攻击性和领域性；单后型的蚁巢的土堆形态更集中，更“高尖”，蚁巢与蚁巢之间距离更大，一般有个十米左右；在繁殖季节，单后型的巢群繁殖蚁后代的比例更高，多后型的巢群工蚁的比例更高。但是在一个地方，多后型的蚁巢通常能把单后的竞争排除掉，因为工蚁数量更多，多后蚁巢之间是”supercolony”姐妹关系，蚁巢寿命更持久(能不断有新的蚁后加入)。暂时想到那么多。</p>
-]]></content>
-      <categories>
-        <category>自用</category>
-        <category>小说设定</category>
-      </categories>
-      <tags>
-        <tag>小说</tag>
-        <tag>素材</tag>
-        <tag>自用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无限流小说设（3）</title>
-    <url>/%E6%97%A0%E9%99%90%E6%B5%81%E5%B0%8F%E8%AF%B4%E8%AE%BE%EF%BC%883%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="新月学会（Jaunatis-Acad）"><a href="#新月学会（Jaunatis-Acad）" class="headerlink" title="新月学会（Jaunatis Acad）"></a>新月学会（Jaunatis Acad）</h1><h3 id="身份构成"><a href="#身份构成" class="headerlink" title="身份构成"></a>身份构成</h3><span id="more"></span>
-
-<h4 id="学者（Academia）"><a href="#学者（Academia）" class="headerlink" title="学者（Academia）"></a>学者（Academia）</h4><p>学者是学会最重要的资产及构成，他们全部由科学家组成，专业涵盖所有科学领域，主要用于解释并利用异常</p>
-<p>大部分学者不参与探索，部分学者临时参与探索。当学者处于探索小队，将是该探索小队的首要保护对象。</p>
-<p>学者是学会中最主要的委托发布者。</p>
-<h4 id="探索者（Explorer）"><a href="#探索者（Explorer）" class="headerlink" title="探索者（Explorer）"></a>探索者（Explorer）</h4><p>学会内部最普遍的成员。探索者内部以1-5分级，此分级不保存在员工身份编码中。</p>
-<ul>
-<li>1级：对学会具有特殊意义的探索者。掌握至少1个异常的全部特质及处理办法，且该方法无法以任何形式传递给其他员工。</li>
-<li>2级：对学会具有重要意义的探索者。主职保卫学者及处理特殊异常。</li>
-<li>3级：高级探索者。普遍为小队队长或重要成员。具有至少1支5人以上小队的部分或全部权限。保持小队成立所需额外缴纳贡献为：30点&#x2F;月。</li>
-<li>4级：最常见的探索者。无任何特质。具有探索者普遍权益。保持探索者身份所需缴纳贡献为：10点&#x2F;月。</li>
-<li>5级：新人探索者。完成第一次探索并加入探索小队后进入4级。</li>
-</ul>
-<h4 id="实验者-x2F-实验对象（Subject）"><a href="#实验者-x2F-实验对象（Subject）" class="headerlink" title="实验者&#x2F;实验对象（Subject）"></a>实验者&#x2F;实验对象（Subject）</h4><h4 id="后勤人员（Logistics-staff）"><a href="#后勤人员（Logistics-staff）" class="headerlink" title="后勤人员（Logistics staff）"></a>后勤人员（Logistics staff）</h4><p>常见的后勤人员包括：</p>
-<p>招募人：招募新员工的人</p>
-<p>信使：将探索者送往委托目的地者及沟通委托双方者</p>
-<p>资料管理员：管理成员资料的人</p>
-<h3 id="成员编号规则"><a href="#成员编号规则" class="headerlink" title="成员编号规则"></a>成员编号规则</h3><p>E-HG097-H-AD002000（此编码根据持有者所处世界有改动。）</p>
-<p>第1位：身份编码 A（学者）E（探索者）S（实验者）L（后勤人员）</p>
-<p>第2位：世界大区，按占主导地位的文明分类，H代表human</p>
-<p>第3-6位：持有者所处世界编码。字母代表母世界，数字代表子世界编号</p>
-<p>第7位：持有者种族，H代表人类，A代表其他动物，P代表植物，F代表真菌，B代表细菌，V代表病毒，E代表电子生命</p>
-<p>第8-16位：生存年代。AD代表公元，BC代表公元前。</p>
-<h3 id="小队"><a href="#小队" class="headerlink" title="小队"></a>小队</h3><p>2人以上10人以下的探索者可成立小队，接受面向小队的委托。</p>
-<p>小队每月需额外缴纳30点贡献，否则小队失效。</p>
-<h3 id="贡献规则"><a href="#贡献规则" class="headerlink" title="贡献规则"></a>贡献规则</h3><p>探索者每参与一次探索即可获得相应贡献点。贡献点可用于保持自身探索者身份及购买部分由贸易行提供的特殊商品。</p>
-<p>面向单人的委托贡献点必定≤10. 由学会官方发布的特殊委托除外。</p>
-<h3 id="学会成员手册"><a href="#学会成员手册" class="headerlink" title="学会成员手册"></a>学会成员手册</h3><p>封面上印有学会会徽及成员编号的手册，根据成员所处文明具有自适应外貌。</p>
-<p>手册将自动填写持有者完成委托类型、时间、所处世界编号及有关该委托的简要记述。</p>
-<p>持有成员手册者保留成员身份，失去成员手册则丧失相应记忆。成员离开学会，成员手册将在资料库封存。成员手册如若转交，被转交者将得到成员手册原持有者的部分记忆及人格。</p>
-<p>成员手册在一般情况下无法被损毁、偷盗。</p>
-<p>成员可上交成员手册，申请主动离开学会。</p>
-<p>手册的本质为一种名为“沙之书”的超自然物品。它可以存在多种形态，具体特征为：不具有最后一页&#x2F;不存在存储上限。</p>
-<h3 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h3><p>绝大部分委托由学者提供，少部分由学会官方发布。委托将展示于新月学会官网-委托页。学者&#x2F;探索者可自行登录账号，发布及接受委托。委托将展示：委托简介，委托地点，完成报酬，意向成员&#x2F;要求，危险程度，及有无保险。（p.s. 自带保险的委托项目一般默认会出现伤亡）</p>
-<p>接受委托后，探索者将得到相应委托书。委托书应包含：委托目标，详细委托内容，委托地，到达委托地方式，注意事项。必要时委托方将提供特殊装备。</p>
-<h3 id="委托分类"><a href="#委托分类" class="headerlink" title="委托分类"></a>委托分类</h3><p>基础分类：</p>
-<ul>
-<li>N级(Normal)：标准级。学会已获得大部分相关信息。无有害因素。可随时撤离。</li>
-<li>D级：该委托目标不存在任何危险性。</li>
-<li>C级：该委托目标存在些许危险。</li>
-<li>B级：该委托目标存在大量危险。</li>
-<li>A级：该委托目标存在致命危险。</li>
-<li>U级(Unknown)：未知。学会对目标一无所知。</li>
-</ul>
-<p>特别分类（存在以下情况应额外标注特别分类）</p>
-<ul>
-<li>Academia：学者。该委托需要与至少一位学者同行并保卫他的安全。</li>
-<li>Box：盒子。因不可抗力，进入目标地点后不可随意撤离。</li>
-<li>Chaos：混沌。该委托存在明显的非线性决定论及蝴蝶效应。</li>
-<li>Cthulhu：克苏鲁。该委托中存在sancheck。</li>
-<li>Extraneous：外来入侵。该委托已知存在非原生宇宙的外来要素。</li>
-<li>Lacuna：断章。该委托中存在时间紊乱&#x2F;缺失。</li>
-<li>Saraab：幻象之地。该委托涉及幻象及精神领域。</li>
-</ul>
-<h1 id="其他组织"><a href="#其他组织" class="headerlink" title="其他组织"></a>其他组织</h1><h2 id="保险公司"><a href="#保险公司" class="headerlink" title="保险公司"></a>保险公司</h2><p>一家专职于为探索者提供保险的公司。小队成员伤亡后将为小队提供相应赔偿贡献点。</p>
-<h2 id="贸易行"><a href="#贸易行" class="headerlink" title="贸易行"></a>贸易行</h2><p>似乎是新月学会的合作伙伴。探索者可以通过浏览新月学会官网提供的友链，用新月学会的贡献点购买他们的商品。</p>
-<p>使用新月学会成员编号可登入贸易行。有趣的是，不同编号所登录的贸易行，商品显示价格是不同的。</p>
-<h1 id="已知异常收录"><a href="#已知异常收录" class="headerlink" title="已知异常收录"></a>已知异常收录</h1><h2 id="沙之书"><a href="#沙之书" class="headerlink" title="沙之书"></a>沙之书</h2><p>分类：N级</p>
-<p>一大类可存在多种形态的储存物件的统称。</p>
-<p>其特征为：不具有最后一页&#x2F;不存在存储上限</p>
-<h2 id="蝶化生"><a href="#蝶化生" class="headerlink" title="蝶化生"></a>蝶化生</h2><p>分类：C级</p>
-<p>原生世界：HG097</p>
-<p>蝶化生在人类婴儿中产卵，幼虫将逐步占据人类或其他动物幼儿的身体，直到人类死亡（此过程至少二十年），蝶化生破茧而出，成为一种人眼无法看见的成虫。若幼虫期不满二十年脱离人体（茧）且无法占据下一个茧，幼虫死亡。</p>
-<p>蝶化生成虫以人格&#x2F;精神态&#x2F;虚无生物为食，成虫会钻入生物体内，重复幼虫期的寄生过程，直至躯体死亡，完成进食。成虫可自由变化为它所吃掉的精神态的模样或舍弃正在进食中的躯体。若成虫舍弃正在进食中的躯体，则无法再次回到同一具躯体进食。该躯体人格将遭受一定程度损毁。</p>
-<p>蝶化生的寿命为百年以上，终身只选定一位配偶。</p>
-<p>蝶化生的幼虫会被解离蜂寄居，而成虫则捕食解离蜂幼虫。</p>
-<h2 id="解离蜂"><a href="#解离蜂" class="headerlink" title="解离蜂"></a>解离蜂</h2><p>分类：C级</p>
-<p>原生世界：HG097</p>
-<p>解离蜂的幼虫寄居于蝶化生幼虫之中，其幼虫将攻击蝶化生幼虫人格（主人格）使其产生人格解离，并逐步占据主人格地位。解离蜂的成熟期为三年。解离蜂幼虫成熟后，将驱使此躯体自杀身亡，使得自己离开躯体。</p>
-<p>解离蜂的成虫以游离的精神态为食。</p>
-<h2 id="虚无之眼"><a href="#虚无之眼" class="headerlink" title="虚无之眼"></a>虚无之眼</h2><p>分类：A级&#x2F;Cthulhu</p>
-<p>原生世界：HG151</p>
-<p>注视虚无之眼者，迷失于虚无。</p>
-<p>迷雾笼罩的海港塞司尔特，一批又一批的探索者们自这里上岸。塞司尔特港是个繁华的旅游城市——除了。每年的3-4月，整个海港被浓郁的雾气掩盖，空气湿度达到95%以上，雪白的房屋墙面因过湿的空气而霉变剥离。</p>
-<p>塞司尔特港的居民们大多从事旅游服务业，他们出售给往来游客用鱼骨或贝壳制成的纪念品。塞司尔特港的窗台上种满鲜花，他们个性热情，许多居民都是艺术家。塞司尔特港的居民大多具有出众的色感，理论上来说，他们极富灵性。难以想象，他们是如何在这么一个充斥着sancheck的世界生活的。</p>
-<p>海其实并不遥远，只需下潜，再下潜，你就发现，海下有一层坚硬的玻璃罩，罩住海中湛蓝的山脉。若你再大胆些，向海的深处去，你便找到一口大洞，深不见底。若你有那么灵光一闪，你会发现，海是一只眼睛。将你注视。</p>
-<blockquote>
-<p>“现在是禁渔期。每年3-4月，我们都不捕鱼。”</p>
-</blockquote>
-<h2 id="海之虫"><a href="#海之虫" class="headerlink" title="海之虫"></a>海之虫</h2><p>分类：C级&#x2F;Cthulhu</p>
-<p>原生世界：HG151</p>
-<p>海之虫：I期</p>
-<p>海之虫的幼体漂浮在海面上。每年11月，塞司尔特港的人们能在海滩上捡到不少透明的巴掌大的瓶装贝壳。这种天然玻璃制品是塞司尔特港的特产，人们将他们加工成各种各样的工艺品，出售给游客。</p>
-<p>海之虫：II期</p>
-<p>漂浮在塞司尔特港附近海域上空的虫。这些纤长的全然透明的虫，缓慢地在人们面前漂浮着。它们是如此透明，阳光透过它们浑圆的身体照射在地板上，形成一道道水波纹那样的光斑。它们灵动而纤细，总能灵巧地避开物体运动。它们的存在让塞司尔特港像沙丁鱼罐头那样拥挤闷热密不透风。</p>
-<p>每年3-4月，是海之虫最成熟活跃的时期。它们纷纷从土壤中挤出，漂浮在空中，企图前往海里，继续他们的生命。一些迷路的海之虫，撞进人类的眼睛。撞进人类眼睛里的海之虫会在此盘踞，拥有他们的人因此能看见不一样的色彩。当海之虫逐渐成熟，人类将会失明，直到他们在翌年10-11月的产卵期离开。当地人称之为：海神的赐福。</p>
-<blockquote>
-<p>“海神让你看见一月天堂，随后叫你忍受五月黑暗。”</p>
-</blockquote>
-<p>海之虫：III期</p>
-<p>海之虫突破虚无之眼的屏障，来到海中。也即，虚无之眼的玻璃体中。海之虫由透明逐渐变为黑色，遮蔽虚无之眼的注视。</p>
-]]></content>
-      <categories>
-        <category>自用</category>
-        <category>小说设定</category>
-      </categories>
-      <tags>
-        <tag>小说</tag>
-        <tag>自用</tag>
       </tags>
   </entry>
   <entry>
@@ -2388,6 +2250,144 @@
       </tags>
   </entry>
   <entry>
+    <title>小说素材收录</title>
+    <url>/%E5%B0%8F%E8%AF%B4%E7%B4%A0%E6%9D%90%E6%94%B6%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
+<span id="more"></span>
+
+<h3 id="水波与折射"><a href="#水波与折射" class="headerlink" title="水波与折射"></a>水波与折射</h3><p>水的折射率与温度密切相关。随着水温的升高，折射率也会发生变化。</p>
+<p>局地对流是指在某一个密闭区域内，由于温度差异而引起的流动。当热水进入杯子时，与周围的相对冷水发生对流，形成了局地对流。这种局地对流一方面加速了热水的冷却，另一方面也导致了温度和折射率的变化。</p>
+<p>在局部对流的区域内，由于温度和折射率的变化，光线的传播路径也发生了改变。具体来说，从高温的热水流向相对较冷的杯底杯壁时，光线被折射，其传播的方向发生改变。这样，在杯子内部形成了两种不同的光线路径，从而产生了两种不同的影子。</p>
+<p>当我们观察热水倒入杯子的过程时，实际上是在观察光线在不同折射率区域中的传播和交错。由于折射率的差异，我们看到了仿佛有两种不同的液体在杯子中流动，并形成了交错的影子。</p>
+<h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h3 id="域界门纲目"><a href="#域界门纲目" class="headerlink" title="域界门纲目"></a>域界门纲目</h3><p>生物用域（Domain）、界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）加以分类。</p>
+<p>种是最基本的分类单位，科是最常用的分类单位</p>
+<p>五界法：原核生物界、原生生物界、菌物界、植物界以及动物界</p>
+<p>十界法：</p>
+<p>未专属域：1.病毒界（Euvirus）2.亚病毒因子（Subvirus）：包括类病毒viroid、朊病毒prion、拟病毒virusoid</p>
+<p>古菌域：3.古细菌界(paleobacterial)</p>
+<p>细菌域：4.细菌界(bacterial)</p>
+<p>真核生物域：5.囊泡藻界(vesicular alga)、6.古虫界(paleosphere)、7.有孔虫界(foramanifera)、8.真菌界(fungus)、9.植物界(Plantae)、10.动物界(animal)</p>
+<h3 id="蚁后"><a href="#蚁后" class="headerlink" title="蚁后"></a>蚁后</h3><p>工蚁，兵蚁，雄蚁，公主蚁</p>
+<p>当巢穴发展到一定的规模后，蚁后发出指令让公主蚁飞出巢穴。同时，远超公主蚁数量的大群雄蚁会追随她们飞出巢穴。这一过程大概是每年一次。    </p>
+<p> 飞出巢穴的公主蚁会在飞行中遇到雄蚁的追求。公主蚁此时会轮番和每只雄蚁进行空中交欢（婚飞），然后在身体中储存足够一生使用的精子，而雄蚁则会死亡</p>
+<p>携带了大量精子的公主蚁会降落在地面上，脱去翅膀，选择树缝或者洞穴中开始产第一批卵，建造新的蚁巢，而她也就成为了这个蚁巢的女王。</p>
+<p>单后和多后的蚂蚁巢群在非常多方面都有不同，不同的物种的蚁后数量差异是由不同的遗传机制造成的，这里我只简单讲红火蚁，相对于多后型的蚁后，单后型的蚁后 - 新后脂肪储量更大，婚飞的时候飞得更高更远，多倾向于入侵新领域建巢，由于她们脂肪储量更大，建巢的存活率更高（多后型的蚁后更倾向于加入已经成熟的多后蚁巢），单后型的蚁后寿命也被认为更长；然后相对来说，单后型的工蚁 -  体型更大，更具有攻击性和领域性；单后型的蚁巢的土堆形态更集中，更“高尖”，蚁巢与蚁巢之间距离更大，一般有个十米左右；在繁殖季节，单后型的巢群繁殖蚁后代的比例更高，多后型的巢群工蚁的比例更高。但是在一个地方，多后型的蚁巢通常能把单后的竞争排除掉，因为工蚁数量更多，多后蚁巢之间是”supercolony”姐妹关系，蚁巢寿命更持久(能不断有新的蚁后加入)。暂时想到那么多。</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+        <category>小说设定</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>素材</tag>
+        <tag>自用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无限流小说设（3）</title>
+    <url>/%E6%97%A0%E9%99%90%E6%B5%81%E5%B0%8F%E8%AF%B4%E8%AE%BE%EF%BC%883%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="新月学会（Jaunatis-Acad）"><a href="#新月学会（Jaunatis-Acad）" class="headerlink" title="新月学会（Jaunatis Acad）"></a>新月学会（Jaunatis Acad）</h1><h3 id="身份构成"><a href="#身份构成" class="headerlink" title="身份构成"></a>身份构成</h3><span id="more"></span>
+
+<h4 id="学者（Academia）"><a href="#学者（Academia）" class="headerlink" title="学者（Academia）"></a>学者（Academia）</h4><p>学者是学会最重要的资产及构成，他们全部由科学家组成，专业涵盖所有科学领域，主要用于解释并利用异常</p>
+<p>大部分学者不参与探索，部分学者临时参与探索。当学者处于探索小队，将是该探索小队的首要保护对象。</p>
+<p>学者是学会中最主要的委托发布者。</p>
+<h4 id="探索者（Explorer）"><a href="#探索者（Explorer）" class="headerlink" title="探索者（Explorer）"></a>探索者（Explorer）</h4><p>学会内部最普遍的成员。探索者内部以1-5分级，此分级不保存在员工身份编码中。</p>
+<ul>
+<li>1级：对学会具有特殊意义的探索者。掌握至少1个异常的全部特质及处理办法，且该方法无法以任何形式传递给其他员工。</li>
+<li>2级：对学会具有重要意义的探索者。主职保卫学者及处理特殊异常。</li>
+<li>3级：高级探索者。普遍为小队队长或重要成员。具有至少1支5人以上小队的部分或全部权限。保持小队成立所需额外缴纳贡献为：30点&#x2F;月。</li>
+<li>4级：最常见的探索者。无任何特质。具有探索者普遍权益。保持探索者身份所需缴纳贡献为：10点&#x2F;月。</li>
+<li>5级：新人探索者。完成第一次探索并加入探索小队后进入4级。</li>
+</ul>
+<h4 id="实验者-x2F-实验对象（Subject）"><a href="#实验者-x2F-实验对象（Subject）" class="headerlink" title="实验者&#x2F;实验对象（Subject）"></a>实验者&#x2F;实验对象（Subject）</h4><h4 id="后勤人员（Logistics-staff）"><a href="#后勤人员（Logistics-staff）" class="headerlink" title="后勤人员（Logistics staff）"></a>后勤人员（Logistics staff）</h4><p>常见的后勤人员包括：</p>
+<p>招募人：招募新员工的人</p>
+<p>信使：将探索者送往委托目的地者及沟通委托双方者</p>
+<p>资料管理员：管理成员资料的人</p>
+<h3 id="成员编号规则"><a href="#成员编号规则" class="headerlink" title="成员编号规则"></a>成员编号规则</h3><p>E-HG097-H-AD002000（此编码根据持有者所处世界有改动。）</p>
+<p>第1位：身份编码 A（学者）E（探索者）S（实验者）L（后勤人员）</p>
+<p>第2位：世界大区，按占主导地位的文明分类，H代表human</p>
+<p>第3-6位：持有者所处世界编码。字母代表母世界，数字代表子世界编号</p>
+<p>第7位：持有者种族，H代表人类，A代表其他动物，P代表植物，F代表真菌，B代表细菌，V代表病毒，E代表电子生命</p>
+<p>第8-16位：生存年代。AD代表公元，BC代表公元前。</p>
+<h3 id="小队"><a href="#小队" class="headerlink" title="小队"></a>小队</h3><p>2人以上10人以下的探索者可成立小队，接受面向小队的委托。</p>
+<p>小队每月需额外缴纳30点贡献，否则小队失效。</p>
+<h3 id="贡献规则"><a href="#贡献规则" class="headerlink" title="贡献规则"></a>贡献规则</h3><p>探索者每参与一次探索即可获得相应贡献点。贡献点可用于保持自身探索者身份及购买部分由贸易行提供的特殊商品。</p>
+<p>面向单人的委托贡献点必定≤10. 由学会官方发布的特殊委托除外。</p>
+<h3 id="学会成员手册"><a href="#学会成员手册" class="headerlink" title="学会成员手册"></a>学会成员手册</h3><p>封面上印有学会会徽及成员编号的手册，根据成员所处文明具有自适应外貌。</p>
+<p>手册将自动填写持有者完成委托类型、时间、所处世界编号及有关该委托的简要记述。</p>
+<p>持有成员手册者保留成员身份，失去成员手册则丧失相应记忆。成员离开学会，成员手册将在资料库封存。成员手册如若转交，被转交者将得到成员手册原持有者的部分记忆及人格。</p>
+<p>成员手册在一般情况下无法被损毁、偷盗。</p>
+<p>成员可上交成员手册，申请主动离开学会。</p>
+<p>手册的本质为一种名为“沙之书”的超自然物品。它可以存在多种形态，具体特征为：不具有最后一页&#x2F;不存在存储上限。</p>
+<h3 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h3><p>绝大部分委托由学者提供，少部分由学会官方发布。委托将展示于新月学会官网-委托页。学者&#x2F;探索者可自行登录账号，发布及接受委托。委托将展示：委托简介，委托地点，完成报酬，意向成员&#x2F;要求，危险程度，及有无保险。（p.s. 自带保险的委托项目一般默认会出现伤亡）</p>
+<p>接受委托后，探索者将得到相应委托书。委托书应包含：委托目标，详细委托内容，委托地，到达委托地方式，注意事项。必要时委托方将提供特殊装备。</p>
+<h3 id="委托分类"><a href="#委托分类" class="headerlink" title="委托分类"></a>委托分类</h3><p>基础分类：</p>
+<ul>
+<li>N级(Normal)：标准级。学会已获得大部分相关信息。无有害因素。可随时撤离。</li>
+<li>D级：该委托目标不存在任何危险性。</li>
+<li>C级：该委托目标存在些许危险。</li>
+<li>B级：该委托目标存在大量危险。</li>
+<li>A级：该委托目标存在致命危险。</li>
+<li>U级(Unknown)：未知。学会对目标一无所知。</li>
+</ul>
+<p>特别分类（存在以下情况应额外标注特别分类）</p>
+<ul>
+<li>Academia：学者。该委托需要与至少一位学者同行并保卫他的安全。</li>
+<li>Box：盒子。因不可抗力，进入目标地点后不可随意撤离。</li>
+<li>Chaos：混沌。该委托存在明显的非线性决定论及蝴蝶效应。</li>
+<li>Cthulhu：克苏鲁。该委托中存在sancheck。</li>
+<li>Extraneous：外来入侵。该委托已知存在非原生宇宙的外来要素。</li>
+<li>Lacuna：断章。该委托中存在时间紊乱&#x2F;缺失。</li>
+<li>Saraab：幻象之地。该委托涉及幻象及精神领域。</li>
+</ul>
+<h1 id="其他组织"><a href="#其他组织" class="headerlink" title="其他组织"></a>其他组织</h1><h2 id="保险公司"><a href="#保险公司" class="headerlink" title="保险公司"></a>保险公司</h2><p>一家专职于为探索者提供保险的公司。小队成员伤亡后将为小队提供相应赔偿贡献点。</p>
+<h2 id="贸易行"><a href="#贸易行" class="headerlink" title="贸易行"></a>贸易行</h2><p>似乎是新月学会的合作伙伴。探索者可以通过浏览新月学会官网提供的友链，用新月学会的贡献点购买他们的商品。</p>
+<p>使用新月学会成员编号可登入贸易行。有趣的是，不同编号所登录的贸易行，商品显示价格是不同的。</p>
+<h1 id="已知异常收录"><a href="#已知异常收录" class="headerlink" title="已知异常收录"></a>已知异常收录</h1><h2 id="沙之书"><a href="#沙之书" class="headerlink" title="沙之书"></a>沙之书</h2><p>分类：N级</p>
+<p>一大类可存在多种形态的储存物件的统称。</p>
+<p>其特征为：不具有最后一页&#x2F;不存在存储上限</p>
+<h2 id="蝶化生"><a href="#蝶化生" class="headerlink" title="蝶化生"></a>蝶化生</h2><p>分类：C级</p>
+<p>原生世界：HG097</p>
+<p>蝶化生在人类婴儿中产卵，幼虫将逐步占据人类或其他动物幼儿的身体，直到人类死亡（此过程至少二十年），蝶化生破茧而出，成为一种人眼无法看见的成虫。若幼虫期不满二十年脱离人体（茧）且无法占据下一个茧，幼虫死亡。</p>
+<p>蝶化生成虫以人格&#x2F;精神态&#x2F;虚无生物为食，成虫会钻入生物体内，重复幼虫期的寄生过程，直至躯体死亡，完成进食。成虫可自由变化为它所吃掉的精神态的模样或舍弃正在进食中的躯体。若成虫舍弃正在进食中的躯体，则无法再次回到同一具躯体进食。该躯体人格将遭受一定程度损毁。</p>
+<p>蝶化生的寿命为百年以上，终身只选定一位配偶。</p>
+<p>蝶化生的幼虫会被解离蜂寄居，而成虫则捕食解离蜂幼虫。</p>
+<h2 id="解离蜂"><a href="#解离蜂" class="headerlink" title="解离蜂"></a>解离蜂</h2><p>分类：C级</p>
+<p>原生世界：HG097</p>
+<p>解离蜂的幼虫寄居于蝶化生幼虫之中，其幼虫将攻击蝶化生幼虫人格（主人格）使其产生人格解离，并逐步占据主人格地位。解离蜂的成熟期为三年。解离蜂幼虫成熟后，将驱使此躯体自杀身亡，使得自己离开躯体。</p>
+<p>解离蜂的成虫以游离的精神态为食。</p>
+<h2 id="虚无之眼"><a href="#虚无之眼" class="headerlink" title="虚无之眼"></a>虚无之眼</h2><p>分类：A级&#x2F;Cthulhu</p>
+<p>原生世界：HG151</p>
+<p>注视虚无之眼者，迷失于虚无。</p>
+<p>迷雾笼罩的海港塞司尔特，一批又一批的探索者们自这里上岸。塞司尔特港是个繁华的旅游城市——除了。每年的3-4月，整个海港被浓郁的雾气掩盖，空气湿度达到95%以上，雪白的房屋墙面因过湿的空气而霉变剥离。</p>
+<p>塞司尔特港的居民们大多从事旅游服务业，他们出售给往来游客用鱼骨或贝壳制成的纪念品。塞司尔特港的窗台上种满鲜花，他们个性热情，许多居民都是艺术家。塞司尔特港的居民大多具有出众的色感，理论上来说，他们极富灵性。难以想象，他们是如何在这么一个充斥着sancheck的世界生活的。</p>
+<p>海其实并不遥远，只需下潜，再下潜，你就发现，海下有一层坚硬的玻璃罩，罩住海中湛蓝的山脉。若你再大胆些，向海的深处去，你便找到一口大洞，深不见底。若你有那么灵光一闪，你会发现，海是一只眼睛。将你注视。</p>
+<blockquote>
+<p>“现在是禁渔期。每年3-4月，我们都不捕鱼。”</p>
+</blockquote>
+<h2 id="海之虫"><a href="#海之虫" class="headerlink" title="海之虫"></a>海之虫</h2><p>分类：C级&#x2F;Cthulhu</p>
+<p>原生世界：HG151</p>
+<p>海之虫：I期</p>
+<p>海之虫的幼体漂浮在海面上。每年11月，塞司尔特港的人们能在海滩上捡到不少透明的巴掌大的瓶装贝壳。这种天然玻璃制品是塞司尔特港的特产，人们将他们加工成各种各样的工艺品，出售给游客。</p>
+<p>海之虫：II期</p>
+<p>漂浮在塞司尔特港附近海域上空的虫。这些纤长的全然透明的虫，缓慢地在人们面前漂浮着。它们是如此透明，阳光透过它们浑圆的身体照射在地板上，形成一道道水波纹那样的光斑。它们灵动而纤细，总能灵巧地避开物体运动。它们的存在让塞司尔特港像沙丁鱼罐头那样拥挤闷热密不透风。</p>
+<p>每年3-4月，是海之虫最成熟活跃的时期。它们纷纷从土壤中挤出，漂浮在空中，企图前往海里，继续他们的生命。一些迷路的海之虫，撞进人类的眼睛。撞进人类眼睛里的海之虫会在此盘踞，拥有他们的人因此能看见不一样的色彩。当海之虫逐渐成熟，人类将会失明，直到他们在翌年10-11月的产卵期离开。当地人称之为：海神的赐福。</p>
+<blockquote>
+<p>“海神让你看见一月天堂，随后叫你忍受五月黑暗。”</p>
+</blockquote>
+<p>海之虫：III期</p>
+<p>海之虫突破虚无之眼的屏障，来到海中。也即，虚无之眼的玻璃体中。海之虫由透明逐渐变为黑色，遮蔽虚无之眼的注视。</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+        <category>小说设定</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>自用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无限流：人设</title>
     <url>/%E6%97%A0%E9%99%90%E6%B5%81%EF%BC%9A%E4%BA%BA%E8%AE%BE/</url>
     <content><![CDATA[<h1 id="许和光"><a href="#许和光" class="headerlink" title="许和光"></a>许和光</h1><p>通用年龄：17岁</p>
@@ -2584,6 +2584,481 @@
         <tag>文献速记</tag>
         <tag>李杨零</tag>
         <tag>Fisher零</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模拟人生4-自设孤儿院挑战</title>
+    <url>/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/</url>
+    <content><![CDATA[<h1 id="规则总览"><a href="#规则总览" class="headerlink" title="规则总览"></a>规则总览</h1><p>本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成</p>
+<p>人物寿命需设置为普通</p>
+<p>初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。</p>
+<span id="more"></span>
+
+<p>所有人物（除Adam之外）找到相应工作且完成要求后需搬出原始家庭成为与原始家庭同一地段的租户。</p>
+<p>必须接受所有游戏过程中自动出现的偏好，性格转变及生活方式。</p>
+<p>玩家只能操纵Adam与Charles完成家务。</p>
+<p>玩家可以进行Polaris，Jasmine，Michael，Cacao奇想中的友情&#x2F;浪漫交互，Ocrea可任意与非家庭中的异性进行友情&#x2F;浪漫交互，Adam可任意与其他人物进行亲情交互。除此之外，玩家不得操控其他人物进行友情&#x2F;浪漫交互。</p>
+<p>每个节日假期必须出门旅行</p>
+<p>Ocrea接受所有外出邀请，Jasmine接受所有异性外出邀请，Adam接受所有来自家人的外出邀请，Raven拒绝所有外出邀请，其他外出邀请则通过随机数决定。</p>
+<p> Polaris与Sirius应设置为姐弟关系，Jasmine与Michael应设置为姐弟关系</p>
+<h1 id="人物规则"><a href="#人物规则" class="headerlink" title="人物规则"></a>人物规则</h1><h2 id="1-Adam（吴铮）"><a href="#1-Adam（吴铮）" class="headerlink" title="1 Adam（吴铮）"></a>1 Adam（吴铮）</h2><p>初始年龄：青年</p>
+<p>初始性格特征：秋之子，好人，乐于助人的</p>
+<p>要求：</p>
+<ol>
+<li>赚钱方式只能选择写作&#x2F;绘画，且不得外出工作</li>
+<li>完成畅销作家的全部抱负内容并完成一本人生之书</li>
+<li>对所有儿童都采取鼓励式教育，冷静&#x2F;坚定地告诫（不得使用严厉的告诫），以及拥抱和家人亲吻</li>
+<li>达成写作&#x2F;绘画十级</li>
+<li>在每位家人离开家前为他们绘制一副肖像画</li>
+<li>在所有孩子离开家前与他们成为好朋友</li>
+</ol>
+<h2 id="2-Charles（齐彭殇）"><a href="#2-Charles（齐彭殇）" class="headerlink" title="2 Charles（齐彭殇）"></a>2 Charles（齐彭殇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：洁癖，有能力的（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>完成所有作业及加分作业，以A类学生从高中毕业</li>
+<li>在保证A类学生的前提下在学校尽可能多地交朋友</li>
+<li>具有一份青少年兼职并从不缺席</li>
+<li>获得政治学大学学位并完成学术的全部抱负</li>
+<li>具有负责任的奖励特征</li>
+</ol>
+<p>职业：政治家</p>
+<h2 id="3-Polaris（张紫薇）"><a href="#3-Polaris（张紫薇）" class="headerlink" title="3 Polaris（张紫薇）"></a>3 Polaris（张紫薇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：天才，夏之子（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>将灵魂伴侣作为终身抱负</li>
+<li>若与Charles具有浪漫关系，则与Charles约会至少一次</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：特工</p>
+<h2 id="4-Ocrea（高秋）"><a href="#4-Ocrea（高秋）" class="headerlink" title="4 Ocrea（高秋）"></a>4 Ocrea（高秋）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：甜言蜜语（儿童）不愿承诺（青少年）物质主义（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花抱负</li>
+<li>魅力五级及以上</li>
+<li>每次上学都选择交朋友</li>
+<li>加入一个俱乐部并与俱乐部里每位异性发展浪漫关系</li>
+<li>去至少两次夜店</li>
+<li>抱负选择连环浪漫，在搬出家前至少拥有3段感情，若双方浪漫值出现下降，则立刻分手（若与Sirius具有浪漫关系，在离开家前不与Sirius分手）</li>
+</ol>
+<p>职业：商业</p>
+<h2 id="5-Sirius（张狂）"><a href="#5-Sirius（张狂）" class="headerlink" title="5 Sirius（张狂）"></a>5 Sirius（张狂）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：极客（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>编程五级及以上</li>
+<li>参加一次极客会展并乘坐火箭来到外星</li>
+</ol>
+<p>职业：科技达人</p>
+<h2 id="6-Jasmine（钟不遇）"><a href="#6-Jasmine（钟不遇）" class="headerlink" title="6 Jasmine（钟不遇）"></a>6 Jasmine（钟不遇）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：拘谨的（儿童），难以伺候（青少年），悲伤（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才抱负</li>
+<li>烹饪及通灵五级及以上</li>
+<li>至少交五个异性朋友</li>
+<li>若有异性提出交往&#x2F;求婚，则立刻同意</li>
+</ol>
+<p>职业：</p>
+<p>若与他人发展出浪漫关系，则不选择职业，成年后立刻与其结婚，抱负改为欢乐大家庭</p>
+<p>若无浪漫关系，则选择职业为主厨</p>
+<h2 id="7-Michael（钟不惑）"><a href="#7-Michael（钟不惑）" class="headerlink" title="7 Michael（钟不惑）"></a>7 Michael（钟不惑）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：粘人精（幼儿）令人难忘的（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才及调皮蛋抱负（艺术天才优先）</li>
+<li>在离开家前可以与其他人发展浪漫关系，但不与任何人确认成为恋人</li>
+<li>和一个玩偶熊&#x2F;鬼魂成为朋友</li>
+<li>在网络上拥有至少一千位追随者</li>
+<li>魅力及健身三级及以上</li>
+<li>成为二星名人及以上</li>
+</ol>
+<p>职业：模特</p>
+<p><strong>以下家庭成员在Charles及Polaris搬出家庭后搬入：</strong></p>
+<h2 id="8-Lucius（许和光）"><a href="#8-Lucius（许和光）" class="headerlink" title="8 Lucius（许和光）"></a>8 Lucius（许和光）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：独立（幼儿）独行侠（儿童），刻薄，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>小提琴五级及以上</li>
+<li>除Cacao外不与其他任何人成为好朋友</li>
+</ol>
+<p>职业：</p>
+<p>若名声为好&#x2F;中等：医生</p>
+<p>若坏名声大于三级：罪犯</p>
+<h2 id="9-Cacao（周可可）"><a href="#9-Cacao（周可可）" class="headerlink" title="9 Cacao（周可可）"></a>9 Cacao（周可可）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：万人迷（幼儿）欢乐，外向，音乐爱好者，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花及调皮蛋抱负（交际花优先），尝试和床下怪物成为朋友</li>
+<li>加入童子军</li>
+<li>完成世界之友抱负</li>
+<li>吉他五级及以上</li>
+</ol>
+<p>职业：演艺人员</p>
+<h2 id="10-Raven（唐篁）"><a href="#10-Raven（唐篁）" class="headerlink" title="10 Raven（唐篁）"></a>10 Raven（唐篁）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：好奇宝宝（幼儿）古怪，懒惰，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>完成诡奇小镇抱负</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：警探</p>
+<h1 id="游戏过程特征简记"><a href="#游戏过程特征简记" class="headerlink" title="游戏过程特征简记"></a>游戏过程特征简记</h1><h2 id="1-Adam"><a href="#1-Adam" class="headerlink" title="1 Adam"></a>1 Adam</h2><p>初始设定特征：秋之子，好人，乐于助人的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ESTP（实干家）：聪明，富有活力，极其敏锐的人，享受生活的各个方面，热爱运动</p>
+<p>沉思者：更容易发展精神技能</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决</p>
+<p>+出乎意料的成功者（day3）</p>
+<p>+欢乐：这类模拟市民很容易感到快乐（day12）</p>
+<p>+制造者：这类模拟市民喜欢制作东西（day15）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG"></p>
+<h2 id="2-Charles"><a href="#2-Charles" class="headerlink" title="2 Charles"></a>2 Charles</h2><p>初始设定特征：洁癖，有能力的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENFP（竞选者）：热情而富有创造力，在写作及艺术方面具有天分</p>
+<p>快速学习者：学习技能更快</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决（被上面那位传染的？？）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/2.PNG"></p>
+<h2 id="3-Polaris"><a href="#3-Polaris" class="headerlink" title="3 Polaris"></a>3 Polaris</h2><p>初始设定特征：天才，夏之子</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ISFJ（守卫者）：具有献身精神与温暖的人，喜欢烹饪，绘画，自然…会支持一切她爱的人的活动和兴趣</p>
+<p>天赐创造力：在写作，艺术，烹饪方面格外有天赋</p>
+<p>迷人的：她在浪漫关系方面比别人更成功（lucky！）</p>
+<p>+喜欢咯咯咯地傻笑（day7）</p>
+<p>+害怕壮志未酬（day11）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/3.PNG"></p>
+<h2 id="4-Ocrea"><a href="#4-Ocrea" class="headerlink" title="4 Ocrea"></a>4 Ocrea</h2><p>初始设定特征：甜言蜜语</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INFJ（提倡者）：安静，神秘，富有精神力，喜欢文化，读书与听音乐（你最好真的是）</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉的随机属性）</p>
+<p>普通自信→高度自信（day3）</p>
+<p>+刻薄倾向：这类模拟市民总是喜欢对别人刻薄（day6）</p>
+<p>害怕失败：当她失去自信时她很容易紧张，容易因为批评或者没拿奖而尴尬（day6）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/4.PNG"></p>
+<h2 id="5-Sirius"><a href="#5-Sirius" class="headerlink" title="5 Sirius"></a>5 Sirius</h2><p>初始设定特征：极客</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INTJ（建筑师）：图像和直觉思维，擅长给每件事做计划</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉x2，但CP就应该整整齐齐）</p>
+<p>背痛：背部疼痛</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+刻薄倾向（day7）</p>
+<p>+黏人，害怕失败（day13）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/5.PNG"></p>
+<h2 id="6-Jasmine"><a href="#6-Jasmine" class="headerlink" title="6 Jasmine"></a>6 Jasmine</h2><p>初始设定特征：拘谨的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENTJ（总经理）：好的领导者，喜欢社交与运动，集中于他们的职业生涯</p>
+<p>→INFP（调停者）：可爱，诗意，利他主义者。</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+害怕失败（day8）</p>
+<p>+叛逆（day13）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/6.PNG"></p>
+<h2 id="7-Michael"><a href="#7-Michael" class="headerlink" title="7 Michael"></a>7 Michael</h2><p>初始设定特征：粘人精</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>害怕溺水：不知为何他害怕溺水，避免泳池和海洋（Michael在原始人设里确实很怕水，因为到水里会失去五感，我觉得这个设定不是很必要就没有作为初始设定强制加入，结果自己出现了）</p>
+<p>健康：他没有任何身体问题真的很幸运（何止是健康，长大可以去当超人）</p>
+<p>→过敏（day2）→胃胀气（day8）</p>
+<p>小歌唱家：这孩子喜欢随时随地唱歌</p>
+<p>好胃口：他吃的很快，甚至会去吃掉在地板上的食物…他有点被宠坏了（他确实是。喂！不要随便在地上捡垃圾吃啊！）</p>
+<p>+讨厌起床（day2）</p>
+<p>儿童</p>
+<p>+ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>+高度自信</p>
+<p>+令人难忘的（设定特征）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/7.PNG"></p>
+<h1 id="游戏过程简记"><a href="#游戏过程简记" class="headerlink" title="游戏过程简记"></a>游戏过程简记</h1><h2 id="第1天（夏·周一）"><a href="#第1天（夏·周一）" class="headerlink" title="第1天（夏·周一）"></a>第1天（夏·周一）</h2><p>孩子们一直在地上制造脏乱，但因为Adam没有育儿技能无法管教他们（啊这…）</p>
+<p>第一顿饭是Polaris做的，看起来她挺喜欢烹饪（但只做了4份）Charles快饿死了但没吃到饭</p>
+<p>大家似乎都很喜欢Michael，Jasmine和Micheal的姐弟关系相当不错</p>
+<p>Charles一直在卫生间对着镜子练习辩论，看样子他很适合当个政治家。（后来发现可能是因为他的学术抱负需要辩论等级，第一天直接练到三级。卷王开卷。）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day1-1.PNG"></p>
+<p>Adam抱着Michael走到卫生间上厕所，把Charles赶出去了。迷惑的操作，可能是他打算抱着Michael上楼睡觉，走到一半想上厕所（？）虽然但是，我还是要强调，你把Charles赶出去了，Michael还在厕所里(*´・ｖ・)</p>
+<p>最后Polaris去把Michael抱上床睡觉了（听我说，谢谢你）</p>
+<p>Charles问Adam学校很蠢，能不上学直接工作吗？（别问了，问就是回去上学）</p>
+<p>Sirius问Adam自己在学校和别人因为给什么东西起名（没仔细看）发生了争执，哪个更好？Adam：一样好（经典端水）Sirius对Adam产生情绪：友善的建议者（Adam总会倾听他的问题并给出深思熟虑过的建议）</p>
+<h2 id="第2天（夏·周二）"><a href="#第2天（夏·周二）" class="headerlink" title="第2天（夏·周二）"></a>第2天（夏·周二）</h2><p>Charles在早上六点完成了他的作业。通宵当卷王当的爽吗？</p>
+<p>Sirius不知道什么时候写完了他的作业（兄弟你偷偷卷？）昨天一直看他的状态都是背痛写不了作业&#x2F;玩电脑游戏&#x2F;玩毛绒熊。你到底是什么时候写的作业？？？</p>
+<p>Jasmine昨天中规中矩地写完了作业。其他人都没有完成作业。Ocrea好像写了一半，Polaris一直在做家务，根本没写。</p>
+<p>Adam终于在写稿子了，不记得他什么时候睡过了，睡眠条还是满的。（好神奇哦，到底是什么时候睡过了）</p>
+<p>Sirius在一个人下象棋，Adam在写稿子，其他人都在睡觉。</p>
+<p>Adam结束了他的写稿，获得186模拟币。</p>
+<p>Jasmine的床底下有怪物，Ocrea把Charles和Polaris都叫起来了（虽然但是，Adam就在旁边坐着）Sirius突然怕黑了（可能是因为目睹怪物）</p>
+<p>Ocrea在学校收到了一封情书，可能是新来的学生给她的。选择当面对质，新来的学生说是因为自己没什么朋友，希望Ocrea为此事保密</p>
+<p>Michael真的很好带，哥哥姐姐出门上学的时候他都在睡觉zzz，完全不用操心</p>
+<p>Ocrea在学校认识了多丽丝和哈蒂。</p>
+<p>记录一点校园爱情的开端（你最好是）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-1.PNG"></p>
+<p>Polaris在这写作业，Charles带她玩手机（？）而且天上还在下雨</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-2.PNG"></p>
+<p>Sirius和Jasmine都因为完成家庭作业被老师表扬变成<strong>高度自信</strong>了</p>
+<p>Charles和Sirius都想和彼此做朋友，Ocrea想和Adam做朋友，Michael想和Ocrea做朋友。Polaris想进行浪漫交互，但没说是谁。</p>
+<p>Michael从阁楼上醒了一直在哭，因为床不舒服，昨晚上没睡好。但阁楼上没人，所以决定宝宝玩具熊QAQ. 获得了特征：<strong>讨厌起床</strong>。失去特征健康，获得特征：<strong>过敏</strong>。春天和夏天的时候晚上会呼吸不畅（果然这个环境是没法让人健康的。）</p>
+<p>Micheal通过自言自语升到了语言三级（喂！）然后开始自己跳舞玩（说好的粘人精呢？）</p>
+<p>Polaris问Adam我觉得我已经足够大了，你能像大人一样对我吗？Adam应该会说你永远是我的宝贝。</p>
+<p>Michael一直在阁楼上走来走去和玩玩具熊，我觉得他可能是不会下楼梯（虽然但是，他之前是自己爬上来的）我决定还是让Adam上来看看。不然Michael一直很难过。</p>
+<p>Michael和他的玩具小熊↓</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-3.PNG"></p>
+<p>记录一点校园爱情故事x2</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-4.PNG"></p>
+<p>外面在下雷雨，Adam把Michael一个人扔在阳台上自己下楼了（你小子）</p>
+<p>Polaris不知道是不是刚才在镜子前面练习了一下告白，然后自己觉得很尴尬：我真的能成功吗？（这很Polaris）</p>
+<p>Charles做了完美的蔬菜卷饼</p>
+<p>误会解除，Michael是会自己爬楼梯的。他只是真的很爱玩具熊。太好带了，宝贝。他甚至会自己爬下三楼去吃厨房的剩菜（膝盖还好吗？宝贝）这孩子一直因为雷阵雨很害怕，但一直没在哭（不会是被吓傻了吧）</p>
+<p>截一张很有睡美人感觉的Jasmine姐姐</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-5.PNG"></p>
+<p>妈！（发现Adam带孩子都是把孩子抱起来讲话的，别太宠孩子了）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-6.PNG"></p>
+<p>Michael因为交了一个新朋友很开心，不过通知里并没有显示他和谁成为了朋友。可能是Adam（或者他的熊）目前他和Adam，姐姐Jasmine还有熊都是朋友。</p>
+<p>一直以为Polaris和Charles的关系应该挺不错的，结果发现他们的关系目前只是认识（？）Polaris只和弟弟Sirius是朋友。Ocrea和Sirius不知道为什么都和玩具熊看不顺眼（？？）</p>
+<p>Michael白天一直睡觉，晚上根本睡不着。Adam几次想睡觉，几次被Michael打断施法（泪目）最后他很无语地把Michael抱到阁楼上玩，自己睡觉了（坏消息，他的床也在阁楼上，不过起码不用担心Michael去吵别人了）</p>
+<p>Michael爬下楼把Charles和Ocrea吵起来了（果然不能随便立flag），然后爬上楼去找玩具熊玩（小朋友害人不浅）</p>
+<h2 id="第3天（夏·周三）"><a href="#第3天（夏·周三）" class="headerlink" title="第3天（夏·周三）"></a>第3天（夏·周三）</h2><p>凌晨两点，大家都醒了。</p>
+<p>Ocrea不断制造脏乱又自己拖地之后，莫名其妙成为了<strong>高度自信</strong>（完成了自循环）</p>
+<p>Charles也在镜子前面练习了一下调情，并且陷入和Polaris一样的尴尬：我真的能成功吗？（校园爱情故事继续入股）并且感到脸红和我真是个蠢人（莎士比亚是吧？你们怎么都是些蠢人！）</p>
+<p><strong>Polaris对Charles产生了情绪：亲近</strong>。Polaris真的很感激Charles与她花时间共度美好时光。花时间在一起使得他们更加亲近。但Charles对Polaris并没有特别的感情。</p>
+<p>Polaris，Sirius和Ocrea突然都因为脑海里思绪过多很不舒服（出现了人传人现象）Polaris因为皮肤发红有些不太舒服。</p>
+<p>Charles因对俄罗斯方块一见钟情决定承认自己喜欢玩游戏（喂！）</p>
+<p>Polaris不知道为什么在学校变成了挑逗状态，但设置的状态是好好学习（？）</p>
+<p>学校休息时间，Jasmine画了不合适的画给大家传阅。出于必须鼓励规则，Adam应该会说，我们鼓励创意。</p>
+<p>Jasmine在学校认识了塞西尔和泰瑞沙。</p>
+<p>Ocrea在学校认识了贾思琳</p>
+<p>每个人都被邀请去参加某朋友的生日聚会，除了Sirius。他该怎么办？Adam或许会让他去问问朋友是不是忘记邀请他了。——朋友只是耸耸肩作为回答，并且之后都躲着Sirius。</p>
+<p>Adam写完了童书《老虎不会小憩》（什么怪书）出版。获得了特征：<strong>出乎意料的成功者</strong>（这确实很公主）他们无论是提升技能还是完成任务都比别人更快，但有点儿难和朋友独处</p>
+<p>今天决定让Ocrea和Jasmine各叫一位在学校认识的小朋友来家里玩。Ocrea和新来的小朋友塞西尔聊天，感觉十分无聊。</p>
+<p>Charles和Polaris拥抱了一下，并且用一种好哥们的姿势打招呼（你们到底是什么关系）Polaris从Charles那里学到怎么辨识脂鲤（什么东西？）</p>
+<h2 id="第4天（夏·周四）"><a href="#第4天（夏·周四）" class="headerlink" title="第4天（夏·周四）"></a>第4天（夏·周四）</h2><p>Polaris做了一个白蛋糕放在桌上，短短一晚上Micheal一个人吃了两份。</p>
+<p>突然发现Jasmine的社交已经6级了（怎么做到的）</p>
+<p>Charles在和Michael玩</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day3-1.PNG"></p>
+<p>Ocrea上床睡觉了，坚持不去上学（上学哪有睡觉要紧）看样子我不用操控她逃学，她自己会逃。</p>
+<p>Polaris在学校认识了托米和穆丽尔。</p>
+<p>Jasmine在学校认识了布鲁诺。</p>
+<p>Polaris在学校应该选择更容易的任务取得好成绩还是选更难的任务学到更多？按Polaris的个性应该会选更难的——她得到的成绩不佳，表现略为降低了。</p>
+<p>Polaris和同学在走廊上大家，是应该说让他们自己解决还是没人受伤吗？那很好。感觉Adam会说后一个。</p>
+<p>Michael一直一直在吃蛋糕，爱吃糖的宝宝，不吃糖就会，愤怒。</p>
+<p>Charles的成绩提升了，现在是B级学生。</p>
+<p>索菲亚邀请Sirius加入模范公社俱乐部（Sirius什么时候认识索菲亚的？）随机数说同意。这个俱乐部鼓励对叛徒刻薄；喝咖啡；换装。看起来并不是很适合Sirius的俱乐部…</p>
+<p>截一张Adam小憩的图，感觉Adam…你别说，你真别说，真挺好看的。（兄弟你好香。）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-1.PNG"></p>
+<p>哈蒂约Ocrea去咖啡店（小小年纪就咖啡店约会？这么优雅？）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-2.PNG"></p>
+<p>Polaris做了汉堡蛋糕（这个家没你做饭得散）</p>
+<p>Ocrea问Adam学校有人欺负她的朋友怎么办？Adam应该会鼓励她为朋友挺身而出。</p>
+<h2 id="第5天（夏·周五）"><a href="#第5天（夏·周五）" class="headerlink" title="第5天（夏·周五）"></a>第5天（夏·周五）</h2><p>我决定加入洗衣盆和吸尘器，不然家里的家务太少了没什么挑战性（？）</p>
+<p>Polaris喜欢健身。</p>
+<p>Adam把电脑玩坏了。替换需要700元（有点太贵了）只能维修，希望他不要把自己电死。</p>
+<p>Charles和Adam成为了好朋友（虽然他们俩一个在修电脑一个在看书，但在一个空间怎么不能用意念成为好朋友呢？(￣▽￣)~*哥，你和我在一个房间，一定是爱我。）</p>
+<p>Charles跑到卫生间喷古龙水（你小子怪讲究的嘞）而且他真的很爱俄罗斯方块，我哭死。我想让他写一下加分作业，结果他一直在和Adam聊天。从Adam那里学到了辨识大盖巨脂鲤（他笔记本里有两条鱼，还有一只玻璃梭鲈。到底是哪里学来的啊！）</p>
+<p>Polaris因为泡澡变得非常挑逗（挠头）</p>
+<p>两天前Charles在手机上发消息问Adam怎么了，Polaris给Charles发短信说：“你的风格就是一切，教我怎么像你那样生活。”还有“是先有鸡还是先有蛋，我会告诉你。（是什么冷笑话吗？）”Adam五小时之前发消息说，Charles，我们有空可以出去玩。</p>
+<p>好精彩的短信往来（汗流浃背）</p>
+<p>Charles在社交兔上新增的追随者是79个，Polaris是13个。</p>
+<p>我决定这个周末让大家都去雪山度假。585一天，家庭资金只够住一天（泪目）Polaris来了雪山之后就耳朵疼，可能是太冷了。Michael因为做噩梦一直很难过。Ocrea自己去滑雪了。Jasmine和Michael的家庭关系变成了喜欢互相开玩笑。</p>
+<p>Polaris觉得没人喜欢她。Adam感觉会说我永远爱你。</p>
+<p>Ocrea突然换牙了。Michael发挥了他人见人爱的特性，有个怀孕的陌生人阿姨要教他玩识字卡（虽然他现在因为做噩梦非常难过）</p>
+<p>Sirius也去滑雪了，然后也换牙了。换牙到底和滑雪有什么微妙的联系，还是说Sirius和Ocrea冥冥之中的情侣趋同性（flag+1，要是最后没在一起岂不是很打脸）</p>
+<p>Charles在洗澡，Adam突然进去和他说话。但居然没出现尴尬buff。</p>
+<p>哈蒂约Ocrea去家里玩。这家伙好像是狼人，一来就看见他奶奶正在从狼变成人（好超前的艺术）不知道为什么两个小朋友都很不舒服，Ocrea一直想去长椅上小睡。</p>
+<p>Adam给自己做了一份沙拉。一份…你小子。Polaris又在做蛋糕。她真的很爱蛋糕，我哭死。Michael吃多了糖牙疼了。Charles一直在抱他，不过好像他不是很喜欢Charles抱（可能是因为他手摸过食物有点脏，他现在尴尬了。）</p>
+<p>Charles在教Michael玩识字卡</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day5-1.PNG"></p>
+<p>Adam在手机上发短信问Polaris要不要试着去学吉他？我觉得你可能会喜欢。Adam现在已经有好名声了。</p>
+<p>我决定让Adam带大家去温泉玩一下。虽然现在是午夜十二点。来都来了。</p>
+<p>Charles问Adam说我给别人发消息别人一直没回怎么办？Adam应该会建议再发一次。Charles对Adam现在有了一个特殊感受：友善的建议者。</p>
+<p>Michael一直想和Ocrea开玩笑。满足了一下他的奇想，现在他想和Sirius表示友善了（看样子很喜欢张家姐弟嘛）我决定让他去给Sirius讲个故事（？）</p>
+<p>Charles想和Adam当朋友，然后想和Polaris眺望星空。Polaris一直想解决一个难题（我不知道怎么实现她这个奇想），然后想和一个人约会。不过现在她还没有和别人有浪漫条。Adam想让别人高兴起来，不过没说是谁。Sirius想和Adam当朋友，Jasmine想给弟弟Michael一个拥抱。</p>
+<p>先让Charles和Adam聊聊今天过的怎么样满足第一个奇想好了。不知道为什么Adam刻薄了一下Charles，Charles觉得很受伤。然后Adam还对Charles说谎了一下自己的职业（师傅你是做什么工作的？）Charles上楼喝茶了，他和Adam友善的奇想还是没有完成（为什么啊！！！）</p>
+<p>Charles因为Adam很受伤，要去被子里大哭。（呜呜呜我的宝宝）Adam在社交兔上发动态说：“枕头大战应该是缓解压力的，为什么我这么紧张呢？”Charles立刻私聊他说：“Adam，你怎么了？”（我哭死。）</p>
+<h2 id="第6天（夏·周六）"><a href="#第6天（夏·周六）" class="headerlink" title="第6天（夏·周六）"></a>第6天（夏·周六）</h2><p>结束度假了！Charles回来因为从Adam那里受伤非常愤怒，决定给玩具熊两拳（熊熊——）然后上楼找到玩具熊之后又取消了这种想法。</p>
+<p>Jasmine说别的小朋友不和她玩。Adam应该会说让她试着加入其他小朋友而不是告老师。对Adam产生情绪：友善的建议者。</p>
+<p>Jasmine<strong>喜欢健身</strong>了。并且想要Sirius成为朋友。</p>
+<p>ocrea产生了新的特征：刻薄倾向；害怕失败。</p>
+<p>Adam想要提升写作技能。我让他去写短篇故事。名字叫《矮子的伟大故事》（？）</p>
+<p>有个人（不知道是谁，可能是她在学校认识的朋友）问Polaris要不要去海港玩？随机数说OK。（但不知道为什么没有去成。可能是因为她在和Charles聊天）</p>
+<p>高中舞会开始了。Polaris和Charles都很困。Charles在和杰斯sweetheart dance （不是兄弟你谁啊？）Charles甚至根本不认识这人。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-1.PNG"></p>
+<p>Polaris也在和一个不认识的女生跳舞。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-2.PNG"></p>
+<p>Polaris发动态说：“给你找个像Charles一样的闺蜜，但不能和他合法地生活在一起(?)get you a bestie like him. legit can’t live with them”</p>
+<p>Charles和Polaris都没有成为舞会女王（其实我不知道这个玩法怎么玩）</p>
+<p>Polaris要和Charles一起拍大头贴（so cute）Charles觉得这照拍的很痛苦（？可能是他本来状态就不太好，太困了）Polaris觉得很高兴。她还化了妆。</p>
+<p>超可爱的拍立得，不过拍的时候Polaris好像有点长痘</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-4.PNG"></p>
+<p>有人问Polaris要不要参加after party。随机数说她想参加，还想带朋友。虽然她现在真的很困困困困困困。</p>
+<p>Charles终于完成和Polaris一起眺望星空的奇想了。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-3.PNG"></p>
+<h2 id="第7天（夏·周日）"><a href="#第7天（夏·周日）" class="headerlink" title="第7天（夏·周日）"></a>第7天（夏·周日）</h2><p>Michael和Jasmine的姐弟关系变成不太和谐了。可能是因为刚才Ocrea刻薄了一下他们。（不知道说了什么，难道是挑拨离间）他们姐弟都想和Sirius玩，不过Sirius觉得他们太吵了（喂！）</p>
+<p>Jasmine对Sirius现在有情绪：<strong>不断恶化的怨恨</strong>。泪目了。你们到底聊了什么。Jasmine和Sirius互相大喊大叫了一下（打起来打起来）Sirius觉得很愤怒，Jasmine倒没什么特别的感觉。</p>
+<p>Sirius也有<strong>喜欢刻薄</strong>的特征了。</p>
+<p>不知道是因为什么冲突，Charles没法去上班。先辞职为敬。Charles自己去洗衣服了。在家打工也是打工。</p>
+<p>哈蒂又约Ocrea去他家玩。Ocrea又很困（啊啊啊啊啊，这该死的睡眠条）</p>
+<p>回来之后Adam太困了直接晕倒，但是冰箱还是没修好。</p>
+<p>Adam给Polaris发消息说发明自动纠错的人今天去世了（什么怪新闻分享）</p>
+<p>Charles想给Michael读故事哄他睡觉。</p>
+<p>Polaris多了一个特征，<strong>喜欢咯咯咯地傻笑</strong>。</p>
+<p>Polaris对Sirius的关系也变成<strong>困难</strong>了。并且都对彼此感觉受伤。果然喜欢刻薄害人害己。Sirius不要跟Ocrea学啊！！！</p>
+<p>Charles想和Max聊天（好像是高中舞会认识的一个人），想和Adam淘气。他还是因为被亲近的人伤害特别难过（啊！）明明都已经没有受伤的情绪了。</p>
+<h2 id="第8天（秋·周一）"><a href="#第8天（秋·周一）" class="headerlink" title="第8天（秋·周一）"></a>第8天（秋·周一）</h2><p>Adam在给Michael讲故事</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day8-1.PNG"></p>
+<p>Michael的过敏变成<strong>胃胀气</strong>了，可能是因为他吃多了蛋糕。</p>
+<p>Jasmine的老师发短信说在她抽屉里发现了她给老师的情书（喂！别人放课桌里你怎么会知道啊！）感觉Adam应该会说和她谈谈而不是骂她。</p>
+<p>糟糕，付不起账单。为什么低端税要5k啊！！！</p>
+<p>Adam和Michael成为了好朋友。</p>
+<p>Jasmine邀请安娜贝尔来家里玩。Sirius现在是B级学生了。Charles的朋友托米来家里玩了（真别说这小伙子挺好看的）Ocrea说想成为忍者（挠头）</p>
+<p>让Adam写一本新书，叫做《sims城市英雄:Candid Portraits and Tales》</p>
+<p>Jasmine和Michael成为了好朋友。</p>
+<p>Sirius好像和Jasmine真的很合不来，他们俩一直互相恶作剧。Jasmine现在也<strong>害怕失败</strong>了。Polaris不知道和谁吵架也很生气。</p>
+<p>我希望Charles在大学之前把家里的椅子全修好。看起来是不太可能了。</p>
+<h2 id="第9天（秋·周二）"><a href="#第9天（秋·周二）" class="headerlink" title="第9天（秋·周二）"></a>第9天（秋·周二）</h2><p>Ocrea要去和Charles恶作剧说点禁忌的话（？）Charles觉得很好笑。好了，现在孩子们都开始疯狂互相恶作剧了。</p>
+<p>今天Sirius得了流感，请病假不上学。突然发现Ocrea也没去上学。你为什么不上学！！！</p>
+<p>Charles现在是A级学生了。回来在看爱情小说《心之背叛》（？）</p>
+<p>Polaris莫名其妙问了一下Ocrea叫什么名字（？）</p>
+<p>Charles也<strong>喜欢健身</strong>了。为什么我老觉得他之前就喜欢健身？</p>
+<p>Jasmine一个人在玩弹珠游戏</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-1.PNG"></p>
+<p>托米又来家里找Charles了！开始我还以为托米是男的，她戴礼帽的那个装扮真的很像男的ovo</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-2.PNG"></p>
+<p>Charles想和Adam眺望白云（兄弟你除了看天空没有别的idea吗）</p>
+<p>决定让Charles给家里的厨房洗手池升一下级。</p>
+<h2 id="第10天（秋·周三）"><a href="#第10天（秋·周三）" class="headerlink" title="第10天（秋·周三）"></a>第10天（秋·周三）</h2><p>Adam从Charles那里学会了怎么辨识鲈鱼（？）</p>
+<p>Charles在写作业，Adam过来和他聊天，然后Michael跑过来在两个人中间唱歌，Adam坐立难安地换了两个位置之后，选择把Michael抱起来（你小子是懂争宠的）</p>
+<p>Charles对Adam说：“你真的很有魅力，我希望你意识到这一点。”（男同发言）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day10-1.PNG"></p>
+<p>Adam聊着聊着感觉对Jasmine很受伤，可能是因为Jasmine刻薄他了（自从Ocrea喜欢刻薄别人，我们这个家永无宁日）</p>
+<p>Ocrea和Jasmine一直在吵架（你们干脆打一架吧！！！）</p>
+<p>Charles莫名其妙又很受伤（日常受伤想起受伤的回忆的一人）</p>
+<p>Polaris的学习成绩不太好（可能是因为她一直不想写家庭作业）她应该退学吗？反正Adam肯定不会让她退学的。</p>
+<p>Polaris给Adam发消息说我们有空可以出去玩（什么三角恋故事）</p>
+<p>Adam想去吃饭，走到一楼又被Michael小朋友哭回来了。他想睡觉。</p>
+<p>托米来找Adam玩了。等等，你不用上学吗？Adam了解到托米的特征：有创意。</p>
+<p>Charles请同学塞西尔来家里玩了。这家伙一直试图裸奔，然后到床边上又突然穿上衣服（？)后来发现他是要在床上干点手艺活（？？？）Charles想和塞西尔调情（好超前的艺术）我觉得还是不要了。这人是有点变态在身上的。</p>
+<p>一直有人坐在Jasmine的床上聊天，她根本没法睡觉。呃啊啊啊啊啊。我让她在Polaris的床上睡一会，Michael还把她吵起来了。</p>
+<p>Polaris也不知道为什么觉得很受伤（被Charles传染了？）</p>
+<p>Sirius向Adam问朋友被欺负怎么办？Adam劝他为朋友挺身而出。Sirius现在对Adam有些崇拜。</p>
+<h2 id="第11天（秋·周四）"><a href="#第11天（秋·周四）" class="headerlink" title="第11天（秋·周四）"></a>第11天（秋·周四）</h2><p>今天是Michael的生日！！！（然后卡住了时间倒回礼拜三下午）</p>
+<p>让Charles给Michael洗了个澡，Adam实在是太困了。发现Charles今天早上起来居然长胡子了</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-1.PNG"></p>
+<p>Sirius喜欢愚蠢行为（？？？没关系，傻傻的也很可爱）</p>
+<p>Charles发短信给Polaris说你看起来像只没毛的羊驼（啊？？？）Polaris回了个翻白眼。</p>
+<p>托米发短信给Adam说自己爱上了雅各布。Adam应该会让她试试看。现在他们在一起了。（好好好）</p>
+<p>Michael除了思考都是满级了。一个不擅长思考的小孩。</p>
+<p>Polaris突然很害怕壮志未酬。</p>
+<p>Michael这孩子好像天生长得就很好看（未整容版）。我决定还是把他嘴巴上面的痣取消掉。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-2.PNG"></p>
+<p>他长大了还是那么爱他的小猫，我哭死</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-3.PNG"></p>
+<p>Michael是ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>Jasmine说塞林很有魅力，不过不知道塞林到底是谁的朋友。可能是Polaris的吧。</p>
+<h2 id="第12天（秋·周五）"><a href="#第12天（秋·周五）" class="headerlink" title="第12天（秋·周五）"></a>第12天（秋·周五）</h2><p>Adam不知道为什么突然去指出Michael的缺点，Michael感觉很<strong>受伤</strong>（我们这个家到底是怎么了！）Adam又指出了Charles的缺点（一人给一拳）</p>
+<p>Jasmine现在有好名声了。</p>
+<p>Jasmine不知道和Michael说了什么，Jasmine觉得很尴尬：为什么我要这么说？Michael觉得很生气。Jasmine对Michael有一个<strong>不断恶化的怨恨</strong>。</p>
+<p>Adam不知道为什么对Michael很<strong>崇拜</strong>，因为Michael知道他要做什么，而Adam不知道（？什么小孩哥）今天Michael不用去上学，可能是因为他刚长大。</p>
+<p>今天不知道为什么Charles也不想去上学。Ocrea日常不想上学。</p>
+<p>Adam获得了特征：<strong>欢乐</strong>。</p>
+<p>Michael一直在和Adam聊天，虽然但是，宝宝你该睡觉了。困得要死，但非要聊天。</p>
+<p>Jasmine很<strong>崇拜</strong>Adam。Jasmine真的很喜欢玩弹珠，经常看见她一个人在玩。其实我觉得Ocrea和Sirius有点排挤Jasmine，他们俩和Jasmine的关系都很差。</p>
+<p>托米邀请Charles去她家玩。随机数说去并且带上一位朋友。决定带上Polaris。不知道为什么Polaris一来就情绪失控并且非常愤怒，难道是因为托米是女生（挠头）但是托米不是和雅各布在一起了吗？</p>
+<p>我现在才发现原来通知栏有的时候会提醒我课程表不是自己提醒的，是Charles一直在查课程表（我哭死，他好爱学习）</p>
+<h2 id="第13天（秋·周六）"><a href="#第13天（秋·周六）" class="headerlink" title="第13天（秋·周六）"></a>第13天（秋·周六）</h2><p>Jasmine变得很<strong>叛逆</strong>。她现在变成INFP（调停者）了。诗意，可爱，无私的人（但一直和同龄小伙伴关系不太好）她现在和Ocrea，Sirius都是红条了（我们这个家早晚要散）</p>
+<p>今天决定去乡下旅游。</p>
+<p>Sirius多了一个特征：<strong>黏人</strong>。只有在照料者在一起才感觉安全。</p>
+<p>Adam<strong>喜欢闲聊</strong>。Ocrea和Adam有一个情绪，共度亲密时光。</p>
+<p>Michael对Charles说：你真的很好。+你真的很有趣，我很享受和你在一起的时候，希望你也一样。</p>
+<p>托米约Adam来参加绘画展（我以为是浪漫庆典，挠头）好像就是浪漫庆典。</p>
+<p>一起喝樱花茶，Jasmine把杯子掉茶喷泉里了。</p>
+<p>Adam在画浪漫的画</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day13-1.PNG"></p>
+<p>本来打算通过浪漫庆典来点感情进展，但Polaris太困了，让Adam画完画就直接回来了（等等，好像画没拿回来，啊啊啊啊啊）</p>
+<p>Adam，Charles和Polaris因为喝了樱花茶都有挑逗的状态，Polaris太困睡觉去了，Adam决定自己来点手艺活（？？？）Charles本来打算和Adam聊天，然后取消了去和Michael抱怨不公平的生活（好混乱的关系）Charles对Michael说：你真的太棒了。</p>
+<p>Michael和Adam成为最好的朋友了，Michael对Adam有一个情绪：深深的链接。但不知道为什么Michael突然感觉被Adam深深的伤害了，可能是因为Ocrea在说离开家的事情。</p>
+<h2 id="第14天（冬·周日）"><a href="#第14天（冬·周日）" class="headerlink" title="第14天（冬·周日）"></a>第14天（冬·周日）</h2><p>Ocrea也很崇拜Michael。</p>
+<p>Sirius的奇想里说想和Jasmine做朋友，我决定让他先去给Jasmine道个歉。</p>
+<p>Michael觉得对Jasmine很受伤。突然发现Polaris和Sirius不知道为什么也是红条，而且Polaris感觉对Sirius很受伤（虽然这个情绪已经快降完了）</p>
+<p>企图让Jasmine喝有灵感的药水完成在有灵感状态下画两幅画的抱负要求。不知道为什么画完了但是没有显示完成。</p>
+<p>Polaris给Adam发消息说希望你今天过得好。Charles给Adam分享了一个专辑。</p>
+<h2 id="第15天（冬·周一）"><a href="#第15天（冬·周一）" class="headerlink" title="第15天（冬·周一）"></a>第15天（冬·周一）</h2><p>为了快点完成Ocrea的抱负，决定让她和Sirius多说点话。因为她的友情条和Sirius比较高。Sirius喜欢讨论兴趣爱好。Ocrea对Sirius有了一个崇拜的情绪。Polaris对Charles非常崇拜。</p>
+<p>Sirius和Ocrea一起堆雪人。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-1.PNG"></p>
+<p>突然发现Michael不知道为什么和托米关系不太好（挠头）我以为托米和大家关系都很好。</p>
+<p>抽象雪人</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-2.PNG"></p>
+<p>好好好，今天大家都去上学了。Sirius是A类学生了。</p>
+<p>Charles对Polaris说我很高兴你不觉得我的羊驼笑话太老，你真的很懂我（咯咯咯，发出听见冷笑话的笑声）</p>
+<p>Adam写科幻小说写着写着突然觉得自己喜欢制造东西了（？）</p>
+<p>Michael因为自己和自己下棋没下过感觉不舒服（？）然后又想起被姐姐伤害的事，现在难过了。</p>
+<p>Polaris做饭叫大家来吃了。</p>
+<p>Michael想和Ocrea做朋友，Ocrea想和Jasmine做朋友。Ocrea先和Michael成为了朋友。不知道为什么，Ocrea和Jasmine做朋友真的很难。</p>
+<p>Michael说自己收到了朋友的礼物，应不应该把礼物转赠他人。Adam应该会让他留着礼物。</p>
+<h2 id="第16天（冬·周二）"><a href="#第16天（冬·周二）" class="headerlink" title="第16天（冬·周二）"></a>第16天（冬·周二）</h2><p>小朋友们早上在做学校实践作业。Charles似乎是第一次作业还没写。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day16-1.PNG"></p>
+<p>今天Ocrea和Polaris都不想去上学（喵喵喵？）</p>
+<p>Michael<strong>喜欢开玩笑</strong>。</p>
+<p>刷友好度好难，感觉要晕过去了。难道是我装了什么mod吗？友好度加的超级慢。</p>
+<p>Charles帮Michael写作业了，Charles和Michael成为了好朋友。Michael觉得自己<strong>喜欢感情</strong>。</p>
+<p>Jasmine不喜欢做决定，那太难了。</p>
+<p>Charles在圣诞节礼物里面放了恶作剧礼物（喂！！！）</p>
+<p>Jasmine掉牙了，但是没有得到牙仙证书（奇怪）</p>
+<p>不知道谁把Michael的实践作业踹翻了（啊啊啊啊啊NOOOOOO）坏了，他睡觉起来发现自己的作业被人踢了。</p>
+<h2 id="第17天（冬·周三·圣诞节）"><a href="#第17天（冬·周三·圣诞节）" class="headerlink" title="第17天（冬·周三·圣诞节）"></a>第17天（冬·周三·圣诞节）</h2><p>终于给我们家装上灯和白色地板了。</p>
+<p>Michael不知道为什么真的很生气，然后自己去洗澡了。</p>
+<p>一起装饰圣诞树。圣诞快乐！</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-1.PNG" alt="day17-1"></p>
+<p>不得不说，托米真的很好看。我现在宣布，托米是我们这个家的一份子。</p>
+<p>Ocrea居然要和Michael说你是我的最爱~果然这个家最讨人喜欢的是弟弟。</p>
+<p>sweet hug</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-2.PNG" alt="day17-2"></p>
+<p>Adam从圣诞老人那里得到了一个平板，Charles得到了一个世代灯塔奖（什么东西？），Polaris得到了一幅画，Ocrea得到了一个巨大的三叶虫化石（？）Ocrea居然很喜欢。Jasmine得到了黏土块，Michael得到了泡泡水。Michael特别喜欢泡泡水。圣诞节结束了，但是Sirius还没有得到他的礼物！！！</p>
+<p>让大家一起打开圣诞树下的礼物。Ocrea拿到了一个空盒子。</p>
+<p>Jasmine<strong>喜欢讨论兴趣</strong></p>
+<h2 id="第18天（冬·周四·圣诞节）"><a href="#第18天（冬·周四·圣诞节）" class="headerlink" title="第18天（冬·周四·圣诞节）"></a>第18天（冬·周四·圣诞节）</h2><p>Adam解锁了生活方式：喜欢独处</p>
+<p>Adam好像很喜欢赛琳，他们很契合，并且Adam想和赛琳调情。我觉得可以让他去了解一下赛琳。</p>
+<p>Ocrea选择的特征是物质主义，抱负是连环浪漫。ocrea真的超级瘦。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-3.PNG" alt="day17-3"></p>
+<p>Sirius选择的特征是客观主义，抱负是聪明的大脑。</p>
+<p>Jasmine选择的特征是移动感情的，抱负是主厨。</p>
+<p>突然发现赛琳怀孕了（？？？）难道她已经结婚了？</p>
+<h2 id="第19天（冬·周五）"><a href="#第19天（冬·周五）" class="headerlink" title="第19天（冬·周五）"></a>第19天（冬·周五）</h2><p>Michael掉牙了。</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+        <category>Sims 4</category>
+      </categories>
+      <tags>
+        <tag>自用</tag>
+        <tag>模拟人生4</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>相变理论基础</title>
+    <url>/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h3 id="从气液固开始"><a href="#从气液固开始" class="headerlink" title="从气液固开始"></a>从气液固开始</h3><p>当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。</p>
+<span id="more"></span>
+
+<p>从直观词义上来说，我们知道相变是一种变化，从一种相变成另一种相的物理过程就称之为相变。最常见且令人熟悉的相变现象是水的气液固相变，在一个标准大气压下，100℃时水会汽化成水蒸气（从液态变为气态），而0℃时，液态的水则凝固成固态的冰。</p>
+<p>我们都知道在水沸腾的过程中，锅里的水总是保持在100℃，而在冰融化的过程中，冰水混合物的温度总保持在0℃。实际上，我们可以用这两个温度来为一个简易温度计定标（印象中初中或者高中物理会提到这个小实验）。</p>
+<p>为什么煮沸水的过程中，水明明在被加热却依然保持温度不变？印象中基础物理会这样解释：这部分能量被用于做功，使得水分子从分子间距较近的液态变为分子间距较远的气态。这似乎不太对，但印象中初中老师们似乎确实会这么告诉小朋友。要稍微专业一些来说，这涉及到相变潜热的概念（在下面一节：一阶相变中再说）。毕竟说这些概念什么——光是说到做功我就已经头大了，更别提什么潜热。我们或许可以先谈一些直观的，比如说图一。</p>
+<img src="\images\气液固相变.png" alt="气液固相变" style="zoom:60%;" />
+
+<div style="text-align: center;">图一：气液固相变</div>
+
+<p>图一是一张横坐标是温度纵坐标是压强的图像（废话！），在这张图中我们把气液固三相用不同的颜色标示出来，分别是蓝色的固相，紫色的液相，以及橙色的气相。这些相之间非常泾渭分明，除了最右上角那一块黄昏主题眼影一样的晕染。</p>
+<p>相与相之间的交界线代表相变的发生，这时两相（甚至三相）可以共存，比如说冰水混合物，这些不同的相之间处于一种微妙的平衡状态。而当条件稍稍改变一些，我们的共存体系就会无可挽回地向着单一相的情况发展了。共存体系的条件如此苛刻，以至于我们观察到的系统总是从一种相的极端迅速走向另一种相的极端，也就是相变。</p>
+<p>这里我不得不说，统计学家们对相变如此好奇可能就是因为这些变化非常不稳定而且剧烈。就像蝴蝶振翅，原本平衡的体系会瞬间打破，演变成一场风暴。蝴蝶振翅对人们来说当然算不上什么，但一场风暴就很不妙。</p>
+<p>说回图一，在右上角这个特别的边界模糊处，液相和气相的区别消失了，物质变成了一种超临界流体（听上去很吓人，但只需要知道它是一种液相和气相之间的界限消失，两者无法区分的特殊相就行了）。这东西要详细研究起来非常有趣，可以单独作为一个课题，叫做超临界流体。不过我们在这里只讨论相变——没错，这里也发生了相变。前一种界线分明的相变叫做一阶相变，这里叫做二阶相变，也叫连续相变。</p>
+<h3 id="一阶相变"><a href="#一阶相变" class="headerlink" title="一阶相变"></a>一阶相变</h3><p>物理学家通常会说，一阶相变是指那些涉及潜热的相变（所以潜热到底是什么？）。在这种相变过程中，系统吸收或释放固定的能量（这个能量通常很大），系统的温度随热量的增加而保持不变：系统处于“混合阶段”，其中系统的某些部分已经完成了过渡，而其他部分则没有。比如说在水的蒸发过程中（说通俗点，在烧开水），水温总是维持在100℃不变，而随着加热的进行，越来越多的水转换为水蒸气，锅里的水越来越少了。</p>
+<p>若我们要系统地阐述相变问题，使用“水越来越少”这样的话实在不能令人信服。当我们描述相变时，我们总是需要一些准确的可测量的物理量。比如说我们熟悉的热力学量：温度，压强等等。当我们烧开水时，虽然水的温度并没有变化，但压强却在短期内发生了极为剧烈的改变。</p>
+<p>一阶相变的经典图像是一个阶梯函数，大概长这样：▁|▔（你是懂作图的）虽然一阶相变很好理解也很好观察，但它却很难求得精确解。因为它涉及到相变潜热的问题（非常麻烦）为什么起名叫做潜热（latent heat），据说是因为系统吸热但温度没有上升，吸收的热量不能直接观察到，因此得名潜热，也就是隐藏的热量。在某些基础热力学课本中，潜热也被称之为“焓的变化”。</p>
+<p>我们回到在第一节中提到的，加热过程中吸收的热量到底到哪去了？化学家会说，它用于提高“位能”。当冰熔化成水时，它吸收热量用于打断水分子间的键结，破坏分子间相互作用力。这就是“熔化热”。而当水蒸发为水蒸气时，分子间相互作用力被进一步破坏，这就称之为“汽化热”。（当然我从来不管什么熔化热和汽化热，这段是从别处抄来的。）</p>
+<p>现在。我们大概了解了我们最熟悉的一阶相变，熔化和汽化（反过来作为凝固和液化也是一阶相变）。我们知道了它们从物理学定量描述来看的直观特征，也就是那个阶梯函数。也知道了什么是潜热。有趣的是，一阶相变绝不仅仅存在于热力学，在经典的磁化现象以及复杂网络中也存在相变，这是热力学统计物理的推广，我们只需要把之前讨论的热力学量换成与之相对应的其他物理量，就可以用相同的方式理解其他系统中的相变问题。</p>
+<h3 id="二阶相变"><a href="#二阶相变" class="headerlink" title="二阶相变"></a>二阶相变</h3>]]></content>
+      <categories>
+        <category>物理</category>
+        <category>统计物理</category>
+      </categories>
+      <tags>
+        <tag>相变</tag>
       </tags>
   </entry>
   <entry>
@@ -4688,481 +5163,6 @@
       <tags>
         <tag>小说</tag>
         <tag>兰台不书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模拟人生4-自设孤儿院挑战</title>
-    <url>/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/</url>
-    <content><![CDATA[<h1 id="规则总览"><a href="#规则总览" class="headerlink" title="规则总览"></a>规则总览</h1><p>本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成</p>
-<p>人物寿命需设置为普通</p>
-<p>初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。</p>
-<span id="more"></span>
-
-<p>所有人物（除Adam之外）找到相应工作且完成要求后需搬出原始家庭成为与原始家庭同一地段的租户。</p>
-<p>必须接受所有游戏过程中自动出现的偏好，性格转变及生活方式。</p>
-<p>玩家只能操纵Adam与Charles完成家务。</p>
-<p>玩家可以进行Polaris，Jasmine，Michael，Cacao奇想中的友情&#x2F;浪漫交互，Ocrea可任意与非家庭中的异性进行友情&#x2F;浪漫交互，Adam可任意与其他人物进行亲情交互。除此之外，玩家不得操控其他人物进行友情&#x2F;浪漫交互。</p>
-<p>每个节日假期必须出门旅行</p>
-<p>Ocrea接受所有外出邀请，Jasmine接受所有异性外出邀请，Adam接受所有来自家人的外出邀请，Raven拒绝所有外出邀请，其他外出邀请则通过随机数决定。</p>
-<p> Polaris与Sirius应设置为姐弟关系，Jasmine与Michael应设置为姐弟关系</p>
-<h1 id="人物规则"><a href="#人物规则" class="headerlink" title="人物规则"></a>人物规则</h1><h2 id="1-Adam（吴铮）"><a href="#1-Adam（吴铮）" class="headerlink" title="1 Adam（吴铮）"></a>1 Adam（吴铮）</h2><p>初始年龄：青年</p>
-<p>初始性格特征：秋之子，好人，乐于助人的</p>
-<p>要求：</p>
-<ol>
-<li>赚钱方式只能选择写作&#x2F;绘画，且不得外出工作</li>
-<li>完成畅销作家的全部抱负内容并完成一本人生之书</li>
-<li>对所有儿童都采取鼓励式教育，冷静&#x2F;坚定地告诫（不得使用严厉的告诫），以及拥抱和家人亲吻</li>
-<li>达成写作&#x2F;绘画十级</li>
-<li>在每位家人离开家前为他们绘制一副肖像画</li>
-<li>在所有孩子离开家前与他们成为好朋友</li>
-</ol>
-<h2 id="2-Charles（齐彭殇）"><a href="#2-Charles（齐彭殇）" class="headerlink" title="2 Charles（齐彭殇）"></a>2 Charles（齐彭殇）</h2><p>初始年龄：青少年</p>
-<p>初始性格特征：洁癖，有能力的（青少年）</p>
-<p>要求：</p>
-<ol>
-<li>完成所有作业及加分作业，以A类学生从高中毕业</li>
-<li>在保证A类学生的前提下在学校尽可能多地交朋友</li>
-<li>具有一份青少年兼职并从不缺席</li>
-<li>获得政治学大学学位并完成学术的全部抱负</li>
-<li>具有负责任的奖励特征</li>
-</ol>
-<p>职业：政治家</p>
-<h2 id="3-Polaris（张紫薇）"><a href="#3-Polaris（张紫薇）" class="headerlink" title="3 Polaris（张紫薇）"></a>3 Polaris（张紫薇）</h2><p>初始年龄：青少年</p>
-<p>初始性格特征：天才，夏之子（青少年）</p>
-<p>要求：</p>
-<ol>
-<li>将灵魂伴侣作为终身抱负</li>
-<li>若与Charles具有浪漫关系，则与Charles约会至少一次</li>
-<li>逻辑五级及以上</li>
-</ol>
-<p>职业：特工</p>
-<h2 id="4-Ocrea（高秋）"><a href="#4-Ocrea（高秋）" class="headerlink" title="4 Ocrea（高秋）"></a>4 Ocrea（高秋）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：甜言蜜语（儿童）不愿承诺（青少年）物质主义（青年）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成交际花抱负</li>
-<li>魅力五级及以上</li>
-<li>每次上学都选择交朋友</li>
-<li>加入一个俱乐部并与俱乐部里每位异性发展浪漫关系</li>
-<li>去至少两次夜店</li>
-<li>抱负选择连环浪漫，在搬出家前至少拥有3段感情，若双方浪漫值出现下降，则立刻分手（若与Sirius具有浪漫关系，在离开家前不与Sirius分手）</li>
-</ol>
-<p>职业：商业</p>
-<h2 id="5-Sirius（张狂）"><a href="#5-Sirius（张狂）" class="headerlink" title="5 Sirius（张狂）"></a>5 Sirius（张狂）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：极客（儿童）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>编程五级及以上</li>
-<li>参加一次极客会展并乘坐火箭来到外星</li>
-</ol>
-<p>职业：科技达人</p>
-<h2 id="6-Jasmine（钟不遇）"><a href="#6-Jasmine（钟不遇）" class="headerlink" title="6 Jasmine（钟不遇）"></a>6 Jasmine（钟不遇）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：拘谨的（儿童），难以伺候（青少年），悲伤（青年）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成艺术天才抱负</li>
-<li>烹饪及通灵五级及以上</li>
-<li>至少交五个异性朋友</li>
-<li>若有异性提出交往&#x2F;求婚，则立刻同意</li>
-</ol>
-<p>职业：</p>
-<p>若与他人发展出浪漫关系，则不选择职业，成年后立刻与其结婚，抱负改为欢乐大家庭</p>
-<p>若无浪漫关系，则选择职业为主厨</p>
-<h2 id="7-Michael（钟不惑）"><a href="#7-Michael（钟不惑）" class="headerlink" title="7 Michael（钟不惑）"></a>7 Michael（钟不惑）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：粘人精（幼儿）令人难忘的（儿童）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成艺术天才及调皮蛋抱负（艺术天才优先）</li>
-<li>在离开家前可以与其他人发展浪漫关系，但不与任何人确认成为恋人</li>
-<li>和一个玩偶熊&#x2F;鬼魂成为朋友</li>
-<li>在网络上拥有至少一千位追随者</li>
-<li>魅力及健身三级及以上</li>
-<li>成为二星名人及以上</li>
-</ol>
-<p>职业：模特</p>
-<p><strong>以下家庭成员在Charles及Polaris搬出家庭后搬入：</strong></p>
-<h2 id="8-Lucius（许和光）"><a href="#8-Lucius（许和光）" class="headerlink" title="8 Lucius（许和光）"></a>8 Lucius（许和光）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：独立（幼儿）独行侠（儿童），刻薄，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>小提琴五级及以上</li>
-<li>除Cacao外不与其他任何人成为好朋友</li>
-</ol>
-<p>职业：</p>
-<p>若名声为好&#x2F;中等：医生</p>
-<p>若坏名声大于三级：罪犯</p>
-<h2 id="9-Cacao（周可可）"><a href="#9-Cacao（周可可）" class="headerlink" title="9 Cacao（周可可）"></a>9 Cacao（周可可）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：万人迷（幼儿）欢乐，外向，音乐爱好者，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成交际花及调皮蛋抱负（交际花优先），尝试和床下怪物成为朋友</li>
-<li>加入童子军</li>
-<li>完成世界之友抱负</li>
-<li>吉他五级及以上</li>
-</ol>
-<p>职业：演艺人员</p>
-<h2 id="10-Raven（唐篁）"><a href="#10-Raven（唐篁）" class="headerlink" title="10 Raven（唐篁）"></a>10 Raven（唐篁）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：好奇宝宝（幼儿）古怪，懒惰，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>完成诡奇小镇抱负</li>
-<li>逻辑五级及以上</li>
-</ol>
-<p>职业：警探</p>
-<h1 id="游戏过程特征简记"><a href="#游戏过程特征简记" class="headerlink" title="游戏过程特征简记"></a>游戏过程特征简记</h1><h2 id="1-Adam"><a href="#1-Adam" class="headerlink" title="1 Adam"></a>1 Adam</h2><p>初始设定特征：秋之子，好人，乐于助人的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ESTP（实干家）：聪明，富有活力，极其敏锐的人，享受生活的各个方面，热爱运动</p>
-<p>沉思者：更容易发展精神技能</p>
-<p>发痒：这类模拟人生的身体经常发痒而且无法解决</p>
-<p>+出乎意料的成功者（day3）</p>
-<p>+欢乐：这类模拟市民很容易感到快乐（day12）</p>
-<p>+制造者：这类模拟市民喜欢制作东西（day15）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG"></p>
-<h2 id="2-Charles"><a href="#2-Charles" class="headerlink" title="2 Charles"></a>2 Charles</h2><p>初始设定特征：洁癖，有能力的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ENFP（竞选者）：热情而富有创造力，在写作及艺术方面具有天分</p>
-<p>快速学习者：学习技能更快</p>
-<p>发痒：这类模拟人生的身体经常发痒而且无法解决（被上面那位传染的？？）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/2.PNG"></p>
-<h2 id="3-Polaris"><a href="#3-Polaris" class="headerlink" title="3 Polaris"></a>3 Polaris</h2><p>初始设定特征：天才，夏之子</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ISFJ（守卫者）：具有献身精神与温暖的人，喜欢烹饪，绘画，自然…会支持一切她爱的人的活动和兴趣</p>
-<p>天赐创造力：在写作，艺术，烹饪方面格外有天赋</p>
-<p>迷人的：她在浪漫关系方面比别人更成功（lucky！）</p>
-<p>+喜欢咯咯咯地傻笑（day7）</p>
-<p>+害怕壮志未酬（day11）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/3.PNG"></p>
-<h2 id="4-Ocrea"><a href="#4-Ocrea" class="headerlink" title="4 Ocrea"></a>4 Ocrea</h2><p>初始设定特征：甜言蜜语</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>INFJ（提倡者）：安静，神秘，富有精神力，喜欢文化，读书与听音乐（你最好真的是）</p>
-<p>不太有能力：在每件事上都做得很缓慢（倒霉的随机属性）</p>
-<p>普通自信→高度自信（day3）</p>
-<p>+刻薄倾向：这类模拟市民总是喜欢对别人刻薄（day6）</p>
-<p>害怕失败：当她失去自信时她很容易紧张，容易因为批评或者没拿奖而尴尬（day6）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/4.PNG"></p>
-<h2 id="5-Sirius"><a href="#5-Sirius" class="headerlink" title="5 Sirius"></a>5 Sirius</h2><p>初始设定特征：极客</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>INTJ（建筑师）：图像和直觉思维，擅长给每件事做计划</p>
-<p>不太有能力：在每件事上都做得很缓慢（倒霉x2，但CP就应该整整齐齐）</p>
-<p>背痛：背部疼痛</p>
-<p>普通自信→高度自信（day2）</p>
-<p>+刻薄倾向（day7）</p>
-<p>+黏人，害怕失败（day13）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/5.PNG"></p>
-<h2 id="6-Jasmine"><a href="#6-Jasmine" class="headerlink" title="6 Jasmine"></a>6 Jasmine</h2><p>初始设定特征：拘谨的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ENTJ（总经理）：好的领导者，喜欢社交与运动，集中于他们的职业生涯</p>
-<p>→INFP（调停者）：可爱，诗意，利他主义者。</p>
-<p>普通自信→高度自信（day2）</p>
-<p>+害怕失败（day8）</p>
-<p>+叛逆（day13）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/6.PNG"></p>
-<h2 id="7-Michael"><a href="#7-Michael" class="headerlink" title="7 Michael"></a>7 Michael</h2><p>初始设定特征：粘人精</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>害怕溺水：不知为何他害怕溺水，避免泳池和海洋（Michael在原始人设里确实很怕水，因为到水里会失去五感，我觉得这个设定不是很必要就没有作为初始设定强制加入，结果自己出现了）</p>
-<p>健康：他没有任何身体问题真的很幸运（何止是健康，长大可以去当超人）</p>
-<p>→过敏（day2）→胃胀气（day8）</p>
-<p>小歌唱家：这孩子喜欢随时随地唱歌</p>
-<p>好胃口：他吃的很快，甚至会去吃掉在地板上的食物…他有点被宠坏了（他确实是。喂！不要随便在地上捡垃圾吃啊！）</p>
-<p>+讨厌起床（day2）</p>
-<p>儿童</p>
-<p>+ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
-<p>+高度自信</p>
-<p>+令人难忘的（设定特征）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/7.PNG"></p>
-<h1 id="游戏过程简记"><a href="#游戏过程简记" class="headerlink" title="游戏过程简记"></a>游戏过程简记</h1><h2 id="第1天（夏·周一）"><a href="#第1天（夏·周一）" class="headerlink" title="第1天（夏·周一）"></a>第1天（夏·周一）</h2><p>孩子们一直在地上制造脏乱，但因为Adam没有育儿技能无法管教他们（啊这…）</p>
-<p>第一顿饭是Polaris做的，看起来她挺喜欢烹饪（但只做了4份）Charles快饿死了但没吃到饭</p>
-<p>大家似乎都很喜欢Michael，Jasmine和Micheal的姐弟关系相当不错</p>
-<p>Charles一直在卫生间对着镜子练习辩论，看样子他很适合当个政治家。（后来发现可能是因为他的学术抱负需要辩论等级，第一天直接练到三级。卷王开卷。）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day1-1.PNG"></p>
-<p>Adam抱着Michael走到卫生间上厕所，把Charles赶出去了。迷惑的操作，可能是他打算抱着Michael上楼睡觉，走到一半想上厕所（？）虽然但是，我还是要强调，你把Charles赶出去了，Michael还在厕所里(*´・ｖ・)</p>
-<p>最后Polaris去把Michael抱上床睡觉了（听我说，谢谢你）</p>
-<p>Charles问Adam学校很蠢，能不上学直接工作吗？（别问了，问就是回去上学）</p>
-<p>Sirius问Adam自己在学校和别人因为给什么东西起名（没仔细看）发生了争执，哪个更好？Adam：一样好（经典端水）Sirius对Adam产生情绪：友善的建议者（Adam总会倾听他的问题并给出深思熟虑过的建议）</p>
-<h2 id="第2天（夏·周二）"><a href="#第2天（夏·周二）" class="headerlink" title="第2天（夏·周二）"></a>第2天（夏·周二）</h2><p>Charles在早上六点完成了他的作业。通宵当卷王当的爽吗？</p>
-<p>Sirius不知道什么时候写完了他的作业（兄弟你偷偷卷？）昨天一直看他的状态都是背痛写不了作业&#x2F;玩电脑游戏&#x2F;玩毛绒熊。你到底是什么时候写的作业？？？</p>
-<p>Jasmine昨天中规中矩地写完了作业。其他人都没有完成作业。Ocrea好像写了一半，Polaris一直在做家务，根本没写。</p>
-<p>Adam终于在写稿子了，不记得他什么时候睡过了，睡眠条还是满的。（好神奇哦，到底是什么时候睡过了）</p>
-<p>Sirius在一个人下象棋，Adam在写稿子，其他人都在睡觉。</p>
-<p>Adam结束了他的写稿，获得186模拟币。</p>
-<p>Jasmine的床底下有怪物，Ocrea把Charles和Polaris都叫起来了（虽然但是，Adam就在旁边坐着）Sirius突然怕黑了（可能是因为目睹怪物）</p>
-<p>Ocrea在学校收到了一封情书，可能是新来的学生给她的。选择当面对质，新来的学生说是因为自己没什么朋友，希望Ocrea为此事保密</p>
-<p>Michael真的很好带，哥哥姐姐出门上学的时候他都在睡觉zzz，完全不用操心</p>
-<p>Ocrea在学校认识了多丽丝和哈蒂。</p>
-<p>记录一点校园爱情的开端（你最好是）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-1.PNG"></p>
-<p>Polaris在这写作业，Charles带她玩手机（？）而且天上还在下雨</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-2.PNG"></p>
-<p>Sirius和Jasmine都因为完成家庭作业被老师表扬变成<strong>高度自信</strong>了</p>
-<p>Charles和Sirius都想和彼此做朋友，Ocrea想和Adam做朋友，Michael想和Ocrea做朋友。Polaris想进行浪漫交互，但没说是谁。</p>
-<p>Michael从阁楼上醒了一直在哭，因为床不舒服，昨晚上没睡好。但阁楼上没人，所以决定宝宝玩具熊QAQ. 获得了特征：<strong>讨厌起床</strong>。失去特征健康，获得特征：<strong>过敏</strong>。春天和夏天的时候晚上会呼吸不畅（果然这个环境是没法让人健康的。）</p>
-<p>Micheal通过自言自语升到了语言三级（喂！）然后开始自己跳舞玩（说好的粘人精呢？）</p>
-<p>Polaris问Adam我觉得我已经足够大了，你能像大人一样对我吗？Adam应该会说你永远是我的宝贝。</p>
-<p>Michael一直在阁楼上走来走去和玩玩具熊，我觉得他可能是不会下楼梯（虽然但是，他之前是自己爬上来的）我决定还是让Adam上来看看。不然Michael一直很难过。</p>
-<p>Michael和他的玩具小熊↓</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-3.PNG"></p>
-<p>记录一点校园爱情故事x2</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-4.PNG"></p>
-<p>外面在下雷雨，Adam把Michael一个人扔在阳台上自己下楼了（你小子）</p>
-<p>Polaris不知道是不是刚才在镜子前面练习了一下告白，然后自己觉得很尴尬：我真的能成功吗？（这很Polaris）</p>
-<p>Charles做了完美的蔬菜卷饼</p>
-<p>误会解除，Michael是会自己爬楼梯的。他只是真的很爱玩具熊。太好带了，宝贝。他甚至会自己爬下三楼去吃厨房的剩菜（膝盖还好吗？宝贝）这孩子一直因为雷阵雨很害怕，但一直没在哭（不会是被吓傻了吧）</p>
-<p>截一张很有睡美人感觉的Jasmine姐姐</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-5.PNG"></p>
-<p>妈！（发现Adam带孩子都是把孩子抱起来讲话的，别太宠孩子了）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-6.PNG"></p>
-<p>Michael因为交了一个新朋友很开心，不过通知里并没有显示他和谁成为了朋友。可能是Adam（或者他的熊）目前他和Adam，姐姐Jasmine还有熊都是朋友。</p>
-<p>一直以为Polaris和Charles的关系应该挺不错的，结果发现他们的关系目前只是认识（？）Polaris只和弟弟Sirius是朋友。Ocrea和Sirius不知道为什么都和玩具熊看不顺眼（？？）</p>
-<p>Michael白天一直睡觉，晚上根本睡不着。Adam几次想睡觉，几次被Michael打断施法（泪目）最后他很无语地把Michael抱到阁楼上玩，自己睡觉了（坏消息，他的床也在阁楼上，不过起码不用担心Michael去吵别人了）</p>
-<p>Michael爬下楼把Charles和Ocrea吵起来了（果然不能随便立flag），然后爬上楼去找玩具熊玩（小朋友害人不浅）</p>
-<h2 id="第3天（夏·周三）"><a href="#第3天（夏·周三）" class="headerlink" title="第3天（夏·周三）"></a>第3天（夏·周三）</h2><p>凌晨两点，大家都醒了。</p>
-<p>Ocrea不断制造脏乱又自己拖地之后，莫名其妙成为了<strong>高度自信</strong>（完成了自循环）</p>
-<p>Charles也在镜子前面练习了一下调情，并且陷入和Polaris一样的尴尬：我真的能成功吗？（校园爱情故事继续入股）并且感到脸红和我真是个蠢人（莎士比亚是吧？你们怎么都是些蠢人！）</p>
-<p><strong>Polaris对Charles产生了情绪：亲近</strong>。Polaris真的很感激Charles与她花时间共度美好时光。花时间在一起使得他们更加亲近。但Charles对Polaris并没有特别的感情。</p>
-<p>Polaris，Sirius和Ocrea突然都因为脑海里思绪过多很不舒服（出现了人传人现象）Polaris因为皮肤发红有些不太舒服。</p>
-<p>Charles因对俄罗斯方块一见钟情决定承认自己喜欢玩游戏（喂！）</p>
-<p>Polaris不知道为什么在学校变成了挑逗状态，但设置的状态是好好学习（？）</p>
-<p>学校休息时间，Jasmine画了不合适的画给大家传阅。出于必须鼓励规则，Adam应该会说，我们鼓励创意。</p>
-<p>Jasmine在学校认识了塞西尔和泰瑞沙。</p>
-<p>Ocrea在学校认识了贾思琳</p>
-<p>每个人都被邀请去参加某朋友的生日聚会，除了Sirius。他该怎么办？Adam或许会让他去问问朋友是不是忘记邀请他了。——朋友只是耸耸肩作为回答，并且之后都躲着Sirius。</p>
-<p>Adam写完了童书《老虎不会小憩》（什么怪书）出版。获得了特征：<strong>出乎意料的成功者</strong>（这确实很公主）他们无论是提升技能还是完成任务都比别人更快，但有点儿难和朋友独处</p>
-<p>今天决定让Ocrea和Jasmine各叫一位在学校认识的小朋友来家里玩。Ocrea和新来的小朋友塞西尔聊天，感觉十分无聊。</p>
-<p>Charles和Polaris拥抱了一下，并且用一种好哥们的姿势打招呼（你们到底是什么关系）Polaris从Charles那里学到怎么辨识脂鲤（什么东西？）</p>
-<h2 id="第4天（夏·周四）"><a href="#第4天（夏·周四）" class="headerlink" title="第4天（夏·周四）"></a>第4天（夏·周四）</h2><p>Polaris做了一个白蛋糕放在桌上，短短一晚上Micheal一个人吃了两份。</p>
-<p>突然发现Jasmine的社交已经6级了（怎么做到的）</p>
-<p>Charles在和Michael玩</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day3-1.PNG"></p>
-<p>Ocrea上床睡觉了，坚持不去上学（上学哪有睡觉要紧）看样子我不用操控她逃学，她自己会逃。</p>
-<p>Polaris在学校认识了托米和穆丽尔。</p>
-<p>Jasmine在学校认识了布鲁诺。</p>
-<p>Polaris在学校应该选择更容易的任务取得好成绩还是选更难的任务学到更多？按Polaris的个性应该会选更难的——她得到的成绩不佳，表现略为降低了。</p>
-<p>Polaris和同学在走廊上大家，是应该说让他们自己解决还是没人受伤吗？那很好。感觉Adam会说后一个。</p>
-<p>Michael一直一直在吃蛋糕，爱吃糖的宝宝，不吃糖就会，愤怒。</p>
-<p>Charles的成绩提升了，现在是B级学生。</p>
-<p>索菲亚邀请Sirius加入模范公社俱乐部（Sirius什么时候认识索菲亚的？）随机数说同意。这个俱乐部鼓励对叛徒刻薄；喝咖啡；换装。看起来并不是很适合Sirius的俱乐部…</p>
-<p>截一张Adam小憩的图，感觉Adam…你别说，你真别说，真挺好看的。（兄弟你好香。）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-1.PNG"></p>
-<p>哈蒂约Ocrea去咖啡店（小小年纪就咖啡店约会？这么优雅？）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-2.PNG"></p>
-<p>Polaris做了汉堡蛋糕（这个家没你做饭得散）</p>
-<p>Ocrea问Adam学校有人欺负她的朋友怎么办？Adam应该会鼓励她为朋友挺身而出。</p>
-<h2 id="第5天（夏·周五）"><a href="#第5天（夏·周五）" class="headerlink" title="第5天（夏·周五）"></a>第5天（夏·周五）</h2><p>我决定加入洗衣盆和吸尘器，不然家里的家务太少了没什么挑战性（？）</p>
-<p>Polaris喜欢健身。</p>
-<p>Adam把电脑玩坏了。替换需要700元（有点太贵了）只能维修，希望他不要把自己电死。</p>
-<p>Charles和Adam成为了好朋友（虽然他们俩一个在修电脑一个在看书，但在一个空间怎么不能用意念成为好朋友呢？(￣▽￣)~*哥，你和我在一个房间，一定是爱我。）</p>
-<p>Charles跑到卫生间喷古龙水（你小子怪讲究的嘞）而且他真的很爱俄罗斯方块，我哭死。我想让他写一下加分作业，结果他一直在和Adam聊天。从Adam那里学到了辨识大盖巨脂鲤（他笔记本里有两条鱼，还有一只玻璃梭鲈。到底是哪里学来的啊！）</p>
-<p>Polaris因为泡澡变得非常挑逗（挠头）</p>
-<p>两天前Charles在手机上发消息问Adam怎么了，Polaris给Charles发短信说：“你的风格就是一切，教我怎么像你那样生活。”还有“是先有鸡还是先有蛋，我会告诉你。（是什么冷笑话吗？）”Adam五小时之前发消息说，Charles，我们有空可以出去玩。</p>
-<p>好精彩的短信往来（汗流浃背）</p>
-<p>Charles在社交兔上新增的追随者是79个，Polaris是13个。</p>
-<p>我决定这个周末让大家都去雪山度假。585一天，家庭资金只够住一天（泪目）Polaris来了雪山之后就耳朵疼，可能是太冷了。Michael因为做噩梦一直很难过。Ocrea自己去滑雪了。Jasmine和Michael的家庭关系变成了喜欢互相开玩笑。</p>
-<p>Polaris觉得没人喜欢她。Adam感觉会说我永远爱你。</p>
-<p>Ocrea突然换牙了。Michael发挥了他人见人爱的特性，有个怀孕的陌生人阿姨要教他玩识字卡（虽然他现在因为做噩梦非常难过）</p>
-<p>Sirius也去滑雪了，然后也换牙了。换牙到底和滑雪有什么微妙的联系，还是说Sirius和Ocrea冥冥之中的情侣趋同性（flag+1，要是最后没在一起岂不是很打脸）</p>
-<p>Charles在洗澡，Adam突然进去和他说话。但居然没出现尴尬buff。</p>
-<p>哈蒂约Ocrea去家里玩。这家伙好像是狼人，一来就看见他奶奶正在从狼变成人（好超前的艺术）不知道为什么两个小朋友都很不舒服，Ocrea一直想去长椅上小睡。</p>
-<p>Adam给自己做了一份沙拉。一份…你小子。Polaris又在做蛋糕。她真的很爱蛋糕，我哭死。Michael吃多了糖牙疼了。Charles一直在抱他，不过好像他不是很喜欢Charles抱（可能是因为他手摸过食物有点脏，他现在尴尬了。）</p>
-<p>Charles在教Michael玩识字卡</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day5-1.PNG"></p>
-<p>Adam在手机上发短信问Polaris要不要试着去学吉他？我觉得你可能会喜欢。Adam现在已经有好名声了。</p>
-<p>我决定让Adam带大家去温泉玩一下。虽然现在是午夜十二点。来都来了。</p>
-<p>Charles问Adam说我给别人发消息别人一直没回怎么办？Adam应该会建议再发一次。Charles对Adam现在有了一个特殊感受：友善的建议者。</p>
-<p>Michael一直想和Ocrea开玩笑。满足了一下他的奇想，现在他想和Sirius表示友善了（看样子很喜欢张家姐弟嘛）我决定让他去给Sirius讲个故事（？）</p>
-<p>Charles想和Adam当朋友，然后想和Polaris眺望星空。Polaris一直想解决一个难题（我不知道怎么实现她这个奇想），然后想和一个人约会。不过现在她还没有和别人有浪漫条。Adam想让别人高兴起来，不过没说是谁。Sirius想和Adam当朋友，Jasmine想给弟弟Michael一个拥抱。</p>
-<p>先让Charles和Adam聊聊今天过的怎么样满足第一个奇想好了。不知道为什么Adam刻薄了一下Charles，Charles觉得很受伤。然后Adam还对Charles说谎了一下自己的职业（师傅你是做什么工作的？）Charles上楼喝茶了，他和Adam友善的奇想还是没有完成（为什么啊！！！）</p>
-<p>Charles因为Adam很受伤，要去被子里大哭。（呜呜呜我的宝宝）Adam在社交兔上发动态说：“枕头大战应该是缓解压力的，为什么我这么紧张呢？”Charles立刻私聊他说：“Adam，你怎么了？”（我哭死。）</p>
-<h2 id="第6天（夏·周六）"><a href="#第6天（夏·周六）" class="headerlink" title="第6天（夏·周六）"></a>第6天（夏·周六）</h2><p>结束度假了！Charles回来因为从Adam那里受伤非常愤怒，决定给玩具熊两拳（熊熊——）然后上楼找到玩具熊之后又取消了这种想法。</p>
-<p>Jasmine说别的小朋友不和她玩。Adam应该会说让她试着加入其他小朋友而不是告老师。对Adam产生情绪：友善的建议者。</p>
-<p>Jasmine<strong>喜欢健身</strong>了。并且想要Sirius成为朋友。</p>
-<p>ocrea产生了新的特征：刻薄倾向；害怕失败。</p>
-<p>Adam想要提升写作技能。我让他去写短篇故事。名字叫《矮子的伟大故事》（？）</p>
-<p>有个人（不知道是谁，可能是她在学校认识的朋友）问Polaris要不要去海港玩？随机数说OK。（但不知道为什么没有去成。可能是因为她在和Charles聊天）</p>
-<p>高中舞会开始了。Polaris和Charles都很困。Charles在和杰斯sweetheart dance （不是兄弟你谁啊？）Charles甚至根本不认识这人。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-1.PNG"></p>
-<p>Polaris也在和一个不认识的女生跳舞。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-2.PNG"></p>
-<p>Polaris发动态说：“给你找个像Charles一样的闺蜜，但不能和他合法地生活在一起(?)get you a bestie like him. legit can’t live with them”</p>
-<p>Charles和Polaris都没有成为舞会女王（其实我不知道这个玩法怎么玩）</p>
-<p>Polaris要和Charles一起拍大头贴（so cute）Charles觉得这照拍的很痛苦（？可能是他本来状态就不太好，太困了）Polaris觉得很高兴。她还化了妆。</p>
-<p>超可爱的拍立得，不过拍的时候Polaris好像有点长痘</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-4.PNG"></p>
-<p>有人问Polaris要不要参加after party。随机数说她想参加，还想带朋友。虽然她现在真的很困困困困困困。</p>
-<p>Charles终于完成和Polaris一起眺望星空的奇想了。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-3.PNG"></p>
-<h2 id="第7天（夏·周日）"><a href="#第7天（夏·周日）" class="headerlink" title="第7天（夏·周日）"></a>第7天（夏·周日）</h2><p>Michael和Jasmine的姐弟关系变成不太和谐了。可能是因为刚才Ocrea刻薄了一下他们。（不知道说了什么，难道是挑拨离间）他们姐弟都想和Sirius玩，不过Sirius觉得他们太吵了（喂！）</p>
-<p>Jasmine对Sirius现在有情绪：<strong>不断恶化的怨恨</strong>。泪目了。你们到底聊了什么。Jasmine和Sirius互相大喊大叫了一下（打起来打起来）Sirius觉得很愤怒，Jasmine倒没什么特别的感觉。</p>
-<p>Sirius也有<strong>喜欢刻薄</strong>的特征了。</p>
-<p>不知道是因为什么冲突，Charles没法去上班。先辞职为敬。Charles自己去洗衣服了。在家打工也是打工。</p>
-<p>哈蒂又约Ocrea去他家玩。Ocrea又很困（啊啊啊啊啊，这该死的睡眠条）</p>
-<p>回来之后Adam太困了直接晕倒，但是冰箱还是没修好。</p>
-<p>Adam给Polaris发消息说发明自动纠错的人今天去世了（什么怪新闻分享）</p>
-<p>Charles想给Michael读故事哄他睡觉。</p>
-<p>Polaris多了一个特征，<strong>喜欢咯咯咯地傻笑</strong>。</p>
-<p>Polaris对Sirius的关系也变成<strong>困难</strong>了。并且都对彼此感觉受伤。果然喜欢刻薄害人害己。Sirius不要跟Ocrea学啊！！！</p>
-<p>Charles想和Max聊天（好像是高中舞会认识的一个人），想和Adam淘气。他还是因为被亲近的人伤害特别难过（啊！）明明都已经没有受伤的情绪了。</p>
-<h2 id="第8天（秋·周一）"><a href="#第8天（秋·周一）" class="headerlink" title="第8天（秋·周一）"></a>第8天（秋·周一）</h2><p>Adam在给Michael讲故事</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day8-1.PNG"></p>
-<p>Michael的过敏变成<strong>胃胀气</strong>了，可能是因为他吃多了蛋糕。</p>
-<p>Jasmine的老师发短信说在她抽屉里发现了她给老师的情书（喂！别人放课桌里你怎么会知道啊！）感觉Adam应该会说和她谈谈而不是骂她。</p>
-<p>糟糕，付不起账单。为什么低端税要5k啊！！！</p>
-<p>Adam和Michael成为了好朋友。</p>
-<p>Jasmine邀请安娜贝尔来家里玩。Sirius现在是B级学生了。Charles的朋友托米来家里玩了（真别说这小伙子挺好看的）Ocrea说想成为忍者（挠头）</p>
-<p>让Adam写一本新书，叫做《sims城市英雄:Candid Portraits and Tales》</p>
-<p>Jasmine和Michael成为了好朋友。</p>
-<p>Sirius好像和Jasmine真的很合不来，他们俩一直互相恶作剧。Jasmine现在也<strong>害怕失败</strong>了。Polaris不知道和谁吵架也很生气。</p>
-<p>我希望Charles在大学之前把家里的椅子全修好。看起来是不太可能了。</p>
-<h2 id="第9天（秋·周二）"><a href="#第9天（秋·周二）" class="headerlink" title="第9天（秋·周二）"></a>第9天（秋·周二）</h2><p>Ocrea要去和Charles恶作剧说点禁忌的话（？）Charles觉得很好笑。好了，现在孩子们都开始疯狂互相恶作剧了。</p>
-<p>今天Sirius得了流感，请病假不上学。突然发现Ocrea也没去上学。你为什么不上学！！！</p>
-<p>Charles现在是A级学生了。回来在看爱情小说《心之背叛》（？）</p>
-<p>Polaris莫名其妙问了一下Ocrea叫什么名字（？）</p>
-<p>Charles也<strong>喜欢健身</strong>了。为什么我老觉得他之前就喜欢健身？</p>
-<p>Jasmine一个人在玩弹珠游戏</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-1.PNG"></p>
-<p>托米又来家里找Charles了！开始我还以为托米是男的，她戴礼帽的那个装扮真的很像男的ovo</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-2.PNG"></p>
-<p>Charles想和Adam眺望白云（兄弟你除了看天空没有别的idea吗）</p>
-<p>决定让Charles给家里的厨房洗手池升一下级。</p>
-<h2 id="第10天（秋·周三）"><a href="#第10天（秋·周三）" class="headerlink" title="第10天（秋·周三）"></a>第10天（秋·周三）</h2><p>Adam从Charles那里学会了怎么辨识鲈鱼（？）</p>
-<p>Charles在写作业，Adam过来和他聊天，然后Michael跑过来在两个人中间唱歌，Adam坐立难安地换了两个位置之后，选择把Michael抱起来（你小子是懂争宠的）</p>
-<p>Charles对Adam说：“你真的很有魅力，我希望你意识到这一点。”（男同发言）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day10-1.PNG"></p>
-<p>Adam聊着聊着感觉对Jasmine很受伤，可能是因为Jasmine刻薄他了（自从Ocrea喜欢刻薄别人，我们这个家永无宁日）</p>
-<p>Ocrea和Jasmine一直在吵架（你们干脆打一架吧！！！）</p>
-<p>Charles莫名其妙又很受伤（日常受伤想起受伤的回忆的一人）</p>
-<p>Polaris的学习成绩不太好（可能是因为她一直不想写家庭作业）她应该退学吗？反正Adam肯定不会让她退学的。</p>
-<p>Polaris给Adam发消息说我们有空可以出去玩（什么三角恋故事）</p>
-<p>Adam想去吃饭，走到一楼又被Michael小朋友哭回来了。他想睡觉。</p>
-<p>托米来找Adam玩了。等等，你不用上学吗？Adam了解到托米的特征：有创意。</p>
-<p>Charles请同学塞西尔来家里玩了。这家伙一直试图裸奔，然后到床边上又突然穿上衣服（？)后来发现他是要在床上干点手艺活（？？？）Charles想和塞西尔调情（好超前的艺术）我觉得还是不要了。这人是有点变态在身上的。</p>
-<p>一直有人坐在Jasmine的床上聊天，她根本没法睡觉。呃啊啊啊啊啊。我让她在Polaris的床上睡一会，Michael还把她吵起来了。</p>
-<p>Polaris也不知道为什么觉得很受伤（被Charles传染了？）</p>
-<p>Sirius向Adam问朋友被欺负怎么办？Adam劝他为朋友挺身而出。Sirius现在对Adam有些崇拜。</p>
-<h2 id="第11天（秋·周四）"><a href="#第11天（秋·周四）" class="headerlink" title="第11天（秋·周四）"></a>第11天（秋·周四）</h2><p>今天是Michael的生日！！！（然后卡住了时间倒回礼拜三下午）</p>
-<p>让Charles给Michael洗了个澡，Adam实在是太困了。发现Charles今天早上起来居然长胡子了</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-1.PNG"></p>
-<p>Sirius喜欢愚蠢行为（？？？没关系，傻傻的也很可爱）</p>
-<p>Charles发短信给Polaris说你看起来像只没毛的羊驼（啊？？？）Polaris回了个翻白眼。</p>
-<p>托米发短信给Adam说自己爱上了雅各布。Adam应该会让她试试看。现在他们在一起了。（好好好）</p>
-<p>Michael除了思考都是满级了。一个不擅长思考的小孩。</p>
-<p>Polaris突然很害怕壮志未酬。</p>
-<p>Michael这孩子好像天生长得就很好看（未整容版）。我决定还是把他嘴巴上面的痣取消掉。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-2.PNG"></p>
-<p>他长大了还是那么爱他的小猫，我哭死</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-3.PNG"></p>
-<p>Michael是ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
-<p>Jasmine说塞林很有魅力，不过不知道塞林到底是谁的朋友。可能是Polaris的吧。</p>
-<h2 id="第12天（秋·周五）"><a href="#第12天（秋·周五）" class="headerlink" title="第12天（秋·周五）"></a>第12天（秋·周五）</h2><p>Adam不知道为什么突然去指出Michael的缺点，Michael感觉很<strong>受伤</strong>（我们这个家到底是怎么了！）Adam又指出了Charles的缺点（一人给一拳）</p>
-<p>Jasmine现在有好名声了。</p>
-<p>Jasmine不知道和Michael说了什么，Jasmine觉得很尴尬：为什么我要这么说？Michael觉得很生气。Jasmine对Michael有一个<strong>不断恶化的怨恨</strong>。</p>
-<p>Adam不知道为什么对Michael很<strong>崇拜</strong>，因为Michael知道他要做什么，而Adam不知道（？什么小孩哥）今天Michael不用去上学，可能是因为他刚长大。</p>
-<p>今天不知道为什么Charles也不想去上学。Ocrea日常不想上学。</p>
-<p>Adam获得了特征：<strong>欢乐</strong>。</p>
-<p>Michael一直在和Adam聊天，虽然但是，宝宝你该睡觉了。困得要死，但非要聊天。</p>
-<p>Jasmine很<strong>崇拜</strong>Adam。Jasmine真的很喜欢玩弹珠，经常看见她一个人在玩。其实我觉得Ocrea和Sirius有点排挤Jasmine，他们俩和Jasmine的关系都很差。</p>
-<p>托米邀请Charles去她家玩。随机数说去并且带上一位朋友。决定带上Polaris。不知道为什么Polaris一来就情绪失控并且非常愤怒，难道是因为托米是女生（挠头）但是托米不是和雅各布在一起了吗？</p>
-<p>我现在才发现原来通知栏有的时候会提醒我课程表不是自己提醒的，是Charles一直在查课程表（我哭死，他好爱学习）</p>
-<h2 id="第13天（秋·周六）"><a href="#第13天（秋·周六）" class="headerlink" title="第13天（秋·周六）"></a>第13天（秋·周六）</h2><p>Jasmine变得很<strong>叛逆</strong>。她现在变成INFP（调停者）了。诗意，可爱，无私的人（但一直和同龄小伙伴关系不太好）她现在和Ocrea，Sirius都是红条了（我们这个家早晚要散）</p>
-<p>今天决定去乡下旅游。</p>
-<p>Sirius多了一个特征：<strong>黏人</strong>。只有在照料者在一起才感觉安全。</p>
-<p>Adam<strong>喜欢闲聊</strong>。Ocrea和Adam有一个情绪，共度亲密时光。</p>
-<p>Michael对Charles说：你真的很好。+你真的很有趣，我很享受和你在一起的时候，希望你也一样。</p>
-<p>托米约Adam来参加绘画展（我以为是浪漫庆典，挠头）好像就是浪漫庆典。</p>
-<p>一起喝樱花茶，Jasmine把杯子掉茶喷泉里了。</p>
-<p>Adam在画浪漫的画</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day13-1.PNG"></p>
-<p>本来打算通过浪漫庆典来点感情进展，但Polaris太困了，让Adam画完画就直接回来了（等等，好像画没拿回来，啊啊啊啊啊）</p>
-<p>Adam，Charles和Polaris因为喝了樱花茶都有挑逗的状态，Polaris太困睡觉去了，Adam决定自己来点手艺活（？？？）Charles本来打算和Adam聊天，然后取消了去和Michael抱怨不公平的生活（好混乱的关系）Charles对Michael说：你真的太棒了。</p>
-<p>Michael和Adam成为最好的朋友了，Michael对Adam有一个情绪：深深的链接。但不知道为什么Michael突然感觉被Adam深深的伤害了，可能是因为Ocrea在说离开家的事情。</p>
-<h2 id="第14天（冬·周日）"><a href="#第14天（冬·周日）" class="headerlink" title="第14天（冬·周日）"></a>第14天（冬·周日）</h2><p>Ocrea也很崇拜Michael。</p>
-<p>Sirius的奇想里说想和Jasmine做朋友，我决定让他先去给Jasmine道个歉。</p>
-<p>Michael觉得对Jasmine很受伤。突然发现Polaris和Sirius不知道为什么也是红条，而且Polaris感觉对Sirius很受伤（虽然这个情绪已经快降完了）</p>
-<p>企图让Jasmine喝有灵感的药水完成在有灵感状态下画两幅画的抱负要求。不知道为什么画完了但是没有显示完成。</p>
-<p>Polaris给Adam发消息说希望你今天过得好。Charles给Adam分享了一个专辑。</p>
-<h2 id="第15天（冬·周一）"><a href="#第15天（冬·周一）" class="headerlink" title="第15天（冬·周一）"></a>第15天（冬·周一）</h2><p>为了快点完成Ocrea的抱负，决定让她和Sirius多说点话。因为她的友情条和Sirius比较高。Sirius喜欢讨论兴趣爱好。Ocrea对Sirius有了一个崇拜的情绪。Polaris对Charles非常崇拜。</p>
-<p>Sirius和Ocrea一起堆雪人。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-1.PNG"></p>
-<p>突然发现Michael不知道为什么和托米关系不太好（挠头）我以为托米和大家关系都很好。</p>
-<p>抽象雪人</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-2.PNG"></p>
-<p>好好好，今天大家都去上学了。Sirius是A类学生了。</p>
-<p>Charles对Polaris说我很高兴你不觉得我的羊驼笑话太老，你真的很懂我（咯咯咯，发出听见冷笑话的笑声）</p>
-<p>Adam写科幻小说写着写着突然觉得自己喜欢制造东西了（？）</p>
-<p>Michael因为自己和自己下棋没下过感觉不舒服（？）然后又想起被姐姐伤害的事，现在难过了。</p>
-<p>Polaris做饭叫大家来吃了。</p>
-<p>Michael想和Ocrea做朋友，Ocrea想和Jasmine做朋友。Ocrea先和Michael成为了朋友。不知道为什么，Ocrea和Jasmine做朋友真的很难。</p>
-<p>Michael说自己收到了朋友的礼物，应不应该把礼物转赠他人。Adam应该会让他留着礼物。</p>
-<h2 id="第16天（冬·周二）"><a href="#第16天（冬·周二）" class="headerlink" title="第16天（冬·周二）"></a>第16天（冬·周二）</h2><p>小朋友们早上在做学校实践作业。Charles似乎是第一次作业还没写。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day16-1.PNG"></p>
-<p>今天Ocrea和Polaris都不想去上学（喵喵喵？）</p>
-<p>Michael<strong>喜欢开玩笑</strong>。</p>
-<p>刷友好度好难，感觉要晕过去了。难道是我装了什么mod吗？友好度加的超级慢。</p>
-<p>Charles帮Michael写作业了，Charles和Michael成为了好朋友。Michael觉得自己<strong>喜欢感情</strong>。</p>
-<p>Jasmine不喜欢做决定，那太难了。</p>
-<p>Charles在圣诞节礼物里面放了恶作剧礼物（喂！！！）</p>
-<p>Jasmine掉牙了，但是没有得到牙仙证书（奇怪）</p>
-<p>不知道谁把Michael的实践作业踹翻了（啊啊啊啊啊NOOOOOO）坏了，他睡觉起来发现自己的作业被人踢了。</p>
-<h2 id="第17天（冬·周三·圣诞节）"><a href="#第17天（冬·周三·圣诞节）" class="headerlink" title="第17天（冬·周三·圣诞节）"></a>第17天（冬·周三·圣诞节）</h2><p>终于给我们家装上灯和白色地板了。</p>
-<p>Michael不知道为什么真的很生气，然后自己去洗澡了。</p>
-<p>一起装饰圣诞树。圣诞快乐！</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-1.PNG" alt="day17-1"></p>
-<p>不得不说，托米真的很好看。我现在宣布，托米是我们这个家的一份子。</p>
-<p>Ocrea居然要和Michael说你是我的最爱~果然这个家最讨人喜欢的是弟弟。</p>
-<p>sweet hug</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-2.PNG" alt="day17-2"></p>
-<p>Adam从圣诞老人那里得到了一个平板，Charles得到了一个世代灯塔奖（什么东西？），Polaris得到了一幅画，Ocrea得到了一个巨大的三叶虫化石（？）Ocrea居然很喜欢。Jasmine得到了黏土块，Michael得到了泡泡水。Michael特别喜欢泡泡水。圣诞节结束了，但是Sirius还没有得到他的礼物！！！</p>
-<p>让大家一起打开圣诞树下的礼物。Ocrea拿到了一个空盒子。</p>
-<p>Jasmine<strong>喜欢讨论兴趣</strong></p>
-<h2 id="第18天（冬·周四·圣诞节）"><a href="#第18天（冬·周四·圣诞节）" class="headerlink" title="第18天（冬·周四·圣诞节）"></a>第18天（冬·周四·圣诞节）</h2><p>Adam解锁了生活方式：喜欢独处</p>
-<p>Adam好像很喜欢赛琳，他们很契合，并且Adam想和赛琳调情。我觉得可以让他去了解一下赛琳。</p>
-<p>Ocrea选择的特征是物质主义，抱负是连环浪漫。ocrea真的超级瘦。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-3.PNG" alt="day17-3"></p>
-<p>Sirius选择的特征是客观主义，抱负是聪明的大脑。</p>
-<p>Jasmine选择的特征是移动感情的，抱负是主厨。</p>
-<p>突然发现赛琳怀孕了（？？？）难道她已经结婚了？</p>
-<h2 id="第19天（冬·周五）"><a href="#第19天（冬·周五）" class="headerlink" title="第19天（冬·周五）"></a>第19天（冬·周五）</h2><p>Michael掉牙了。</p>
-]]></content>
-      <categories>
-        <category>自用</category>
-        <category>Sims 4</category>
-      </categories>
-      <tags>
-        <tag>自用</tag>
-        <tag>模拟人生4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>相变理论基础</title>
-    <url>/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h3 id="从气液固开始"><a href="#从气液固开始" class="headerlink" title="从气液固开始"></a>从气液固开始</h3><p>当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。</p>
-<span id="more"></span>
-
-<p>从直观词义上来说，我们知道相变是一种变化，从一种相变成另一种相的物理过程就称之为相变。最常见且令人熟悉的相变现象是水的气液固相变，在一个标准大气压下，100℃时水会汽化成水蒸气（从液态变为气态），而0℃时，液态的水则凝固成固态的冰。</p>
-<p>我们都知道在水沸腾的过程中，锅里的水总是保持在100℃，而在冰融化的过程中，冰水混合物的温度总保持在0℃。实际上，我们可以用这两个温度来为一个简易温度计定标（印象中初中或者高中物理会提到这个小实验）。</p>
-<p>为什么煮沸水的过程中，水明明在被加热却依然保持温度不变？印象中基础物理会这样解释：这部分能量被用于做功，使得水分子从分子间距较近的液态变为分子间距较远的气态。这似乎不太对，但印象中初中老师们似乎确实会这么告诉小朋友。要稍微专业一些来说，这涉及到相变潜热的概念（在下面一节：一阶相变中再说）。毕竟说这些概念什么——光是说到做功我就已经头大了，更别提什么潜热。我们或许可以先谈一些直观的，比如说图一。</p>
-<img src="\images\气液固相变.png" alt="气液固相变" style="zoom:60%;" />
-
-<div style="text-align: center;">图一：气液固相变</div>
-
-<p>图一是一张横坐标是温度纵坐标是压强的图像（废话！），在这张图中我们把气液固三相用不同的颜色标示出来，分别是蓝色的固相，紫色的液相，以及橙色的气相。这些相之间非常泾渭分明，除了最右上角那一块黄昏主题眼影一样的晕染。</p>
-<p>相与相之间的交界线代表相变的发生，这时两相（甚至三相）可以共存，比如说冰水混合物，这些不同的相之间处于一种微妙的平衡状态。而当条件稍稍改变一些，我们的共存体系就会无可挽回地向着单一相的情况发展了。共存体系的条件如此苛刻，以至于我们观察到的系统总是从一种相的极端迅速走向另一种相的极端，也就是相变。</p>
-<p>这里我不得不说，统计学家们对相变如此好奇可能就是因为这些变化非常不稳定而且剧烈。就像蝴蝶振翅，原本平衡的体系会瞬间打破，演变成一场风暴。蝴蝶振翅对人们来说当然算不上什么，但一场风暴就很不妙。</p>
-<p>说回图一，在右上角这个特别的边界模糊处，液相和气相的区别消失了，物质变成了一种超临界流体（听上去很吓人，但只需要知道它是一种液相和气相之间的界限消失，两者无法区分的特殊相就行了）。这东西要详细研究起来非常有趣，可以单独作为一个课题，叫做超临界流体。不过我们在这里只讨论相变——没错，这里也发生了相变。前一种界线分明的相变叫做一阶相变，这里叫做二阶相变，也叫连续相变。</p>
-<h3 id="一阶相变"><a href="#一阶相变" class="headerlink" title="一阶相变"></a>一阶相变</h3><p>物理学家通常会说，一阶相变是指那些涉及潜热的相变（所以潜热到底是什么？）。在这种相变过程中，系统吸收或释放固定的能量（这个能量通常很大），系统的温度随热量的增加而保持不变：系统处于“混合阶段”，其中系统的某些部分已经完成了过渡，而其他部分则没有。比如说在水的蒸发过程中（说通俗点，在烧开水），水温总是维持在100℃不变，而随着加热的进行，越来越多的水转换为水蒸气，锅里的水越来越少了。</p>
-<p>若我们要系统地阐述相变问题，使用“水越来越少”这样的话实在不能令人信服。当我们描述相变时，我们总是需要一些准确的可测量的物理量。比如说我们熟悉的热力学量：温度，压强等等。当我们烧开水时，虽然水的温度并没有变化，但压强却在短期内发生了极为剧烈的改变。</p>
-<p>一阶相变的经典图像是一个阶梯函数，大概长这样：▁|▔（你是懂作图的）虽然一阶相变很好理解也很好观察，但它却很难求得精确解。因为它涉及到相变潜热的问题（非常麻烦）为什么起名叫做潜热（latent heat），据说是因为系统吸热但温度没有上升，吸收的热量不能直接观察到，因此得名潜热，也就是隐藏的热量。在某些基础热力学课本中，潜热也被称之为“焓的变化”。</p>
-<p>我们回到在第一节中提到的，加热过程中吸收的热量到底到哪去了？化学家会说，它用于提高“位能”。当冰熔化成水时，它吸收热量用于打断水分子间的键结，破坏分子间相互作用力。这就是“熔化热”。而当水蒸发为水蒸气时，分子间相互作用力被进一步破坏，这就称之为“汽化热”。（当然我从来不管什么熔化热和汽化热，这段是从别处抄来的。）</p>
-<p>现在。我们大概了解了我们最熟悉的一阶相变，熔化和汽化（反过来作为凝固和液化也是一阶相变）。我们知道了它们从物理学定量描述来看的直观特征，也就是那个阶梯函数。也知道了什么是潜热。有趣的是，一阶相变绝不仅仅存在于热力学，在经典的磁化现象以及复杂网络中也存在相变，这是热力学统计物理的推广，我们只需要把之前讨论的热力学量换成与之相对应的其他物理量，就可以用相同的方式理解其他系统中的相变问题。</p>
-<h3 id="二阶相变"><a href="#二阶相变" class="headerlink" title="二阶相变"></a>二阶相变</h3>]]></content>
-      <categories>
-        <category>物理</category>
-        <category>统计物理</category>
-      </categories>
-      <tags>
-        <tag>相变</tag>
       </tags>
   </entry>
 </search>

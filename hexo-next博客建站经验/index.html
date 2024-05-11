@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="随便堆堆建站技巧 Hexo-next官方帮助文档">
+    <meta name="description" content="随便堆堆建站技巧（适用于next 8.17.0） Hexo-next官方帮助文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-next博客建站经验">
 <meta property="og:url" content="http://example.com/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/index.html">
 <meta property="og:site_name" content="兀孀的个人博客">
-<meta property="og:description" content="随便堆堆建站技巧 Hexo-next官方帮助文档">
+<meta property="og:description" content="随便堆堆建站技巧（适用于next 8.17.0） Hexo-next官方帮助文档">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-11T03:56:33.000Z">
-<meta property="article:modified_time" content="2024-05-11T08:44:18.224Z">
+<meta property="article:modified_time" content="2024-05-11T08:48:11.853Z">
 <meta property="article:author" content="babel">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="hexo">
@@ -240,7 +240,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-05-11 11:56:33 / 修改时间：16:44:18" itemprop="dateCreated datePublished" datetime="2024-05-11T11:56:33+08:00">2024-05-11</time>
+      <time title="创建时间：2024-05-11 11:56:33 / 修改时间：16:48:11" itemprop="dateCreated datePublished" datetime="2024-05-11T11:56:33+08:00">2024-05-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,7 +290,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>随便堆堆建站技巧</p>
+    <div class="post-body" itemprop="articleBody"><p>随便堆堆建站技巧（适用于next 8.17.0）</p>
 <p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
 <span id="more"></span>
 
@@ -304,8 +304,8 @@
 </ol>
 <h2 id="修改主题-x2F-链接-x2F-文本颜色"><a href="#修改主题-x2F-链接-x2F-文本颜色" class="headerlink" title="修改主题&#x2F;链接&#x2F;文本颜色"></a>修改主题&#x2F;链接&#x2F;文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
 <p>修改Color system中的颜色</p>
-<p>链接：link</p>
-<p>按钮：btn</p>
+<p>链接请检索：link</p>
+<p>按钮请检索：btn</p>
 <h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
 <p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -446,7 +446,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"9lidXznOTuex6joEmPWanCah-MdYXbMMI","appKey":"tMUAbiRZIZ3kW6KzBQIsDRZC","serverURLs":"https://9lidxzno.api.lncldglobal.com","placeholder":"请在这里发表评论~","avatar":"identicon","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"path":"/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/","el":"#valine-comments"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"9lidXznOTuex6joEmPWanCah-MdYXbMMI","appKey":"tMUAbiRZIZ3kW6KzBQIsDRZC","serverURLs":"https://9lidxzno.api.lncldglobal.com","placeholder":"请在这里发表评论~","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"path":"/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/","el":"#valine-comments"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
