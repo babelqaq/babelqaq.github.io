@@ -121,41 +121,59 @@
     <content><![CDATA[<p>随便堆堆建站技巧（适用于next 8.17.0）</p>
 <p><a href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
 <span id="more"></span>
+
 <h1 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h1><h2 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h2><p>把图标放进<code>hexo/themes/主题/source/img/</code>里</p>
 <p>在<code>/themes/主题/_config.yml</code>中修改成自己的图标</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
+
 <p>参考链接：</p>
 <ol>
 <li><a href="https://blog.csdn.net/apple_71925917/article/details/135886528">hexo更改网站图标</a></li>
 </ol>
-<h2 id="修改主题-链接-文本颜色"><a href="#修改主题-链接-文本颜色" class="headerlink" title="修改主题/链接/文本颜色"></a>修改主题/链接/文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
+<h2 id="修改主题-x2F-链接-x2F-文本颜色"><a href="#修改主题-x2F-链接-x2F-文本颜色" class="headerlink" title="修改主题&#x2F;链接&#x2F;文本颜色"></a>修改主题&#x2F;链接&#x2F;文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
 <p>修改Color system中的颜色</p>
 <p>链接请检索：link</p>
 <p>按钮请检索：btn</p>
 <h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
 <p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>3.进入next主题下的config配置文件，找到custom file paths，取消对styles的注释</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>4.找到social link对小图标进行修改</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">Lofter:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-lofter</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mail</span> <span class="string">to:填自己的邮箱</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br></pre></td></tr></table></figure>
+
 <p>参考链接：</p>
 <ol>
 <li><a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon</a></li>
-<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235^v43^pc_blog_bottom_relevance_base1&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
+<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235%5Ev43%5Epc_blog_bottom_relevance_base1&spm=1001.2101.3001.4242.1&utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
 </ol>
 <h2 id="浏览文本显示进度"><a href="#浏览文本显示进度" class="headerlink" title="浏览文本显示进度"></a>浏览文本显示进度</h2><p>打开 <code>themes/next/_config.yml</code> ,搜索关键字 <code>scrollpercent</code> ,把 <code>false</code> 改为<code>true</code></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p>然后打开<code>themes/next/_config.yml</code> ,搜索关键字<code>b2t</code> ,把<code>false</code> 改为<code>true</code>，在<code>top</code>按钮上加上进度显示。</p>
 <p>如果想让<code>top</code>按钮显示在底部，把<code>b2t</code>属性设置为<code>false</code>即</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> <span class="attr">b2t:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p>参考链接：</p>
 <ol>
-<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&amp;utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
+<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
 </ol>
-<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
+<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><h2 id="valine"><a href="#valine" class="headerlink" title="valine"></a>valine</h2><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
 <p>valine更新后参量改变，详情参见<a href="https://valine.js.org/avatar.html">valine官方文档</a>，在_config.yml文件下修改参量名称后问题解决。</p>
 <p>评论需要科学上网（泪目）不辛苦，命苦</p>
+<h2 id="waline"><a href="#waline" class="headerlink" title="waline"></a>waline</h2><p>依然被墙了，申请免费域名中</p>
+<p>EU免费域名申请：<a href="https://nic.eu.org/">https://nic.eu.org/</a></p>
+<p>记录一下我的免费域名申请账号编码：JC2663-FREE</p>
+<p>参考文档：</p>
+<ol>
+<li><a href="https://waline.js.org/guide/get-started/">Waline官方文档</a></li>
+<li><a href="https://www.bilibili.com/read/cv24166023/">使用Hexo+NexT8+Waline搭建评论系统</a></li>
+<li><a href="https://lisenhui.cn/tech/create-your-forever-org-domain.html">创建属于你自己的org永久域名</a></li>
+<li><a href="https://lisenhui.cn/blog/use-custom-domain-active-vercel-waline.html">使用自定义域名激活Vercel部署的Waline服务</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/680243696">免费域名注册，轻松拥有您的eu.org域名！！！</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>代码工具</category>
