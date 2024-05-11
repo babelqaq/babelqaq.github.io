@@ -116,6 +116,56 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-next博客建站经验</title>
+    <url>/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</url>
+    <content><![CDATA[<p>随便堆堆建站技巧（适用于next 8.17.0）</p>
+<p><a href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
+<span id="more"></span>
+<h1 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h1><h2 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h2><p>把图标放进<code>hexo/themes/主题/source/img/</code>里</p>
+<p>在<code>/themes/主题/_config.yml</code>中修改成自己的图标</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/apple_71925917/article/details/135886528">hexo更改网站图标</a></li>
+</ol>
+<h2 id="修改主题-链接-文本颜色"><a href="#修改主题-链接-文本颜色" class="headerlink" title="修改主题/链接/文本颜色"></a>修改主题/链接/文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
+<p>修改Color system中的颜色</p>
+<p>链接请检索：link</p>
+<p>按钮请检索：btn</p>
+<h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
+<p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.进入next主题下的config配置文件，找到custom file paths，取消对styles的注释</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>4.找到social link对小图标进行修改</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">Lofter:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-lofter</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mail</span> <span class="string">to:填自己的邮箱</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon</a></li>
+<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235^v43^pc_blog_bottom_relevance_base1&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
+</ol>
+<h2 id="浏览文本显示进度"><a href="#浏览文本显示进度" class="headerlink" title="浏览文本显示进度"></a>浏览文本显示进度</h2><p>打开 <code>themes/next/_config.yml</code> ,搜索关键字 <code>scrollpercent</code> ,把 <code>false</code> 改为<code>true</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>然后打开<code>themes/next/_config.yml</code> ,搜索关键字<code>b2t</code> ,把<code>false</code> 改为<code>true</code>，在<code>top</code>按钮上加上进度显示。</p>
+<p>如果想让<code>top</code>按钮显示在底部，把<code>b2t</code>属性设置为<code>false</code>即</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> <span class="attr">b2t:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&amp;utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
+</ol>
+<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
+<p>valine更新后参量改变，详情参见<a href="https://valine.js.org/avatar.html">valine官方文档</a>，在_config.yml文件下修改参量名称后问题解决。</p>
+<p>评论需要科学上网（泪目）不辛苦，命苦</p>
+]]></content>
+      <categories>
+        <category>代码工具</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为唐氏综合征儿童父母提供的读书笔记(1)：专栏大纲与帮助网站整合</title>
     <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1-%EF%BC%9A%E4%B8%93%E6%A0%8F%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B8%AE%E5%8A%A9%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<p>本专栏笔记，我想从《唐氏综合征儿童的父母指南（The Parent’s Guide to Down Syndrome）》这本书开始，配合壹基金提供的《心智障碍者家庭支持资源手册》（下载二维码在本节最后提供）以及其他网络资料进行笔记的总结整理。《唐氏综合征儿童的父母指南（The Parent’s Guide to Down Syndrome）》这本书在淘宝或是京东可以搜到英文原版书，如果感兴趣的话可以买来看一看。如果想要免费的电子版，这本书也可以在zliabary的国内镜像网站上直接搜索英文书名下载。</p>
@@ -197,62 +247,6 @@
       <tags>
         <tag>唐氏综合征</tag>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-next博客建站经验</title>
-    <url>/hexo-next%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C/</url>
-    <content><![CDATA[<p>随便堆堆建站技巧（适用于next 8.17.0）</p>
-<p><a href="https://theme-next.js.org/docs/">Hexo-next官方帮助文档</a></p>
-<span id="more"></span>
-
-<h1 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h1><h2 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h2><p>把图标放进<code>hexo/themes/主题/source/img/</code>里</p>
-<p>在<code>/themes/主题/_config.yml</code>中修改成自己的图标</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/apple_71925917/article/details/135886528">hexo更改网站图标</a></li>
-</ol>
-<h2 id="修改主题-x2F-链接-x2F-文本颜色"><a href="#修改主题-x2F-链接-x2F-文本颜色" class="headerlink" title="修改主题&#x2F;链接&#x2F;文本颜色"></a>修改主题&#x2F;链接&#x2F;文本颜色</h2><p>打开文件：<code>\themes\next\source\css\_variables\base.styl</code></p>
-<p>修改Color system中的颜色</p>
-<p>链接请检索：link</p>
-<p>按钮请检索：btn</p>
-<h1 id="侧边栏美化"><a href="#侧边栏美化" class="headerlink" title="侧边栏美化"></a>侧边栏美化</h1><h2 id="自定义侧边栏用户社交链接小图标"><a href="#自定义侧边栏用户社交链接小图标" class="headerlink" title="自定义侧边栏用户社交链接小图标"></a>自定义侧边栏用户社交链接小图标</h2><p>1.在<a href="https://www.iconfont.cn/">iconfont</a>下载图标的svg格式</p>
-<p>2.自定义图标格式：在hexo文件夹中，在<code>\source\ _data</code>路径下新建styles.styl文件。 如果没有<code>_data</code>文件夹自行创建。在styles文件中添加如下样式：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">/*</span> <span class="string">sidebar</span> <span class="string">social</span> <span class="string">icon</span> <span class="string">*/</span></span><br><span class="line"><span class="string">.fa-bilibili</span> &#123;</span><br><span class="line">  <span class="attr">background-image:</span> <span class="string">url(&#x27;/images/bilibili.svg&#x27;);</span></span><br><span class="line">  <span class="attr">background-size:</span> <span class="string">1em</span> <span class="string">1em;</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.55</span><span class="string">;</span></span><br><span class="line">  <span class="attr">background-position:</span> <span class="number">0.</span><span class="string">05rem</span> <span class="number">0.</span><span class="string">2rem;</span></span><br><span class="line">  <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">1rem;</span></span><br><span class="line">  <span class="attr">width:</span> <span class="string">1rem;</span> </span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">0rem;</span></span><br><span class="line">  <span class="string">/*鼠标停留在图标上时，图标呈现发光效果*/</span></span><br><span class="line">  <span class="string">&amp;:hover</span> &#123;</span><br><span class="line">      <span class="attr">opacity:</span> <span class="number">1</span><span class="string">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.进入next主题下的config配置文件，找到custom file paths，取消对styles的注释</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>4.找到social link对小图标进行修改</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">Lofter:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-lofter</span></span><br><span class="line">  <span class="attr">Bilibili:</span> <span class="string">填自己的链接</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bilibili</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mail</span> <span class="string">to:填自己的邮箱</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_44634406/article/details/122777058">hexo next 解决自定义侧边栏用户社交链接小图标 custom sidebar social icon</a></li>
-<li><a href="https://blog.csdn.net/lu_embedded/article/details/114181462?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-114181462-blog-122777058.235%5Ev43%5Epc_blog_bottom_relevance_base1&spm=1001.2101.3001.4242.1&utm_relevant_index=3">Hexo + NexT 通过自定义样式添加 Bilibili 图标</a></li>
-</ol>
-<h2 id="浏览文本显示进度"><a href="#浏览文本显示进度" class="headerlink" title="浏览文本显示进度"></a>浏览文本显示进度</h2><p>打开 <code>themes/next/_config.yml</code> ,搜索关键字 <code>scrollpercent</code> ,把 <code>false</code> 改为<code>true</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>然后打开<code>themes/next/_config.yml</code> ,搜索关键字<code>b2t</code> ,把<code>false</code> 改为<code>true</code>，在<code>top</code>按钮上加上进度显示。</p>
-<p>如果想让<code>top</code>按钮显示在底部，把<code>b2t</code>属性设置为<code>false</code>即</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> <span class="attr">b2t:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>参考链接：</p>
-<ol>
-<li><a href="https://blog.csdn.net/weixin_43026567/article/details/104897983?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-104897983-blog-105228168.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=5">hexo博客-next主题美化、配置</a></li>
-</ol>
-<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><p>基于valine的评论框不显示，控制台报错显示valine.main.js:12错误</p>
-<p>valine更新后参量改变，详情参见<a href="https://valine.js.org/avatar.html">valine官方文档</a>，在_config.yml文件下修改参量名称后问题解决。</p>
-]]></content>
-      <categories>
-        <category>代码工具</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -650,6 +644,73 @@
       </tags>
   </entry>
   <entry>
+    <title>为唐氏综合征儿童父母提供的读书笔记(7)：3-5岁</title>
+    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/</url>
+    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>3-5岁的唐宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
+<span id="more"></span>
+
+<h3 id="1-听力"><a href="#1-听力" class="headerlink" title="1.听力"></a>1.听力</h3><p>每年进行一次听觉测试，直至18岁成年。</p>
+<h3 id="2-甲状腺功能"><a href="#2-甲状腺功能" class="headerlink" title="2.甲状腺功能"></a>2.甲状腺功能</h3><p>每年进行一次甲状腺功能检查，直至成年。</p>
+<h3 id="3-心脏"><a href="#3-心脏" class="headerlink" title="3.心脏"></a>3.心脏</h3><p>如果宝宝出生时患有心血管方面的疾病，需要定时复查。</p>
+<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>每1-2年应进行一次视力检查。特别注意白内障、角膜炎、屈光不正。</p>
+<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>每年进行一次牙科检查。</p>
+<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑宝宝存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
+<h2 id="早期干预中的社区参与（融合）"><a href="#早期干预中的社区参与（融合）" class="headerlink" title="早期干预中的社区参与（融合）"></a>早期干预中的社区参与（融合）</h2><p>在上一节中我们谈论到了对孩子们早期家庭教育的一些方面，在这里做一个补充。孩子们要想加强社交沟通能力，进一步切身体会并了解社交规则与生活常识，进行社区参与是最好的方案之一。</p>
+<h3 id="为什么要参与社区？"><a href="#为什么要参与社区？" class="headerlink" title="为什么要参与社区？"></a>为什么要参与社区？</h3><p>1.任何年龄段都需要社区融合</p>
+<p>儿童、青少年需要伙伴和友谊，成年人需要丰富的社会生活，避免一直待在家中导致各方面能力提早退化。支持心智障碍者走向社会，融入社区，有助于提高他们的社会生活能力，更好地在社会中生存。</p>
+<p>2.社区的优势</p>
+<p>社区是一个很好的天然教学场所，孩子可以在父母的引导下、在真实情境中去应用和实践平时学习到的各种技能。</p>
+<p>3.“父母先走出来，孩子才有未来”</p>
+<p>融合首先需要父母打开心结，不刻意对身边人隐瞒孩子的情况，心智障碍孩子的未来，取决于父母是否真正接纳这个孩子。从另一个角度说，一些父母的痛苦根源并不是一个有心智障碍的孩子，而是能否真正接纳。</p>
+<h3 id="如何参与社区"><a href="#如何参与社区" class="headerlink" title="如何参与社区"></a>如何参与社区</h3><p>1.适应社区</p>
+<p>首先要走出家门，了解并使用社区的资源和各种公共设施设备，从附近的小商店、理发店、健身房等场所开始，让心智障碍者可以逐步适应环境，拓展其生活经验,当他们熟悉了社区环境，就会慢慢放松下来，自然地融入社区。</p>
+<p>2.参与井贡献社区</p>
+<p>寻找其他社区参与的机会，如: 家长组织举办的融合活动、社区向居民开放的各类休闲和体育活动等，照护者也可以带孩子一起贡献社区，例如担任垃圾分类等社区事务志愿者等。</p>
+<p>3.社区内部倡导，建构社区支持资源网络</p>
+<p>在社区内为心智障碍者搭建一个良好的融合环境——让社区内常接触的左邻右舍保洁保安都了解到孩子的情况，在有需要的时候，坦诚地告诉别人可以如何支持这个孩子，让社区里的人“看着孩子长大”，他们会通过自己的观察、相处的经历去了解、理解和接纳这样的孩子，逐渐成为自然支持资源。</p>
+<h2 id="幼儿园升小学转衔准备"><a href="#幼儿园升小学转衔准备" class="headerlink" title="幼儿园升小学转衔准备"></a>幼儿园升小学转衔准备</h2><p><strong>时间：</strong>最晚在幼儿园大班的下半年，完成幼儿园升小学转衔计划的制定</p>
+<p><strong>参与人员：</strong>父母、学前与小学普教及特教老师，及医生、治疗师等必要相关专业人员</p>
+<h3 id="为什么需要幼儿园升小学转衔准备？"><a href="#为什么需要幼儿园升小学转衔准备？" class="headerlink" title="为什么需要幼儿园升小学转衔准备？"></a>为什么需要幼儿园升小学转衔准备？</h3><p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/1.PNG"></p>
+<p>（《让残障孩子成为最重要的自己》，P40）</p>
+<h3 id="幼儿园升小学的转衔准备中主要涉及哪些内容？"><a href="#幼儿园升小学的转衔准备中主要涉及哪些内容？" class="headerlink" title="幼儿园升小学的转衔准备中主要涉及哪些内容？"></a>幼儿园升小学的转衔准备中主要涉及哪些内容？</h3><p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/2.PNG"></p>
+<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/3.PNG"></p>
+<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/4.PNG"></p>
+<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/5.PNG"></p>
+<p>（奇色花福利幼儿园，2022；广州市扬爱特殊孩子家长俱乐部；周玲，2022）</p>
+<h2 id="初步择校准备"><a href="#初步择校准备" class="headerlink" title="初步择校准备"></a>初步择校准备</h2><p>在孩子们进入小学阶段之前，家长应该着手初步了解学校方面的相关知识，初步得到几个可以选择的目标小学。</p>
+<h3 id="融合教育是什么？"><a href="#融合教育是什么？" class="headerlink" title="融合教育是什么？"></a>融合教育是什么？</h3><p>融合教育又称全纳教育，由联合国教科文组织在1994年6月于西班牙萨拉曼卡召开的“世界特殊需要教育大会：入学和质量（World Conference on Special Needs Education:Access and Quality）”主题会议上提出。本次大会颁布的《萨拉曼卡宣言》首次提出了融合教育的理念，强调每个人都有受教育的基本权利，提出每个人都有其独特的个性、兴趣、能力和学习需要，学校要接纳全体儿童，并满足他们的特殊教育需要。融合教育将残障视为孩子的特点而非缺陷，教育需要包容与接纳每个孩子的特点，并因材施教。需要注意的是融合教育所提出的“平等”并非让所有孩子接受整齐划一的教育，而是强调包容与接纳。</p>
+<p>融合教育理念的提出使得残障儿童也可以进入普通学校学习，教育需要而非在独立的特殊学校学习。这一教育模式大大加强了孩子们的社会融合度，使得孩子们更有可能在未来脱离父母，进入社会独立社会。</p>
+<p>这一教育理念目前还在普及及逐步实施的过程中，部分普通学校不支持融合教育。孩子们及父母在入学及入学后依然面临诸多挑战。</p>
+<h3 id="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"><a href="#目前唐宝有哪些接受教育的方式？它们的优缺点是什么？" class="headerlink" title="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"></a>目前唐宝有哪些接受教育的方式？它们的优缺点是什么？</h3><p>目前我国唐宝接受教育的方式大体分为四种：</p>
+<ol start="2">
+<li>在普通学校随班就读，与其他同龄非特需学生同校同班</li>
+<li>在普通学校附设特教班，与其他同龄非特需学生同校不同班</li>
+<li>在特殊教育学校就读，与其他同龄非特需学生不同校</li>
+<li>送教上门，在特需学生家中进行教育</li>
+</ol>
+<p>这些教育方式各有利弊，在普通学校随班就读的融合力度最大，理论上更利于孩子融入社会。但随班就读也可能遇到歧视、特殊需求无法解决等问题，需要综合自己孩子的情况进行考量，选择合适的受教育方式。</p>
+<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/6.PNG"></p>
+<h3 id="理论择校原则基础"><a href="#理论择校原则基础" class="headerlink" title="理论择校原则基础"></a>理论择校原则基础</h3><p>理论上以融合为先，现实中结合自身与环境情况综合考量。</p>
+<p>现实中，以唐宝与环境的匹配度最佳为原则。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
+<li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
+<li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
+<li>崔凤鸣，蔡聪，傅高山，许家成(2015)，《让残障孩子成为最重要的自己——给家长的支持手册》，p40</li>
+<li>河南省郑州市管城回族区奇色花福利幼儿园 (2022) ，“幼小衔接”，孩子究竟需要什么?</li>
+<li>周玲 (2020)，心智障碍的发展历程和研究现状，《中国心智障碍者保障状况蓝皮书》，中国社会出版社，p181</li>
+<li>许家成主编(2020)，特殊教育安置概述，《特殊教育概论》，国家开放大学出版社，p47</li>
+</ol>
+]]></content>
+      <categories>
+        <category>唐氏综合征读书笔记</category>
+      </categories>
+      <tags>
+        <tag>唐氏综合征</tag>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为唐氏综合征儿童父母提供的读书笔记(6)：6个月-2岁</title>
     <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-6-%EF%BC%9A6%E4%B8%AA%E6%9C%88-2%E5%B2%81/</url>
     <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>6个月-2岁的宝宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
@@ -708,73 +769,6 @@
 <li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
 <li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
 <li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>唐氏综合征读书笔记</category>
-      </categories>
-      <tags>
-        <tag>唐氏综合征</tag>
-        <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为唐氏综合征儿童父母提供的读书笔记(7)：3-5岁</title>
-    <url>/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/</url>
-    <content><![CDATA[<h2 id="身体检查"><a href="#身体检查" class="headerlink" title="身体检查"></a>身体检查</h2><p>3-5岁的唐宝应该进行的身体检查罗列（有些检查可能在之前提到过，这里对该年龄段做一个归纳总结）</p>
-<span id="more"></span>
-
-<h3 id="1-听力"><a href="#1-听力" class="headerlink" title="1.听力"></a>1.听力</h3><p>每年进行一次听觉测试，直至18岁成年。</p>
-<h3 id="2-甲状腺功能"><a href="#2-甲状腺功能" class="headerlink" title="2.甲状腺功能"></a>2.甲状腺功能</h3><p>每年进行一次甲状腺功能检查，直至成年。</p>
-<h3 id="3-心脏"><a href="#3-心脏" class="headerlink" title="3.心脏"></a>3.心脏</h3><p>如果宝宝出生时患有心血管方面的疾病，需要定时复查。</p>
-<h3 id="4-视力"><a href="#4-视力" class="headerlink" title="4.视力"></a>4.视力</h3><p>每1-2年应进行一次视力检查。特别注意白内障、角膜炎、屈光不正。</p>
-<h3 id="5-牙齿"><a href="#5-牙齿" class="headerlink" title="5.牙齿"></a>5.牙齿</h3><p>每年进行一次牙科检查。</p>
-<h3 id="6-呼吸"><a href="#6-呼吸" class="headerlink" title="6.呼吸"></a>6.呼吸</h3><p>如果怀疑宝宝存在睡眠呼吸暂停，需要及时进行睡眠检查，并转诊至耳鼻喉科医生。</p>
-<h2 id="早期干预中的社区参与（融合）"><a href="#早期干预中的社区参与（融合）" class="headerlink" title="早期干预中的社区参与（融合）"></a>早期干预中的社区参与（融合）</h2><p>在上一节中我们谈论到了对孩子们早期家庭教育的一些方面，在这里做一个补充。孩子们要想加强社交沟通能力，进一步切身体会并了解社交规则与生活常识，进行社区参与是最好的方案之一。</p>
-<h3 id="为什么要参与社区？"><a href="#为什么要参与社区？" class="headerlink" title="为什么要参与社区？"></a>为什么要参与社区？</h3><p>1.任何年龄段都需要社区融合</p>
-<p>儿童、青少年需要伙伴和友谊，成年人需要丰富的社会生活，避免一直待在家中导致各方面能力提早退化。支持心智障碍者走向社会，融入社区，有助于提高他们的社会生活能力，更好地在社会中生存。</p>
-<p>2.社区的优势</p>
-<p>社区是一个很好的天然教学场所，孩子可以在父母的引导下、在真实情境中去应用和实践平时学习到的各种技能。</p>
-<p>3.“父母先走出来，孩子才有未来”</p>
-<p>融合首先需要父母打开心结，不刻意对身边人隐瞒孩子的情况，心智障碍孩子的未来，取决于父母是否真正接纳这个孩子。从另一个角度说，一些父母的痛苦根源并不是一个有心智障碍的孩子，而是能否真正接纳。</p>
-<h3 id="如何参与社区"><a href="#如何参与社区" class="headerlink" title="如何参与社区"></a>如何参与社区</h3><p>1.适应社区</p>
-<p>首先要走出家门，了解并使用社区的资源和各种公共设施设备，从附近的小商店、理发店、健身房等场所开始，让心智障碍者可以逐步适应环境，拓展其生活经验,当他们熟悉了社区环境，就会慢慢放松下来，自然地融入社区。</p>
-<p>2.参与井贡献社区</p>
-<p>寻找其他社区参与的机会，如: 家长组织举办的融合活动、社区向居民开放的各类休闲和体育活动等，照护者也可以带孩子一起贡献社区，例如担任垃圾分类等社区事务志愿者等。</p>
-<p>3.社区内部倡导，建构社区支持资源网络</p>
-<p>在社区内为心智障碍者搭建一个良好的融合环境——让社区内常接触的左邻右舍保洁保安都了解到孩子的情况，在有需要的时候，坦诚地告诉别人可以如何支持这个孩子，让社区里的人“看着孩子长大”，他们会通过自己的观察、相处的经历去了解、理解和接纳这样的孩子，逐渐成为自然支持资源。</p>
-<h2 id="幼儿园升小学转衔准备"><a href="#幼儿园升小学转衔准备" class="headerlink" title="幼儿园升小学转衔准备"></a>幼儿园升小学转衔准备</h2><p><strong>时间：</strong>最晚在幼儿园大班的下半年，完成幼儿园升小学转衔计划的制定</p>
-<p><strong>参与人员：</strong>父母、学前与小学普教及特教老师，及医生、治疗师等必要相关专业人员</p>
-<h3 id="为什么需要幼儿园升小学转衔准备？"><a href="#为什么需要幼儿园升小学转衔准备？" class="headerlink" title="为什么需要幼儿园升小学转衔准备？"></a>为什么需要幼儿园升小学转衔准备？</h3><p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/1.PNG"></p>
-<p>（《让残障孩子成为最重要的自己》，P40）</p>
-<h3 id="幼儿园升小学的转衔准备中主要涉及哪些内容？"><a href="#幼儿园升小学的转衔准备中主要涉及哪些内容？" class="headerlink" title="幼儿园升小学的转衔准备中主要涉及哪些内容？"></a>幼儿园升小学的转衔准备中主要涉及哪些内容？</h3><p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/2.PNG"></p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/3.PNG"></p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/4.PNG"></p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/5.PNG"></p>
-<p>（奇色花福利幼儿园，2022；广州市扬爱特殊孩子家长俱乐部；周玲，2022）</p>
-<h2 id="初步择校准备"><a href="#初步择校准备" class="headerlink" title="初步择校准备"></a>初步择校准备</h2><p>在孩子们进入小学阶段之前，家长应该着手初步了解学校方面的相关知识，初步得到几个可以选择的目标小学。</p>
-<h3 id="融合教育是什么？"><a href="#融合教育是什么？" class="headerlink" title="融合教育是什么？"></a>融合教育是什么？</h3><p>融合教育又称全纳教育，由联合国教科文组织在1994年6月于西班牙萨拉曼卡召开的“世界特殊需要教育大会：入学和质量（World Conference on Special Needs Education:Access and Quality）”主题会议上提出。本次大会颁布的《萨拉曼卡宣言》首次提出了融合教育的理念，强调每个人都有受教育的基本权利，提出每个人都有其独特的个性、兴趣、能力和学习需要，学校要接纳全体儿童，并满足他们的特殊教育需要。融合教育将残障视为孩子的特点而非缺陷，教育需要包容与接纳每个孩子的特点，并因材施教。需要注意的是融合教育所提出的“平等”并非让所有孩子接受整齐划一的教育，而是强调包容与接纳。</p>
-<p>融合教育理念的提出使得残障儿童也可以进入普通学校学习，教育需要而非在独立的特殊学校学习。这一教育模式大大加强了孩子们的社会融合度，使得孩子们更有可能在未来脱离父母，进入社会独立社会。</p>
-<p>这一教育理念目前还在普及及逐步实施的过程中，部分普通学校不支持融合教育。孩子们及父母在入学及入学后依然面临诸多挑战。</p>
-<h3 id="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"><a href="#目前唐宝有哪些接受教育的方式？它们的优缺点是什么？" class="headerlink" title="目前唐宝有哪些接受教育的方式？它们的优缺点是什么？"></a>目前唐宝有哪些接受教育的方式？它们的优缺点是什么？</h3><p>目前我国唐宝接受教育的方式大体分为四种：</p>
-<ol start="2">
-<li>在普通学校随班就读，与其他同龄非特需学生同校同班</li>
-<li>在普通学校附设特教班，与其他同龄非特需学生同校不同班</li>
-<li>在特殊教育学校就读，与其他同龄非特需学生不同校</li>
-<li>送教上门，在特需学生家中进行教育</li>
-</ol>
-<p>这些教育方式各有利弊，在普通学校随班就读的融合力度最大，理论上更利于孩子融入社会。但随班就读也可能遇到歧视、特殊需求无法解决等问题，需要综合自己孩子的情况进行考量，选择合适的受教育方式。</p>
-<p><img src="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-7-%EF%BC%9A3-5%E5%B2%81/6.PNG"></p>
-<h3 id="理论择校原则基础"><a href="#理论择校原则基础" class="headerlink" title="理论择校原则基础"></a>理论择校原则基础</h3><p>理论上以融合为先，现实中结合自身与环境情况综合考量。</p>
-<p>现实中，以唐宝与环境的匹配度最佳为原则。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Jacob J, Sikora M. <em>The Parent’s Guide to down Syndrome</em>. Simon and Schuster; 2015.</li>
-<li>壹基金. 心智障碍者家庭支持资源手册：唐氏综合征[J]. 2022. </li>
-<li>壹基金. 心智障碍者家庭支持资源手册：0-6岁婴幼儿期[J]. 2022. </li>
-<li>崔凤鸣，蔡聪，傅高山，许家成(2015)，《让残障孩子成为最重要的自己——给家长的支持手册》，p40</li>
-<li>河南省郑州市管城回族区奇色花福利幼儿园 (2022) ，“幼小衔接”，孩子究竟需要什么?</li>
-<li>周玲 (2020)，心智障碍的发展历程和研究现状，《中国心智障碍者保障状况蓝皮书》，中国社会出版社，p181</li>
-<li>许家成主编(2020)，特殊教育安置概述，《特殊教育概论》，国家开放大学出版社，p47</li>
 </ol>
 ]]></content>
       <categories>
@@ -896,6 +890,40 @@
       <tags>
         <tag>唐氏综合征</tag>
         <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小说素材收录</title>
+    <url>/%E5%B0%8F%E8%AF%B4%E7%B4%A0%E6%9D%90%E6%94%B6%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
+<span id="more"></span>
+
+<h3 id="水波与折射"><a href="#水波与折射" class="headerlink" title="水波与折射"></a>水波与折射</h3><p>水的折射率与温度密切相关。随着水温的升高，折射率也会发生变化。</p>
+<p>局地对流是指在某一个密闭区域内，由于温度差异而引起的流动。当热水进入杯子时，与周围的相对冷水发生对流，形成了局地对流。这种局地对流一方面加速了热水的冷却，另一方面也导致了温度和折射率的变化。</p>
+<p>在局部对流的区域内，由于温度和折射率的变化，光线的传播路径也发生了改变。具体来说，从高温的热水流向相对较冷的杯底杯壁时，光线被折射，其传播的方向发生改变。这样，在杯子内部形成了两种不同的光线路径，从而产生了两种不同的影子。</p>
+<p>当我们观察热水倒入杯子的过程时，实际上是在观察光线在不同折射率区域中的传播和交错。由于折射率的差异，我们看到了仿佛有两种不同的液体在杯子中流动，并形成了交错的影子。</p>
+<h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h3 id="域界门纲目"><a href="#域界门纲目" class="headerlink" title="域界门纲目"></a>域界门纲目</h3><p>生物用域（Domain）、界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）加以分类。</p>
+<p>种是最基本的分类单位，科是最常用的分类单位</p>
+<p>五界法：原核生物界、原生生物界、菌物界、植物界以及动物界</p>
+<p>十界法：</p>
+<p>未专属域：1.病毒界（Euvirus）2.亚病毒因子（Subvirus）：包括类病毒viroid、朊病毒prion、拟病毒virusoid</p>
+<p>古菌域：3.古细菌界(paleobacterial)</p>
+<p>细菌域：4.细菌界(bacterial)</p>
+<p>真核生物域：5.囊泡藻界(vesicular alga)、6.古虫界(paleosphere)、7.有孔虫界(foramanifera)、8.真菌界(fungus)、9.植物界(Plantae)、10.动物界(animal)</p>
+<h3 id="蚁后"><a href="#蚁后" class="headerlink" title="蚁后"></a>蚁后</h3><p>工蚁，兵蚁，雄蚁，公主蚁</p>
+<p>当巢穴发展到一定的规模后，蚁后发出指令让公主蚁飞出巢穴。同时，远超公主蚁数量的大群雄蚁会追随她们飞出巢穴。这一过程大概是每年一次。    </p>
+<p> 飞出巢穴的公主蚁会在飞行中遇到雄蚁的追求。公主蚁此时会轮番和每只雄蚁进行空中交欢（婚飞），然后在身体中储存足够一生使用的精子，而雄蚁则会死亡</p>
+<p>携带了大量精子的公主蚁会降落在地面上，脱去翅膀，选择树缝或者洞穴中开始产第一批卵，建造新的蚁巢，而她也就成为了这个蚁巢的女王。</p>
+<p>单后和多后的蚂蚁巢群在非常多方面都有不同，不同的物种的蚁后数量差异是由不同的遗传机制造成的，这里我只简单讲红火蚁，相对于多后型的蚁后，单后型的蚁后 - 新后脂肪储量更大，婚飞的时候飞得更高更远，多倾向于入侵新领域建巢，由于她们脂肪储量更大，建巢的存活率更高（多后型的蚁后更倾向于加入已经成熟的多后蚁巢），单后型的蚁后寿命也被认为更长；然后相对来说，单后型的工蚁 -  体型更大，更具有攻击性和领域性；单后型的蚁巢的土堆形态更集中，更“高尖”，蚁巢与蚁巢之间距离更大，一般有个十米左右；在繁殖季节，单后型的巢群繁殖蚁后代的比例更高，多后型的巢群工蚁的比例更高。但是在一个地方，多后型的蚁巢通常能把单后的竞争排除掉，因为工蚁数量更多，多后蚁巢之间是”supercolony”姐妹关系，蚁巢寿命更持久(能不断有新的蚁后加入)。暂时想到那么多。</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+        <category>小说设定</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>素材</tag>
+        <tag>自用</tag>
       </tags>
   </entry>
   <entry>
@@ -2250,40 +2278,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小说素材收录</title>
-    <url>/%E5%B0%8F%E8%AF%B4%E7%B4%A0%E6%9D%90%E6%94%B6%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="科学类"><a href="#科学类" class="headerlink" title="科学类"></a>科学类</h1><h2 id="物理学"><a href="#物理学" class="headerlink" title="物理学"></a>物理学</h2><h3 id="回旋陀螺"><a href="#回旋陀螺" class="headerlink" title="回旋陀螺"></a>回旋陀螺</h3><p>回旋陀螺，又称凯尔特石头，是一个半椭圆形的陀螺．它会往特定的方向旋转；但是，当被往反方向转时，它会变得不稳定，摇晃，停止，然后又变换往原来特定的方向旋转。</p>
-<span id="more"></span>
-
-<h3 id="水波与折射"><a href="#水波与折射" class="headerlink" title="水波与折射"></a>水波与折射</h3><p>水的折射率与温度密切相关。随着水温的升高，折射率也会发生变化。</p>
-<p>局地对流是指在某一个密闭区域内，由于温度差异而引起的流动。当热水进入杯子时，与周围的相对冷水发生对流，形成了局地对流。这种局地对流一方面加速了热水的冷却，另一方面也导致了温度和折射率的变化。</p>
-<p>在局部对流的区域内，由于温度和折射率的变化，光线的传播路径也发生了改变。具体来说，从高温的热水流向相对较冷的杯底杯壁时，光线被折射，其传播的方向发生改变。这样，在杯子内部形成了两种不同的光线路径，从而产生了两种不同的影子。</p>
-<p>当我们观察热水倒入杯子的过程时，实际上是在观察光线在不同折射率区域中的传播和交错。由于折射率的差异，我们看到了仿佛有两种不同的液体在杯子中流动，并形成了交错的影子。</p>
-<h2 id="生物学"><a href="#生物学" class="headerlink" title="生物学"></a>生物学</h2><h3 id="域界门纲目"><a href="#域界门纲目" class="headerlink" title="域界门纲目"></a>域界门纲目</h3><p>生物用域（Domain）、界（Kingdom）、门（Phylum）、纲（Class）、目（Order）、科（Family）、属（Genus）、种（Species）加以分类。</p>
-<p>种是最基本的分类单位，科是最常用的分类单位</p>
-<p>五界法：原核生物界、原生生物界、菌物界、植物界以及动物界</p>
-<p>十界法：</p>
-<p>未专属域：1.病毒界（Euvirus）2.亚病毒因子（Subvirus）：包括类病毒viroid、朊病毒prion、拟病毒virusoid</p>
-<p>古菌域：3.古细菌界(paleobacterial)</p>
-<p>细菌域：4.细菌界(bacterial)</p>
-<p>真核生物域：5.囊泡藻界(vesicular alga)、6.古虫界(paleosphere)、7.有孔虫界(foramanifera)、8.真菌界(fungus)、9.植物界(Plantae)、10.动物界(animal)</p>
-<h3 id="蚁后"><a href="#蚁后" class="headerlink" title="蚁后"></a>蚁后</h3><p>工蚁，兵蚁，雄蚁，公主蚁</p>
-<p>当巢穴发展到一定的规模后，蚁后发出指令让公主蚁飞出巢穴。同时，远超公主蚁数量的大群雄蚁会追随她们飞出巢穴。这一过程大概是每年一次。    </p>
-<p> 飞出巢穴的公主蚁会在飞行中遇到雄蚁的追求。公主蚁此时会轮番和每只雄蚁进行空中交欢（婚飞），然后在身体中储存足够一生使用的精子，而雄蚁则会死亡</p>
-<p>携带了大量精子的公主蚁会降落在地面上，脱去翅膀，选择树缝或者洞穴中开始产第一批卵，建造新的蚁巢，而她也就成为了这个蚁巢的女王。</p>
-<p>单后和多后的蚂蚁巢群在非常多方面都有不同，不同的物种的蚁后数量差异是由不同的遗传机制造成的，这里我只简单讲红火蚁，相对于多后型的蚁后，单后型的蚁后 - 新后脂肪储量更大，婚飞的时候飞得更高更远，多倾向于入侵新领域建巢，由于她们脂肪储量更大，建巢的存活率更高（多后型的蚁后更倾向于加入已经成熟的多后蚁巢），单后型的蚁后寿命也被认为更长；然后相对来说，单后型的工蚁 -  体型更大，更具有攻击性和领域性；单后型的蚁巢的土堆形态更集中，更“高尖”，蚁巢与蚁巢之间距离更大，一般有个十米左右；在繁殖季节，单后型的巢群繁殖蚁后代的比例更高，多后型的巢群工蚁的比例更高。但是在一个地方，多后型的蚁巢通常能把单后的竞争排除掉，因为工蚁数量更多，多后蚁巢之间是”supercolony”姐妹关系，蚁巢寿命更持久(能不断有新的蚁后加入)。暂时想到那么多。</p>
-]]></content>
-      <categories>
-        <category>自用</category>
-        <category>小说设定</category>
-      </categories>
-      <tags>
-        <tag>小说</tag>
-        <tag>素材</tag>
-        <tag>自用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>无限流小说设（3）</title>
     <url>/%E6%97%A0%E9%99%90%E6%B5%81%E5%B0%8F%E8%AF%B4%E8%AE%BE%EF%BC%883%EF%BC%89/</url>
     <content><![CDATA[<h1 id="新月学会（Jaunatis-Acad）"><a href="#新月学会（Jaunatis-Acad）" class="headerlink" title="新月学会（Jaunatis Acad）"></a>新月学会（Jaunatis Acad）</h1><h3 id="身份构成"><a href="#身份构成" class="headerlink" title="身份构成"></a>身份构成</h3><span id="more"></span>
@@ -2401,664 +2395,6 @@
       <tags>
         <tag>小说</tag>
         <tag>自用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>李杨定理</title>
-    <url>/%E6%9D%8E%E6%9D%A8%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<p>要想了解李杨定理，首先我们可以撇去那些乱七八糟的数学推导不管，唯象地简单了解一下李杨定理到底提出了什么问题，或者说解决了什么问题？</p>
-<p>李杨定理用于解决相变问题，是相变理论的重要组成部分。通过对李杨零点的测定或者计算（李杨零点的概念我们稍后再谈，现在你只需要知道它是一个复平面上的零点），我们可以找到系统的相变点甚至确定在这一点到底是发生了一阶相变还是二阶相变。</p>
-<span id="more"></span>
-
-<p>在李杨定理提出之前，当我们需要研究相变问题时，我们可以尝试直接求出系统热力学量的精确解（不得不说，这非常麻烦，甚至经常找不到解）。或者用朗道的相变理论，尝试找出自由能（或者说热力学势）的不可导点，从而找出相变点。这个方法比上一个稍好一些，因为它把研究的重点从热力学量变成了热力学量的一阶导。李杨定理提出了更加本质的方法，也就是研究配分函数。自由能可以表述为一个与配分函数相关的自然对数函数，当自由能不可导时，配分函数为0.将配分函数的这些零点都画在复平面上，就是我们所说的李杨零。李杨零点对应的，就是我们要找的相变点。</p>
-<h3 id="李杨定理"><a href="#李杨定理" class="headerlink" title="李杨定理"></a>李杨定理</h3><p>李政道与杨振宁在1952年的著名论文（Statistical theory of equations of state and phase transitions. I. Theory of condensation）中提出李杨定理的前两条：</p>
-<blockquote>
-<p>Th. 1    对所有的正实数逸度z，当系统处于热力学极限情况下时，$V^{-1} \ln \Xi$（$\Xi$是配分函数）的极限存在，且极限函数是z的连续、单调递增函数，与容器的形状无关（除非容器的形状特别奇怪，使得容器的表面积增加得比$V^{2&#x2F;3}$还快）</p>
-</blockquote>
-<blockquote>
-<p>Th. 2    若在z的复平面中，包含一段正实轴的区域R内不包含$\Xi&#x3D;0$的根，则对区域R中的各z，极限<br>$$<br>\lim _{V \rightarrow \infty} V^{-1} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1} \frac{\partial}{\partial \ln z} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1}\left(\frac{\partial}{\partial \ln z}\right)^{2} \ln \Xi \cdots<br>$$<br>均存在，它们是z的解析函数，且在R中$\frac{\partial }{\partial \ln{z} } $与$\lim _{V \rightarrow \infty}$互易<br>$$<br>\lim _{V \rightarrow \infty}\left(\frac{\partial}{\partial \ln z} V^{-1} \ln \Xi\right)&#x3D;\frac{\partial}{\partial \ln z}\left(\lim _{V \rightarrow \infty} V^{-1} \ln \Xi\right)<br>$$</p>
-</blockquote>
-<p>Th. 1提出在z的复平面上，不论正实轴上是否存在零点，$\lim _{V \rightarrow \infty} V^{-1} \ln \Xi$永远存在且是一个&#x3D;&#x3D;连续的&#x3D;&#x3D;单调递增函数。从物理学上来说，$V^{-1} \ln \Xi$可以理解为自由能F或者热力学势。</p>
-<p>Th. 2则说明，当区域R内正实轴上不存在零点时，相变不存在。在Th.2中解释说，$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$是自由能的一阶导，它们一般是一些我们熟悉的热力学量。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$存在极限时，自由能可导。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) ^2\ln \Xi$存在极限时，热力学量也可导。我们知道可导必然连续，则热力学量不存在奇点。奇点不存在时，相变也不存在。</p>
-<p>当正实轴上存在零点时，根据Th.1我们知道自由能F连续，但根据Th.2，自由能不可导，因此热力学量在这一点存在一个奇点，也就是相变点。根据我们对于相变的特征论述，我们知道这是一阶相变。若想直观地了解这些图像，我们可以查看图一。</p>
-<img src="/李杨定理1.png" style="zoom:60%;" />
-
-<div style="text-align: center;">图一</div>
-
-<p>图一(a)展示的是逸度z的复平面下李杨零点的分布，我们可以在图中找到两个位于正实轴上的李杨零点（t<del>1</del>,t<del>2</del>），在这两点系统发生相变。为什么要找正实轴上的李杨零点呢？因为我们知道现实世界中的物理量是不可能为虚数或者复数的，当这些值为虚数或者复数时，我们称它们为“非物理的”。只有正实轴上的李杨零点才对我们有意义。</p>
-<p>我们将该系统的配分函数带入自由能的表达式得到图一(b)，在这幅图中纵坐标是p而不是我们熟悉的F，是因为它代表的是热力学势（thermodynamic potential）。在本文中我会把自由能和热力学势混用（这是个口语习惯问题）。可以发现在李杨零点对应点，热力学势是不可导的，它是个折点，左右两边的斜率明显不一致。</p>
-<p>至于图一(c)则展现了李杨零点对应点与热力学量的关系，这里很明显地产生了相变，且是典型的一阶相变。而图(d)则展示了温度体积不变时，气体物质的量υ与热力学势p的关系。随着物质的量增大，热力学势p出现了两个平台期，此时发生相变，系统处于两相共存的状态。</p>
-<h3 id="李杨定理的数学推导（硬球模型）"><a href="#李杨定理的数学推导（硬球模型）" class="headerlink" title="李杨定理的数学推导（硬球模型）"></a>李杨定理的数学推导（硬球模型）</h3><p>在讨论李杨定理的严格数学推导时，李杨的原文采用了一个理想的硬球模型假设。设一个有相互作用的单原子气体系统，每个气体分子都可以看做直径为a的硬球，$u\left(r_{i j}\right)$是两体相互作用势，只受以下条件约束：<br>$$<br>\left{\begin{array}{ll}<br>u\left(r_{i j}\right)&#x3D;+\infty &amp; \text { 当 } r \leq a \<br>-u_{0}&lt;u_{r}&lt;0 &amp; \text { 当 } a&lt;r&lt;r_{0} \<br>u_{r}&#x3D;0 &amp; \text { 当 } r \geq r_{0}<br>\end{array}\right.<br>$$<br>系统的总势能为两粒子相互作用势能之和：<br>$$<br>U&#x3D;\sum u\left(r_{i j}\right)(i&lt;j)<br>$$<br>李杨在巨正则系综下讨论这个问题（不过我们知道热力学极限情况下三种系综其实并无分别）假设在一个温度恒为T，体积为V的盒子里有N个粒子，每个粒子的化学势为μ。该盒子允许粒子与外界进行交换，则可以写出系统的巨配分函数为：<br>$$<br>\Xi&#x3D;\sum_{N&#x3D;0}^{M} \frac{1}{N !} Q_{N} z^{N}<br>$$<br>其中$Q_{N}$代表正则系综下的配分函数：<br>$$<br>Q_{N}&#x3D;\int \cdots \int_{V} d \tau_{1} \cdots d \tau_{N} e^{-\beta H} d V, H&#x3D;U+T<br>$$<br>定义逸度z为：<br>$$<br>z&#x3D;\left(2 \pi m k T &#x2F; h^{2}\right)^{\frac{3}{2}} \exp (\mu &#x2F; k T)<br>$$<br>公式（7）可以展开成为逸度z的多项式如下：<br>$$<br>\Xi(z, T, V)&#x3D;1+Q_{1} z+Q_{2} z^{2}+\cdots+Q_{M} z^{M}<br>$$<br>其中各项系数$Q_{i}$均为正数，$\Xi \ge 1$。</p>
-<p>我们在这里需要了解一下逸度的相关概念。逸度在化学中表示实际气体的有效压强。逸度是一个与化学势相关的函数，用于表述化学势与理想气体的关系。逸度的值等于相同条件下具有相同化学势的理想气体的压强。因此，当气体为理想气体时，逸度的值与压强相等。要具体地理解逸度的值，我们可以举出以下这个例子： 0°C 下 100个大气压下的氮气的逸度为 97.03 个大气压，这意味着它与 97.03 个大气压下的氮气理想气体有着相同的化学势。</p>
-<p>我们可以发现，当我们的粒子数N小于盒子紧密堆积所能具有的最大粒子数M时，系统的巨配分函数是个e指数函数，其任意阶导数均存在且连续，因此由它导出的所有热力学函数都不具有奇异性。系统不存在相变。而当粒子数N大于盒子紧密堆积所能具有的最大粒子数M时，系统的势能将无穷大，$Q_{N}&#x3D;0$.</p>
-<p>现在我们拥有了巨正则系综下的配分函数。我们可以得到压强和粒子数密度的表达式如下：<br>$$<br>p&#x3D;\frac{k T}{V} \ln \Xi<br>$$</p>
-<p>$$<br>\rho&#x3D;\frac{N}{V}&#x3D;\frac{1}{v}&#x3D;\frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi<br>$$</p>
-<p>回到前文提到的巨配分函数的展开式（10），我们知道该式各项系数$Q_{i}$均为正数，$\Xi \ge 1$。因此，函数$\ln \Xi$恒为正数，由此导出的热力学函数也不具有奇异性，这就是为什么李杨之前的学者认为并不能从配分函数着手来研究相变问题。然而李杨提出，在热力学极限的情况下，$V^{-1} \ln \Xi$的极限是存在的（Th. 1）。</p>
-<p>要想证明这一点，我们可以先回到巨配分函数$\Xi $.我们将巨配分函数进一步做一个泰勒展开如下：<br>$$<br>\Xi(z, T, V)&#x3D;\sum_{N&#x3D;0}^{M} Q_{N}(T, V) z^{N}&#x3D;\prod_{k&#x3D;1}^{M}\left(1-\frac{z}{z_{k}}\right)<br>$$<br>其中$z_{k}$是巨配分函数$\Xi &#x3D; 0$的根。一般来说，$z_{k}$分布在z的复平面上，但不会分布在正实轴上，因为正如前文提到，巨配分函数多项式的各系数均为正数，因此$z_{k}$不可能为正实数。另外，因为该多项式系数均为实数，若$z_{k}$为$\Xi &#x3D; 0$的根，那么$z_{k}^{*} $也是该方程的根，因此<strong>在整个复平面上$z_{k}$的分布相对于实轴对称</strong>。</p>
-<p>我们知道，该盒子的最大容纳粒子数M总是正比于体积V，而巨配分函数零点数与M数相等。热力学极限下，盒子的体积V将趋向于无限大，$\Xi &#x3D; 0$的根亦将趋近无穷，$\Xi &#x3D; 0$的某些根可能无限趋近于正实轴上的某些点$z_{0}$，也就是说，在$z_{0}$的任意邻域，无论该邻域有多小总是包含着一些零点。$V^{-1} \ln \Xi$本身依然连续，但它的导数可以不连续，因此出现奇异性。</p>
-<p>在热力学极限下，压强和粒子数密度的表达式如下：<br>$$<br>\frac{p}{k T}&#x3D;\lim _{V \rightarrow \infty} \frac{k T}{V} \ln \Xi<br>$$</p>
-<p>$$<br>\rho&#x3D;\lim _{V \rightarrow \infty} \frac{N}{V}&#x3D;\lim _{V \rightarrow \infty} \frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi<br>$$</p>
-<h3 id="Ising-模型下的李杨定理"><a href="#Ising-模型下的李杨定理" class="headerlink" title="Ising 模型下的李杨定理"></a>Ising 模型下的李杨定理</h3><p>李杨在他们的第二篇论文（ T. D. Lee and C. N. Yang (1952) Statistical theory of equations of state and phase transitions. II. Lattice gas and Ising model. Phys. Rev. 87 410.）中证明了Ising模型中李杨定理的适用性。</p>
-<blockquote>
-<p>Th. 3 在晶格气体模型中，如果任意两个气体原子占据同一点阵时相互作用能$u&#x3D;+\infty $，其他情况$u\le 0$，则巨配分函数的所有零点都在z的复平面的单位圆上。</p>
-</blockquote>
-<h3 id="李杨零的实验测定"><a href="#李杨零的实验测定" class="headerlink" title="李杨零的实验测定"></a>李杨零的实验测定</h3><p>李杨零点作为处于复平面上的零点，实验测定具有本质上的困难性（因为它是非物理的）PRL 2015年发表了一篇文章提出使用三甲基亚磷酸盐分子做一个spin-bath耦合，在三甲基亚磷酸盐分子中央的^31^P原子（图二，蓝色）作为探针(spin)，周围的九个^1^H原子（图二，橙色）共同组成被测定系统(bath)。我们由探针去测定系统的退相干现象，构建相关性与时间的函数关系，得到相干性函数。相干性函数与我们要讨论的系统的配分函数具有一一对应关系。</p>
-<p><img src="/%E4%B8%89%E7%94%B2%E5%9F%BA%E4%BA%9A%E7%A3%B7%E9%85%B8%E7%9B%90%E5%88%86%E5%AD%90.png" alt="三甲基亚磷酸盐分子"></p>
-<div style="text-align: center;">图二 三甲基亚磷酸盐（TMP）分子</div>
-
-<p>首先，我们讨论一下探针的相干性函数。我们设初态探针自旋为：$\left | \psi\left ( 0 \right )   \right \rangle &#x3D;\left | \uparrow   \right \rangle +\left | \downarrow  \right \rangle$</p>
-<p>探针自旋随时间变化：$\left | \psi\left ( t \right )   \right \rangle &#x3D;\left | \uparrow   \right \rangle +exp \left (-ibt  \right ) \left | \downarrow  \right \rangle$</p>
-<p>探针和浴之间的耦合产生了一个局部磁场b，局域场b的随机分布导致了探针的自旋退相干。</p>
-<p><img src="/%E6%9D%8E%E6%9D%A8%E5%AE%9A%E7%90%86%E5%AE%9E%E9%AA%8C%E6%B5%8B%E5%AE%9A.png" alt="李杨定理实验测定"></p>
-<div style="text-align: center;">图三 Lee-Yang零的实验测定</div>
-
-<p>上图蓝色圆圈表示李杨零的理论值，红叉代表测定值。</p>
-<h3 id="根据零点分布判断相变类型"><a href="#根据零点分布判断相变类型" class="headerlink" title="根据零点分布判断相变类型"></a>根据零点分布判断相变类型</h3><p>一阶相变的零点曲线通过正实轴上，且零点曲线切线与正实轴呈现90度角（图三，β&#x3D;1&#x2F;3）。二阶相变趋近于正实轴但并不通过正实轴，零点曲线切线与正实轴呈45度夹角（图三，β&#x3D;1）。总的来说，高阶相变两点曲线切线与正实轴角度为：π&#x2F;(2·相变阶数)</p>
-<p><img src="/%E9%9B%B6%E7%82%B9%E6%9B%B2%E7%BA%BF.png" alt="零点曲线"></p>
-<div style="text-align: center;">图四 零点曲线</div>
-
-<h3 id="非平衡态下的李杨定理"><a href="#非平衡态下的李杨定理" class="headerlink" title="非平衡态下的李杨定理"></a>非平衡态下的李杨定理</h3><p>前文我们大部分介绍的是平衡态下李杨定理的应用，比如说硬球模型或者Ising 模型，接下来我会简要介绍一下非平衡态中一些会运用到李杨定理的模型。</p>
-<h4 id="KLS模型"><a href="#KLS模型" class="headerlink" title="KLS模型"></a>KLS模型</h4><p>KLS模型是由Sheldon Katz, ‘Joel L. Lebowitz, 和H. Spohn在1983年的论文（ S. Katz, J. L. Lebowitz and H. Spohn (1983) Phase transitions in stationary non-equilibrium states of model lattice systems. Phys. Rev. B 28 1655.）中提出。它描述的是一种受外界驱动的晶格气体模型。它在原始的晶格气体模型上添加了一个单向外部磁场，气体粒子在外部场方向上的跳跃速率增强。</p>
-<p><img src="/KLS.PNG" alt="KLS"></p>
-<div style="text-align: center;">图五 KLS模型</div>
-
-<p>图五左图表述了没有添加外磁场的晶格气体模型，右图描绘了添加外磁场的晶格气体模型。添加磁场后晶格气体模型明显出现了一个隔离相变现象。</p>
-<h4 id="ASEP过程"><a href="#ASEP过程" class="headerlink" title="ASEP过程"></a>ASEP过程</h4><h4 id="AHR模型"><a href="#AHR模型" class="headerlink" title="AHR模型"></a>AHR模型</h4><h4 id="反应扩散模型"><a href="#反应扩散模型" class="headerlink" title="反应扩散模型"></a>反应扩散模型</h4><h4 id="DP模型"><a href="#DP模型" class="headerlink" title="DP模型"></a>DP模型</h4>]]></content>
-      <categories>
-        <category>物理</category>
-        <category>统计物理</category>
-      </categories>
-      <tags>
-        <tag>相变</tag>
-        <tag>李杨定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>李杨零/Fisher零-文献速记</title>
-    <url>/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/</url>
-    <content><![CDATA[<h4 id="PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）"><a href="#PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）" class="headerlink" title="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）"></a>PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）</h4><p>简介：</p>
-<p>如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。</p>
-<span id="more"></span>
-
-<h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><p>利用配分函数零的密度区分：（1）一阶与高阶相变；（2）研究此类相变的交叉（指外部情况改变的情况下，从一种相变过渡到另一种相变）；（3）以潜热和临界指数的形式测量一阶和二阶相变的强度。</p>
-<p>一阶相变：自由能一阶导数的不连续。对于温度（或者说能量）驱动的一阶相变，导致不连续的是潜热。对于场驱动的…是自发磁化。自由能相对于温度与外场的二阶导分别是比热和磁化率。在一阶相变下表现出函数奇点。这与二阶相变不同，二阶相变中自由能的二阶导随相关长度发散。</p>
-<p>有限体积系统可以导出热力学极限情况下？（FSS？这段不是很确定）</p>
-<blockquote>
-<p>chatgpt：FSS 背后的想法是，临界点附近的系统行为由几个通用量决定，例如临界指数和缩放函数。这些量与系统的细节无关，可用于描述各种系统的行为。</p>
-</blockquote>
-<p>对于场驱动的相变，我们关注的是复外磁场平面上的李杨零。对温度驱动的，则是复温度平面上的Fisher零。</p>
-<p>由第一个Fisher零的FSS得到临界指数相关长度υ，一阶相变下υ为1&#x2F;d（d是维度）从而区分一阶与高阶相变。另外，相变强度以往不能由零的性质来确定，只能通过直接测量潜热或界面张力来确定的。本文希望通过零的密度来研究相变强度（一阶相变下零密度与潜热成正比）</p>
-<p>对于大j，第j个李杨零（或Fisher零）可以简化为公式…</p>
-<p>配分函数零的这种行为提供了一种（通常是非常准确的）方法来确定(i)临界温度和（ii）描述系统的热力学临界性质的临界指数。</p>
-<p>回顾以往对配分函数零的研究：</p>
-<ol>
-<li>确定零的分布，以研究复杂参数的相图，并检查（以定性的方式）零是否似乎跨越了真实的轴，这是相变存在的证据</li>
-<li>定量测量那些具有最小虚部的零的（有限尺寸）尺度行为，以确定临界指数，可能用类似的分析分别应用于更高的指数零或确定夹角</li>
-<li>Lee-Yang零的固定体积图表明在一阶相变时零的非零密度的开始</li>
-</ol>
-<p>早期认为在有限晶格中估计零点密度非常困难→现可用数值方法</p>
-<h6 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h6><p>L：晶格线性范围（晶格大小）</p>
-<p>A(z)：一个永不消失的平滑函数。这意味着A(z)连续</p>
-<p>z<del>j</del>：零点</p>
-<p>z<del>c</del>：临界点（感觉这里应该是指正实轴上那个零点）</p>
-<p>z &#x3D;z<del>c</del> + r exp (iϕ)：零点曲线，ϕ是与实轴夹角</p>
-<p>g<del>L</del>(r)：z<del>j</del>&#x3D;z<del>c</del> + r<del>j</del> exp (iϕ)上的零点密度</p>
-<p>G<del>L</del>(r)：0-r这个圆里的零点累积密度</p>
-<p>对于FSS，$G_{L}(r)&#x3D;\frac{j}{L^{d}} \quad \text { if } \quad r \in\left(r_{j}, r_{j+1}\right)$是一个区间，所以做一下平均值求出r<del>j</del>处的零点累积密度为：$G_{L}(r)&#x3D;\frac{2j-1}{2L^{d}} \quad$（过原点，且通过原点的斜率揭示相变的类型和强度）</p>
-<p>比热进行FSS：$C_{L}(z_c)&#x3D;L^{\alpha &#x2F; \nu }$，在一阶情况下对于固定的j有：$r_{j}(L) \sim  L^{-d}$,$C_{L}(z_c) \sim  L^{d}$</p>
-<h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h6><p>对一阶与二阶相变，有：$G_{L}(r)&#x3D;a_{1}r^{a_{2}}+a_{3}$</p>
-<p> a<del>3</del> 大于零，零点越过实轴，表示一阶相变。 如果 a<del>3</del> 小于零，则零仍然远离实轴，表示处于对称阶段的情况。若a<del>2</del>趋近于1，对于小r（原点附近斜率恒定）一阶相变。潜热与斜率a<del>1</del>成正比。若a<del>2</del>大于1，则是二阶相变。这种情况下相变强度α&#x3D;2-a<del>2</del>。（r<del>j</del>是第j个零点的虚部，也就是说，r<del>j</del>&#x3D;Im z<del>j</del>(L)）</p>
-<p>误差分析的一些细节…（不想看qwq）</p>
-<h6 id="Potts-Model"><a href="#Potts-Model" class="headerlink" title="Potts Model"></a>Potts Model</h6><p>二维potts model： q≤4，二阶相变；q＞4，一阶相变。临界温度倒数$\beta _{c}&#x3D;\ln{1+\sqrt{q} } $</p>
-<p>三维potts model： q&#x3D;2，二阶相变（Ising 情况）；q≥3，一阶相变</p>
-<h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h6 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>根据二维点阵晶格（L为14）且无外磁场H的系统精确配分函数，可得复温度平面上的Fisher零。当L趋近无穷，H不为零，Fisher零在反铁磁临界点a<del>c</del>(H)与正实轴相交，将这些值与反铁磁临界线的封闭近似结果进行了比较。</p>
-<p>从Fisher零得到沿临界线的热尺度指数y<del>t</del>&#x3D;1，表明在强均匀磁场下反铁磁模型比热的对数奇异性。</p>
-<h6 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h6><p>本文：N<del>s</del>个位点（sites）和N<del>b</del>个键（bonds）的晶格，具有外部磁场的伊辛模型。</p>
-<p>李杨：研究外部磁场非零的伊辛模型的铁磁效应。</p>
-<p>Fisher：</p>
-<ol>
-<li>外部磁场为零，伊辛模型铁磁效应与非铁磁效应，Fisher零在复温度平面上分别落在两个圆上：$a_{FM}&#x3D;1+\sqrt{2} e^{i \theta}$，$a_{AF}&#x3D;-1+\sqrt{2} e^{i \theta}$.</li>
-<li>零磁场的伊辛模型比热奇异性在对数上是无限的，这是由Fisher零的性质引起</li>
-<li>对于非常特殊的边界条件，零磁场下伊辛模型的Fisher零确实位于两个圆上，而对于更一般的边界条件，随着晶格大小增加，零接近于两个圆。</li>
-</ol>
-<p>非零磁场Fisher点，在非物理临界点发散（Fisher边奇点），这代替了零磁场下的铁磁临界点</p>
-<p>另一方面，反铁磁临界点切割正实轴（但之前从未有人展示出这一现象）so，本文通过精确解配分函数对应的Fisher零，研究非零磁场下的伊辛模型的反铁磁临界点（LxL方形晶格，L&#x3D;14）</p>
-<h6 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h6><p>x是一个与外磁场有关的量，$x&#x3D;e^{-2 \beta H}$（或许可以理解为外磁场对系统的影响？或者驱动作用。当x&#x3D;1时，H&#x3D;0，零场情况。）</p>
-<h6 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h6><p>图3通过两种拟合，算出反铁磁圆与正实轴的切割点，横坐标可以理解为外磁场强度（x是H的相关量）</p>
-<p>由Fisher 零，沿临界线获得热缩放指数 y<del>t</del>&#x3D;1（或趋近于0，结果位于表2），$\alpha &#x3D;2-d&#x2F;y_{t}&#x3D;0$，这表明即使在强均匀磁场中，反铁磁伊辛模型的比热也具有对数奇异性。</p>
-<p>我们的结果清楚地表明，即使在强均匀磁场中，AF Ising模型的比热也具有对数奇点。</p>
-<h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>非标准型一阶相变有限尺寸相变。这篇文章好像没有很相关于李杨零点，而是集中于讨论FSS。</p>
-<p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1&#x2F;L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1&#x2F;L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
-<p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
-<p>通常情况下，低温相的简并度q不随系统尺寸而变化，因此一阶相变的一般有限尺寸尺度行为与体积的倒数L^−d^成正比。我们可以从方程(4)，(5)中看到，如果低温相的简并度q以指数关系依赖于系统大小q∝e^L^，则这将被修改。</p>
-<h6 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h6><p>多级蒙特卡洛算法，初始晶格（100-1000）x10^6^ sweeps（扫视&#x2F;扫描），双（dual）晶格4x10^6^ sweeps</p>
-<p>模拟相当于真实时间500h</p>
-<p>在模拟过程中，拥有27^3^个自旋的最大晶格在两相之间有效跃迁超过250次。尽管与最可能的态相比，罕见态被抑制了60多个数量级（图1）。</p>
-<p>dual model：自相关时间更大</p>
-<p>然后，可以通过加权多参数数据来检索标准估计量，从而得到玻尔兹曼分布的能量。当与多角度模拟相结合时，重加权技术非常强大，并允许计算在广泛的温度范围内的可观测值。</p>
-<p>通过重新加权等式得出的温度函数(8)和dual型等式(9)</p>
-<p>图一：</p>
-<p>L取值：13-27</p>
-<p>红绿线重合</p>
-<p>图二：</p>
-<p>dual型，L取值：12-24</p>
-<h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>三个相变：一阶，二阶，李杨边奇点</p>
-<p>都能通过估计有限尺度系统的零密度的磁尺度指数y<del>h</del>来清楚区分。</p>
-<p>从有限尺寸的数据中得到了高温下杨李边缘零密度的散度，这是通过lattice铁磁体的级数扩展得到。利用杨-李零密度讨论了<u>小系统</u>相变阶的识别。</p>
-<h6 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h6><p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨边奇点，并提出了李杨边奇点可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
-<p>在临界温度以上，杨-李零不会切割热力学极限中的正实轴。在正实轴周围的零分布存在间隙。也就是说，在$\left | \theta  \right | &lt;\theta _{e}$，$g(\theta)&#x3D;0$.在临界温度，这个间隙消失。我们把在$\theta &#x3D;\pm \theta _{e}$的李杨零叫做&#x3D;&#x3D;李杨边缘零&#x3D;&#x3D;。在T&gt;T<del>c</del>及d≥2时，李杨边缘零的具体位置不可得。当温度从临界温度攀升到正无穷，李阳边$\theta _{e}$从0移动到π。</p>
-<p>除Yang-Lee零外，Fisher还证明了H &#x3D; 0的平方格化模型的热性质完全由复温度平面上的正则配分函数Z (T)的零决定。</p>
-<p>如果找到零的密度，就可以得到自由能、状态方程和所有其他热力学函数。然而，我们对零的密度的实际形式知之甚少。除了一维情况外，伊辛铁磁体的杨-李零的密度从未被完全知道…（一些过去的研究）</p>
-<p>对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L &#x3D; 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
-<p>图一：16x16晶格</p>
-<p>图二：温度等于临界温度时，L&#x3D;12与L&#x3D;16不可区分，有限尺度效应是非常小的。</p>
-<p>在临界温度附近（T&#x3D;2.5），L &#x3D; 12和16的零密度也无法区分，除了在θ &#x3D; 0附近，g(L)随着系统尺寸L的增加而急剧减小。</p>
-<p>远高于临界温度时（T&#x3D;10），L &#x3D; 12和16的零密度的总体形式几乎相同。与T &#x3D; 1和2.5处相比，T &#x3D; 10处的零密度的有限尺寸效应相对较大。在Yang-Lee边缘θ<del>e</del> &#x3D; 1.161附近，零的密度有些不规则，并且随着L的增加而增加。</p>
-<h4 id="FSS方法"><a href="#FSS方法" class="headerlink" title="FSS方法"></a>FSS方法</h4><h6 id="序列重要性抽样蒙特卡罗方法"><a href="#序列重要性抽样蒙特卡罗方法" class="headerlink" title="序列重要性抽样蒙特卡罗方法"></a>序列重要性抽样蒙特卡罗方法</h6><ol>
-<li>选一个初始态</li>
-<li>选一个点位i</li>
-<li>计算点位自旋翻转所需能量ΔE</li>
-<li>取0-1之间的随机数r</li>
-<li>如果r＜exp(-ΔE&#x2F;k<del>B</del>T), 自旋翻转</li>
-<li>选择另一个i回到第三步循环</li>
-</ol>
-<p>注：在低温下翻转是很少的，可以加快运算时间，高温下翻转很多，是一个准遍历问题。</p>
-<h6 id="FSS入门：齐次函数"><a href="#FSS入门：齐次函数" class="headerlink" title="FSS入门：齐次函数"></a>FSS入门：齐次函数</h6><p>对于所有尺度值λ，有$f(λr)&#x3D;g(λ)f(r)$，f(r)是热力学参量，$g(λ)&#x3D;λ^{p}$，p是齐次度。</p>
-<p>广义齐次函数：$f\left(\lambda^{a} x, \lambda^{b} y\right)&#x3D;\lambda f(x, y)$</p>
-<p><strong>The static scaling hypothesis（静态缩放假说）</strong>认为，吉布斯自由能$G(t,H)$是一个齐次函数。</p>
-<h6 id="静态缩放假说："><a href="#静态缩放假说：" class="headerlink" title="静态缩放假说："></a>静态缩放假说：</h6><p>在临界点附近，系统的各种物理量在合适的标度变换下表现出统一的行为。</p>
-<p>核心思想是当系统接近相变临界点时，各种宏观物理量（如磁化强度、比热容等）的尺度行为可以用一个或多个标度指数来描述。这些标度指数决定了物理量如何随着系统的大小或临界点的接近而变化。</p>
-<p>具体而言，静态缩放假说包括以下几个方面：</p>
-<ol>
-<li>尺度不变性：在临界点附近，系统的物理性质在合适的尺度变换下保持不变。这意味着各种物理量具有相同的标度行为，即它们随着系统大小的增加或临界点的接近而表现出相似的行为。</li>
-<li>标度指数：各种物理量与系统的相关长度或相关时间之间存在关联。通过引入标度指数，可以描述这种关联。例如，对于磁化强度，其与系统大小的关系可以表示为M ∝ L^β^，其中β是磁化强度的临界指数，L是系统的线性尺寸。</li>
-<li>标度函数：静态标度假设还引入了标度函数，用于描述物理量随着临界点的接近而变化的行为。标度函数通常是物理量和相对于临界点的距离（通常用无量纲的标度变量表示）之间的关系。这种函数形式可以帮助我们理解和描述临界点附近的物理行为。</li>
-</ol>
-<p>有限尺寸效应→局部松弛是不可能的（obviously local relaxation is impossible）</p>
-]]></content>
-      <categories>
-        <category>物理</category>
-        <category>统计物理</category>
-      </categories>
-      <tags>
-        <tag>文献速记</tag>
-        <tag>李杨零</tag>
-        <tag>Fisher零</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模拟人生4-自设孤儿院挑战</title>
-    <url>/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/</url>
-    <content><![CDATA[<h1 id="规则总览"><a href="#规则总览" class="headerlink" title="规则总览"></a>规则总览</h1><p>本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成</p>
-<p>人物寿命需设置为普通</p>
-<p>初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。</p>
-<span id="more"></span>
-
-<p>所有人物（除Adam之外）找到相应工作且完成要求后需搬出原始家庭成为与原始家庭同一地段的租户。</p>
-<p>必须接受所有游戏过程中自动出现的偏好，性格转变及生活方式。</p>
-<p>玩家只能操纵Adam与Charles完成家务。</p>
-<p>玩家可以进行Polaris，Jasmine，Michael，Cacao奇想中的友情&#x2F;浪漫交互，Ocrea可任意与非家庭中的异性进行友情&#x2F;浪漫交互，Adam可任意与其他人物进行亲情交互。除此之外，玩家不得操控其他人物进行友情&#x2F;浪漫交互。</p>
-<p>每个节日假期必须出门旅行</p>
-<p>Ocrea接受所有外出邀请，Jasmine接受所有异性外出邀请，Adam接受所有来自家人的外出邀请，Raven拒绝所有外出邀请，其他外出邀请则通过随机数决定。</p>
-<p> Polaris与Sirius应设置为姐弟关系，Jasmine与Michael应设置为姐弟关系</p>
-<h1 id="人物规则"><a href="#人物规则" class="headerlink" title="人物规则"></a>人物规则</h1><h2 id="1-Adam（吴铮）"><a href="#1-Adam（吴铮）" class="headerlink" title="1 Adam（吴铮）"></a>1 Adam（吴铮）</h2><p>初始年龄：青年</p>
-<p>初始性格特征：秋之子，好人，乐于助人的</p>
-<p>要求：</p>
-<ol>
-<li>赚钱方式只能选择写作&#x2F;绘画，且不得外出工作</li>
-<li>完成畅销作家的全部抱负内容并完成一本人生之书</li>
-<li>对所有儿童都采取鼓励式教育，冷静&#x2F;坚定地告诫（不得使用严厉的告诫），以及拥抱和家人亲吻</li>
-<li>达成写作&#x2F;绘画十级</li>
-<li>在每位家人离开家前为他们绘制一副肖像画</li>
-<li>在所有孩子离开家前与他们成为好朋友</li>
-</ol>
-<h2 id="2-Charles（齐彭殇）"><a href="#2-Charles（齐彭殇）" class="headerlink" title="2 Charles（齐彭殇）"></a>2 Charles（齐彭殇）</h2><p>初始年龄：青少年</p>
-<p>初始性格特征：洁癖，有能力的（青少年）</p>
-<p>要求：</p>
-<ol>
-<li>完成所有作业及加分作业，以A类学生从高中毕业</li>
-<li>在保证A类学生的前提下在学校尽可能多地交朋友</li>
-<li>具有一份青少年兼职并从不缺席</li>
-<li>获得政治学大学学位并完成学术的全部抱负</li>
-<li>具有负责任的奖励特征</li>
-</ol>
-<p>职业：政治家</p>
-<h2 id="3-Polaris（张紫薇）"><a href="#3-Polaris（张紫薇）" class="headerlink" title="3 Polaris（张紫薇）"></a>3 Polaris（张紫薇）</h2><p>初始年龄：青少年</p>
-<p>初始性格特征：天才，夏之子（青少年）</p>
-<p>要求：</p>
-<ol>
-<li>将灵魂伴侣作为终身抱负</li>
-<li>若与Charles具有浪漫关系，则与Charles约会至少一次</li>
-<li>逻辑五级及以上</li>
-</ol>
-<p>职业：特工</p>
-<h2 id="4-Ocrea（高秋）"><a href="#4-Ocrea（高秋）" class="headerlink" title="4 Ocrea（高秋）"></a>4 Ocrea（高秋）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：甜言蜜语（儿童）不愿承诺（青少年）物质主义（青年）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成交际花抱负</li>
-<li>魅力五级及以上</li>
-<li>每次上学都选择交朋友</li>
-<li>加入一个俱乐部并与俱乐部里每位异性发展浪漫关系</li>
-<li>去至少两次夜店</li>
-<li>抱负选择连环浪漫，在搬出家前至少拥有3段感情，若双方浪漫值出现下降，则立刻分手（若与Sirius具有浪漫关系，在离开家前不与Sirius分手）</li>
-</ol>
-<p>职业：商业</p>
-<h2 id="5-Sirius（张狂）"><a href="#5-Sirius（张狂）" class="headerlink" title="5 Sirius（张狂）"></a>5 Sirius（张狂）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：极客（儿童）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>编程五级及以上</li>
-<li>参加一次极客会展并乘坐火箭来到外星</li>
-</ol>
-<p>职业：科技达人</p>
-<h2 id="6-Jasmine（钟不遇）"><a href="#6-Jasmine（钟不遇）" class="headerlink" title="6 Jasmine（钟不遇）"></a>6 Jasmine（钟不遇）</h2><p>初始年龄：儿童</p>
-<p>初始性格特征：拘谨的（儿童），难以伺候（青少年），悲伤（青年）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成艺术天才抱负</li>
-<li>烹饪及通灵五级及以上</li>
-<li>至少交五个异性朋友</li>
-<li>若有异性提出交往&#x2F;求婚，则立刻同意</li>
-</ol>
-<p>职业：</p>
-<p>若与他人发展出浪漫关系，则不选择职业，成年后立刻与其结婚，抱负改为欢乐大家庭</p>
-<p>若无浪漫关系，则选择职业为主厨</p>
-<h2 id="7-Michael（钟不惑）"><a href="#7-Michael（钟不惑）" class="headerlink" title="7 Michael（钟不惑）"></a>7 Michael（钟不惑）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：粘人精（幼儿）令人难忘的（儿童）</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成艺术天才及调皮蛋抱负（艺术天才优先）</li>
-<li>在离开家前可以与其他人发展浪漫关系，但不与任何人确认成为恋人</li>
-<li>和一个玩偶熊&#x2F;鬼魂成为朋友</li>
-<li>在网络上拥有至少一千位追随者</li>
-<li>魅力及健身三级及以上</li>
-<li>成为二星名人及以上</li>
-</ol>
-<p>职业：模特</p>
-<p><strong>以下家庭成员在Charles及Polaris搬出家庭后搬入：</strong></p>
-<h2 id="8-Lucius（许和光）"><a href="#8-Lucius（许和光）" class="headerlink" title="8 Lucius（许和光）"></a>8 Lucius（许和光）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：独立（幼儿）独行侠（儿童），刻薄，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>小提琴五级及以上</li>
-<li>除Cacao外不与其他任何人成为好朋友</li>
-</ol>
-<p>职业：</p>
-<p>若名声为好&#x2F;中等：医生</p>
-<p>若坏名声大于三级：罪犯</p>
-<h2 id="9-Cacao（周可可）"><a href="#9-Cacao（周可可）" class="headerlink" title="9 Cacao（周可可）"></a>9 Cacao（周可可）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：万人迷（幼儿）欢乐，外向，音乐爱好者，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成交际花及调皮蛋抱负（交际花优先），尝试和床下怪物成为朋友</li>
-<li>加入童子军</li>
-<li>完成世界之友抱负</li>
-<li>吉他五级及以上</li>
-</ol>
-<p>职业：演艺人员</p>
-<h2 id="10-Raven（唐篁）"><a href="#10-Raven（唐篁）" class="headerlink" title="10 Raven（唐篁）"></a>10 Raven（唐篁）</h2><p>初始年龄：幼儿</p>
-<p>初始性格特征：好奇宝宝（幼儿）古怪，懒惰，</p>
-<p>要求：</p>
-<ol>
-<li>儿童时期完成神童抱负</li>
-<li>完成诡奇小镇抱负</li>
-<li>逻辑五级及以上</li>
-</ol>
-<p>职业：警探</p>
-<h1 id="游戏过程特征简记"><a href="#游戏过程特征简记" class="headerlink" title="游戏过程特征简记"></a>游戏过程特征简记</h1><h2 id="1-Adam"><a href="#1-Adam" class="headerlink" title="1 Adam"></a>1 Adam</h2><p>初始设定特征：秋之子，好人，乐于助人的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ESTP（实干家）：聪明，富有活力，极其敏锐的人，享受生活的各个方面，热爱运动</p>
-<p>沉思者：更容易发展精神技能</p>
-<p>发痒：这类模拟人生的身体经常发痒而且无法解决</p>
-<p>+出乎意料的成功者（day3）</p>
-<p>+欢乐：这类模拟市民很容易感到快乐（day12）</p>
-<p>+制造者：这类模拟市民喜欢制作东西（day15）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG"></p>
-<h2 id="2-Charles"><a href="#2-Charles" class="headerlink" title="2 Charles"></a>2 Charles</h2><p>初始设定特征：洁癖，有能力的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ENFP（竞选者）：热情而富有创造力，在写作及艺术方面具有天分</p>
-<p>快速学习者：学习技能更快</p>
-<p>发痒：这类模拟人生的身体经常发痒而且无法解决（被上面那位传染的？？）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/2.PNG"></p>
-<h2 id="3-Polaris"><a href="#3-Polaris" class="headerlink" title="3 Polaris"></a>3 Polaris</h2><p>初始设定特征：天才，夏之子</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ISFJ（守卫者）：具有献身精神与温暖的人，喜欢烹饪，绘画，自然…会支持一切她爱的人的活动和兴趣</p>
-<p>天赐创造力：在写作，艺术，烹饪方面格外有天赋</p>
-<p>迷人的：她在浪漫关系方面比别人更成功（lucky！）</p>
-<p>+喜欢咯咯咯地傻笑（day7）</p>
-<p>+害怕壮志未酬（day11）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/3.PNG"></p>
-<h2 id="4-Ocrea"><a href="#4-Ocrea" class="headerlink" title="4 Ocrea"></a>4 Ocrea</h2><p>初始设定特征：甜言蜜语</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>INFJ（提倡者）：安静，神秘，富有精神力，喜欢文化，读书与听音乐（你最好真的是）</p>
-<p>不太有能力：在每件事上都做得很缓慢（倒霉的随机属性）</p>
-<p>普通自信→高度自信（day3）</p>
-<p>+刻薄倾向：这类模拟市民总是喜欢对别人刻薄（day6）</p>
-<p>害怕失败：当她失去自信时她很容易紧张，容易因为批评或者没拿奖而尴尬（day6）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/4.PNG"></p>
-<h2 id="5-Sirius"><a href="#5-Sirius" class="headerlink" title="5 Sirius"></a>5 Sirius</h2><p>初始设定特征：极客</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>INTJ（建筑师）：图像和直觉思维，擅长给每件事做计划</p>
-<p>不太有能力：在每件事上都做得很缓慢（倒霉x2，但CP就应该整整齐齐）</p>
-<p>背痛：背部疼痛</p>
-<p>普通自信→高度自信（day2）</p>
-<p>+刻薄倾向（day7）</p>
-<p>+黏人，害怕失败（day13）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/5.PNG"></p>
-<h2 id="6-Jasmine"><a href="#6-Jasmine" class="headerlink" title="6 Jasmine"></a>6 Jasmine</h2><p>初始设定特征：拘谨的</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>ENTJ（总经理）：好的领导者，喜欢社交与运动，集中于他们的职业生涯</p>
-<p>→INFP（调停者）：可爱，诗意，利他主义者。</p>
-<p>普通自信→高度自信（day2）</p>
-<p>+害怕失败（day8）</p>
-<p>+叛逆（day13）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/6.PNG"></p>
-<h2 id="7-Michael"><a href="#7-Michael" class="headerlink" title="7 Michael"></a>7 Michael</h2><p>初始设定特征：粘人精</p>
-<p>进入游戏后获得附加随机特征：</p>
-<p>害怕溺水：不知为何他害怕溺水，避免泳池和海洋（Michael在原始人设里确实很怕水，因为到水里会失去五感，我觉得这个设定不是很必要就没有作为初始设定强制加入，结果自己出现了）</p>
-<p>健康：他没有任何身体问题真的很幸运（何止是健康，长大可以去当超人）</p>
-<p>→过敏（day2）→胃胀气（day8）</p>
-<p>小歌唱家：这孩子喜欢随时随地唱歌</p>
-<p>好胃口：他吃的很快，甚至会去吃掉在地板上的食物…他有点被宠坏了（他确实是。喂！不要随便在地上捡垃圾吃啊！）</p>
-<p>+讨厌起床（day2）</p>
-<p>儿童</p>
-<p>+ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
-<p>+高度自信</p>
-<p>+令人难忘的（设定特征）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/7.PNG"></p>
-<h1 id="游戏过程简记"><a href="#游戏过程简记" class="headerlink" title="游戏过程简记"></a>游戏过程简记</h1><h2 id="第1天（夏·周一）"><a href="#第1天（夏·周一）" class="headerlink" title="第1天（夏·周一）"></a>第1天（夏·周一）</h2><p>孩子们一直在地上制造脏乱，但因为Adam没有育儿技能无法管教他们（啊这…）</p>
-<p>第一顿饭是Polaris做的，看起来她挺喜欢烹饪（但只做了4份）Charles快饿死了但没吃到饭</p>
-<p>大家似乎都很喜欢Michael，Jasmine和Micheal的姐弟关系相当不错</p>
-<p>Charles一直在卫生间对着镜子练习辩论，看样子他很适合当个政治家。（后来发现可能是因为他的学术抱负需要辩论等级，第一天直接练到三级。卷王开卷。）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day1-1.PNG"></p>
-<p>Adam抱着Michael走到卫生间上厕所，把Charles赶出去了。迷惑的操作，可能是他打算抱着Michael上楼睡觉，走到一半想上厕所（？）虽然但是，我还是要强调，你把Charles赶出去了，Michael还在厕所里(*´・ｖ・)</p>
-<p>最后Polaris去把Michael抱上床睡觉了（听我说，谢谢你）</p>
-<p>Charles问Adam学校很蠢，能不上学直接工作吗？（别问了，问就是回去上学）</p>
-<p>Sirius问Adam自己在学校和别人因为给什么东西起名（没仔细看）发生了争执，哪个更好？Adam：一样好（经典端水）Sirius对Adam产生情绪：友善的建议者（Adam总会倾听他的问题并给出深思熟虑过的建议）</p>
-<h2 id="第2天（夏·周二）"><a href="#第2天（夏·周二）" class="headerlink" title="第2天（夏·周二）"></a>第2天（夏·周二）</h2><p>Charles在早上六点完成了他的作业。通宵当卷王当的爽吗？</p>
-<p>Sirius不知道什么时候写完了他的作业（兄弟你偷偷卷？）昨天一直看他的状态都是背痛写不了作业&#x2F;玩电脑游戏&#x2F;玩毛绒熊。你到底是什么时候写的作业？？？</p>
-<p>Jasmine昨天中规中矩地写完了作业。其他人都没有完成作业。Ocrea好像写了一半，Polaris一直在做家务，根本没写。</p>
-<p>Adam终于在写稿子了，不记得他什么时候睡过了，睡眠条还是满的。（好神奇哦，到底是什么时候睡过了）</p>
-<p>Sirius在一个人下象棋，Adam在写稿子，其他人都在睡觉。</p>
-<p>Adam结束了他的写稿，获得186模拟币。</p>
-<p>Jasmine的床底下有怪物，Ocrea把Charles和Polaris都叫起来了（虽然但是，Adam就在旁边坐着）Sirius突然怕黑了（可能是因为目睹怪物）</p>
-<p>Ocrea在学校收到了一封情书，可能是新来的学生给她的。选择当面对质，新来的学生说是因为自己没什么朋友，希望Ocrea为此事保密</p>
-<p>Michael真的很好带，哥哥姐姐出门上学的时候他都在睡觉zzz，完全不用操心</p>
-<p>Ocrea在学校认识了多丽丝和哈蒂。</p>
-<p>记录一点校园爱情的开端（你最好是）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-1.PNG"></p>
-<p>Polaris在这写作业，Charles带她玩手机（？）而且天上还在下雨</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-2.PNG"></p>
-<p>Sirius和Jasmine都因为完成家庭作业被老师表扬变成<strong>高度自信</strong>了</p>
-<p>Charles和Sirius都想和彼此做朋友，Ocrea想和Adam做朋友，Michael想和Ocrea做朋友。Polaris想进行浪漫交互，但没说是谁。</p>
-<p>Michael从阁楼上醒了一直在哭，因为床不舒服，昨晚上没睡好。但阁楼上没人，所以决定宝宝玩具熊QAQ. 获得了特征：<strong>讨厌起床</strong>。失去特征健康，获得特征：<strong>过敏</strong>。春天和夏天的时候晚上会呼吸不畅（果然这个环境是没法让人健康的。）</p>
-<p>Micheal通过自言自语升到了语言三级（喂！）然后开始自己跳舞玩（说好的粘人精呢？）</p>
-<p>Polaris问Adam我觉得我已经足够大了，你能像大人一样对我吗？Adam应该会说你永远是我的宝贝。</p>
-<p>Michael一直在阁楼上走来走去和玩玩具熊，我觉得他可能是不会下楼梯（虽然但是，他之前是自己爬上来的）我决定还是让Adam上来看看。不然Michael一直很难过。</p>
-<p>Michael和他的玩具小熊↓</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-3.PNG"></p>
-<p>记录一点校园爱情故事x2</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-4.PNG"></p>
-<p>外面在下雷雨，Adam把Michael一个人扔在阳台上自己下楼了（你小子）</p>
-<p>Polaris不知道是不是刚才在镜子前面练习了一下告白，然后自己觉得很尴尬：我真的能成功吗？（这很Polaris）</p>
-<p>Charles做了完美的蔬菜卷饼</p>
-<p>误会解除，Michael是会自己爬楼梯的。他只是真的很爱玩具熊。太好带了，宝贝。他甚至会自己爬下三楼去吃厨房的剩菜（膝盖还好吗？宝贝）这孩子一直因为雷阵雨很害怕，但一直没在哭（不会是被吓傻了吧）</p>
-<p>截一张很有睡美人感觉的Jasmine姐姐</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-5.PNG"></p>
-<p>妈！（发现Adam带孩子都是把孩子抱起来讲话的，别太宠孩子了）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-6.PNG"></p>
-<p>Michael因为交了一个新朋友很开心，不过通知里并没有显示他和谁成为了朋友。可能是Adam（或者他的熊）目前他和Adam，姐姐Jasmine还有熊都是朋友。</p>
-<p>一直以为Polaris和Charles的关系应该挺不错的，结果发现他们的关系目前只是认识（？）Polaris只和弟弟Sirius是朋友。Ocrea和Sirius不知道为什么都和玩具熊看不顺眼（？？）</p>
-<p>Michael白天一直睡觉，晚上根本睡不着。Adam几次想睡觉，几次被Michael打断施法（泪目）最后他很无语地把Michael抱到阁楼上玩，自己睡觉了（坏消息，他的床也在阁楼上，不过起码不用担心Michael去吵别人了）</p>
-<p>Michael爬下楼把Charles和Ocrea吵起来了（果然不能随便立flag），然后爬上楼去找玩具熊玩（小朋友害人不浅）</p>
-<h2 id="第3天（夏·周三）"><a href="#第3天（夏·周三）" class="headerlink" title="第3天（夏·周三）"></a>第3天（夏·周三）</h2><p>凌晨两点，大家都醒了。</p>
-<p>Ocrea不断制造脏乱又自己拖地之后，莫名其妙成为了<strong>高度自信</strong>（完成了自循环）</p>
-<p>Charles也在镜子前面练习了一下调情，并且陷入和Polaris一样的尴尬：我真的能成功吗？（校园爱情故事继续入股）并且感到脸红和我真是个蠢人（莎士比亚是吧？你们怎么都是些蠢人！）</p>
-<p><strong>Polaris对Charles产生了情绪：亲近</strong>。Polaris真的很感激Charles与她花时间共度美好时光。花时间在一起使得他们更加亲近。但Charles对Polaris并没有特别的感情。</p>
-<p>Polaris，Sirius和Ocrea突然都因为脑海里思绪过多很不舒服（出现了人传人现象）Polaris因为皮肤发红有些不太舒服。</p>
-<p>Charles因对俄罗斯方块一见钟情决定承认自己喜欢玩游戏（喂！）</p>
-<p>Polaris不知道为什么在学校变成了挑逗状态，但设置的状态是好好学习（？）</p>
-<p>学校休息时间，Jasmine画了不合适的画给大家传阅。出于必须鼓励规则，Adam应该会说，我们鼓励创意。</p>
-<p>Jasmine在学校认识了塞西尔和泰瑞沙。</p>
-<p>Ocrea在学校认识了贾思琳</p>
-<p>每个人都被邀请去参加某朋友的生日聚会，除了Sirius。他该怎么办？Adam或许会让他去问问朋友是不是忘记邀请他了。——朋友只是耸耸肩作为回答，并且之后都躲着Sirius。</p>
-<p>Adam写完了童书《老虎不会小憩》（什么怪书）出版。获得了特征：<strong>出乎意料的成功者</strong>（这确实很公主）他们无论是提升技能还是完成任务都比别人更快，但有点儿难和朋友独处</p>
-<p>今天决定让Ocrea和Jasmine各叫一位在学校认识的小朋友来家里玩。Ocrea和新来的小朋友塞西尔聊天，感觉十分无聊。</p>
-<p>Charles和Polaris拥抱了一下，并且用一种好哥们的姿势打招呼（你们到底是什么关系）Polaris从Charles那里学到怎么辨识脂鲤（什么东西？）</p>
-<h2 id="第4天（夏·周四）"><a href="#第4天（夏·周四）" class="headerlink" title="第4天（夏·周四）"></a>第4天（夏·周四）</h2><p>Polaris做了一个白蛋糕放在桌上，短短一晚上Micheal一个人吃了两份。</p>
-<p>突然发现Jasmine的社交已经6级了（怎么做到的）</p>
-<p>Charles在和Michael玩</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day3-1.PNG"></p>
-<p>Ocrea上床睡觉了，坚持不去上学（上学哪有睡觉要紧）看样子我不用操控她逃学，她自己会逃。</p>
-<p>Polaris在学校认识了托米和穆丽尔。</p>
-<p>Jasmine在学校认识了布鲁诺。</p>
-<p>Polaris在学校应该选择更容易的任务取得好成绩还是选更难的任务学到更多？按Polaris的个性应该会选更难的——她得到的成绩不佳，表现略为降低了。</p>
-<p>Polaris和同学在走廊上大家，是应该说让他们自己解决还是没人受伤吗？那很好。感觉Adam会说后一个。</p>
-<p>Michael一直一直在吃蛋糕，爱吃糖的宝宝，不吃糖就会，愤怒。</p>
-<p>Charles的成绩提升了，现在是B级学生。</p>
-<p>索菲亚邀请Sirius加入模范公社俱乐部（Sirius什么时候认识索菲亚的？）随机数说同意。这个俱乐部鼓励对叛徒刻薄；喝咖啡；换装。看起来并不是很适合Sirius的俱乐部…</p>
-<p>截一张Adam小憩的图，感觉Adam…你别说，你真别说，真挺好看的。（兄弟你好香。）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-1.PNG"></p>
-<p>哈蒂约Ocrea去咖啡店（小小年纪就咖啡店约会？这么优雅？）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-2.PNG"></p>
-<p>Polaris做了汉堡蛋糕（这个家没你做饭得散）</p>
-<p>Ocrea问Adam学校有人欺负她的朋友怎么办？Adam应该会鼓励她为朋友挺身而出。</p>
-<h2 id="第5天（夏·周五）"><a href="#第5天（夏·周五）" class="headerlink" title="第5天（夏·周五）"></a>第5天（夏·周五）</h2><p>我决定加入洗衣盆和吸尘器，不然家里的家务太少了没什么挑战性（？）</p>
-<p>Polaris喜欢健身。</p>
-<p>Adam把电脑玩坏了。替换需要700元（有点太贵了）只能维修，希望他不要把自己电死。</p>
-<p>Charles和Adam成为了好朋友（虽然他们俩一个在修电脑一个在看书，但在一个空间怎么不能用意念成为好朋友呢？(￣▽￣)~*哥，你和我在一个房间，一定是爱我。）</p>
-<p>Charles跑到卫生间喷古龙水（你小子怪讲究的嘞）而且他真的很爱俄罗斯方块，我哭死。我想让他写一下加分作业，结果他一直在和Adam聊天。从Adam那里学到了辨识大盖巨脂鲤（他笔记本里有两条鱼，还有一只玻璃梭鲈。到底是哪里学来的啊！）</p>
-<p>Polaris因为泡澡变得非常挑逗（挠头）</p>
-<p>两天前Charles在手机上发消息问Adam怎么了，Polaris给Charles发短信说：“你的风格就是一切，教我怎么像你那样生活。”还有“是先有鸡还是先有蛋，我会告诉你。（是什么冷笑话吗？）”Adam五小时之前发消息说，Charles，我们有空可以出去玩。</p>
-<p>好精彩的短信往来（汗流浃背）</p>
-<p>Charles在社交兔上新增的追随者是79个，Polaris是13个。</p>
-<p>我决定这个周末让大家都去雪山度假。585一天，家庭资金只够住一天（泪目）Polaris来了雪山之后就耳朵疼，可能是太冷了。Michael因为做噩梦一直很难过。Ocrea自己去滑雪了。Jasmine和Michael的家庭关系变成了喜欢互相开玩笑。</p>
-<p>Polaris觉得没人喜欢她。Adam感觉会说我永远爱你。</p>
-<p>Ocrea突然换牙了。Michael发挥了他人见人爱的特性，有个怀孕的陌生人阿姨要教他玩识字卡（虽然他现在因为做噩梦非常难过）</p>
-<p>Sirius也去滑雪了，然后也换牙了。换牙到底和滑雪有什么微妙的联系，还是说Sirius和Ocrea冥冥之中的情侣趋同性（flag+1，要是最后没在一起岂不是很打脸）</p>
-<p>Charles在洗澡，Adam突然进去和他说话。但居然没出现尴尬buff。</p>
-<p>哈蒂约Ocrea去家里玩。这家伙好像是狼人，一来就看见他奶奶正在从狼变成人（好超前的艺术）不知道为什么两个小朋友都很不舒服，Ocrea一直想去长椅上小睡。</p>
-<p>Adam给自己做了一份沙拉。一份…你小子。Polaris又在做蛋糕。她真的很爱蛋糕，我哭死。Michael吃多了糖牙疼了。Charles一直在抱他，不过好像他不是很喜欢Charles抱（可能是因为他手摸过食物有点脏，他现在尴尬了。）</p>
-<p>Charles在教Michael玩识字卡</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day5-1.PNG"></p>
-<p>Adam在手机上发短信问Polaris要不要试着去学吉他？我觉得你可能会喜欢。Adam现在已经有好名声了。</p>
-<p>我决定让Adam带大家去温泉玩一下。虽然现在是午夜十二点。来都来了。</p>
-<p>Charles问Adam说我给别人发消息别人一直没回怎么办？Adam应该会建议再发一次。Charles对Adam现在有了一个特殊感受：友善的建议者。</p>
-<p>Michael一直想和Ocrea开玩笑。满足了一下他的奇想，现在他想和Sirius表示友善了（看样子很喜欢张家姐弟嘛）我决定让他去给Sirius讲个故事（？）</p>
-<p>Charles想和Adam当朋友，然后想和Polaris眺望星空。Polaris一直想解决一个难题（我不知道怎么实现她这个奇想），然后想和一个人约会。不过现在她还没有和别人有浪漫条。Adam想让别人高兴起来，不过没说是谁。Sirius想和Adam当朋友，Jasmine想给弟弟Michael一个拥抱。</p>
-<p>先让Charles和Adam聊聊今天过的怎么样满足第一个奇想好了。不知道为什么Adam刻薄了一下Charles，Charles觉得很受伤。然后Adam还对Charles说谎了一下自己的职业（师傅你是做什么工作的？）Charles上楼喝茶了，他和Adam友善的奇想还是没有完成（为什么啊！！！）</p>
-<p>Charles因为Adam很受伤，要去被子里大哭。（呜呜呜我的宝宝）Adam在社交兔上发动态说：“枕头大战应该是缓解压力的，为什么我这么紧张呢？”Charles立刻私聊他说：“Adam，你怎么了？”（我哭死。）</p>
-<h2 id="第6天（夏·周六）"><a href="#第6天（夏·周六）" class="headerlink" title="第6天（夏·周六）"></a>第6天（夏·周六）</h2><p>结束度假了！Charles回来因为从Adam那里受伤非常愤怒，决定给玩具熊两拳（熊熊——）然后上楼找到玩具熊之后又取消了这种想法。</p>
-<p>Jasmine说别的小朋友不和她玩。Adam应该会说让她试着加入其他小朋友而不是告老师。对Adam产生情绪：友善的建议者。</p>
-<p>Jasmine<strong>喜欢健身</strong>了。并且想要Sirius成为朋友。</p>
-<p>ocrea产生了新的特征：刻薄倾向；害怕失败。</p>
-<p>Adam想要提升写作技能。我让他去写短篇故事。名字叫《矮子的伟大故事》（？）</p>
-<p>有个人（不知道是谁，可能是她在学校认识的朋友）问Polaris要不要去海港玩？随机数说OK。（但不知道为什么没有去成。可能是因为她在和Charles聊天）</p>
-<p>高中舞会开始了。Polaris和Charles都很困。Charles在和杰斯sweetheart dance （不是兄弟你谁啊？）Charles甚至根本不认识这人。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-1.PNG"></p>
-<p>Polaris也在和一个不认识的女生跳舞。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-2.PNG"></p>
-<p>Polaris发动态说：“给你找个像Charles一样的闺蜜，但不能和他合法地生活在一起(?)get you a bestie like him. legit can’t live with them”</p>
-<p>Charles和Polaris都没有成为舞会女王（其实我不知道这个玩法怎么玩）</p>
-<p>Polaris要和Charles一起拍大头贴（so cute）Charles觉得这照拍的很痛苦（？可能是他本来状态就不太好，太困了）Polaris觉得很高兴。她还化了妆。</p>
-<p>超可爱的拍立得，不过拍的时候Polaris好像有点长痘</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-4.PNG"></p>
-<p>有人问Polaris要不要参加after party。随机数说她想参加，还想带朋友。虽然她现在真的很困困困困困困。</p>
-<p>Charles终于完成和Polaris一起眺望星空的奇想了。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-3.PNG"></p>
-<h2 id="第7天（夏·周日）"><a href="#第7天（夏·周日）" class="headerlink" title="第7天（夏·周日）"></a>第7天（夏·周日）</h2><p>Michael和Jasmine的姐弟关系变成不太和谐了。可能是因为刚才Ocrea刻薄了一下他们。（不知道说了什么，难道是挑拨离间）他们姐弟都想和Sirius玩，不过Sirius觉得他们太吵了（喂！）</p>
-<p>Jasmine对Sirius现在有情绪：<strong>不断恶化的怨恨</strong>。泪目了。你们到底聊了什么。Jasmine和Sirius互相大喊大叫了一下（打起来打起来）Sirius觉得很愤怒，Jasmine倒没什么特别的感觉。</p>
-<p>Sirius也有<strong>喜欢刻薄</strong>的特征了。</p>
-<p>不知道是因为什么冲突，Charles没法去上班。先辞职为敬。Charles自己去洗衣服了。在家打工也是打工。</p>
-<p>哈蒂又约Ocrea去他家玩。Ocrea又很困（啊啊啊啊啊，这该死的睡眠条）</p>
-<p>回来之后Adam太困了直接晕倒，但是冰箱还是没修好。</p>
-<p>Adam给Polaris发消息说发明自动纠错的人今天去世了（什么怪新闻分享）</p>
-<p>Charles想给Michael读故事哄他睡觉。</p>
-<p>Polaris多了一个特征，<strong>喜欢咯咯咯地傻笑</strong>。</p>
-<p>Polaris对Sirius的关系也变成<strong>困难</strong>了。并且都对彼此感觉受伤。果然喜欢刻薄害人害己。Sirius不要跟Ocrea学啊！！！</p>
-<p>Charles想和Max聊天（好像是高中舞会认识的一个人），想和Adam淘气。他还是因为被亲近的人伤害特别难过（啊！）明明都已经没有受伤的情绪了。</p>
-<h2 id="第8天（秋·周一）"><a href="#第8天（秋·周一）" class="headerlink" title="第8天（秋·周一）"></a>第8天（秋·周一）</h2><p>Adam在给Michael讲故事</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day8-1.PNG"></p>
-<p>Michael的过敏变成<strong>胃胀气</strong>了，可能是因为他吃多了蛋糕。</p>
-<p>Jasmine的老师发短信说在她抽屉里发现了她给老师的情书（喂！别人放课桌里你怎么会知道啊！）感觉Adam应该会说和她谈谈而不是骂她。</p>
-<p>糟糕，付不起账单。为什么低端税要5k啊！！！</p>
-<p>Adam和Michael成为了好朋友。</p>
-<p>Jasmine邀请安娜贝尔来家里玩。Sirius现在是B级学生了。Charles的朋友托米来家里玩了（真别说这小伙子挺好看的）Ocrea说想成为忍者（挠头）</p>
-<p>让Adam写一本新书，叫做《sims城市英雄:Candid Portraits and Tales》</p>
-<p>Jasmine和Michael成为了好朋友。</p>
-<p>Sirius好像和Jasmine真的很合不来，他们俩一直互相恶作剧。Jasmine现在也<strong>害怕失败</strong>了。Polaris不知道和谁吵架也很生气。</p>
-<p>我希望Charles在大学之前把家里的椅子全修好。看起来是不太可能了。</p>
-<h2 id="第9天（秋·周二）"><a href="#第9天（秋·周二）" class="headerlink" title="第9天（秋·周二）"></a>第9天（秋·周二）</h2><p>Ocrea要去和Charles恶作剧说点禁忌的话（？）Charles觉得很好笑。好了，现在孩子们都开始疯狂互相恶作剧了。</p>
-<p>今天Sirius得了流感，请病假不上学。突然发现Ocrea也没去上学。你为什么不上学！！！</p>
-<p>Charles现在是A级学生了。回来在看爱情小说《心之背叛》（？）</p>
-<p>Polaris莫名其妙问了一下Ocrea叫什么名字（？）</p>
-<p>Charles也<strong>喜欢健身</strong>了。为什么我老觉得他之前就喜欢健身？</p>
-<p>Jasmine一个人在玩弹珠游戏</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-1.PNG"></p>
-<p>托米又来家里找Charles了！开始我还以为托米是男的，她戴礼帽的那个装扮真的很像男的ovo</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-2.PNG"></p>
-<p>Charles想和Adam眺望白云（兄弟你除了看天空没有别的idea吗）</p>
-<p>决定让Charles给家里的厨房洗手池升一下级。</p>
-<h2 id="第10天（秋·周三）"><a href="#第10天（秋·周三）" class="headerlink" title="第10天（秋·周三）"></a>第10天（秋·周三）</h2><p>Adam从Charles那里学会了怎么辨识鲈鱼（？）</p>
-<p>Charles在写作业，Adam过来和他聊天，然后Michael跑过来在两个人中间唱歌，Adam坐立难安地换了两个位置之后，选择把Michael抱起来（你小子是懂争宠的）</p>
-<p>Charles对Adam说：“你真的很有魅力，我希望你意识到这一点。”（男同发言）</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day10-1.PNG"></p>
-<p>Adam聊着聊着感觉对Jasmine很受伤，可能是因为Jasmine刻薄他了（自从Ocrea喜欢刻薄别人，我们这个家永无宁日）</p>
-<p>Ocrea和Jasmine一直在吵架（你们干脆打一架吧！！！）</p>
-<p>Charles莫名其妙又很受伤（日常受伤想起受伤的回忆的一人）</p>
-<p>Polaris的学习成绩不太好（可能是因为她一直不想写家庭作业）她应该退学吗？反正Adam肯定不会让她退学的。</p>
-<p>Polaris给Adam发消息说我们有空可以出去玩（什么三角恋故事）</p>
-<p>Adam想去吃饭，走到一楼又被Michael小朋友哭回来了。他想睡觉。</p>
-<p>托米来找Adam玩了。等等，你不用上学吗？Adam了解到托米的特征：有创意。</p>
-<p>Charles请同学塞西尔来家里玩了。这家伙一直试图裸奔，然后到床边上又突然穿上衣服（？)后来发现他是要在床上干点手艺活（？？？）Charles想和塞西尔调情（好超前的艺术）我觉得还是不要了。这人是有点变态在身上的。</p>
-<p>一直有人坐在Jasmine的床上聊天，她根本没法睡觉。呃啊啊啊啊啊。我让她在Polaris的床上睡一会，Michael还把她吵起来了。</p>
-<p>Polaris也不知道为什么觉得很受伤（被Charles传染了？）</p>
-<p>Sirius向Adam问朋友被欺负怎么办？Adam劝他为朋友挺身而出。Sirius现在对Adam有些崇拜。</p>
-<h2 id="第11天（秋·周四）"><a href="#第11天（秋·周四）" class="headerlink" title="第11天（秋·周四）"></a>第11天（秋·周四）</h2><p>今天是Michael的生日！！！（然后卡住了时间倒回礼拜三下午）</p>
-<p>让Charles给Michael洗了个澡，Adam实在是太困了。发现Charles今天早上起来居然长胡子了</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-1.PNG"></p>
-<p>Sirius喜欢愚蠢行为（？？？没关系，傻傻的也很可爱）</p>
-<p>Charles发短信给Polaris说你看起来像只没毛的羊驼（啊？？？）Polaris回了个翻白眼。</p>
-<p>托米发短信给Adam说自己爱上了雅各布。Adam应该会让她试试看。现在他们在一起了。（好好好）</p>
-<p>Michael除了思考都是满级了。一个不擅长思考的小孩。</p>
-<p>Polaris突然很害怕壮志未酬。</p>
-<p>Michael这孩子好像天生长得就很好看（未整容版）。我决定还是把他嘴巴上面的痣取消掉。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-2.PNG"></p>
-<p>他长大了还是那么爱他的小猫，我哭死</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-3.PNG"></p>
-<p>Michael是ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
-<p>Jasmine说塞林很有魅力，不过不知道塞林到底是谁的朋友。可能是Polaris的吧。</p>
-<h2 id="第12天（秋·周五）"><a href="#第12天（秋·周五）" class="headerlink" title="第12天（秋·周五）"></a>第12天（秋·周五）</h2><p>Adam不知道为什么突然去指出Michael的缺点，Michael感觉很<strong>受伤</strong>（我们这个家到底是怎么了！）Adam又指出了Charles的缺点（一人给一拳）</p>
-<p>Jasmine现在有好名声了。</p>
-<p>Jasmine不知道和Michael说了什么，Jasmine觉得很尴尬：为什么我要这么说？Michael觉得很生气。Jasmine对Michael有一个<strong>不断恶化的怨恨</strong>。</p>
-<p>Adam不知道为什么对Michael很<strong>崇拜</strong>，因为Michael知道他要做什么，而Adam不知道（？什么小孩哥）今天Michael不用去上学，可能是因为他刚长大。</p>
-<p>今天不知道为什么Charles也不想去上学。Ocrea日常不想上学。</p>
-<p>Adam获得了特征：<strong>欢乐</strong>。</p>
-<p>Michael一直在和Adam聊天，虽然但是，宝宝你该睡觉了。困得要死，但非要聊天。</p>
-<p>Jasmine很<strong>崇拜</strong>Adam。Jasmine真的很喜欢玩弹珠，经常看见她一个人在玩。其实我觉得Ocrea和Sirius有点排挤Jasmine，他们俩和Jasmine的关系都很差。</p>
-<p>托米邀请Charles去她家玩。随机数说去并且带上一位朋友。决定带上Polaris。不知道为什么Polaris一来就情绪失控并且非常愤怒，难道是因为托米是女生（挠头）但是托米不是和雅各布在一起了吗？</p>
-<p>我现在才发现原来通知栏有的时候会提醒我课程表不是自己提醒的，是Charles一直在查课程表（我哭死，他好爱学习）</p>
-<h2 id="第13天（秋·周六）"><a href="#第13天（秋·周六）" class="headerlink" title="第13天（秋·周六）"></a>第13天（秋·周六）</h2><p>Jasmine变得很<strong>叛逆</strong>。她现在变成INFP（调停者）了。诗意，可爱，无私的人（但一直和同龄小伙伴关系不太好）她现在和Ocrea，Sirius都是红条了（我们这个家早晚要散）</p>
-<p>今天决定去乡下旅游。</p>
-<p>Sirius多了一个特征：<strong>黏人</strong>。只有在照料者在一起才感觉安全。</p>
-<p>Adam<strong>喜欢闲聊</strong>。Ocrea和Adam有一个情绪，共度亲密时光。</p>
-<p>Michael对Charles说：你真的很好。+你真的很有趣，我很享受和你在一起的时候，希望你也一样。</p>
-<p>托米约Adam来参加绘画展（我以为是浪漫庆典，挠头）好像就是浪漫庆典。</p>
-<p>一起喝樱花茶，Jasmine把杯子掉茶喷泉里了。</p>
-<p>Adam在画浪漫的画</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day13-1.PNG"></p>
-<p>本来打算通过浪漫庆典来点感情进展，但Polaris太困了，让Adam画完画就直接回来了（等等，好像画没拿回来，啊啊啊啊啊）</p>
-<p>Adam，Charles和Polaris因为喝了樱花茶都有挑逗的状态，Polaris太困睡觉去了，Adam决定自己来点手艺活（？？？）Charles本来打算和Adam聊天，然后取消了去和Michael抱怨不公平的生活（好混乱的关系）Charles对Michael说：你真的太棒了。</p>
-<p>Michael和Adam成为最好的朋友了，Michael对Adam有一个情绪：深深的链接。但不知道为什么Michael突然感觉被Adam深深的伤害了，可能是因为Ocrea在说离开家的事情。</p>
-<h2 id="第14天（冬·周日）"><a href="#第14天（冬·周日）" class="headerlink" title="第14天（冬·周日）"></a>第14天（冬·周日）</h2><p>Ocrea也很崇拜Michael。</p>
-<p>Sirius的奇想里说想和Jasmine做朋友，我决定让他先去给Jasmine道个歉。</p>
-<p>Michael觉得对Jasmine很受伤。突然发现Polaris和Sirius不知道为什么也是红条，而且Polaris感觉对Sirius很受伤（虽然这个情绪已经快降完了）</p>
-<p>企图让Jasmine喝有灵感的药水完成在有灵感状态下画两幅画的抱负要求。不知道为什么画完了但是没有显示完成。</p>
-<p>Polaris给Adam发消息说希望你今天过得好。Charles给Adam分享了一个专辑。</p>
-<h2 id="第15天（冬·周一）"><a href="#第15天（冬·周一）" class="headerlink" title="第15天（冬·周一）"></a>第15天（冬·周一）</h2><p>为了快点完成Ocrea的抱负，决定让她和Sirius多说点话。因为她的友情条和Sirius比较高。Sirius喜欢讨论兴趣爱好。Ocrea对Sirius有了一个崇拜的情绪。Polaris对Charles非常崇拜。</p>
-<p>Sirius和Ocrea一起堆雪人。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-1.PNG"></p>
-<p>突然发现Michael不知道为什么和托米关系不太好（挠头）我以为托米和大家关系都很好。</p>
-<p>抽象雪人</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-2.PNG"></p>
-<p>好好好，今天大家都去上学了。Sirius是A类学生了。</p>
-<p>Charles对Polaris说我很高兴你不觉得我的羊驼笑话太老，你真的很懂我（咯咯咯，发出听见冷笑话的笑声）</p>
-<p>Adam写科幻小说写着写着突然觉得自己喜欢制造东西了（？）</p>
-<p>Michael因为自己和自己下棋没下过感觉不舒服（？）然后又想起被姐姐伤害的事，现在难过了。</p>
-<p>Polaris做饭叫大家来吃了。</p>
-<p>Michael想和Ocrea做朋友，Ocrea想和Jasmine做朋友。Ocrea先和Michael成为了朋友。不知道为什么，Ocrea和Jasmine做朋友真的很难。</p>
-<p>Michael说自己收到了朋友的礼物，应不应该把礼物转赠他人。Adam应该会让他留着礼物。</p>
-<h2 id="第16天（冬·周二）"><a href="#第16天（冬·周二）" class="headerlink" title="第16天（冬·周二）"></a>第16天（冬·周二）</h2><p>小朋友们早上在做学校实践作业。Charles似乎是第一次作业还没写。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day16-1.PNG"></p>
-<p>今天Ocrea和Polaris都不想去上学（喵喵喵？）</p>
-<p>Michael<strong>喜欢开玩笑</strong>。</p>
-<p>刷友好度好难，感觉要晕过去了。难道是我装了什么mod吗？友好度加的超级慢。</p>
-<p>Charles帮Michael写作业了，Charles和Michael成为了好朋友。Michael觉得自己<strong>喜欢感情</strong>。</p>
-<p>Jasmine不喜欢做决定，那太难了。</p>
-<p>Charles在圣诞节礼物里面放了恶作剧礼物（喂！！！）</p>
-<p>Jasmine掉牙了，但是没有得到牙仙证书（奇怪）</p>
-<p>不知道谁把Michael的实践作业踹翻了（啊啊啊啊啊NOOOOOO）坏了，他睡觉起来发现自己的作业被人踢了。</p>
-<h2 id="第17天（冬·周三·圣诞节）"><a href="#第17天（冬·周三·圣诞节）" class="headerlink" title="第17天（冬·周三·圣诞节）"></a>第17天（冬·周三·圣诞节）</h2><p>终于给我们家装上灯和白色地板了。</p>
-<p>Michael不知道为什么真的很生气，然后自己去洗澡了。</p>
-<p>一起装饰圣诞树。圣诞快乐！</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-1.PNG" alt="day17-1"></p>
-<p>不得不说，托米真的很好看。我现在宣布，托米是我们这个家的一份子。</p>
-<p>Ocrea居然要和Michael说你是我的最爱~果然这个家最讨人喜欢的是弟弟。</p>
-<p>sweet hug</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-2.PNG" alt="day17-2"></p>
-<p>Adam从圣诞老人那里得到了一个平板，Charles得到了一个世代灯塔奖（什么东西？），Polaris得到了一幅画，Ocrea得到了一个巨大的三叶虫化石（？）Ocrea居然很喜欢。Jasmine得到了黏土块，Michael得到了泡泡水。Michael特别喜欢泡泡水。圣诞节结束了，但是Sirius还没有得到他的礼物！！！</p>
-<p>让大家一起打开圣诞树下的礼物。Ocrea拿到了一个空盒子。</p>
-<p>Jasmine<strong>喜欢讨论兴趣</strong></p>
-<h2 id="第18天（冬·周四·圣诞节）"><a href="#第18天（冬·周四·圣诞节）" class="headerlink" title="第18天（冬·周四·圣诞节）"></a>第18天（冬·周四·圣诞节）</h2><p>Adam解锁了生活方式：喜欢独处</p>
-<p>Adam好像很喜欢赛琳，他们很契合，并且Adam想和赛琳调情。我觉得可以让他去了解一下赛琳。</p>
-<p>Ocrea选择的特征是物质主义，抱负是连环浪漫。ocrea真的超级瘦。</p>
-<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-3.PNG" alt="day17-3"></p>
-<p>Sirius选择的特征是客观主义，抱负是聪明的大脑。</p>
-<p>Jasmine选择的特征是移动感情的，抱负是主厨。</p>
-<p>突然发现赛琳怀孕了（？？？）难道她已经结婚了？</p>
-<h2 id="第19天（冬·周五）"><a href="#第19天（冬·周五）" class="headerlink" title="第19天（冬·周五）"></a>第19天（冬·周五）</h2><p>Michael掉牙了。</p>
-]]></content>
-      <categories>
-        <category>自用</category>
-        <category>Sims 4</category>
-      </categories>
-      <tags>
-        <tag>自用</tag>
-        <tag>模拟人生4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>相变理论基础</title>
-    <url>/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h3 id="从气液固开始"><a href="#从气液固开始" class="headerlink" title="从气液固开始"></a>从气液固开始</h3><p>当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。</p>
-<span id="more"></span>
-
-<p>从直观词义上来说，我们知道相变是一种变化，从一种相变成另一种相的物理过程就称之为相变。最常见且令人熟悉的相变现象是水的气液固相变，在一个标准大气压下，100℃时水会汽化成水蒸气（从液态变为气态），而0℃时，液态的水则凝固成固态的冰。</p>
-<p>我们都知道在水沸腾的过程中，锅里的水总是保持在100℃，而在冰融化的过程中，冰水混合物的温度总保持在0℃。实际上，我们可以用这两个温度来为一个简易温度计定标（印象中初中或者高中物理会提到这个小实验）。</p>
-<p>为什么煮沸水的过程中，水明明在被加热却依然保持温度不变？印象中基础物理会这样解释：这部分能量被用于做功，使得水分子从分子间距较近的液态变为分子间距较远的气态。这似乎不太对，但印象中初中老师们似乎确实会这么告诉小朋友。要稍微专业一些来说，这涉及到相变潜热的概念（在下面一节：一阶相变中再说）。毕竟说这些概念什么——光是说到做功我就已经头大了，更别提什么潜热。我们或许可以先谈一些直观的，比如说图一。</p>
-<img src="\images\气液固相变.png" alt="气液固相变" style="zoom:60%;" />
-
-<div style="text-align: center;">图一：气液固相变</div>
-
-<p>图一是一张横坐标是温度纵坐标是压强的图像（废话！），在这张图中我们把气液固三相用不同的颜色标示出来，分别是蓝色的固相，紫色的液相，以及橙色的气相。这些相之间非常泾渭分明，除了最右上角那一块黄昏主题眼影一样的晕染。</p>
-<p>相与相之间的交界线代表相变的发生，这时两相（甚至三相）可以共存，比如说冰水混合物，这些不同的相之间处于一种微妙的平衡状态。而当条件稍稍改变一些，我们的共存体系就会无可挽回地向着单一相的情况发展了。共存体系的条件如此苛刻，以至于我们观察到的系统总是从一种相的极端迅速走向另一种相的极端，也就是相变。</p>
-<p>这里我不得不说，统计学家们对相变如此好奇可能就是因为这些变化非常不稳定而且剧烈。就像蝴蝶振翅，原本平衡的体系会瞬间打破，演变成一场风暴。蝴蝶振翅对人们来说当然算不上什么，但一场风暴就很不妙。</p>
-<p>说回图一，在右上角这个特别的边界模糊处，液相和气相的区别消失了，物质变成了一种超临界流体（听上去很吓人，但只需要知道它是一种液相和气相之间的界限消失，两者无法区分的特殊相就行了）。这东西要详细研究起来非常有趣，可以单独作为一个课题，叫做超临界流体。不过我们在这里只讨论相变——没错，这里也发生了相变。前一种界线分明的相变叫做一阶相变，这里叫做二阶相变，也叫连续相变。</p>
-<h3 id="一阶相变"><a href="#一阶相变" class="headerlink" title="一阶相变"></a>一阶相变</h3><p>物理学家通常会说，一阶相变是指那些涉及潜热的相变（所以潜热到底是什么？）。在这种相变过程中，系统吸收或释放固定的能量（这个能量通常很大），系统的温度随热量的增加而保持不变：系统处于“混合阶段”，其中系统的某些部分已经完成了过渡，而其他部分则没有。比如说在水的蒸发过程中（说通俗点，在烧开水），水温总是维持在100℃不变，而随着加热的进行，越来越多的水转换为水蒸气，锅里的水越来越少了。</p>
-<p>若我们要系统地阐述相变问题，使用“水越来越少”这样的话实在不能令人信服。当我们描述相变时，我们总是需要一些准确的可测量的物理量。比如说我们熟悉的热力学量：温度，压强等等。当我们烧开水时，虽然水的温度并没有变化，但压强却在短期内发生了极为剧烈的改变。</p>
-<p>一阶相变的经典图像是一个阶梯函数，大概长这样：▁|▔（你是懂作图的）虽然一阶相变很好理解也很好观察，但它却很难求得精确解。因为它涉及到相变潜热的问题（非常麻烦）为什么起名叫做潜热（latent heat），据说是因为系统吸热但温度没有上升，吸收的热量不能直接观察到，因此得名潜热，也就是隐藏的热量。在某些基础热力学课本中，潜热也被称之为“焓的变化”。</p>
-<p>我们回到在第一节中提到的，加热过程中吸收的热量到底到哪去了？化学家会说，它用于提高“位能”。当冰熔化成水时，它吸收热量用于打断水分子间的键结，破坏分子间相互作用力。这就是“熔化热”。而当水蒸发为水蒸气时，分子间相互作用力被进一步破坏，这就称之为“汽化热”。（当然我从来不管什么熔化热和汽化热，这段是从别处抄来的。）</p>
-<p>现在。我们大概了解了我们最熟悉的一阶相变，熔化和汽化（反过来作为凝固和液化也是一阶相变）。我们知道了它们从物理学定量描述来看的直观特征，也就是那个阶梯函数。也知道了什么是潜热。有趣的是，一阶相变绝不仅仅存在于热力学，在经典的磁化现象以及复杂网络中也存在相变，这是热力学统计物理的推广，我们只需要把之前讨论的热力学量换成与之相对应的其他物理量，就可以用相同的方式理解其他系统中的相变问题。</p>
-<h3 id="二阶相变"><a href="#二阶相变" class="headerlink" title="二阶相变"></a>二阶相变</h3>]]></content>
-      <categories>
-        <category>物理</category>
-        <category>统计物理</category>
-      </categories>
-      <tags>
-        <tag>相变</tag>
       </tags>
   </entry>
   <entry>
@@ -5163,6 +4499,664 @@
       <tags>
         <tag>小说</tag>
         <tag>兰台不书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>李杨定理</title>
+    <url>/%E6%9D%8E%E6%9D%A8%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>要想了解李杨定理，首先我们可以撇去那些乱七八糟的数学推导不管，唯象地简单了解一下李杨定理到底提出了什么问题，或者说解决了什么问题？</p>
+<p>李杨定理用于解决相变问题，是相变理论的重要组成部分。通过对李杨零点的测定或者计算（李杨零点的概念我们稍后再谈，现在你只需要知道它是一个复平面上的零点），我们可以找到系统的相变点甚至确定在这一点到底是发生了一阶相变还是二阶相变。</p>
+<span id="more"></span>
+
+<p>在李杨定理提出之前，当我们需要研究相变问题时，我们可以尝试直接求出系统热力学量的精确解（不得不说，这非常麻烦，甚至经常找不到解）。或者用朗道的相变理论，尝试找出自由能（或者说热力学势）的不可导点，从而找出相变点。这个方法比上一个稍好一些，因为它把研究的重点从热力学量变成了热力学量的一阶导。李杨定理提出了更加本质的方法，也就是研究配分函数。自由能可以表述为一个与配分函数相关的自然对数函数，当自由能不可导时，配分函数为0.将配分函数的这些零点都画在复平面上，就是我们所说的李杨零。李杨零点对应的，就是我们要找的相变点。</p>
+<h3 id="李杨定理"><a href="#李杨定理" class="headerlink" title="李杨定理"></a>李杨定理</h3><p>李政道与杨振宁在1952年的著名论文（Statistical theory of equations of state and phase transitions. I. Theory of condensation）中提出李杨定理的前两条：</p>
+<blockquote>
+<p>Th. 1    对所有的正实数逸度z，当系统处于热力学极限情况下时，$V^{-1} \ln \Xi$（$\Xi$是配分函数）的极限存在，且极限函数是z的连续、单调递增函数，与容器的形状无关（除非容器的形状特别奇怪，使得容器的表面积增加得比$V^{2&#x2F;3}$还快）</p>
+</blockquote>
+<blockquote>
+<p>Th. 2    若在z的复平面中，包含一段正实轴的区域R内不包含$\Xi&#x3D;0$的根，则对区域R中的各z，极限<br>$$<br>\lim _{V \rightarrow \infty} V^{-1} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1} \frac{\partial}{\partial \ln z} \ln \Xi, \lim _{V \rightarrow \infty} V^{-1}\left(\frac{\partial}{\partial \ln z}\right)^{2} \ln \Xi \cdots<br>$$<br>均存在，它们是z的解析函数，且在R中$\frac{\partial }{\partial \ln{z} } $与$\lim _{V \rightarrow \infty}$互易<br>$$<br>\lim _{V \rightarrow \infty}\left(\frac{\partial}{\partial \ln z} V^{-1} \ln \Xi\right)&#x3D;\frac{\partial}{\partial \ln z}\left(\lim _{V \rightarrow \infty} V^{-1} \ln \Xi\right)<br>$$</p>
+</blockquote>
+<p>Th. 1提出在z的复平面上，不论正实轴上是否存在零点，$\lim _{V \rightarrow \infty} V^{-1} \ln \Xi$永远存在且是一个&#x3D;&#x3D;连续的&#x3D;&#x3D;单调递增函数。从物理学上来说，$V^{-1} \ln \Xi$可以理解为自由能F或者热力学势。</p>
+<p>Th. 2则说明，当区域R内正实轴上不存在零点时，相变不存在。在Th.2中解释说，$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$是自由能的一阶导，它们一般是一些我们熟悉的热力学量。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) \ln \Xi$存在极限时，自由能可导。当$V^{-1}\left(\frac{\partial}{\partial \ln z}\right) ^2\ln \Xi$存在极限时，热力学量也可导。我们知道可导必然连续，则热力学量不存在奇点。奇点不存在时，相变也不存在。</p>
+<p>当正实轴上存在零点时，根据Th.1我们知道自由能F连续，但根据Th.2，自由能不可导，因此热力学量在这一点存在一个奇点，也就是相变点。根据我们对于相变的特征论述，我们知道这是一阶相变。若想直观地了解这些图像，我们可以查看图一。</p>
+<img src="/李杨定理1.png" style="zoom:60%;" />
+
+<div style="text-align: center;">图一</div>
+
+<p>图一(a)展示的是逸度z的复平面下李杨零点的分布，我们可以在图中找到两个位于正实轴上的李杨零点（t<del>1</del>,t<del>2</del>），在这两点系统发生相变。为什么要找正实轴上的李杨零点呢？因为我们知道现实世界中的物理量是不可能为虚数或者复数的，当这些值为虚数或者复数时，我们称它们为“非物理的”。只有正实轴上的李杨零点才对我们有意义。</p>
+<p>我们将该系统的配分函数带入自由能的表达式得到图一(b)，在这幅图中纵坐标是p而不是我们熟悉的F，是因为它代表的是热力学势（thermodynamic potential）。在本文中我会把自由能和热力学势混用（这是个口语习惯问题）。可以发现在李杨零点对应点，热力学势是不可导的，它是个折点，左右两边的斜率明显不一致。</p>
+<p>至于图一(c)则展现了李杨零点对应点与热力学量的关系，这里很明显地产生了相变，且是典型的一阶相变。而图(d)则展示了温度体积不变时，气体物质的量υ与热力学势p的关系。随着物质的量增大，热力学势p出现了两个平台期，此时发生相变，系统处于两相共存的状态。</p>
+<h3 id="李杨定理的数学推导（硬球模型）"><a href="#李杨定理的数学推导（硬球模型）" class="headerlink" title="李杨定理的数学推导（硬球模型）"></a>李杨定理的数学推导（硬球模型）</h3><p>在讨论李杨定理的严格数学推导时，李杨的原文采用了一个理想的硬球模型假设。设一个有相互作用的单原子气体系统，每个气体分子都可以看做直径为a的硬球，$u\left(r_{i j}\right)$是两体相互作用势，只受以下条件约束：<br>$$<br>\left{\begin{array}{ll}<br>u\left(r_{i j}\right)&#x3D;+\infty &amp; \text { 当 } r \leq a \<br>-u_{0}&lt;u_{r}&lt;0 &amp; \text { 当 } a&lt;r&lt;r_{0} \<br>u_{r}&#x3D;0 &amp; \text { 当 } r \geq r_{0}<br>\end{array}\right.<br>$$<br>系统的总势能为两粒子相互作用势能之和：<br>$$<br>U&#x3D;\sum u\left(r_{i j}\right)(i&lt;j)<br>$$<br>李杨在巨正则系综下讨论这个问题（不过我们知道热力学极限情况下三种系综其实并无分别）假设在一个温度恒为T，体积为V的盒子里有N个粒子，每个粒子的化学势为μ。该盒子允许粒子与外界进行交换，则可以写出系统的巨配分函数为：<br>$$<br>\Xi&#x3D;\sum_{N&#x3D;0}^{M} \frac{1}{N !} Q_{N} z^{N}<br>$$<br>其中$Q_{N}$代表正则系综下的配分函数：<br>$$<br>Q_{N}&#x3D;\int \cdots \int_{V} d \tau_{1} \cdots d \tau_{N} e^{-\beta H} d V, H&#x3D;U+T<br>$$<br>定义逸度z为：<br>$$<br>z&#x3D;\left(2 \pi m k T &#x2F; h^{2}\right)^{\frac{3}{2}} \exp (\mu &#x2F; k T)<br>$$<br>公式（7）可以展开成为逸度z的多项式如下：<br>$$<br>\Xi(z, T, V)&#x3D;1+Q_{1} z+Q_{2} z^{2}+\cdots+Q_{M} z^{M}<br>$$<br>其中各项系数$Q_{i}$均为正数，$\Xi \ge 1$。</p>
+<p>我们在这里需要了解一下逸度的相关概念。逸度在化学中表示实际气体的有效压强。逸度是一个与化学势相关的函数，用于表述化学势与理想气体的关系。逸度的值等于相同条件下具有相同化学势的理想气体的压强。因此，当气体为理想气体时，逸度的值与压强相等。要具体地理解逸度的值，我们可以举出以下这个例子： 0°C 下 100个大气压下的氮气的逸度为 97.03 个大气压，这意味着它与 97.03 个大气压下的氮气理想气体有着相同的化学势。</p>
+<p>我们可以发现，当我们的粒子数N小于盒子紧密堆积所能具有的最大粒子数M时，系统的巨配分函数是个e指数函数，其任意阶导数均存在且连续，因此由它导出的所有热力学函数都不具有奇异性。系统不存在相变。而当粒子数N大于盒子紧密堆积所能具有的最大粒子数M时，系统的势能将无穷大，$Q_{N}&#x3D;0$.</p>
+<p>现在我们拥有了巨正则系综下的配分函数。我们可以得到压强和粒子数密度的表达式如下：<br>$$<br>p&#x3D;\frac{k T}{V} \ln \Xi<br>$$</p>
+<p>$$<br>\rho&#x3D;\frac{N}{V}&#x3D;\frac{1}{v}&#x3D;\frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi<br>$$</p>
+<p>回到前文提到的巨配分函数的展开式（10），我们知道该式各项系数$Q_{i}$均为正数，$\Xi \ge 1$。因此，函数$\ln \Xi$恒为正数，由此导出的热力学函数也不具有奇异性，这就是为什么李杨之前的学者认为并不能从配分函数着手来研究相变问题。然而李杨提出，在热力学极限的情况下，$V^{-1} \ln \Xi$的极限是存在的（Th. 1）。</p>
+<p>要想证明这一点，我们可以先回到巨配分函数$\Xi $.我们将巨配分函数进一步做一个泰勒展开如下：<br>$$<br>\Xi(z, T, V)&#x3D;\sum_{N&#x3D;0}^{M} Q_{N}(T, V) z^{N}&#x3D;\prod_{k&#x3D;1}^{M}\left(1-\frac{z}{z_{k}}\right)<br>$$<br>其中$z_{k}$是巨配分函数$\Xi &#x3D; 0$的根。一般来说，$z_{k}$分布在z的复平面上，但不会分布在正实轴上，因为正如前文提到，巨配分函数多项式的各系数均为正数，因此$z_{k}$不可能为正实数。另外，因为该多项式系数均为实数，若$z_{k}$为$\Xi &#x3D; 0$的根，那么$z_{k}^{*} $也是该方程的根，因此<strong>在整个复平面上$z_{k}$的分布相对于实轴对称</strong>。</p>
+<p>我们知道，该盒子的最大容纳粒子数M总是正比于体积V，而巨配分函数零点数与M数相等。热力学极限下，盒子的体积V将趋向于无限大，$\Xi &#x3D; 0$的根亦将趋近无穷，$\Xi &#x3D; 0$的某些根可能无限趋近于正实轴上的某些点$z_{0}$，也就是说，在$z_{0}$的任意邻域，无论该邻域有多小总是包含着一些零点。$V^{-1} \ln \Xi$本身依然连续，但它的导数可以不连续，因此出现奇异性。</p>
+<p>在热力学极限下，压强和粒子数密度的表达式如下：<br>$$<br>\frac{p}{k T}&#x3D;\lim _{V \rightarrow \infty} \frac{k T}{V} \ln \Xi<br>$$</p>
+<p>$$<br>\rho&#x3D;\lim _{V \rightarrow \infty} \frac{N}{V}&#x3D;\lim _{V \rightarrow \infty} \frac{1}{V} z \frac{\partial}{\partial z} \ln \Xi<br>$$</p>
+<h3 id="Ising-模型下的李杨定理"><a href="#Ising-模型下的李杨定理" class="headerlink" title="Ising 模型下的李杨定理"></a>Ising 模型下的李杨定理</h3><p>李杨在他们的第二篇论文（ T. D. Lee and C. N. Yang (1952) Statistical theory of equations of state and phase transitions. II. Lattice gas and Ising model. Phys. Rev. 87 410.）中证明了Ising模型中李杨定理的适用性。</p>
+<blockquote>
+<p>Th. 3 在晶格气体模型中，如果任意两个气体原子占据同一点阵时相互作用能$u&#x3D;+\infty $，其他情况$u\le 0$，则巨配分函数的所有零点都在z的复平面的单位圆上。</p>
+</blockquote>
+<h3 id="李杨零的实验测定"><a href="#李杨零的实验测定" class="headerlink" title="李杨零的实验测定"></a>李杨零的实验测定</h3><p>李杨零点作为处于复平面上的零点，实验测定具有本质上的困难性（因为它是非物理的）PRL 2015年发表了一篇文章提出使用三甲基亚磷酸盐分子做一个spin-bath耦合，在三甲基亚磷酸盐分子中央的^31^P原子（图二，蓝色）作为探针(spin)，周围的九个^1^H原子（图二，橙色）共同组成被测定系统(bath)。我们由探针去测定系统的退相干现象，构建相关性与时间的函数关系，得到相干性函数。相干性函数与我们要讨论的系统的配分函数具有一一对应关系。</p>
+<p><img src="/%E4%B8%89%E7%94%B2%E5%9F%BA%E4%BA%9A%E7%A3%B7%E9%85%B8%E7%9B%90%E5%88%86%E5%AD%90.png" alt="三甲基亚磷酸盐分子"></p>
+<div style="text-align: center;">图二 三甲基亚磷酸盐（TMP）分子</div>
+
+<p>首先，我们讨论一下探针的相干性函数。我们设初态探针自旋为：$\left | \psi\left ( 0 \right )   \right \rangle &#x3D;\left | \uparrow   \right \rangle +\left | \downarrow  \right \rangle$</p>
+<p>探针自旋随时间变化：$\left | \psi\left ( t \right )   \right \rangle &#x3D;\left | \uparrow   \right \rangle +exp \left (-ibt  \right ) \left | \downarrow  \right \rangle$</p>
+<p>探针和浴之间的耦合产生了一个局部磁场b，局域场b的随机分布导致了探针的自旋退相干。</p>
+<p><img src="/%E6%9D%8E%E6%9D%A8%E5%AE%9A%E7%90%86%E5%AE%9E%E9%AA%8C%E6%B5%8B%E5%AE%9A.png" alt="李杨定理实验测定"></p>
+<div style="text-align: center;">图三 Lee-Yang零的实验测定</div>
+
+<p>上图蓝色圆圈表示李杨零的理论值，红叉代表测定值。</p>
+<h3 id="根据零点分布判断相变类型"><a href="#根据零点分布判断相变类型" class="headerlink" title="根据零点分布判断相变类型"></a>根据零点分布判断相变类型</h3><p>一阶相变的零点曲线通过正实轴上，且零点曲线切线与正实轴呈现90度角（图三，β&#x3D;1&#x2F;3）。二阶相变趋近于正实轴但并不通过正实轴，零点曲线切线与正实轴呈45度夹角（图三，β&#x3D;1）。总的来说，高阶相变两点曲线切线与正实轴角度为：π&#x2F;(2·相变阶数)</p>
+<p><img src="/%E9%9B%B6%E7%82%B9%E6%9B%B2%E7%BA%BF.png" alt="零点曲线"></p>
+<div style="text-align: center;">图四 零点曲线</div>
+
+<h3 id="非平衡态下的李杨定理"><a href="#非平衡态下的李杨定理" class="headerlink" title="非平衡态下的李杨定理"></a>非平衡态下的李杨定理</h3><p>前文我们大部分介绍的是平衡态下李杨定理的应用，比如说硬球模型或者Ising 模型，接下来我会简要介绍一下非平衡态中一些会运用到李杨定理的模型。</p>
+<h4 id="KLS模型"><a href="#KLS模型" class="headerlink" title="KLS模型"></a>KLS模型</h4><p>KLS模型是由Sheldon Katz, ‘Joel L. Lebowitz, 和H. Spohn在1983年的论文（ S. Katz, J. L. Lebowitz and H. Spohn (1983) Phase transitions in stationary non-equilibrium states of model lattice systems. Phys. Rev. B 28 1655.）中提出。它描述的是一种受外界驱动的晶格气体模型。它在原始的晶格气体模型上添加了一个单向外部磁场，气体粒子在外部场方向上的跳跃速率增强。</p>
+<p><img src="/KLS.PNG" alt="KLS"></p>
+<div style="text-align: center;">图五 KLS模型</div>
+
+<p>图五左图表述了没有添加外磁场的晶格气体模型，右图描绘了添加外磁场的晶格气体模型。添加磁场后晶格气体模型明显出现了一个隔离相变现象。</p>
+<h4 id="ASEP过程"><a href="#ASEP过程" class="headerlink" title="ASEP过程"></a>ASEP过程</h4><h4 id="AHR模型"><a href="#AHR模型" class="headerlink" title="AHR模型"></a>AHR模型</h4><h4 id="反应扩散模型"><a href="#反应扩散模型" class="headerlink" title="反应扩散模型"></a>反应扩散模型</h4><h4 id="DP模型"><a href="#DP模型" class="headerlink" title="DP模型"></a>DP模型</h4>]]></content>
+      <categories>
+        <category>物理</category>
+        <category>统计物理</category>
+      </categories>
+      <tags>
+        <tag>相变</tag>
+        <tag>李杨定理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>李杨零/Fisher零-文献速记</title>
+    <url>/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/</url>
+    <content><![CDATA[<h4 id="PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）"><a href="#PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）" class="headerlink" title="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）"></a>PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）</h4><p>简介：</p>
+<p>如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。</p>
+<span id="more"></span>
+
+<h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><p>利用配分函数零的密度区分：（1）一阶与高阶相变；（2）研究此类相变的交叉（指外部情况改变的情况下，从一种相变过渡到另一种相变）；（3）以潜热和临界指数的形式测量一阶和二阶相变的强度。</p>
+<p>一阶相变：自由能一阶导数的不连续。对于温度（或者说能量）驱动的一阶相变，导致不连续的是潜热。对于场驱动的…是自发磁化。自由能相对于温度与外场的二阶导分别是比热和磁化率。在一阶相变下表现出函数奇点。这与二阶相变不同，二阶相变中自由能的二阶导随相关长度发散。</p>
+<p>有限体积系统可以导出热力学极限情况下？（FSS？这段不是很确定）</p>
+<blockquote>
+<p>chatgpt：FSS 背后的想法是，临界点附近的系统行为由几个通用量决定，例如临界指数和缩放函数。这些量与系统的细节无关，可用于描述各种系统的行为。</p>
+</blockquote>
+<p>对于场驱动的相变，我们关注的是复外磁场平面上的李杨零。对温度驱动的，则是复温度平面上的Fisher零。</p>
+<p>由第一个Fisher零的FSS得到临界指数相关长度υ，一阶相变下υ为1&#x2F;d（d是维度）从而区分一阶与高阶相变。另外，相变强度以往不能由零的性质来确定，只能通过直接测量潜热或界面张力来确定的。本文希望通过零的密度来研究相变强度（一阶相变下零密度与潜热成正比）</p>
+<p>对于大j，第j个李杨零（或Fisher零）可以简化为公式…</p>
+<p>配分函数零的这种行为提供了一种（通常是非常准确的）方法来确定(i)临界温度和（ii）描述系统的热力学临界性质的临界指数。</p>
+<p>回顾以往对配分函数零的研究：</p>
+<ol>
+<li>确定零的分布，以研究复杂参数的相图，并检查（以定性的方式）零是否似乎跨越了真实的轴，这是相变存在的证据</li>
+<li>定量测量那些具有最小虚部的零的（有限尺寸）尺度行为，以确定临界指数，可能用类似的分析分别应用于更高的指数零或确定夹角</li>
+<li>Lee-Yang零的固定体积图表明在一阶相变时零的非零密度的开始</li>
+</ol>
+<p>早期认为在有限晶格中估计零点密度非常困难→现可用数值方法</p>
+<h6 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h6><p>L：晶格线性范围（晶格大小）</p>
+<p>A(z)：一个永不消失的平滑函数。这意味着A(z)连续</p>
+<p>z<del>j</del>：零点</p>
+<p>z<del>c</del>：临界点（感觉这里应该是指正实轴上那个零点）</p>
+<p>z &#x3D;z<del>c</del> + r exp (iϕ)：零点曲线，ϕ是与实轴夹角</p>
+<p>g<del>L</del>(r)：z<del>j</del>&#x3D;z<del>c</del> + r<del>j</del> exp (iϕ)上的零点密度</p>
+<p>G<del>L</del>(r)：0-r这个圆里的零点累积密度</p>
+<p>对于FSS，$G_{L}(r)&#x3D;\frac{j}{L^{d}} \quad \text { if } \quad r \in\left(r_{j}, r_{j+1}\right)$是一个区间，所以做一下平均值求出r<del>j</del>处的零点累积密度为：$G_{L}(r)&#x3D;\frac{2j-1}{2L^{d}} \quad$（过原点，且通过原点的斜率揭示相变的类型和强度）</p>
+<p>比热进行FSS：$C_{L}(z_c)&#x3D;L^{\alpha &#x2F; \nu }$，在一阶情况下对于固定的j有：$r_{j}(L) \sim  L^{-d}$,$C_{L}(z_c) \sim  L^{d}$</p>
+<h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h6><p>对一阶与二阶相变，有：$G_{L}(r)&#x3D;a_{1}r^{a_{2}}+a_{3}$</p>
+<p> a<del>3</del> 大于零，零点越过实轴，表示一阶相变。 如果 a<del>3</del> 小于零，则零仍然远离实轴，表示处于对称阶段的情况。若a<del>2</del>趋近于1，对于小r（原点附近斜率恒定）一阶相变。潜热与斜率a<del>1</del>成正比。若a<del>2</del>大于1，则是二阶相变。这种情况下相变强度α&#x3D;2-a<del>2</del>。（r<del>j</del>是第j个零点的虚部，也就是说，r<del>j</del>&#x3D;Im z<del>j</del>(L)）</p>
+<p>误差分析的一些细节…（不想看qwq）</p>
+<h6 id="Potts-Model"><a href="#Potts-Model" class="headerlink" title="Potts Model"></a>Potts Model</h6><p>二维potts model： q≤4，二阶相变；q＞4，一阶相变。临界温度倒数$\beta _{c}&#x3D;\ln{1+\sqrt{q} } $</p>
+<p>三维potts model： q&#x3D;2，二阶相变（Ising 情况）；q≥3，一阶相变</p>
+<h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h6 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>根据二维点阵晶格（L为14）且无外磁场H的系统精确配分函数，可得复温度平面上的Fisher零。当L趋近无穷，H不为零，Fisher零在反铁磁临界点a<del>c</del>(H)与正实轴相交，将这些值与反铁磁临界线的封闭近似结果进行了比较。</p>
+<p>从Fisher零得到沿临界线的热尺度指数y<del>t</del>&#x3D;1，表明在强均匀磁场下反铁磁模型比热的对数奇异性。</p>
+<h6 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h6><p>本文：N<del>s</del>个位点（sites）和N<del>b</del>个键（bonds）的晶格，具有外部磁场的伊辛模型。</p>
+<p>李杨：研究外部磁场非零的伊辛模型的铁磁效应。</p>
+<p>Fisher：</p>
+<ol>
+<li>外部磁场为零，伊辛模型铁磁效应与非铁磁效应，Fisher零在复温度平面上分别落在两个圆上：$a_{FM}&#x3D;1+\sqrt{2} e^{i \theta}$，$a_{AF}&#x3D;-1+\sqrt{2} e^{i \theta}$.</li>
+<li>零磁场的伊辛模型比热奇异性在对数上是无限的，这是由Fisher零的性质引起</li>
+<li>对于非常特殊的边界条件，零磁场下伊辛模型的Fisher零确实位于两个圆上，而对于更一般的边界条件，随着晶格大小增加，零接近于两个圆。</li>
+</ol>
+<p>非零磁场Fisher点，在非物理临界点发散（Fisher边奇点），这代替了零磁场下的铁磁临界点</p>
+<p>另一方面，反铁磁临界点切割正实轴（但之前从未有人展示出这一现象）so，本文通过精确解配分函数对应的Fisher零，研究非零磁场下的伊辛模型的反铁磁临界点（LxL方形晶格，L&#x3D;14）</p>
+<h6 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h6><p>x是一个与外磁场有关的量，$x&#x3D;e^{-2 \beta H}$（或许可以理解为外磁场对系统的影响？或者驱动作用。当x&#x3D;1时，H&#x3D;0，零场情况。）</p>
+<h6 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h6><p>图3通过两种拟合，算出反铁磁圆与正实轴的切割点，横坐标可以理解为外磁场强度（x是H的相关量）</p>
+<p>由Fisher 零，沿临界线获得热缩放指数 y<del>t</del>&#x3D;1（或趋近于0，结果位于表2），$\alpha &#x3D;2-d&#x2F;y_{t}&#x3D;0$，这表明即使在强均匀磁场中，反铁磁伊辛模型的比热也具有对数奇异性。</p>
+<p>我们的结果清楚地表明，即使在强均匀磁场中，AF Ising模型的比热也具有对数奇点。</p>
+<h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>非标准型一阶相变有限尺寸相变。这篇文章好像没有很相关于李杨零点，而是集中于讨论FSS。</p>
+<p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1&#x2F;L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1&#x2F;L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
+<p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
+<p>通常情况下，低温相的简并度q不随系统尺寸而变化，因此一阶相变的一般有限尺寸尺度行为与体积的倒数L^−d^成正比。我们可以从方程(4)，(5)中看到，如果低温相的简并度q以指数关系依赖于系统大小q∝e^L^，则这将被修改。</p>
+<h6 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h6><p>多级蒙特卡洛算法，初始晶格（100-1000）x10^6^ sweeps（扫视&#x2F;扫描），双（dual）晶格4x10^6^ sweeps</p>
+<p>模拟相当于真实时间500h</p>
+<p>在模拟过程中，拥有27^3^个自旋的最大晶格在两相之间有效跃迁超过250次。尽管与最可能的态相比，罕见态被抑制了60多个数量级（图1）。</p>
+<p>dual model：自相关时间更大</p>
+<p>然后，可以通过加权多参数数据来检索标准估计量，从而得到玻尔兹曼分布的能量。当与多角度模拟相结合时，重加权技术非常强大，并允许计算在广泛的温度范围内的可观测值。</p>
+<p>通过重新加权等式得出的温度函数(8)和dual型等式(9)</p>
+<p>图一：</p>
+<p>L取值：13-27</p>
+<p>红绿线重合</p>
+<p>图二：</p>
+<p>dual型，L取值：12-24</p>
+<h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>三个相变：一阶，二阶，李杨边奇点</p>
+<p>都能通过估计有限尺度系统的零密度的磁尺度指数y<del>h</del>来清楚区分。</p>
+<p>从有限尺寸的数据中得到了高温下杨李边缘零密度的散度，这是通过lattice铁磁体的级数扩展得到。利用杨-李零密度讨论了<u>小系统</u>相变阶的识别。</p>
+<h6 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h6><p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨边奇点，并提出了李杨边奇点可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
+<p>在临界温度以上，杨-李零不会切割热力学极限中的正实轴。在正实轴周围的零分布存在间隙。也就是说，在$\left | \theta  \right | &lt;\theta _{e}$，$g(\theta)&#x3D;0$.在临界温度，这个间隙消失。我们把在$\theta &#x3D;\pm \theta _{e}$的李杨零叫做&#x3D;&#x3D;李杨边缘零&#x3D;&#x3D;。在T&gt;T<del>c</del>及d≥2时，李杨边缘零的具体位置不可得。当温度从临界温度攀升到正无穷，李阳边$\theta _{e}$从0移动到π。</p>
+<p>除Yang-Lee零外，Fisher还证明了H &#x3D; 0的平方格化模型的热性质完全由复温度平面上的正则配分函数Z (T)的零决定。</p>
+<p>如果找到零的密度，就可以得到自由能、状态方程和所有其他热力学函数。然而，我们对零的密度的实际形式知之甚少。除了一维情况外，伊辛铁磁体的杨-李零的密度从未被完全知道…（一些过去的研究）</p>
+<p>对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L &#x3D; 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
+<p>图一：16x16晶格</p>
+<p>图二：温度等于临界温度时，L&#x3D;12与L&#x3D;16不可区分，有限尺度效应是非常小的。</p>
+<p>在临界温度附近（T&#x3D;2.5），L &#x3D; 12和16的零密度也无法区分，除了在θ &#x3D; 0附近，g(L)随着系统尺寸L的增加而急剧减小。</p>
+<p>远高于临界温度时（T&#x3D;10），L &#x3D; 12和16的零密度的总体形式几乎相同。与T &#x3D; 1和2.5处相比，T &#x3D; 10处的零密度的有限尺寸效应相对较大。在Yang-Lee边缘θ<del>e</del> &#x3D; 1.161附近，零的密度有些不规则，并且随着L的增加而增加。</p>
+<h4 id="FSS方法"><a href="#FSS方法" class="headerlink" title="FSS方法"></a>FSS方法</h4><h6 id="序列重要性抽样蒙特卡罗方法"><a href="#序列重要性抽样蒙特卡罗方法" class="headerlink" title="序列重要性抽样蒙特卡罗方法"></a>序列重要性抽样蒙特卡罗方法</h6><ol>
+<li>选一个初始态</li>
+<li>选一个点位i</li>
+<li>计算点位自旋翻转所需能量ΔE</li>
+<li>取0-1之间的随机数r</li>
+<li>如果r＜exp(-ΔE&#x2F;k<del>B</del>T), 自旋翻转</li>
+<li>选择另一个i回到第三步循环</li>
+</ol>
+<p>注：在低温下翻转是很少的，可以加快运算时间，高温下翻转很多，是一个准遍历问题。</p>
+<h6 id="FSS入门：齐次函数"><a href="#FSS入门：齐次函数" class="headerlink" title="FSS入门：齐次函数"></a>FSS入门：齐次函数</h6><p>对于所有尺度值λ，有$f(λr)&#x3D;g(λ)f(r)$，f(r)是热力学参量，$g(λ)&#x3D;λ^{p}$，p是齐次度。</p>
+<p>广义齐次函数：$f\left(\lambda^{a} x, \lambda^{b} y\right)&#x3D;\lambda f(x, y)$</p>
+<p><strong>The static scaling hypothesis（静态缩放假说）</strong>认为，吉布斯自由能$G(t,H)$是一个齐次函数。</p>
+<h6 id="静态缩放假说："><a href="#静态缩放假说：" class="headerlink" title="静态缩放假说："></a>静态缩放假说：</h6><p>在临界点附近，系统的各种物理量在合适的标度变换下表现出统一的行为。</p>
+<p>核心思想是当系统接近相变临界点时，各种宏观物理量（如磁化强度、比热容等）的尺度行为可以用一个或多个标度指数来描述。这些标度指数决定了物理量如何随着系统的大小或临界点的接近而变化。</p>
+<p>具体而言，静态缩放假说包括以下几个方面：</p>
+<ol>
+<li>尺度不变性：在临界点附近，系统的物理性质在合适的尺度变换下保持不变。这意味着各种物理量具有相同的标度行为，即它们随着系统大小的增加或临界点的接近而表现出相似的行为。</li>
+<li>标度指数：各种物理量与系统的相关长度或相关时间之间存在关联。通过引入标度指数，可以描述这种关联。例如，对于磁化强度，其与系统大小的关系可以表示为M ∝ L^β^，其中β是磁化强度的临界指数，L是系统的线性尺寸。</li>
+<li>标度函数：静态标度假设还引入了标度函数，用于描述物理量随着临界点的接近而变化的行为。标度函数通常是物理量和相对于临界点的距离（通常用无量纲的标度变量表示）之间的关系。这种函数形式可以帮助我们理解和描述临界点附近的物理行为。</li>
+</ol>
+<p>有限尺寸效应→局部松弛是不可能的（obviously local relaxation is impossible）</p>
+]]></content>
+      <categories>
+        <category>物理</category>
+        <category>统计物理</category>
+      </categories>
+      <tags>
+        <tag>文献速记</tag>
+        <tag>李杨零</tag>
+        <tag>Fisher零</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模拟人生4-自设孤儿院挑战</title>
+    <url>/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/</url>
+    <content><![CDATA[<h1 id="规则总览"><a href="#规则总览" class="headerlink" title="规则总览"></a>规则总览</h1><p>本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成</p>
+<p>人物寿命需设置为普通</p>
+<p>初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。</p>
+<span id="more"></span>
+
+<p>所有人物（除Adam之外）找到相应工作且完成要求后需搬出原始家庭成为与原始家庭同一地段的租户。</p>
+<p>必须接受所有游戏过程中自动出现的偏好，性格转变及生活方式。</p>
+<p>玩家只能操纵Adam与Charles完成家务。</p>
+<p>玩家可以进行Polaris，Jasmine，Michael，Cacao奇想中的友情&#x2F;浪漫交互，Ocrea可任意与非家庭中的异性进行友情&#x2F;浪漫交互，Adam可任意与其他人物进行亲情交互。除此之外，玩家不得操控其他人物进行友情&#x2F;浪漫交互。</p>
+<p>每个节日假期必须出门旅行</p>
+<p>Ocrea接受所有外出邀请，Jasmine接受所有异性外出邀请，Adam接受所有来自家人的外出邀请，Raven拒绝所有外出邀请，其他外出邀请则通过随机数决定。</p>
+<p> Polaris与Sirius应设置为姐弟关系，Jasmine与Michael应设置为姐弟关系</p>
+<h1 id="人物规则"><a href="#人物规则" class="headerlink" title="人物规则"></a>人物规则</h1><h2 id="1-Adam（吴铮）"><a href="#1-Adam（吴铮）" class="headerlink" title="1 Adam（吴铮）"></a>1 Adam（吴铮）</h2><p>初始年龄：青年</p>
+<p>初始性格特征：秋之子，好人，乐于助人的</p>
+<p>要求：</p>
+<ol>
+<li>赚钱方式只能选择写作&#x2F;绘画，且不得外出工作</li>
+<li>完成畅销作家的全部抱负内容并完成一本人生之书</li>
+<li>对所有儿童都采取鼓励式教育，冷静&#x2F;坚定地告诫（不得使用严厉的告诫），以及拥抱和家人亲吻</li>
+<li>达成写作&#x2F;绘画十级</li>
+<li>在每位家人离开家前为他们绘制一副肖像画</li>
+<li>在所有孩子离开家前与他们成为好朋友</li>
+</ol>
+<h2 id="2-Charles（齐彭殇）"><a href="#2-Charles（齐彭殇）" class="headerlink" title="2 Charles（齐彭殇）"></a>2 Charles（齐彭殇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：洁癖，有能力的（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>完成所有作业及加分作业，以A类学生从高中毕业</li>
+<li>在保证A类学生的前提下在学校尽可能多地交朋友</li>
+<li>具有一份青少年兼职并从不缺席</li>
+<li>获得政治学大学学位并完成学术的全部抱负</li>
+<li>具有负责任的奖励特征</li>
+</ol>
+<p>职业：政治家</p>
+<h2 id="3-Polaris（张紫薇）"><a href="#3-Polaris（张紫薇）" class="headerlink" title="3 Polaris（张紫薇）"></a>3 Polaris（张紫薇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：天才，夏之子（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>将灵魂伴侣作为终身抱负</li>
+<li>若与Charles具有浪漫关系，则与Charles约会至少一次</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：特工</p>
+<h2 id="4-Ocrea（高秋）"><a href="#4-Ocrea（高秋）" class="headerlink" title="4 Ocrea（高秋）"></a>4 Ocrea（高秋）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：甜言蜜语（儿童）不愿承诺（青少年）物质主义（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花抱负</li>
+<li>魅力五级及以上</li>
+<li>每次上学都选择交朋友</li>
+<li>加入一个俱乐部并与俱乐部里每位异性发展浪漫关系</li>
+<li>去至少两次夜店</li>
+<li>抱负选择连环浪漫，在搬出家前至少拥有3段感情，若双方浪漫值出现下降，则立刻分手（若与Sirius具有浪漫关系，在离开家前不与Sirius分手）</li>
+</ol>
+<p>职业：商业</p>
+<h2 id="5-Sirius（张狂）"><a href="#5-Sirius（张狂）" class="headerlink" title="5 Sirius（张狂）"></a>5 Sirius（张狂）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：极客（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>编程五级及以上</li>
+<li>参加一次极客会展并乘坐火箭来到外星</li>
+</ol>
+<p>职业：科技达人</p>
+<h2 id="6-Jasmine（钟不遇）"><a href="#6-Jasmine（钟不遇）" class="headerlink" title="6 Jasmine（钟不遇）"></a>6 Jasmine（钟不遇）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：拘谨的（儿童），难以伺候（青少年），悲伤（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才抱负</li>
+<li>烹饪及通灵五级及以上</li>
+<li>至少交五个异性朋友</li>
+<li>若有异性提出交往&#x2F;求婚，则立刻同意</li>
+</ol>
+<p>职业：</p>
+<p>若与他人发展出浪漫关系，则不选择职业，成年后立刻与其结婚，抱负改为欢乐大家庭</p>
+<p>若无浪漫关系，则选择职业为主厨</p>
+<h2 id="7-Michael（钟不惑）"><a href="#7-Michael（钟不惑）" class="headerlink" title="7 Michael（钟不惑）"></a>7 Michael（钟不惑）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：粘人精（幼儿）令人难忘的（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才及调皮蛋抱负（艺术天才优先）</li>
+<li>在离开家前可以与其他人发展浪漫关系，但不与任何人确认成为恋人</li>
+<li>和一个玩偶熊&#x2F;鬼魂成为朋友</li>
+<li>在网络上拥有至少一千位追随者</li>
+<li>魅力及健身三级及以上</li>
+<li>成为二星名人及以上</li>
+</ol>
+<p>职业：模特</p>
+<p><strong>以下家庭成员在Charles及Polaris搬出家庭后搬入：</strong></p>
+<h2 id="8-Lucius（许和光）"><a href="#8-Lucius（许和光）" class="headerlink" title="8 Lucius（许和光）"></a>8 Lucius（许和光）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：独立（幼儿）独行侠（儿童），刻薄，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>小提琴五级及以上</li>
+<li>除Cacao外不与其他任何人成为好朋友</li>
+</ol>
+<p>职业：</p>
+<p>若名声为好&#x2F;中等：医生</p>
+<p>若坏名声大于三级：罪犯</p>
+<h2 id="9-Cacao（周可可）"><a href="#9-Cacao（周可可）" class="headerlink" title="9 Cacao（周可可）"></a>9 Cacao（周可可）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：万人迷（幼儿）欢乐，外向，音乐爱好者，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花及调皮蛋抱负（交际花优先），尝试和床下怪物成为朋友</li>
+<li>加入童子军</li>
+<li>完成世界之友抱负</li>
+<li>吉他五级及以上</li>
+</ol>
+<p>职业：演艺人员</p>
+<h2 id="10-Raven（唐篁）"><a href="#10-Raven（唐篁）" class="headerlink" title="10 Raven（唐篁）"></a>10 Raven（唐篁）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：好奇宝宝（幼儿）古怪，懒惰，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>完成诡奇小镇抱负</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：警探</p>
+<h1 id="游戏过程特征简记"><a href="#游戏过程特征简记" class="headerlink" title="游戏过程特征简记"></a>游戏过程特征简记</h1><h2 id="1-Adam"><a href="#1-Adam" class="headerlink" title="1 Adam"></a>1 Adam</h2><p>初始设定特征：秋之子，好人，乐于助人的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ESTP（实干家）：聪明，富有活力，极其敏锐的人，享受生活的各个方面，热爱运动</p>
+<p>沉思者：更容易发展精神技能</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决</p>
+<p>+出乎意料的成功者（day3）</p>
+<p>+欢乐：这类模拟市民很容易感到快乐（day12）</p>
+<p>+制造者：这类模拟市民喜欢制作东西（day15）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG"></p>
+<h2 id="2-Charles"><a href="#2-Charles" class="headerlink" title="2 Charles"></a>2 Charles</h2><p>初始设定特征：洁癖，有能力的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENFP（竞选者）：热情而富有创造力，在写作及艺术方面具有天分</p>
+<p>快速学习者：学习技能更快</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决（被上面那位传染的？？）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/2.PNG"></p>
+<h2 id="3-Polaris"><a href="#3-Polaris" class="headerlink" title="3 Polaris"></a>3 Polaris</h2><p>初始设定特征：天才，夏之子</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ISFJ（守卫者）：具有献身精神与温暖的人，喜欢烹饪，绘画，自然…会支持一切她爱的人的活动和兴趣</p>
+<p>天赐创造力：在写作，艺术，烹饪方面格外有天赋</p>
+<p>迷人的：她在浪漫关系方面比别人更成功（lucky！）</p>
+<p>+喜欢咯咯咯地傻笑（day7）</p>
+<p>+害怕壮志未酬（day11）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/3.PNG"></p>
+<h2 id="4-Ocrea"><a href="#4-Ocrea" class="headerlink" title="4 Ocrea"></a>4 Ocrea</h2><p>初始设定特征：甜言蜜语</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INFJ（提倡者）：安静，神秘，富有精神力，喜欢文化，读书与听音乐（你最好真的是）</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉的随机属性）</p>
+<p>普通自信→高度自信（day3）</p>
+<p>+刻薄倾向：这类模拟市民总是喜欢对别人刻薄（day6）</p>
+<p>害怕失败：当她失去自信时她很容易紧张，容易因为批评或者没拿奖而尴尬（day6）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/4.PNG"></p>
+<h2 id="5-Sirius"><a href="#5-Sirius" class="headerlink" title="5 Sirius"></a>5 Sirius</h2><p>初始设定特征：极客</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INTJ（建筑师）：图像和直觉思维，擅长给每件事做计划</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉x2，但CP就应该整整齐齐）</p>
+<p>背痛：背部疼痛</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+刻薄倾向（day7）</p>
+<p>+黏人，害怕失败（day13）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/5.PNG"></p>
+<h2 id="6-Jasmine"><a href="#6-Jasmine" class="headerlink" title="6 Jasmine"></a>6 Jasmine</h2><p>初始设定特征：拘谨的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENTJ（总经理）：好的领导者，喜欢社交与运动，集中于他们的职业生涯</p>
+<p>→INFP（调停者）：可爱，诗意，利他主义者。</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+害怕失败（day8）</p>
+<p>+叛逆（day13）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/6.PNG"></p>
+<h2 id="7-Michael"><a href="#7-Michael" class="headerlink" title="7 Michael"></a>7 Michael</h2><p>初始设定特征：粘人精</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>害怕溺水：不知为何他害怕溺水，避免泳池和海洋（Michael在原始人设里确实很怕水，因为到水里会失去五感，我觉得这个设定不是很必要就没有作为初始设定强制加入，结果自己出现了）</p>
+<p>健康：他没有任何身体问题真的很幸运（何止是健康，长大可以去当超人）</p>
+<p>→过敏（day2）→胃胀气（day8）</p>
+<p>小歌唱家：这孩子喜欢随时随地唱歌</p>
+<p>好胃口：他吃的很快，甚至会去吃掉在地板上的食物…他有点被宠坏了（他确实是。喂！不要随便在地上捡垃圾吃啊！）</p>
+<p>+讨厌起床（day2）</p>
+<p>儿童</p>
+<p>+ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>+高度自信</p>
+<p>+令人难忘的（设定特征）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/7.PNG"></p>
+<h1 id="游戏过程简记"><a href="#游戏过程简记" class="headerlink" title="游戏过程简记"></a>游戏过程简记</h1><h2 id="第1天（夏·周一）"><a href="#第1天（夏·周一）" class="headerlink" title="第1天（夏·周一）"></a>第1天（夏·周一）</h2><p>孩子们一直在地上制造脏乱，但因为Adam没有育儿技能无法管教他们（啊这…）</p>
+<p>第一顿饭是Polaris做的，看起来她挺喜欢烹饪（但只做了4份）Charles快饿死了但没吃到饭</p>
+<p>大家似乎都很喜欢Michael，Jasmine和Micheal的姐弟关系相当不错</p>
+<p>Charles一直在卫生间对着镜子练习辩论，看样子他很适合当个政治家。（后来发现可能是因为他的学术抱负需要辩论等级，第一天直接练到三级。卷王开卷。）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day1-1.PNG"></p>
+<p>Adam抱着Michael走到卫生间上厕所，把Charles赶出去了。迷惑的操作，可能是他打算抱着Michael上楼睡觉，走到一半想上厕所（？）虽然但是，我还是要强调，你把Charles赶出去了，Michael还在厕所里(*´・ｖ・)</p>
+<p>最后Polaris去把Michael抱上床睡觉了（听我说，谢谢你）</p>
+<p>Charles问Adam学校很蠢，能不上学直接工作吗？（别问了，问就是回去上学）</p>
+<p>Sirius问Adam自己在学校和别人因为给什么东西起名（没仔细看）发生了争执，哪个更好？Adam：一样好（经典端水）Sirius对Adam产生情绪：友善的建议者（Adam总会倾听他的问题并给出深思熟虑过的建议）</p>
+<h2 id="第2天（夏·周二）"><a href="#第2天（夏·周二）" class="headerlink" title="第2天（夏·周二）"></a>第2天（夏·周二）</h2><p>Charles在早上六点完成了他的作业。通宵当卷王当的爽吗？</p>
+<p>Sirius不知道什么时候写完了他的作业（兄弟你偷偷卷？）昨天一直看他的状态都是背痛写不了作业&#x2F;玩电脑游戏&#x2F;玩毛绒熊。你到底是什么时候写的作业？？？</p>
+<p>Jasmine昨天中规中矩地写完了作业。其他人都没有完成作业。Ocrea好像写了一半，Polaris一直在做家务，根本没写。</p>
+<p>Adam终于在写稿子了，不记得他什么时候睡过了，睡眠条还是满的。（好神奇哦，到底是什么时候睡过了）</p>
+<p>Sirius在一个人下象棋，Adam在写稿子，其他人都在睡觉。</p>
+<p>Adam结束了他的写稿，获得186模拟币。</p>
+<p>Jasmine的床底下有怪物，Ocrea把Charles和Polaris都叫起来了（虽然但是，Adam就在旁边坐着）Sirius突然怕黑了（可能是因为目睹怪物）</p>
+<p>Ocrea在学校收到了一封情书，可能是新来的学生给她的。选择当面对质，新来的学生说是因为自己没什么朋友，希望Ocrea为此事保密</p>
+<p>Michael真的很好带，哥哥姐姐出门上学的时候他都在睡觉zzz，完全不用操心</p>
+<p>Ocrea在学校认识了多丽丝和哈蒂。</p>
+<p>记录一点校园爱情的开端（你最好是）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-1.PNG"></p>
+<p>Polaris在这写作业，Charles带她玩手机（？）而且天上还在下雨</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-2.PNG"></p>
+<p>Sirius和Jasmine都因为完成家庭作业被老师表扬变成<strong>高度自信</strong>了</p>
+<p>Charles和Sirius都想和彼此做朋友，Ocrea想和Adam做朋友，Michael想和Ocrea做朋友。Polaris想进行浪漫交互，但没说是谁。</p>
+<p>Michael从阁楼上醒了一直在哭，因为床不舒服，昨晚上没睡好。但阁楼上没人，所以决定宝宝玩具熊QAQ. 获得了特征：<strong>讨厌起床</strong>。失去特征健康，获得特征：<strong>过敏</strong>。春天和夏天的时候晚上会呼吸不畅（果然这个环境是没法让人健康的。）</p>
+<p>Micheal通过自言自语升到了语言三级（喂！）然后开始自己跳舞玩（说好的粘人精呢？）</p>
+<p>Polaris问Adam我觉得我已经足够大了，你能像大人一样对我吗？Adam应该会说你永远是我的宝贝。</p>
+<p>Michael一直在阁楼上走来走去和玩玩具熊，我觉得他可能是不会下楼梯（虽然但是，他之前是自己爬上来的）我决定还是让Adam上来看看。不然Michael一直很难过。</p>
+<p>Michael和他的玩具小熊↓</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-3.PNG"></p>
+<p>记录一点校园爱情故事x2</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-4.PNG"></p>
+<p>外面在下雷雨，Adam把Michael一个人扔在阳台上自己下楼了（你小子）</p>
+<p>Polaris不知道是不是刚才在镜子前面练习了一下告白，然后自己觉得很尴尬：我真的能成功吗？（这很Polaris）</p>
+<p>Charles做了完美的蔬菜卷饼</p>
+<p>误会解除，Michael是会自己爬楼梯的。他只是真的很爱玩具熊。太好带了，宝贝。他甚至会自己爬下三楼去吃厨房的剩菜（膝盖还好吗？宝贝）这孩子一直因为雷阵雨很害怕，但一直没在哭（不会是被吓傻了吧）</p>
+<p>截一张很有睡美人感觉的Jasmine姐姐</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-5.PNG"></p>
+<p>妈！（发现Adam带孩子都是把孩子抱起来讲话的，别太宠孩子了）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-6.PNG"></p>
+<p>Michael因为交了一个新朋友很开心，不过通知里并没有显示他和谁成为了朋友。可能是Adam（或者他的熊）目前他和Adam，姐姐Jasmine还有熊都是朋友。</p>
+<p>一直以为Polaris和Charles的关系应该挺不错的，结果发现他们的关系目前只是认识（？）Polaris只和弟弟Sirius是朋友。Ocrea和Sirius不知道为什么都和玩具熊看不顺眼（？？）</p>
+<p>Michael白天一直睡觉，晚上根本睡不着。Adam几次想睡觉，几次被Michael打断施法（泪目）最后他很无语地把Michael抱到阁楼上玩，自己睡觉了（坏消息，他的床也在阁楼上，不过起码不用担心Michael去吵别人了）</p>
+<p>Michael爬下楼把Charles和Ocrea吵起来了（果然不能随便立flag），然后爬上楼去找玩具熊玩（小朋友害人不浅）</p>
+<h2 id="第3天（夏·周三）"><a href="#第3天（夏·周三）" class="headerlink" title="第3天（夏·周三）"></a>第3天（夏·周三）</h2><p>凌晨两点，大家都醒了。</p>
+<p>Ocrea不断制造脏乱又自己拖地之后，莫名其妙成为了<strong>高度自信</strong>（完成了自循环）</p>
+<p>Charles也在镜子前面练习了一下调情，并且陷入和Polaris一样的尴尬：我真的能成功吗？（校园爱情故事继续入股）并且感到脸红和我真是个蠢人（莎士比亚是吧？你们怎么都是些蠢人！）</p>
+<p><strong>Polaris对Charles产生了情绪：亲近</strong>。Polaris真的很感激Charles与她花时间共度美好时光。花时间在一起使得他们更加亲近。但Charles对Polaris并没有特别的感情。</p>
+<p>Polaris，Sirius和Ocrea突然都因为脑海里思绪过多很不舒服（出现了人传人现象）Polaris因为皮肤发红有些不太舒服。</p>
+<p>Charles因对俄罗斯方块一见钟情决定承认自己喜欢玩游戏（喂！）</p>
+<p>Polaris不知道为什么在学校变成了挑逗状态，但设置的状态是好好学习（？）</p>
+<p>学校休息时间，Jasmine画了不合适的画给大家传阅。出于必须鼓励规则，Adam应该会说，我们鼓励创意。</p>
+<p>Jasmine在学校认识了塞西尔和泰瑞沙。</p>
+<p>Ocrea在学校认识了贾思琳</p>
+<p>每个人都被邀请去参加某朋友的生日聚会，除了Sirius。他该怎么办？Adam或许会让他去问问朋友是不是忘记邀请他了。——朋友只是耸耸肩作为回答，并且之后都躲着Sirius。</p>
+<p>Adam写完了童书《老虎不会小憩》（什么怪书）出版。获得了特征：<strong>出乎意料的成功者</strong>（这确实很公主）他们无论是提升技能还是完成任务都比别人更快，但有点儿难和朋友独处</p>
+<p>今天决定让Ocrea和Jasmine各叫一位在学校认识的小朋友来家里玩。Ocrea和新来的小朋友塞西尔聊天，感觉十分无聊。</p>
+<p>Charles和Polaris拥抱了一下，并且用一种好哥们的姿势打招呼（你们到底是什么关系）Polaris从Charles那里学到怎么辨识脂鲤（什么东西？）</p>
+<h2 id="第4天（夏·周四）"><a href="#第4天（夏·周四）" class="headerlink" title="第4天（夏·周四）"></a>第4天（夏·周四）</h2><p>Polaris做了一个白蛋糕放在桌上，短短一晚上Micheal一个人吃了两份。</p>
+<p>突然发现Jasmine的社交已经6级了（怎么做到的）</p>
+<p>Charles在和Michael玩</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day3-1.PNG"></p>
+<p>Ocrea上床睡觉了，坚持不去上学（上学哪有睡觉要紧）看样子我不用操控她逃学，她自己会逃。</p>
+<p>Polaris在学校认识了托米和穆丽尔。</p>
+<p>Jasmine在学校认识了布鲁诺。</p>
+<p>Polaris在学校应该选择更容易的任务取得好成绩还是选更难的任务学到更多？按Polaris的个性应该会选更难的——她得到的成绩不佳，表现略为降低了。</p>
+<p>Polaris和同学在走廊上大家，是应该说让他们自己解决还是没人受伤吗？那很好。感觉Adam会说后一个。</p>
+<p>Michael一直一直在吃蛋糕，爱吃糖的宝宝，不吃糖就会，愤怒。</p>
+<p>Charles的成绩提升了，现在是B级学生。</p>
+<p>索菲亚邀请Sirius加入模范公社俱乐部（Sirius什么时候认识索菲亚的？）随机数说同意。这个俱乐部鼓励对叛徒刻薄；喝咖啡；换装。看起来并不是很适合Sirius的俱乐部…</p>
+<p>截一张Adam小憩的图，感觉Adam…你别说，你真别说，真挺好看的。（兄弟你好香。）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-1.PNG"></p>
+<p>哈蒂约Ocrea去咖啡店（小小年纪就咖啡店约会？这么优雅？）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-2.PNG"></p>
+<p>Polaris做了汉堡蛋糕（这个家没你做饭得散）</p>
+<p>Ocrea问Adam学校有人欺负她的朋友怎么办？Adam应该会鼓励她为朋友挺身而出。</p>
+<h2 id="第5天（夏·周五）"><a href="#第5天（夏·周五）" class="headerlink" title="第5天（夏·周五）"></a>第5天（夏·周五）</h2><p>我决定加入洗衣盆和吸尘器，不然家里的家务太少了没什么挑战性（？）</p>
+<p>Polaris喜欢健身。</p>
+<p>Adam把电脑玩坏了。替换需要700元（有点太贵了）只能维修，希望他不要把自己电死。</p>
+<p>Charles和Adam成为了好朋友（虽然他们俩一个在修电脑一个在看书，但在一个空间怎么不能用意念成为好朋友呢？(￣▽￣)~*哥，你和我在一个房间，一定是爱我。）</p>
+<p>Charles跑到卫生间喷古龙水（你小子怪讲究的嘞）而且他真的很爱俄罗斯方块，我哭死。我想让他写一下加分作业，结果他一直在和Adam聊天。从Adam那里学到了辨识大盖巨脂鲤（他笔记本里有两条鱼，还有一只玻璃梭鲈。到底是哪里学来的啊！）</p>
+<p>Polaris因为泡澡变得非常挑逗（挠头）</p>
+<p>两天前Charles在手机上发消息问Adam怎么了，Polaris给Charles发短信说：“你的风格就是一切，教我怎么像你那样生活。”还有“是先有鸡还是先有蛋，我会告诉你。（是什么冷笑话吗？）”Adam五小时之前发消息说，Charles，我们有空可以出去玩。</p>
+<p>好精彩的短信往来（汗流浃背）</p>
+<p>Charles在社交兔上新增的追随者是79个，Polaris是13个。</p>
+<p>我决定这个周末让大家都去雪山度假。585一天，家庭资金只够住一天（泪目）Polaris来了雪山之后就耳朵疼，可能是太冷了。Michael因为做噩梦一直很难过。Ocrea自己去滑雪了。Jasmine和Michael的家庭关系变成了喜欢互相开玩笑。</p>
+<p>Polaris觉得没人喜欢她。Adam感觉会说我永远爱你。</p>
+<p>Ocrea突然换牙了。Michael发挥了他人见人爱的特性，有个怀孕的陌生人阿姨要教他玩识字卡（虽然他现在因为做噩梦非常难过）</p>
+<p>Sirius也去滑雪了，然后也换牙了。换牙到底和滑雪有什么微妙的联系，还是说Sirius和Ocrea冥冥之中的情侣趋同性（flag+1，要是最后没在一起岂不是很打脸）</p>
+<p>Charles在洗澡，Adam突然进去和他说话。但居然没出现尴尬buff。</p>
+<p>哈蒂约Ocrea去家里玩。这家伙好像是狼人，一来就看见他奶奶正在从狼变成人（好超前的艺术）不知道为什么两个小朋友都很不舒服，Ocrea一直想去长椅上小睡。</p>
+<p>Adam给自己做了一份沙拉。一份…你小子。Polaris又在做蛋糕。她真的很爱蛋糕，我哭死。Michael吃多了糖牙疼了。Charles一直在抱他，不过好像他不是很喜欢Charles抱（可能是因为他手摸过食物有点脏，他现在尴尬了。）</p>
+<p>Charles在教Michael玩识字卡</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day5-1.PNG"></p>
+<p>Adam在手机上发短信问Polaris要不要试着去学吉他？我觉得你可能会喜欢。Adam现在已经有好名声了。</p>
+<p>我决定让Adam带大家去温泉玩一下。虽然现在是午夜十二点。来都来了。</p>
+<p>Charles问Adam说我给别人发消息别人一直没回怎么办？Adam应该会建议再发一次。Charles对Adam现在有了一个特殊感受：友善的建议者。</p>
+<p>Michael一直想和Ocrea开玩笑。满足了一下他的奇想，现在他想和Sirius表示友善了（看样子很喜欢张家姐弟嘛）我决定让他去给Sirius讲个故事（？）</p>
+<p>Charles想和Adam当朋友，然后想和Polaris眺望星空。Polaris一直想解决一个难题（我不知道怎么实现她这个奇想），然后想和一个人约会。不过现在她还没有和别人有浪漫条。Adam想让别人高兴起来，不过没说是谁。Sirius想和Adam当朋友，Jasmine想给弟弟Michael一个拥抱。</p>
+<p>先让Charles和Adam聊聊今天过的怎么样满足第一个奇想好了。不知道为什么Adam刻薄了一下Charles，Charles觉得很受伤。然后Adam还对Charles说谎了一下自己的职业（师傅你是做什么工作的？）Charles上楼喝茶了，他和Adam友善的奇想还是没有完成（为什么啊！！！）</p>
+<p>Charles因为Adam很受伤，要去被子里大哭。（呜呜呜我的宝宝）Adam在社交兔上发动态说：“枕头大战应该是缓解压力的，为什么我这么紧张呢？”Charles立刻私聊他说：“Adam，你怎么了？”（我哭死。）</p>
+<h2 id="第6天（夏·周六）"><a href="#第6天（夏·周六）" class="headerlink" title="第6天（夏·周六）"></a>第6天（夏·周六）</h2><p>结束度假了！Charles回来因为从Adam那里受伤非常愤怒，决定给玩具熊两拳（熊熊——）然后上楼找到玩具熊之后又取消了这种想法。</p>
+<p>Jasmine说别的小朋友不和她玩。Adam应该会说让她试着加入其他小朋友而不是告老师。对Adam产生情绪：友善的建议者。</p>
+<p>Jasmine<strong>喜欢健身</strong>了。并且想要Sirius成为朋友。</p>
+<p>ocrea产生了新的特征：刻薄倾向；害怕失败。</p>
+<p>Adam想要提升写作技能。我让他去写短篇故事。名字叫《矮子的伟大故事》（？）</p>
+<p>有个人（不知道是谁，可能是她在学校认识的朋友）问Polaris要不要去海港玩？随机数说OK。（但不知道为什么没有去成。可能是因为她在和Charles聊天）</p>
+<p>高中舞会开始了。Polaris和Charles都很困。Charles在和杰斯sweetheart dance （不是兄弟你谁啊？）Charles甚至根本不认识这人。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-1.PNG"></p>
+<p>Polaris也在和一个不认识的女生跳舞。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-2.PNG"></p>
+<p>Polaris发动态说：“给你找个像Charles一样的闺蜜，但不能和他合法地生活在一起(?)get you a bestie like him. legit can’t live with them”</p>
+<p>Charles和Polaris都没有成为舞会女王（其实我不知道这个玩法怎么玩）</p>
+<p>Polaris要和Charles一起拍大头贴（so cute）Charles觉得这照拍的很痛苦（？可能是他本来状态就不太好，太困了）Polaris觉得很高兴。她还化了妆。</p>
+<p>超可爱的拍立得，不过拍的时候Polaris好像有点长痘</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-4.PNG"></p>
+<p>有人问Polaris要不要参加after party。随机数说她想参加，还想带朋友。虽然她现在真的很困困困困困困。</p>
+<p>Charles终于完成和Polaris一起眺望星空的奇想了。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-3.PNG"></p>
+<h2 id="第7天（夏·周日）"><a href="#第7天（夏·周日）" class="headerlink" title="第7天（夏·周日）"></a>第7天（夏·周日）</h2><p>Michael和Jasmine的姐弟关系变成不太和谐了。可能是因为刚才Ocrea刻薄了一下他们。（不知道说了什么，难道是挑拨离间）他们姐弟都想和Sirius玩，不过Sirius觉得他们太吵了（喂！）</p>
+<p>Jasmine对Sirius现在有情绪：<strong>不断恶化的怨恨</strong>。泪目了。你们到底聊了什么。Jasmine和Sirius互相大喊大叫了一下（打起来打起来）Sirius觉得很愤怒，Jasmine倒没什么特别的感觉。</p>
+<p>Sirius也有<strong>喜欢刻薄</strong>的特征了。</p>
+<p>不知道是因为什么冲突，Charles没法去上班。先辞职为敬。Charles自己去洗衣服了。在家打工也是打工。</p>
+<p>哈蒂又约Ocrea去他家玩。Ocrea又很困（啊啊啊啊啊，这该死的睡眠条）</p>
+<p>回来之后Adam太困了直接晕倒，但是冰箱还是没修好。</p>
+<p>Adam给Polaris发消息说发明自动纠错的人今天去世了（什么怪新闻分享）</p>
+<p>Charles想给Michael读故事哄他睡觉。</p>
+<p>Polaris多了一个特征，<strong>喜欢咯咯咯地傻笑</strong>。</p>
+<p>Polaris对Sirius的关系也变成<strong>困难</strong>了。并且都对彼此感觉受伤。果然喜欢刻薄害人害己。Sirius不要跟Ocrea学啊！！！</p>
+<p>Charles想和Max聊天（好像是高中舞会认识的一个人），想和Adam淘气。他还是因为被亲近的人伤害特别难过（啊！）明明都已经没有受伤的情绪了。</p>
+<h2 id="第8天（秋·周一）"><a href="#第8天（秋·周一）" class="headerlink" title="第8天（秋·周一）"></a>第8天（秋·周一）</h2><p>Adam在给Michael讲故事</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day8-1.PNG"></p>
+<p>Michael的过敏变成<strong>胃胀气</strong>了，可能是因为他吃多了蛋糕。</p>
+<p>Jasmine的老师发短信说在她抽屉里发现了她给老师的情书（喂！别人放课桌里你怎么会知道啊！）感觉Adam应该会说和她谈谈而不是骂她。</p>
+<p>糟糕，付不起账单。为什么低端税要5k啊！！！</p>
+<p>Adam和Michael成为了好朋友。</p>
+<p>Jasmine邀请安娜贝尔来家里玩。Sirius现在是B级学生了。Charles的朋友托米来家里玩了（真别说这小伙子挺好看的）Ocrea说想成为忍者（挠头）</p>
+<p>让Adam写一本新书，叫做《sims城市英雄:Candid Portraits and Tales》</p>
+<p>Jasmine和Michael成为了好朋友。</p>
+<p>Sirius好像和Jasmine真的很合不来，他们俩一直互相恶作剧。Jasmine现在也<strong>害怕失败</strong>了。Polaris不知道和谁吵架也很生气。</p>
+<p>我希望Charles在大学之前把家里的椅子全修好。看起来是不太可能了。</p>
+<h2 id="第9天（秋·周二）"><a href="#第9天（秋·周二）" class="headerlink" title="第9天（秋·周二）"></a>第9天（秋·周二）</h2><p>Ocrea要去和Charles恶作剧说点禁忌的话（？）Charles觉得很好笑。好了，现在孩子们都开始疯狂互相恶作剧了。</p>
+<p>今天Sirius得了流感，请病假不上学。突然发现Ocrea也没去上学。你为什么不上学！！！</p>
+<p>Charles现在是A级学生了。回来在看爱情小说《心之背叛》（？）</p>
+<p>Polaris莫名其妙问了一下Ocrea叫什么名字（？）</p>
+<p>Charles也<strong>喜欢健身</strong>了。为什么我老觉得他之前就喜欢健身？</p>
+<p>Jasmine一个人在玩弹珠游戏</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-1.PNG"></p>
+<p>托米又来家里找Charles了！开始我还以为托米是男的，她戴礼帽的那个装扮真的很像男的ovo</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-2.PNG"></p>
+<p>Charles想和Adam眺望白云（兄弟你除了看天空没有别的idea吗）</p>
+<p>决定让Charles给家里的厨房洗手池升一下级。</p>
+<h2 id="第10天（秋·周三）"><a href="#第10天（秋·周三）" class="headerlink" title="第10天（秋·周三）"></a>第10天（秋·周三）</h2><p>Adam从Charles那里学会了怎么辨识鲈鱼（？）</p>
+<p>Charles在写作业，Adam过来和他聊天，然后Michael跑过来在两个人中间唱歌，Adam坐立难安地换了两个位置之后，选择把Michael抱起来（你小子是懂争宠的）</p>
+<p>Charles对Adam说：“你真的很有魅力，我希望你意识到这一点。”（男同发言）</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day10-1.PNG"></p>
+<p>Adam聊着聊着感觉对Jasmine很受伤，可能是因为Jasmine刻薄他了（自从Ocrea喜欢刻薄别人，我们这个家永无宁日）</p>
+<p>Ocrea和Jasmine一直在吵架（你们干脆打一架吧！！！）</p>
+<p>Charles莫名其妙又很受伤（日常受伤想起受伤的回忆的一人）</p>
+<p>Polaris的学习成绩不太好（可能是因为她一直不想写家庭作业）她应该退学吗？反正Adam肯定不会让她退学的。</p>
+<p>Polaris给Adam发消息说我们有空可以出去玩（什么三角恋故事）</p>
+<p>Adam想去吃饭，走到一楼又被Michael小朋友哭回来了。他想睡觉。</p>
+<p>托米来找Adam玩了。等等，你不用上学吗？Adam了解到托米的特征：有创意。</p>
+<p>Charles请同学塞西尔来家里玩了。这家伙一直试图裸奔，然后到床边上又突然穿上衣服（？)后来发现他是要在床上干点手艺活（？？？）Charles想和塞西尔调情（好超前的艺术）我觉得还是不要了。这人是有点变态在身上的。</p>
+<p>一直有人坐在Jasmine的床上聊天，她根本没法睡觉。呃啊啊啊啊啊。我让她在Polaris的床上睡一会，Michael还把她吵起来了。</p>
+<p>Polaris也不知道为什么觉得很受伤（被Charles传染了？）</p>
+<p>Sirius向Adam问朋友被欺负怎么办？Adam劝他为朋友挺身而出。Sirius现在对Adam有些崇拜。</p>
+<h2 id="第11天（秋·周四）"><a href="#第11天（秋·周四）" class="headerlink" title="第11天（秋·周四）"></a>第11天（秋·周四）</h2><p>今天是Michael的生日！！！（然后卡住了时间倒回礼拜三下午）</p>
+<p>让Charles给Michael洗了个澡，Adam实在是太困了。发现Charles今天早上起来居然长胡子了</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-1.PNG"></p>
+<p>Sirius喜欢愚蠢行为（？？？没关系，傻傻的也很可爱）</p>
+<p>Charles发短信给Polaris说你看起来像只没毛的羊驼（啊？？？）Polaris回了个翻白眼。</p>
+<p>托米发短信给Adam说自己爱上了雅各布。Adam应该会让她试试看。现在他们在一起了。（好好好）</p>
+<p>Michael除了思考都是满级了。一个不擅长思考的小孩。</p>
+<p>Polaris突然很害怕壮志未酬。</p>
+<p>Michael这孩子好像天生长得就很好看（未整容版）。我决定还是把他嘴巴上面的痣取消掉。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-2.PNG"></p>
+<p>他长大了还是那么爱他的小猫，我哭死</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-3.PNG"></p>
+<p>Michael是ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>Jasmine说塞林很有魅力，不过不知道塞林到底是谁的朋友。可能是Polaris的吧。</p>
+<h2 id="第12天（秋·周五）"><a href="#第12天（秋·周五）" class="headerlink" title="第12天（秋·周五）"></a>第12天（秋·周五）</h2><p>Adam不知道为什么突然去指出Michael的缺点，Michael感觉很<strong>受伤</strong>（我们这个家到底是怎么了！）Adam又指出了Charles的缺点（一人给一拳）</p>
+<p>Jasmine现在有好名声了。</p>
+<p>Jasmine不知道和Michael说了什么，Jasmine觉得很尴尬：为什么我要这么说？Michael觉得很生气。Jasmine对Michael有一个<strong>不断恶化的怨恨</strong>。</p>
+<p>Adam不知道为什么对Michael很<strong>崇拜</strong>，因为Michael知道他要做什么，而Adam不知道（？什么小孩哥）今天Michael不用去上学，可能是因为他刚长大。</p>
+<p>今天不知道为什么Charles也不想去上学。Ocrea日常不想上学。</p>
+<p>Adam获得了特征：<strong>欢乐</strong>。</p>
+<p>Michael一直在和Adam聊天，虽然但是，宝宝你该睡觉了。困得要死，但非要聊天。</p>
+<p>Jasmine很<strong>崇拜</strong>Adam。Jasmine真的很喜欢玩弹珠，经常看见她一个人在玩。其实我觉得Ocrea和Sirius有点排挤Jasmine，他们俩和Jasmine的关系都很差。</p>
+<p>托米邀请Charles去她家玩。随机数说去并且带上一位朋友。决定带上Polaris。不知道为什么Polaris一来就情绪失控并且非常愤怒，难道是因为托米是女生（挠头）但是托米不是和雅各布在一起了吗？</p>
+<p>我现在才发现原来通知栏有的时候会提醒我课程表不是自己提醒的，是Charles一直在查课程表（我哭死，他好爱学习）</p>
+<h2 id="第13天（秋·周六）"><a href="#第13天（秋·周六）" class="headerlink" title="第13天（秋·周六）"></a>第13天（秋·周六）</h2><p>Jasmine变得很<strong>叛逆</strong>。她现在变成INFP（调停者）了。诗意，可爱，无私的人（但一直和同龄小伙伴关系不太好）她现在和Ocrea，Sirius都是红条了（我们这个家早晚要散）</p>
+<p>今天决定去乡下旅游。</p>
+<p>Sirius多了一个特征：<strong>黏人</strong>。只有在照料者在一起才感觉安全。</p>
+<p>Adam<strong>喜欢闲聊</strong>。Ocrea和Adam有一个情绪，共度亲密时光。</p>
+<p>Michael对Charles说：你真的很好。+你真的很有趣，我很享受和你在一起的时候，希望你也一样。</p>
+<p>托米约Adam来参加绘画展（我以为是浪漫庆典，挠头）好像就是浪漫庆典。</p>
+<p>一起喝樱花茶，Jasmine把杯子掉茶喷泉里了。</p>
+<p>Adam在画浪漫的画</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day13-1.PNG"></p>
+<p>本来打算通过浪漫庆典来点感情进展，但Polaris太困了，让Adam画完画就直接回来了（等等，好像画没拿回来，啊啊啊啊啊）</p>
+<p>Adam，Charles和Polaris因为喝了樱花茶都有挑逗的状态，Polaris太困睡觉去了，Adam决定自己来点手艺活（？？？）Charles本来打算和Adam聊天，然后取消了去和Michael抱怨不公平的生活（好混乱的关系）Charles对Michael说：你真的太棒了。</p>
+<p>Michael和Adam成为最好的朋友了，Michael对Adam有一个情绪：深深的链接。但不知道为什么Michael突然感觉被Adam深深的伤害了，可能是因为Ocrea在说离开家的事情。</p>
+<h2 id="第14天（冬·周日）"><a href="#第14天（冬·周日）" class="headerlink" title="第14天（冬·周日）"></a>第14天（冬·周日）</h2><p>Ocrea也很崇拜Michael。</p>
+<p>Sirius的奇想里说想和Jasmine做朋友，我决定让他先去给Jasmine道个歉。</p>
+<p>Michael觉得对Jasmine很受伤。突然发现Polaris和Sirius不知道为什么也是红条，而且Polaris感觉对Sirius很受伤（虽然这个情绪已经快降完了）</p>
+<p>企图让Jasmine喝有灵感的药水完成在有灵感状态下画两幅画的抱负要求。不知道为什么画完了但是没有显示完成。</p>
+<p>Polaris给Adam发消息说希望你今天过得好。Charles给Adam分享了一个专辑。</p>
+<h2 id="第15天（冬·周一）"><a href="#第15天（冬·周一）" class="headerlink" title="第15天（冬·周一）"></a>第15天（冬·周一）</h2><p>为了快点完成Ocrea的抱负，决定让她和Sirius多说点话。因为她的友情条和Sirius比较高。Sirius喜欢讨论兴趣爱好。Ocrea对Sirius有了一个崇拜的情绪。Polaris对Charles非常崇拜。</p>
+<p>Sirius和Ocrea一起堆雪人。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-1.PNG"></p>
+<p>突然发现Michael不知道为什么和托米关系不太好（挠头）我以为托米和大家关系都很好。</p>
+<p>抽象雪人</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-2.PNG"></p>
+<p>好好好，今天大家都去上学了。Sirius是A类学生了。</p>
+<p>Charles对Polaris说我很高兴你不觉得我的羊驼笑话太老，你真的很懂我（咯咯咯，发出听见冷笑话的笑声）</p>
+<p>Adam写科幻小说写着写着突然觉得自己喜欢制造东西了（？）</p>
+<p>Michael因为自己和自己下棋没下过感觉不舒服（？）然后又想起被姐姐伤害的事，现在难过了。</p>
+<p>Polaris做饭叫大家来吃了。</p>
+<p>Michael想和Ocrea做朋友，Ocrea想和Jasmine做朋友。Ocrea先和Michael成为了朋友。不知道为什么，Ocrea和Jasmine做朋友真的很难。</p>
+<p>Michael说自己收到了朋友的礼物，应不应该把礼物转赠他人。Adam应该会让他留着礼物。</p>
+<h2 id="第16天（冬·周二）"><a href="#第16天（冬·周二）" class="headerlink" title="第16天（冬·周二）"></a>第16天（冬·周二）</h2><p>小朋友们早上在做学校实践作业。Charles似乎是第一次作业还没写。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day16-1.PNG"></p>
+<p>今天Ocrea和Polaris都不想去上学（喵喵喵？）</p>
+<p>Michael<strong>喜欢开玩笑</strong>。</p>
+<p>刷友好度好难，感觉要晕过去了。难道是我装了什么mod吗？友好度加的超级慢。</p>
+<p>Charles帮Michael写作业了，Charles和Michael成为了好朋友。Michael觉得自己<strong>喜欢感情</strong>。</p>
+<p>Jasmine不喜欢做决定，那太难了。</p>
+<p>Charles在圣诞节礼物里面放了恶作剧礼物（喂！！！）</p>
+<p>Jasmine掉牙了，但是没有得到牙仙证书（奇怪）</p>
+<p>不知道谁把Michael的实践作业踹翻了（啊啊啊啊啊NOOOOOO）坏了，他睡觉起来发现自己的作业被人踢了。</p>
+<h2 id="第17天（冬·周三·圣诞节）"><a href="#第17天（冬·周三·圣诞节）" class="headerlink" title="第17天（冬·周三·圣诞节）"></a>第17天（冬·周三·圣诞节）</h2><p>终于给我们家装上灯和白色地板了。</p>
+<p>Michael不知道为什么真的很生气，然后自己去洗澡了。</p>
+<p>一起装饰圣诞树。圣诞快乐！</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-1.PNG" alt="day17-1"></p>
+<p>不得不说，托米真的很好看。我现在宣布，托米是我们这个家的一份子。</p>
+<p>Ocrea居然要和Michael说你是我的最爱~果然这个家最讨人喜欢的是弟弟。</p>
+<p>sweet hug</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-2.PNG" alt="day17-2"></p>
+<p>Adam从圣诞老人那里得到了一个平板，Charles得到了一个世代灯塔奖（什么东西？），Polaris得到了一幅画，Ocrea得到了一个巨大的三叶虫化石（？）Ocrea居然很喜欢。Jasmine得到了黏土块，Michael得到了泡泡水。Michael特别喜欢泡泡水。圣诞节结束了，但是Sirius还没有得到他的礼物！！！</p>
+<p>让大家一起打开圣诞树下的礼物。Ocrea拿到了一个空盒子。</p>
+<p>Jasmine<strong>喜欢讨论兴趣</strong></p>
+<h2 id="第18天（冬·周四·圣诞节）"><a href="#第18天（冬·周四·圣诞节）" class="headerlink" title="第18天（冬·周四·圣诞节）"></a>第18天（冬·周四·圣诞节）</h2><p>Adam解锁了生活方式：喜欢独处</p>
+<p>Adam好像很喜欢赛琳，他们很契合，并且Adam想和赛琳调情。我觉得可以让他去了解一下赛琳。</p>
+<p>Ocrea选择的特征是物质主义，抱负是连环浪漫。ocrea真的超级瘦。</p>
+<p><img src="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-3.PNG" alt="day17-3"></p>
+<p>Sirius选择的特征是客观主义，抱负是聪明的大脑。</p>
+<p>Jasmine选择的特征是移动感情的，抱负是主厨。</p>
+<p>突然发现赛琳怀孕了（？？？）难道她已经结婚了？</p>
+<h2 id="第19天（冬·周五）"><a href="#第19天（冬·周五）" class="headerlink" title="第19天（冬·周五）"></a>第19天（冬·周五）</h2><p>Michael掉牙了。</p>
+]]></content>
+      <categories>
+        <category>自用</category>
+        <category>Sims 4</category>
+      </categories>
+      <tags>
+        <tag>自用</tag>
+        <tag>模拟人生4</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>相变理论基础</title>
+    <url>/%E7%9B%B8%E5%8F%98%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h3 id="从气液固开始"><a href="#从气液固开始" class="headerlink" title="从气液固开始"></a>从气液固开始</h3><p>当我们谈到相变（phase transition）这个词时，我们首先需要知道“相（phase）”的定义。我们说，相就是系统空间中各处强度性质完全相同的部分。所谓强度性质是指那些与相的质量、大小或形状无关的性质，如温度、压力、密度、组成等。有的时候我们也会把某相称之为某（物）态。最熟悉的气液固三相也可以被称之为气态液态和固态。</p>
+<span id="more"></span>
+
+<p>从直观词义上来说，我们知道相变是一种变化，从一种相变成另一种相的物理过程就称之为相变。最常见且令人熟悉的相变现象是水的气液固相变，在一个标准大气压下，100℃时水会汽化成水蒸气（从液态变为气态），而0℃时，液态的水则凝固成固态的冰。</p>
+<p>我们都知道在水沸腾的过程中，锅里的水总是保持在100℃，而在冰融化的过程中，冰水混合物的温度总保持在0℃。实际上，我们可以用这两个温度来为一个简易温度计定标（印象中初中或者高中物理会提到这个小实验）。</p>
+<p>为什么煮沸水的过程中，水明明在被加热却依然保持温度不变？印象中基础物理会这样解释：这部分能量被用于做功，使得水分子从分子间距较近的液态变为分子间距较远的气态。这似乎不太对，但印象中初中老师们似乎确实会这么告诉小朋友。要稍微专业一些来说，这涉及到相变潜热的概念（在下面一节：一阶相变中再说）。毕竟说这些概念什么——光是说到做功我就已经头大了，更别提什么潜热。我们或许可以先谈一些直观的，比如说图一。</p>
+<img src="\images\气液固相变.png" alt="气液固相变" style="zoom:60%;" />
+
+<div style="text-align: center;">图一：气液固相变</div>
+
+<p>图一是一张横坐标是温度纵坐标是压强的图像（废话！），在这张图中我们把气液固三相用不同的颜色标示出来，分别是蓝色的固相，紫色的液相，以及橙色的气相。这些相之间非常泾渭分明，除了最右上角那一块黄昏主题眼影一样的晕染。</p>
+<p>相与相之间的交界线代表相变的发生，这时两相（甚至三相）可以共存，比如说冰水混合物，这些不同的相之间处于一种微妙的平衡状态。而当条件稍稍改变一些，我们的共存体系就会无可挽回地向着单一相的情况发展了。共存体系的条件如此苛刻，以至于我们观察到的系统总是从一种相的极端迅速走向另一种相的极端，也就是相变。</p>
+<p>这里我不得不说，统计学家们对相变如此好奇可能就是因为这些变化非常不稳定而且剧烈。就像蝴蝶振翅，原本平衡的体系会瞬间打破，演变成一场风暴。蝴蝶振翅对人们来说当然算不上什么，但一场风暴就很不妙。</p>
+<p>说回图一，在右上角这个特别的边界模糊处，液相和气相的区别消失了，物质变成了一种超临界流体（听上去很吓人，但只需要知道它是一种液相和气相之间的界限消失，两者无法区分的特殊相就行了）。这东西要详细研究起来非常有趣，可以单独作为一个课题，叫做超临界流体。不过我们在这里只讨论相变——没错，这里也发生了相变。前一种界线分明的相变叫做一阶相变，这里叫做二阶相变，也叫连续相变。</p>
+<h3 id="一阶相变"><a href="#一阶相变" class="headerlink" title="一阶相变"></a>一阶相变</h3><p>物理学家通常会说，一阶相变是指那些涉及潜热的相变（所以潜热到底是什么？）。在这种相变过程中，系统吸收或释放固定的能量（这个能量通常很大），系统的温度随热量的增加而保持不变：系统处于“混合阶段”，其中系统的某些部分已经完成了过渡，而其他部分则没有。比如说在水的蒸发过程中（说通俗点，在烧开水），水温总是维持在100℃不变，而随着加热的进行，越来越多的水转换为水蒸气，锅里的水越来越少了。</p>
+<p>若我们要系统地阐述相变问题，使用“水越来越少”这样的话实在不能令人信服。当我们描述相变时，我们总是需要一些准确的可测量的物理量。比如说我们熟悉的热力学量：温度，压强等等。当我们烧开水时，虽然水的温度并没有变化，但压强却在短期内发生了极为剧烈的改变。</p>
+<p>一阶相变的经典图像是一个阶梯函数，大概长这样：▁|▔（你是懂作图的）虽然一阶相变很好理解也很好观察，但它却很难求得精确解。因为它涉及到相变潜热的问题（非常麻烦）为什么起名叫做潜热（latent heat），据说是因为系统吸热但温度没有上升，吸收的热量不能直接观察到，因此得名潜热，也就是隐藏的热量。在某些基础热力学课本中，潜热也被称之为“焓的变化”。</p>
+<p>我们回到在第一节中提到的，加热过程中吸收的热量到底到哪去了？化学家会说，它用于提高“位能”。当冰熔化成水时，它吸收热量用于打断水分子间的键结，破坏分子间相互作用力。这就是“熔化热”。而当水蒸发为水蒸气时，分子间相互作用力被进一步破坏，这就称之为“汽化热”。（当然我从来不管什么熔化热和汽化热，这段是从别处抄来的。）</p>
+<p>现在。我们大概了解了我们最熟悉的一阶相变，熔化和汽化（反过来作为凝固和液化也是一阶相变）。我们知道了它们从物理学定量描述来看的直观特征，也就是那个阶梯函数。也知道了什么是潜热。有趣的是，一阶相变绝不仅仅存在于热力学，在经典的磁化现象以及复杂网络中也存在相变，这是热力学统计物理的推广，我们只需要把之前讨论的热力学量换成与之相对应的其他物理量，就可以用相同的方式理解其他系统中的相变问题。</p>
+<h3 id="二阶相变"><a href="#二阶相变" class="headerlink" title="二阶相变"></a>二阶相变</h3>]]></content>
+      <categories>
+        <category>物理</category>
+        <category>统计物理</category>
+      </categories>
+      <tags>
+        <tag>相变</tag>
       </tags>
   </entry>
 </search>
