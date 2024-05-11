@@ -1807,15 +1807,6 @@ pre code {
   top: 0;
   width: 100%;
 }
-a:not(.btn) {
-  color: #dda0dd;
-  border-bottom: none;
-}
-a:not(.btn):hover {
-  color: #9370db;
-  font-weight: bold;
-  text-decoration: underline;
-}
 .post-gallery {
   display: flex;
   min-height: 200px;
@@ -2516,7 +2507,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #e3df61;
+  background: #5332de;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

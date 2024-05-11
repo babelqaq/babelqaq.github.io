@@ -270,7 +270,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.4k</span>
+      <span>5.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -290,6 +290,7 @@
     <div class="post-body" itemprop="articleBody"><h4 id="PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）"><a href="#PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）" class="headerlink" title="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）"></a>PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）</h4><p>简介：</p>
 <p>如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。</p>
 <span id="more"></span>
+
 <h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><p>利用配分函数零的密度区分：（1）一阶与高阶相变；（2）研究此类相变的交叉（指外部情况改变的情况下，从一种相变过渡到另一种相变）；（3）以潜热和临界指数的形式测量一阶和二阶相变的强度。</p>
 <p>一阶相变：自由能一阶导数的不连续。对于温度（或者说能量）驱动的一阶相变，导致不连续的是潜热。对于场驱动的…是自发磁化。自由能相对于温度与外场的二阶导分别是比热和磁化率。在一阶相变下表现出函数奇点。这与二阶相变不同，二阶相变中自由能的二阶导随相关长度发散。</p>
 <p>有限体积系统可以导出热力学极限情况下？（FSS？这段不是很确定）</p>
@@ -297,7 +298,7 @@
 <p>chatgpt：FSS 背后的想法是，临界点附近的系统行为由几个通用量决定，例如临界指数和缩放函数。这些量与系统的细节无关，可用于描述各种系统的行为。</p>
 </blockquote>
 <p>对于场驱动的相变，我们关注的是复外磁场平面上的李杨零。对温度驱动的，则是复温度平面上的Fisher零。</p>
-<p>由第一个Fisher零的FSS得到临界指数相关长度υ，一阶相变下υ为1/d（d是维度）从而区分一阶与高阶相变。另外，相变强度以往不能由零的性质来确定，只能通过直接测量潜热或界面张力来确定的。本文希望通过零的密度来研究相变强度（一阶相变下零密度与潜热成正比）</p>
+<p>由第一个Fisher零的FSS得到临界指数相关长度υ，一阶相变下υ为1&#x2F;d（d是维度）从而区分一阶与高阶相变。另外，相变强度以往不能由零的性质来确定，只能通过直接测量潜热或界面张力来确定的。本文希望通过零的密度来研究相变强度（一阶相变下零密度与潜热成正比）</p>
 <p>对于大j，第j个李杨零（或Fisher零）可以简化为公式…</p>
 <p>配分函数零的这种行为提供了一种（通常是非常准确的）方法来确定(i)临界温度和（ii）描述系统的热力学临界性质的临界指数。</p>
 <p>回顾以往对配分函数零的研究：</p>
@@ -309,39 +310,39 @@
 <p>早期认为在有限晶格中估计零点密度非常困难→现可用数值方法</p>
 <h6 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h6><p>L：晶格线性范围（晶格大小）</p>
 <p>A(z)：一个永不消失的平滑函数。这意味着A(z)连续</p>
-<p>z~j~：零点</p>
-<p>z~c~：临界点（感觉这里应该是指正实轴上那个零点）</p>
-<p>z =z~c~ + r exp (iϕ)：零点曲线，ϕ是与实轴夹角</p>
-<p>g~L~(r)：z~j~=z~c~ + r~j~ exp (iϕ)上的零点密度</p>
-<p>G~L~(r)：0-r这个圆里的零点累积密度</p>
-<p>对于FSS，$G_{L}(r)=\frac{j}{L^{d}} \quad \text { if } \quad r \in\left(r_{j}, r_{j+1}\right)$是一个区间，所以做一下平均值求出r~j~处的零点累积密度为：$G_{L}(r)=\frac{2j-1}{2L^{d}} \quad$（过原点，且通过原点的斜率揭示相变的类型和强度）</p>
-<p>比热进行FSS：$C_{L}(z_c)=L^{\alpha / \nu }$，在一阶情况下对于固定的j有：$r_{j}(L) \sim  L^{-d}$,$C_{L}(z_c) \sim  L^{d}$</p>
-<h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h6><p>对一阶与二阶相变，有：$G_{L}(r)=a_{1}r^{a_{2}}+a_{3}$</p>
-<p> a~3~ 大于零，零点越过实轴，表示一阶相变。 如果 a~3~ 小于零，则零仍然远离实轴，表示处于对称阶段的情况。若a~2~趋近于1，对于小r（原点附近斜率恒定）一阶相变。潜热与斜率a~1~成正比。若a~2~大于1，则是二阶相变。这种情况下相变强度α=2-a~2~。（r~j~是第j个零点的虚部，也就是说，r~j~=Im z~j~(L)）</p>
+<p>z<del>j</del>：零点</p>
+<p>z<del>c</del>：临界点（感觉这里应该是指正实轴上那个零点）</p>
+<p>z &#x3D;z<del>c</del> + r exp (iϕ)：零点曲线，ϕ是与实轴夹角</p>
+<p>g<del>L</del>(r)：z<del>j</del>&#x3D;z<del>c</del> + r<del>j</del> exp (iϕ)上的零点密度</p>
+<p>G<del>L</del>(r)：0-r这个圆里的零点累积密度</p>
+<p>对于FSS，$G_{L}(r)&#x3D;\frac{j}{L^{d}} \quad \text { if } \quad r \in\left(r_{j}, r_{j+1}\right)$是一个区间，所以做一下平均值求出r<del>j</del>处的零点累积密度为：$G_{L}(r)&#x3D;\frac{2j-1}{2L^{d}} \quad$（过原点，且通过原点的斜率揭示相变的类型和强度）</p>
+<p>比热进行FSS：$C_{L}(z_c)&#x3D;L^{\alpha &#x2F; \nu }$，在一阶情况下对于固定的j有：$r_{j}(L) \sim  L^{-d}$,$C_{L}(z_c) \sim  L^{d}$</p>
+<h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h6><p>对一阶与二阶相变，有：$G_{L}(r)&#x3D;a_{1}r^{a_{2}}+a_{3}$</p>
+<p> a<del>3</del> 大于零，零点越过实轴，表示一阶相变。 如果 a<del>3</del> 小于零，则零仍然远离实轴，表示处于对称阶段的情况。若a<del>2</del>趋近于1，对于小r（原点附近斜率恒定）一阶相变。潜热与斜率a<del>1</del>成正比。若a<del>2</del>大于1，则是二阶相变。这种情况下相变强度α&#x3D;2-a<del>2</del>。（r<del>j</del>是第j个零点的虚部，也就是说，r<del>j</del>&#x3D;Im z<del>j</del>(L)）</p>
 <p>误差分析的一些细节…（不想看qwq）</p>
-<h6 id="Potts-Model"><a href="#Potts-Model" class="headerlink" title="Potts Model"></a>Potts Model</h6><p>二维potts model： q≤4，二阶相变；q＞4，一阶相变。临界温度倒数$\beta _{c}=\ln{1+\sqrt{q} } $</p>
-<p>三维potts model： q=2，二阶相变（Ising 情况）；q≥3，一阶相变</p>
-<h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h6 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>根据二维点阵晶格（L为14）且无外磁场H的系统精确配分函数，可得复温度平面上的Fisher零。当L趋近无穷，H不为零，Fisher零在反铁磁临界点a~c~(H)与正实轴相交，将这些值与反铁磁临界线的封闭近似结果进行了比较。</p>
-<p>从Fisher零得到沿临界线的热尺度指数y~t~=1，表明在强均匀磁场下反铁磁模型比热的对数奇异性。</p>
-<h6 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h6><p>本文：N~s~个位点（sites）和N~b~个键（bonds）的晶格，具有外部磁场的伊辛模型。</p>
+<h6 id="Potts-Model"><a href="#Potts-Model" class="headerlink" title="Potts Model"></a>Potts Model</h6><p>二维potts model： q≤4，二阶相变；q＞4，一阶相变。临界温度倒数$\beta _{c}&#x3D;\ln{1+\sqrt{q} } $</p>
+<p>三维potts model： q&#x3D;2，二阶相变（Ising 情况）；q≥3，一阶相变</p>
+<h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h6 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>根据二维点阵晶格（L为14）且无外磁场H的系统精确配分函数，可得复温度平面上的Fisher零。当L趋近无穷，H不为零，Fisher零在反铁磁临界点a<del>c</del>(H)与正实轴相交，将这些值与反铁磁临界线的封闭近似结果进行了比较。</p>
+<p>从Fisher零得到沿临界线的热尺度指数y<del>t</del>&#x3D;1，表明在强均匀磁场下反铁磁模型比热的对数奇异性。</p>
+<h6 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h6><p>本文：N<del>s</del>个位点（sites）和N<del>b</del>个键（bonds）的晶格，具有外部磁场的伊辛模型。</p>
 <p>李杨：研究外部磁场非零的伊辛模型的铁磁效应。</p>
 <p>Fisher：</p>
 <ol>
-<li>外部磁场为零，伊辛模型铁磁效应与非铁磁效应，Fisher零在复温度平面上分别落在两个圆上：$a_{FM}=1+\sqrt{2} e^{i \theta}$，$a_{AF}=-1+\sqrt{2} e^{i \theta}$.</li>
+<li>外部磁场为零，伊辛模型铁磁效应与非铁磁效应，Fisher零在复温度平面上分别落在两个圆上：$a_{FM}&#x3D;1+\sqrt{2} e^{i \theta}$，$a_{AF}&#x3D;-1+\sqrt{2} e^{i \theta}$.</li>
 <li>零磁场的伊辛模型比热奇异性在对数上是无限的，这是由Fisher零的性质引起</li>
 <li>对于非常特殊的边界条件，零磁场下伊辛模型的Fisher零确实位于两个圆上，而对于更一般的边界条件，随着晶格大小增加，零接近于两个圆。</li>
 </ol>
 <p>非零磁场Fisher点，在非物理临界点发散（Fisher边奇点），这代替了零磁场下的铁磁临界点</p>
-<p>另一方面，反铁磁临界点切割正实轴（但之前从未有人展示出这一现象）so，本文通过精确解配分函数对应的Fisher零，研究非零磁场下的伊辛模型的反铁磁临界点（LxL方形晶格，L=14）</p>
-<h6 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h6><p>x是一个与外磁场有关的量，$x=e^{-2 \beta H}$（或许可以理解为外磁场对系统的影响？或者驱动作用。当x=1时，H=0，零场情况。）</p>
+<p>另一方面，反铁磁临界点切割正实轴（但之前从未有人展示出这一现象）so，本文通过精确解配分函数对应的Fisher零，研究非零磁场下的伊辛模型的反铁磁临界点（LxL方形晶格，L&#x3D;14）</p>
+<h6 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h6><p>x是一个与外磁场有关的量，$x&#x3D;e^{-2 \beta H}$（或许可以理解为外磁场对系统的影响？或者驱动作用。当x&#x3D;1时，H&#x3D;0，零场情况。）</p>
 <h6 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h6><p>图3通过两种拟合，算出反铁磁圆与正实轴的切割点，横坐标可以理解为外磁场强度（x是H的相关量）</p>
-<p>由Fisher 零，沿临界线获得热缩放指数 y~t~=1（或趋近于0，结果位于表2），$\alpha =2-d/y_{t}=0$，这表明即使在强均匀磁场中，反铁磁伊辛模型的比热也具有对数奇异性。</p>
+<p>由Fisher 零，沿临界线获得热缩放指数 y<del>t</del>&#x3D;1（或趋近于0，结果位于表2），$\alpha &#x3D;2-d&#x2F;y_{t}&#x3D;0$，这表明即使在强均匀磁场中，反铁磁伊辛模型的比热也具有对数奇异性。</p>
 <p>我们的结果清楚地表明，即使在强均匀磁场中，AF Ising模型的比热也具有对数奇点。</p>
 <h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>非标准型一阶相变有限尺寸相变。这篇文章好像没有很相关于李杨零点，而是集中于讨论FSS。</p>
-<p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1/L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1/L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
+<p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1&#x2F;L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1&#x2F;L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
 <p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
 <p>通常情况下，低温相的简并度q不随系统尺寸而变化，因此一阶相变的一般有限尺寸尺度行为与体积的倒数L^−d^成正比。我们可以从方程(4)，(5)中看到，如果低温相的简并度q以指数关系依赖于系统大小q∝e^L^，则这将被修改。</p>
-<h6 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h6><p>多级蒙特卡洛算法，初始晶格（100-1000）x10^6^ sweeps（扫视/扫描），双（dual）晶格4x10^6^ sweeps</p>
+<h6 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h6><p>多级蒙特卡洛算法，初始晶格（100-1000）x10^6^ sweeps（扫视&#x2F;扫描），双（dual）晶格4x10^6^ sweeps</p>
 <p>模拟相当于真实时间500h</p>
 <p>在模拟过程中，拥有27^3^个自旋的最大晶格在两相之间有效跃迁超过250次。尽管与最可能的态相比，罕见态被抑制了60多个数量级（图1）。</p>
 <p>dual model：自相关时间更大</p>
@@ -353,28 +354,28 @@
 <p>图二：</p>
 <p>dual型，L取值：12-24</p>
 <h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>三个相变：一阶，二阶，李杨边奇点</p>
-<p>都能通过估计有限尺度系统的零密度的磁尺度指数y~h~来清楚区分。</p>
+<p>都能通过估计有限尺度系统的零密度的磁尺度指数y<del>h</del>来清楚区分。</p>
 <p>从有限尺寸的数据中得到了高温下杨李边缘零密度的散度，这是通过lattice铁磁体的级数扩展得到。利用杨-李零密度讨论了<u>小系统</u>相变阶的识别。</p>
 <h6 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h6><p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨边奇点，并提出了李杨边奇点可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
-<p>在临界温度以上，杨-李零不会切割热力学极限中的正实轴。在正实轴周围的零分布存在间隙。也就是说，在$\left | \theta  \right | &lt;\theta _{e}$，$g(\theta)=0$.在临界温度，这个间隙消失。我们把在$\theta =\pm \theta _{e}$的李杨零叫做==李杨边缘零==。在T&gt;T~c~及d≥2时，李杨边缘零的具体位置不可得。当温度从临界温度攀升到正无穷，李阳边$\theta _{e}$从0移动到π。</p>
-<p>除Yang-Lee零外，Fisher还证明了H = 0的平方格化模型的热性质完全由复温度平面上的正则配分函数Z (T)的零决定。</p>
+<p>在临界温度以上，杨-李零不会切割热力学极限中的正实轴。在正实轴周围的零分布存在间隙。也就是说，在$\left | \theta  \right | &lt;\theta _{e}$，$g(\theta)&#x3D;0$.在临界温度，这个间隙消失。我们把在$\theta &#x3D;\pm \theta _{e}$的李杨零叫做&#x3D;&#x3D;李杨边缘零&#x3D;&#x3D;。在T&gt;T<del>c</del>及d≥2时，李杨边缘零的具体位置不可得。当温度从临界温度攀升到正无穷，李阳边$\theta _{e}$从0移动到π。</p>
+<p>除Yang-Lee零外，Fisher还证明了H &#x3D; 0的平方格化模型的热性质完全由复温度平面上的正则配分函数Z (T)的零决定。</p>
 <p>如果找到零的密度，就可以得到自由能、状态方程和所有其他热力学函数。然而，我们对零的密度的实际形式知之甚少。除了一维情况外，伊辛铁磁体的杨-李零的密度从未被完全知道…（一些过去的研究）</p>
-<p>对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L = 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
+<p>对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L &#x3D; 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
 <p>图一：16x16晶格</p>
-<p>图二：温度等于临界温度时，L=12与L=16不可区分，有限尺度效应是非常小的。</p>
-<p>在临界温度附近（T=2.5），L = 12和16的零密度也无法区分，除了在θ = 0附近，g(L)随着系统尺寸L的增加而急剧减小。</p>
-<p>远高于临界温度时（T=10），L = 12和16的零密度的总体形式几乎相同。与T = 1和2.5处相比，T = 10处的零密度的有限尺寸效应相对较大。在Yang-Lee边缘θ~e~ = 1.161附近，零的密度有些不规则，并且随着L的增加而增加。</p>
+<p>图二：温度等于临界温度时，L&#x3D;12与L&#x3D;16不可区分，有限尺度效应是非常小的。</p>
+<p>在临界温度附近（T&#x3D;2.5），L &#x3D; 12和16的零密度也无法区分，除了在θ &#x3D; 0附近，g(L)随着系统尺寸L的增加而急剧减小。</p>
+<p>远高于临界温度时（T&#x3D;10），L &#x3D; 12和16的零密度的总体形式几乎相同。与T &#x3D; 1和2.5处相比，T &#x3D; 10处的零密度的有限尺寸效应相对较大。在Yang-Lee边缘θ<del>e</del> &#x3D; 1.161附近，零的密度有些不规则，并且随着L的增加而增加。</p>
 <h4 id="FSS方法"><a href="#FSS方法" class="headerlink" title="FSS方法"></a>FSS方法</h4><h6 id="序列重要性抽样蒙特卡罗方法"><a href="#序列重要性抽样蒙特卡罗方法" class="headerlink" title="序列重要性抽样蒙特卡罗方法"></a>序列重要性抽样蒙特卡罗方法</h6><ol>
 <li>选一个初始态</li>
 <li>选一个点位i</li>
 <li>计算点位自旋翻转所需能量ΔE</li>
 <li>取0-1之间的随机数r</li>
-<li>如果r＜exp(-ΔE/k~B~T), 自旋翻转</li>
+<li>如果r＜exp(-ΔE&#x2F;k<del>B</del>T), 自旋翻转</li>
 <li>选择另一个i回到第三步循环</li>
 </ol>
 <p>注：在低温下翻转是很少的，可以加快运算时间，高温下翻转很多，是一个准遍历问题。</p>
-<h6 id="FSS入门：齐次函数"><a href="#FSS入门：齐次函数" class="headerlink" title="FSS入门：齐次函数"></a>FSS入门：齐次函数</h6><p>对于所有尺度值λ，有$f(λr)=g(λ)f(r)$，f(r)是热力学参量，$g(λ)=λ^{p}$，p是齐次度。</p>
-<p>广义齐次函数：$f\left(\lambda^{a} x, \lambda^{b} y\right)=\lambda f(x, y)$</p>
+<h6 id="FSS入门：齐次函数"><a href="#FSS入门：齐次函数" class="headerlink" title="FSS入门：齐次函数"></a>FSS入门：齐次函数</h6><p>对于所有尺度值λ，有$f(λr)&#x3D;g(λ)f(r)$，f(r)是热力学参量，$g(λ)&#x3D;λ^{p}$，p是齐次度。</p>
+<p>广义齐次函数：$f\left(\lambda^{a} x, \lambda^{b} y\right)&#x3D;\lambda f(x, y)$</p>
 <p><strong>The static scaling hypothesis（静态缩放假说）</strong>认为，吉布斯自由能$G(t,H)$是一个齐次函数。</p>
 <h6 id="静态缩放假说："><a href="#静态缩放假说：" class="headerlink" title="静态缩放假说："></a>静态缩放假说：</h6><p>在临界点附近，系统的各种物理量在合适的标度变换下表现出统一的行为。</p>
 <p>核心思想是当系统接近相变临界点时，各种宏观物理量（如磁化强度、比热容等）的尺度行为可以用一个或多个标度指数来描述。这些标度指数决定了物理量如何随着系统的大小或临界点的接近而变化。</p>
@@ -505,7 +506,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"1I6Knr9w99gheUM29tvmbRUi-MdYXbMMI","appKey":"voG1mDLnin3ATNYJpAuEcu88","serverURLs":"https://1i6knr9w.api.lncldglobal.com","placeholder":"请在这里留言吧！","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"el":"#valine-comments","path":"/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"9lidXznOTuex6joEmPWanCah-MdYXbMMI","appKey":"tMUAbiRZIZ3kW6KzBQIsDRZC","serverURLs":"https://9lidxzno.api.lncldglobal.com","placeholder":"请在这里发表评论~","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick"],"path":"/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/","el":"#valine-comments"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
