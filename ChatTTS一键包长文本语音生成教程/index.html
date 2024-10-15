@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e468f6"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#e468f6">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="下载首先，下载一个ChatTTS的一键包。在这里放一个知乎大佬分享的界面： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;700962264?utm_psn&#x3D;1829365246923505664  下载一键包后只需点击运行.exe即可使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatTTS一键包长文本语音生成教程">
+<meta property="og:url" content="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="兀孀的个人博客">
+<meta property="og:description" content="下载首先，下载一个ChatTTS的一键包。在这里放一个知乎大佬分享的界面： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;700962264?utm_psn&#x3D;1829365246923505664  下载一键包后只需点击运行.exe即可使用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/image-20241015131723760.png">
+<meta property="og:image" content="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/image-20241015132146856.png">
+<meta property="article:published_time" content="2024-10-15T05:13:28.000Z">
+<meta property="article:modified_time" content="2024-10-15T06:00:18.065Z">
+<meta property="article:author" content="babel">
+<meta property="article:tag" content="代码">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="ChatTTs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/image-20241015131723760.png">
+
+
+<link rel="canonical" href="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/","path":"ChatTTS一键包长文本语音生成教程/","title":"ChatTTS一键包长文本语音生成教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ChatTTS一键包长文本语音生成教程 | 兀孀的个人博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-bice-three.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">兀孀的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">关于一些无聊小说以及物理，还有乱七八糟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda%E9%97%AE%E9%A2%98"><span class="nav-text">cuda问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="nav-text">文本处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E5%89%8D%E6%96%87%E6%9C%AC%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">上传前文本预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E7%82%BC%E6%96%87%E6%9C%AC"><span class="nav-text">提炼文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%88%86%E6%96%87%E6%9C%AC%E9%95%BF%E5%BA%A6"><span class="nav-text">切分文本长度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E9%80%89%E9%A1%B9"><span class="nav-text">音频选项</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E7%A7%8D%E5%AD%90"><span class="nav-text">音频种子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E7%A7%8D%E5%AD%90"><span class="nav-text">文本种子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E9%80%9F"><span class="nav-text">语速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A3%E8%AF%AD%E5%8C%96%E7%A8%8B%E5%BA%A6"><span class="nav-text">口语化程度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%91%E5%A3%B0"><span class="nav-text">笑声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9C%E9%A1%BF"><span class="nav-text">停顿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E5%A2%9E%E5%BC%BA"><span class="nav-text">音频增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ODE-Solver"><span class="nav-text">ODE Solver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><span class="nav-text">其他参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E7%A7%8D%E5%AD%90%E5%8F%8A%E9%9F%B3%E8%89%B2%E9%85%8D%E7%BD%AE"><span class="nav-text">保存种子及音色配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">一些可能遇到的问题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="babel"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">babel</p>
+  <div class="site-description" itemprop="description">无聊~聊~~~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://wushuangqaq.lofter.com/" title="Lofter → https:&#x2F;&#x2F;wushuangqaq.lofter.com&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-lofter fa-fw"></i>Lofter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/86354957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;86354957" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/babelqaq?spm=1011.2124.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;babelqaq?spm&#x3D;1011.2124.3001.5343" rel="noopener me" target="_blank"><i class="fa fa-CSDN fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mail%20to:babelqaq@gmail.com" title="E-Mail → mail to:babelqaq@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="babel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兀孀的个人博客">
+      <meta itemprop="description" content="无聊~聊~~~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ChatTTS一键包长文本语音生成教程 | 兀孀的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ChatTTS一键包长文本语音生成教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-10-15 13:13:28 / 修改时间：14:00:18" itemprop="dateCreated datePublished" datetime="2024-10-15T13:13:28+08:00">2024-10-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BB%A3%E7%A0%81%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">代码工具</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>首先，下载一个ChatTTS的一键包。在这里放一个知乎大佬分享的界面：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/700962264?utm_psn=1829365246923505664">https://zhuanlan.zhihu.com/p/700962264?utm_psn=1829365246923505664</a></p>
+<p> 下载一键包后只需点击运行.exe即可使用。</p>
+<span id="more"></span>
+
+<p>运行后可以看到一个这样的界面。</p>
+<p><img src="/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/image-20241015131723760.png" alt="image-20241015131723760"></p>
+<h2 id="cuda问题"><a href="#cuda问题" class="headerlink" title="cuda问题"></a><strong>cuda问题</strong></h2><p>一键包需要匹配的cuda，但我的cuda有问题也能打开并使用一键包，只是不能使用里面的音效增强功能，会报错。</p>
+<p> 不使用音质增强音效会比较差，我后面用AU解决了这个问题。该教程后面也会附上解决方案。</p>
+<h1 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h1><p> 即“勾选以启用txt文件上传批量处理”，就可以上传txt文件或者SRT文件作为要转 语音的文本。</p>
+<h2 id="上传前文本预处理"><a href="#上传前文本预处理" class="headerlink" title="上传前文本预处理"></a>上传前文本预处理</h2><p>这里主要介绍TXT文件的预处理，SRT文件的没试过。</p>
+<p> 读长文本的时候需要预处理。特别是想要ChatTTS读一些需要缓慢、温和、稳定的文本，比如说资料、有声书、科普类视频的时候。ChatTTS一键包的语速通常较快（即使把speed这一项拉到0也比较快）所以就需要对文本预处理进行断句。</p>
+<p> 一键包中经测试停顿代码[uv_break]无法正常使用。会直接被读出来而不是停顿。<br> 建议直接处理文本，逗号就是小停顿。句号是大停顿（但不一定，有的时候ai也会连读）。</p>
+<p> <strong>一般进行的处理有：</strong></p>
+<ol>
+<li>ChatTTS无法识别冒号、分号、括号、书名号、破折号等等一系列的除了逗号和句号以外的符号。可以在文档里提前把这些符号批量换成逗号或者句号。<br>在每个句号后面换行。</li>
+<li>用文心一言这一类文本处理ai按照语言朗读结构在句子停顿处加上逗号。</li>
+<li>如果句子里逗号太多，就手动把某些逗号改成句号。ai切割会有不合理的地方，记得自己简单看一遍调一下。</li>
+<li>把文本复制到TXT里导入。</li>
+</ol>
+<p> 比如说如下长文本：</p>
+<blockquote>
+<p> 原子核是原子的核心部分，由‌质子和‌中子两种微粒构成。质子又由两个‌上夸克和一个‌下夸克组成，而中子则由两个下夸克和一个上夸克组成。</p>
+</blockquote>
+<p> 处理后变成了：</p>
+<blockquote>
+<p> 原子核，是原子的核心部分。</p>
+<p> 由‌，质子和‌中子，两种微粒构成。</p>
+<p> 质子，又由两个‌上夸克，和一个‌下夸克组成。</p>
+<p> 而中子，则由两个下夸克，和一个上夸克组成。</p>
+</blockquote>
+<h2 id="提炼文本"><a href="#提炼文本" class="headerlink" title="提炼文本"></a>提炼文本</h2><p> 勾上。不勾非常捧读。</p>
+<h2 id="切分文本长度"><a href="#切分文本长度" class="headerlink" title="切分文本长度"></a>切分文本长度</h2><p> 自己按需求调。不调也无所谓。</p>
+<h1 id="音频选项"><a href="#音频选项" class="headerlink" title="音频选项"></a>音频选项</h1><h2 id="音频种子"><a href="#音频种子" class="headerlink" title="音频种子"></a>音频种子</h2><p>随机种子比较麻烦，建议在这个网站找种子。</p>
+<p><a target="_blank" rel="noopener" href="https://modelscope.cn/studios/ttwwwaa/ChatTTS_Speaker/summary">https://modelscope.cn/studios/ttwwwaa/ChatTTS_Speaker/summary</a></p>
+<p>网站里有表格，备注了男声女声，声音年龄段，文本朗读稳定度等信息，点击种子id可在表格下方试听，可下载种子文件。</p>
+<p><img src="/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/image-20241015132146856.png" alt="image-20241015132146856"></p>
+<p>下载种子文件再上传到一键包就好了。网站里的种子编号和一键包不是对应的。</p>
+<h2 id="文本种子"><a href="#文本种子" class="headerlink" title="文本种子"></a>文本种子</h2><p> 比较玄学。就算是一个感情多读几遍，读出来也差异巨大。有心理作用想调可以调一下，不调也无所谓。</p>
+<h2 id="语速"><a href="#语速" class="headerlink" title="语速"></a>语速</h2><p> 一般是0，右拉是变快，不能变慢。</p>
+<h2 id="口语化程度"><a href="#口语化程度" class="headerlink" title="口语化程度"></a>口语化程度</h2><p> 如果读有声书、科普类视频配音之类的就拉到0，不然莫名其妙的语气词会非常多。就算拉到0也有零星几个，需要后期自己手动消掉。</p>
+<h2 id="笑声"><a href="#笑声" class="headerlink" title="笑声"></a>笑声</h2><p> 不需要的时候都是0。</p>
+<h2 id="停顿"><a href="#停顿" class="headerlink" title="停顿"></a>停顿</h2><p> 按需要调整，不要调到大于6，会吞掉停顿后面的一部分语音。</p>
+<h2 id="音频增强"><a href="#音频增强" class="headerlink" title="音频增强"></a>音频增强</h2><p>都勾上，但可能会报错。</p>
+<h2 id="ODE-Solver"><a href="#ODE-Solver" class="headerlink" title="ODE Solver"></a>ODE Solver</h2><p> 最高质量RK4</p>
+<h2 id="其他参数"><a href="#其他参数" class="headerlink" title="其他参数"></a>其他参数</h2><p> 不用调</p>
+<h2 id="保存种子及音色配置"><a href="#保存种子及音色配置" class="headerlink" title="保存种子及音色配置"></a>保存种子及音色配置</h2><p> 在配置管理的音色名称中打种子你自定义的配置名称，点保存音色配置就行了。下次要用的时候点选择音色配置并应用配置。</p>
+<h1 id="一些可能遇到的问题"><a href="#一些可能遇到的问题" class="headerlink" title="一些可能遇到的问题"></a>一些可能遇到的问题</h1><p><strong>1. 因为ChatTTS每句话都是分开生成然后合并在一起的。每句话之间语气、语速、音量大小差异巨大怎么办？</strong></p>
+<ul>
+<li><p>语气问题：一般我会相同的参数重复生成3段音频，导入AU，然后一句话一句话试听，把我觉得最好的段落都剪辑在一起。</p>
+</li>
+<li><p>语速问题：大部分依靠上面提到的文本预处理和剪辑。少部分用AU自带的音频伸缩，直接拉，10%以内的调节音调差异都比较小。</p>
+</li>
+<li><p>音量问题：</p>
+</li>
+</ul>
+<p>  导入AU，转换成立体声。</p>
+<p>  在收藏夹里使用AU自带的“标准化为-3dB”。</p>
+<p>  手动粗略地按段落分区拉一下那些音量特别小的部分，因为有的音量真的太小了，用插件不好调。</p>
+<p>  用AU的插件或者其他音频处理软件平衡音量。网上有很多教程，可以直接搜索。</p>
+<p> <strong>2. 手动粗略地按段落分区拉一下那些音量特别小的部分，因为有的音量真的太小了，用插件不好调</strong></p>
+<ul>
+<li>用AU的滤波器或者其他音频处理软件平衡音量。网上有很多教程，可以直接搜索。</li>
+</ul>
+<p> <strong>3. 句子里在不该停顿的地方停顿了怎么办？或者没有在该停顿的地方停顿怎么办？</strong></p>
+<ul>
+<li>要么重新生成这句话，直到生成你想要的，然后剪辑进来。要么用其他音频处理软件剪辑。推荐前一种办法，比较自然。</li>
+</ul>
+<p> <strong>4. 声音不够好听怎么办？</strong></p>
+<ul>
+<li>AU或者其他调音软件自调。或者多生成几遍这句话找一个比较满意的。即使完全相同参数生成的声音也有可能有透亮的和闷闷的。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag"><i class="fa fa-tag"></i> 代码</a>
+              <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i> AI</a>
+              <a href="/tags/ChatTTs/" rel="tag"><i class="fa fa-tag"></i> ChatTTs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ChatTTs%E7%BB%8F%E9%AA%8C/" rel="prev" title="ChatTTS个人笔记">
+                  <i class="fa fa-chevron-left"></i> ChatTTS个人笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">babel</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-bice-three.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"在这里评论吧~暂时需要科学上网","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/ChatTTS%E4%B8%80%E9%94%AE%E5%8C%85%E9%95%BF%E6%96%87%E6%9C%AC%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%95%99%E7%A8%8B/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
