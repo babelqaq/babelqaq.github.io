@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e468f6"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#e468f6">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）简介： 如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李杨零&#x2F;Fisher零-文献速记">
+<meta property="og:url" content="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="兀孀的个人博客">
+<meta property="og:description" content="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）简介： 如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-04T08:55:58.000Z">
+<meta property="article:modified_time" content="2024-05-11T03:54:54.945Z">
+<meta property="article:author" content="babel">
+<meta property="article:tag" content="文献速记">
+<meta property="article:tag" content="李杨零">
+<meta property="article:tag" content="Fisher零">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/","path":"李杨零Fisher零-文献速记/","title":"李杨零/Fisher零-文献速记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>李杨零/Fisher零-文献速记 | 兀孀的个人博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-bice-three.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">兀孀的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">关于一些无聊小说以及物理，还有乱七八糟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII%EF%BC%881989%EF%BC%89"><span class="nav-text">PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes%EF%BC%882000%EF%BC%89"><span class="nav-text">The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-text">公式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-text">模型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Potts-Model"><span class="nav-text">Potts Model</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field%EF%BC%882005%EF%BC%89"><span class="nav-text">Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B-1"><span class="nav-text">模型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-text">结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions%EF%BC%882014%EF%BC%89"><span class="nav-text">Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="nav-text">模型：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet%EF%BC%882018%EF%BC%89"><span class="nav-text">Density of Yang-Lee zeros for the Ising ferromagnet（2018）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#introduction"><span class="nav-text">introduction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FSS%E6%96%B9%E6%B3%95"><span class="nav-text">FSS方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E9%87%8D%E8%A6%81%E6%80%A7%E6%8A%BD%E6%A0%B7%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><span class="nav-text">序列重要性抽样蒙特卡罗方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#FSS%E5%85%A5%E9%97%A8%EF%BC%9A%E9%BD%90%E6%AC%A1%E5%87%BD%E6%95%B0"><span class="nav-text">FSS入门：齐次函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%BC%A9%E6%94%BE%E5%81%87%E8%AF%B4%EF%BC%9A"><span class="nav-text">静态缩放假说：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="babel"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">babel</p>
+  <div class="site-description" itemprop="description">无聊~聊~~~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://wushuangqaq.lofter.com/" title="Lofter → https:&#x2F;&#x2F;wushuangqaq.lofter.com&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-lofter fa-fw"></i>Lofter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/86354957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;86354957" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/babelqaq?spm=1011.2124.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;babelqaq?spm&#x3D;1011.2124.3001.5343" rel="noopener me" target="_blank"><i class="fa fa-CSDN fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mail%20to:babelqaq@gmail.com" title="E-Mail → mail to:babelqaq@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="babel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兀孀的个人博客">
+      <meta itemprop="description" content="无聊~聊~~~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="李杨零/Fisher零-文献速记 | 兀孀的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          李杨零/Fisher零-文献速记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-04 16:55:58" itemprop="dateCreated datePublished" datetime="2023-07-04T16:55:58+08:00">2023-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-11 11:54:54" itemprop="dateModified" datetime="2024-05-11T11:54:54+08:00">2024-05-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%89%A9%E7%90%86/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">统计物理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h4 id="PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）"><a href="#PARTITION-FUNCTION-ZEROS-FOR-THE-TWO-DIMENSION-ISING-MODEL-VII（1989）" class="headerlink" title="PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）"></a>PARTITION FUNCTION ZEROS FOR THE TWO-DIMENSION ISING MODEL VII（1989）</h4><p>简介：</p>
+<p>如果复解位于包含零的区域内，则称为内部临界点；如果临界点发生在两个边界线相交之处，则称为边界临界点。</p>
+<span id="more"></span>
+<h4 id="The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）"><a href="#The-Strength-of-First-and-Second-Order-Phase-Transitions-from-Partition-Function-Zeroes（2000）" class="headerlink" title="The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）"></a>The Strength of First and Second Order Phase Transitions from Partition Function Zeroes（2000）</h4><p>利用配分函数零的密度区分：（1）一阶与高阶相变；（2）研究此类相变的交叉（指外部情况改变的情况下，从一种相变过渡到另一种相变）；（3）以潜热和临界指数的形式测量一阶和二阶相变的强度。</p>
+<p>一阶相变：自由能一阶导数的不连续。对于温度（或者说能量）驱动的一阶相变，导致不连续的是潜热。对于场驱动的…是自发磁化。自由能相对于温度与外场的二阶导分别是比热和磁化率。在一阶相变下表现出函数奇点。这与二阶相变不同，二阶相变中自由能的二阶导随相关长度发散。</p>
+<p>有限体积系统可以导出热力学极限情况下？（FSS？这段不是很确定）</p>
+<blockquote>
+<p>chatgpt：FSS 背后的想法是，临界点附近的系统行为由几个通用量决定，例如临界指数和缩放函数。这些量与系统的细节无关，可用于描述各种系统的行为。</p>
+</blockquote>
+<p>对于场驱动的相变，我们关注的是复外磁场平面上的李杨零。对温度驱动的，则是复温度平面上的Fisher零。</p>
+<p>由第一个Fisher零的FSS得到临界指数相关长度υ，一阶相变下υ为1/d（d是维度）从而区分一阶与高阶相变。另外，相变强度以往不能由零的性质来确定，只能通过直接测量潜热或界面张力来确定的。本文希望通过零的密度来研究相变强度（一阶相变下零密度与潜热成正比）</p>
+<p>对于大j，第j个李杨零（或Fisher零）可以简化为公式…</p>
+<p>配分函数零的这种行为提供了一种（通常是非常准确的）方法来确定(i)临界温度和（ii）描述系统的热力学临界性质的临界指数。</p>
+<p>回顾以往对配分函数零的研究：</p>
+<ol>
+<li>确定零的分布，以研究复杂参数的相图，并检查（以定性的方式）零是否似乎跨越了真实的轴，这是相变存在的证据</li>
+<li>定量测量那些具有最小虚部的零的（有限尺寸）尺度行为，以确定临界指数，可能用类似的分析分别应用于更高的指数零或确定夹角</li>
+<li>Lee-Yang零的固定体积图表明在一阶相变时零的非零密度的开始</li>
+</ol>
+<p>早期认为在有限晶格中估计零点密度非常困难→现可用数值方法</p>
+<h6 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h6><p>L：晶格线性范围（晶格大小）</p>
+<p>A(z)：一个永不消失的平滑函数。这意味着A(z)连续</p>
+<p>z~j~：零点</p>
+<p>z~c~：临界点（感觉这里应该是指正实轴上那个零点）</p>
+<p>z =z~c~ + r exp (iϕ)：零点曲线，ϕ是与实轴夹角</p>
+<p>g~L~(r)：z~j~=z~c~ + r~j~ exp (iϕ)上的零点密度</p>
+<p>G~L~(r)：0-r这个圆里的零点累积密度</p>
+<p>对于FSS，$G<em>{L}(r)=\frac{j}{L^{d}} \quad \text { if } \quad r \in\left(r</em>{j}, r<em>{j+1}\right)$是一个区间，所以做一下平均值求出r~j~处的零点累积密度为：$G</em>{L}(r)=\frac{2j-1}{2L^{d}} \quad$（过原点，且通过原点的斜率揭示相变的类型和强度）</p>
+<p>比热进行FSS：$C<em>{L}(z_c)=L^{\alpha / \nu }$，在一阶情况下对于固定的j有：$r</em>{j}(L) \sim  L^{-d}$,$C_{L}(z_c) \sim  L^{d}$</p>
+<h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h6><p>对一阶与二阶相变，有：$G<em>{L}(r)=a</em>{1}r^{a<em>{2}}+a</em>{3}$</p>
+<p> a~3~ 大于零，零点越过实轴，表示一阶相变。 如果 a~3~ 小于零，则零仍然远离实轴，表示处于对称阶段的情况。若a~2~趋近于1，对于小r（原点附近斜率恒定）一阶相变。潜热与斜率a~1~成正比。若a~2~大于1，则是二阶相变。这种情况下相变强度α=2-a~2~。（r~j~是第j个零点的虚部，也就是说，r~j~=Im z~j~(L)）</p>
+<p>误差分析的一些细节…（不想看qwq）</p>
+<h6 id="Potts-Model"><a href="#Potts-Model" class="headerlink" title="Potts Model"></a>Potts Model</h6><p>二维potts model： q≤4，二阶相变；q＞4，一阶相变。临界温度倒数$\beta _{c}=\ln{1+\sqrt{q} } $</p>
+<p>三维potts model： q=2，二阶相变（Ising 情况）；q≥3，一阶相变</p>
+<h4 id="Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）"><a href="#Fisher-zeros-of-the-Ising-anti-ferromagnet-in-an-arbitrary-nonzero-magnetic-field（2005）" class="headerlink" title="Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）"></a>Fisher zeros of the Ising anti-ferromagnet in an arbitrary nonzero magnetic field（2005）</h4><h6 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>根据二维点阵晶格（L为14）且无外磁场H的系统精确配分函数，可得复温度平面上的Fisher零。当L趋近无穷，H不为零，Fisher零在反铁磁临界点a~c~(H)与正实轴相交，将这些值与反铁磁临界线的封闭近似结果进行了比较。</p>
+<p>从Fisher零得到沿临界线的热尺度指数y~t~=1，表明在强均匀磁场下反铁磁模型比热的对数奇异性。</p>
+<h6 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h6><p>本文：N~s~个位点（sites）和N~b~个键（bonds）的晶格，具有外部磁场的伊辛模型。</p>
+<p>李杨：研究外部磁场非零的伊辛模型的铁磁效应。</p>
+<p>Fisher：</p>
+<ol>
+<li>外部磁场为零，伊辛模型铁磁效应与非铁磁效应，Fisher零在复温度平面上分别落在两个圆上：$a<em>{FM}=1+\sqrt{2} e^{i \theta}$，$a</em>{AF}=-1+\sqrt{2} e^{i \theta}$.</li>
+<li>零磁场的伊辛模型比热奇异性在对数上是无限的，这是由Fisher零的性质引起</li>
+<li>对于非常特殊的边界条件，零磁场下伊辛模型的Fisher零确实位于两个圆上，而对于更一般的边界条件，随着晶格大小增加，零接近于两个圆。</li>
+</ol>
+<p>非零磁场Fisher点，在非物理临界点发散（Fisher边奇点），这代替了零磁场下的铁磁临界点</p>
+<p>另一方面，反铁磁临界点切割正实轴（但之前从未有人展示出这一现象）so，本文通过精确解配分函数对应的Fisher零，研究非零磁场下的伊辛模型的反铁磁临界点（LxL方形晶格，L=14）</p>
+<h6 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h6><p>x是一个与外磁场有关的量，$x=e^{-2 \beta H}$（或许可以理解为外磁场对系统的影响？或者驱动作用。当x=1时，H=0，零场情况。）</p>
+<h6 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h6><p>图3通过两种拟合，算出反铁磁圆与正实轴的切割点，横坐标可以理解为外磁场强度（x是H的相关量）</p>
+<p>由Fisher 零，沿临界线获得热缩放指数 y~t~=1（或趋近于0，结果位于表2），$\alpha =2-d/y_{t}=0$，这表明即使在强均匀磁场中，反铁磁伊辛模型的比热也具有对数奇异性。</p>
+<p>我们的结果清楚地表明，即使在强均匀磁场中，AF Ising模型的比热也具有对数奇点。</p>
+<h4 id="Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）"><a href="#Non-Standard-Finite-Size-Scaling-at-First-Order-Phase-Transitions（2014）" class="headerlink" title="Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）"></a>Non-Standard Finite-Size Scaling at First-Order Phase Transitions（2014）</h4><p>非标准型一阶相变有限尺寸相变。这篇文章好像没有很相关于李杨零点，而是集中于讨论FSS。</p>
+<p>在一阶相变的背景下，对于三维中的 L x L x L  晶格，有限大小校正的标准反向系统缩放通常为  1/L^3^ 。但是，该论文指出，如果存在指数级的低温相位退化，则该标准缩放定律将转化为1/L^2^缩放。简而言之，这意味着在一阶相变时对物理系统行为的有限大小校正通常与系统体积的逆数成正比，但是如果存在某种类型的退化，则缩放定律会变化为与系统大小的平方的逆数成正比。</p>
+<p>在本文中使用了具有四自旋的The gonihedric Ising model 进行举例，通过仿真生成高精度数据。</p>
+<p>通常情况下，低温相的简并度q不随系统尺寸而变化，因此一阶相变的一般有限尺寸尺度行为与体积的倒数L^−d^成正比。我们可以从方程(4)，(5)中看到，如果低温相的简并度q以指数关系依赖于系统大小q∝e^L^，则这将被修改。</p>
+<h6 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h6><p>多级蒙特卡洛算法，初始晶格（100-1000）x10^6^ sweeps（扫视/扫描），双（dual）晶格4x10^6^ sweeps</p>
+<p>模拟相当于真实时间500h</p>
+<p>在模拟过程中，拥有27^3^个自旋的最大晶格在两相之间有效跃迁超过250次。尽管与最可能的态相比，罕见态被抑制了60多个数量级（图1）。</p>
+<p>dual model：自相关时间更大</p>
+<p>然后，可以通过加权多参数数据来检索标准估计量，从而得到玻尔兹曼分布的能量。当与多角度模拟相结合时，重加权技术非常强大，并允许计算在广泛的温度范围内的可观测值。</p>
+<p>通过重新加权等式得出的温度函数(8)和dual型等式(9)</p>
+<p>图一：</p>
+<p>L取值：13-27</p>
+<p>红绿线重合</p>
+<p>图二：</p>
+<p>dual型，L取值：12-24</p>
+<h4 id="Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）"><a href="#Density-of-Yang-Lee-zeros-for-the-Ising-ferromagnet（2018）" class="headerlink" title="Density of Yang-Lee zeros for the Ising ferromagnet（2018）"></a>Density of Yang-Lee zeros for the Ising ferromagnet（2018）</h4><p>三个相变：一阶，二阶，李杨边奇点</p>
+<p>都能通过估计有限尺度系统的零密度的磁尺度指数y~h~来清楚区分。</p>
+<p>从有限尺寸的数据中得到了高温下杨李边缘零密度的散度，这是通过lattice铁磁体的级数扩展得到。利用杨-李零密度讨论了<u>小系统</u>相变阶的识别。</p>
+<h6 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h6><p>Fisher [20]将T &gt; Tc的边缘零重新命名为李杨边奇点，并提出了李杨边奇点可以看作是具有相关临界指数的一个新的二阶相变的观点。</p>
+<p>在临界温度以上，杨-李零不会切割热力学极限中的正实轴。在正实轴周围的零分布存在间隙。也就是说，在$\left | \theta  \right | &lt;\theta <em>{e}$，$g(\theta)=0$.在临界温度，这个间隙消失。我们把在$\theta =\pm \theta </em>{e}$的李杨零叫做==李杨边缘零==。在T&gt;T~c~及d≥2时，李杨边缘零的具体位置不可得。当温度从临界温度攀升到正无穷，李阳边$\theta _{e}$从0移动到π。</p>
+<p>除Yang-Lee零外，Fisher还证明了H = 0的平方格化模型的热性质完全由复温度平面上的正则配分函数Z (T)的零决定。</p>
+<p>如果找到零的密度，就可以得到自由能、状态方程和所有其他热力学函数。然而，我们对零的密度的实际形式知之甚少。除了一维情况外，伊辛铁磁体的杨-李零的密度从未被完全知道…（一些过去的研究）</p>
+<p>对于T &gt; Tc，之前从未研究过该铁磁体的杨-李零密度的有限尺寸效应（ finite-size effects）。本文基于L×L方格化模型（L = 3∼16）的精确大配分函数，研究了杨-李零密度的性质。探讨关于伊辛类铁磁模型中三种不同的相变：1.一阶相变 2.二阶相变 3.李杨奇点边。我们还研究了杨-李零的密度及其在高温下的散度。</p>
+<p>图一：16x16晶格</p>
+<p>图二：温度等于临界温度时，L=12与L=16不可区分，有限尺度效应是非常小的。</p>
+<p>在临界温度附近（T=2.5），L = 12和16的零密度也无法区分，除了在θ = 0附近，g(L)随着系统尺寸L的增加而急剧减小。</p>
+<p>远高于临界温度时（T=10），L = 12和16的零密度的总体形式几乎相同。与T = 1和2.5处相比，T = 10处的零密度的有限尺寸效应相对较大。在Yang-Lee边缘θ~e~ = 1.161附近，零的密度有些不规则，并且随着L的增加而增加。</p>
+<h4 id="FSS方法"><a href="#FSS方法" class="headerlink" title="FSS方法"></a>FSS方法</h4><h6 id="序列重要性抽样蒙特卡罗方法"><a href="#序列重要性抽样蒙特卡罗方法" class="headerlink" title="序列重要性抽样蒙特卡罗方法"></a>序列重要性抽样蒙特卡罗方法</h6><ol>
+<li>选一个初始态</li>
+<li>选一个点位i</li>
+<li>计算点位自旋翻转所需能量ΔE</li>
+<li>取0-1之间的随机数r</li>
+<li>如果r＜exp(-ΔE/k~B~T), 自旋翻转</li>
+<li>选择另一个i回到第三步循环</li>
+</ol>
+<p>注：在低温下翻转是很少的，可以加快运算时间，高温下翻转很多，是一个准遍历问题。</p>
+<h6 id="FSS入门：齐次函数"><a href="#FSS入门：齐次函数" class="headerlink" title="FSS入门：齐次函数"></a>FSS入门：齐次函数</h6><p>对于所有尺度值λ，有$f(λr)=g(λ)f(r)$，f(r)是热力学参量，$g(λ)=λ^{p}$，p是齐次度。</p>
+<p>广义齐次函数：$f\left(\lambda^{a} x, \lambda^{b} y\right)=\lambda f(x, y)$</p>
+<p><strong>The static scaling hypothesis（静态缩放假说）</strong>认为，吉布斯自由能$G(t,H)$是一个齐次函数。</p>
+<h6 id="静态缩放假说："><a href="#静态缩放假说：" class="headerlink" title="静态缩放假说："></a>静态缩放假说：</h6><p>在临界点附近，系统的各种物理量在合适的标度变换下表现出统一的行为。</p>
+<p>核心思想是当系统接近相变临界点时，各种宏观物理量（如磁化强度、比热容等）的尺度行为可以用一个或多个标度指数来描述。这些标度指数决定了物理量如何随着系统的大小或临界点的接近而变化。</p>
+<p>具体而言，静态缩放假说包括以下几个方面：</p>
+<ol>
+<li>尺度不变性：在临界点附近，系统的物理性质在合适的尺度变换下保持不变。这意味着各种物理量具有相同的标度行为，即它们随着系统大小的增加或临界点的接近而表现出相似的行为。</li>
+<li>标度指数：各种物理量与系统的相关长度或相关时间之间存在关联。通过引入标度指数，可以描述这种关联。例如，对于磁化强度，其与系统大小的关系可以表示为M ∝ L^β^，其中β是磁化强度的临界指数，L是系统的线性尺寸。</li>
+<li>标度函数：静态标度假设还引入了标度函数，用于描述物理量随着临界点的接近而变化的行为。标度函数通常是物理量和相对于临界点的距离（通常用无量纲的标度变量表示）之间的关系。这种函数形式可以帮助我们理解和描述临界点附近的物理行为。</li>
+</ol>
+<p>有限尺寸效应→局部松弛是不可能的（obviously local relaxation is impossible）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 文献速记</a>
+              <a href="/tags/%E6%9D%8E%E6%9D%A8%E9%9B%B6/" rel="tag"><i class="fa fa-tag"></i> 李杨零</a>
+              <a href="/tags/Fisher%E9%9B%B6/" rel="tag"><i class="fa fa-tag"></i> Fisher零</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023-7%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/" rel="prev" title="2023.07摸鱼日志">
+                  <i class="fa fa-chevron-left"></i> 2023.07摸鱼日志
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/" rel="next" title="LaTeX PPT常用代码">
+                  LaTeX PPT常用代码 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">babel</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-bice-three.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"在这里评论吧~暂时需要科学上网","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e468f6"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#e468f6">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在这里整理一些做LaTeX PPT常用的代码以便复制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX PPT常用代码">
+<meta property="og:url" content="http://example.com/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="兀孀的个人博客">
+<meta property="og:description" content="在这里整理一些做LaTeX PPT常用的代码以便复制">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-15T06:33:37.000Z">
+<meta property="article:modified_time" content="2025-01-09T04:16:02.505Z">
+<meta property="article:author" content="babel">
+<meta property="article:tag" content="代码">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="PPT">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/","path":"LaTeX-PPT常用代码/","title":"LaTeX PPT常用代码"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LaTeX PPT常用代码 | 兀孀的个人博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-bice-three.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">兀孀的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">关于一些无聊小说以及物理，还有乱七八糟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-text">头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">头文件加载及主题配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%AE%8F%E5%8C%85%EF%BC%9A"><span class="nav-text">导入宏包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%B8%BB%E9%A2%98%E8%BF%9B%E8%A1%8C%E5%BE%AE%E8%B0%83%EF%BC%9A"><span class="nav-text">对主题进行微调：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E6%A0%BC%E5%BC%8F%E7%BB%86%E8%8A%82%EF%BC%9A"><span class="nav-text">调整格式细节：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A2%9C%E8%89%B2%EF%BC%9A"><span class="nav-text">自定义颜色：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%97%E5%8F%8A%E5%88%97%E8%A1%A8%E6%A0%B7%E5%BC%8F%EF%BC%9A"><span class="nav-text">自定义块及列表样式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%EF%BC%9A"><span class="nav-text">页脚：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E6%AE%B5%E5%BC%8F%E9%A1%B5%E8%84%9A"><span class="nav-text">三段式页脚</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B%E9%A1%B5%E8%84%9A"><span class="nav-text">简介页脚</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%BC%80%E5%A7%8B%EF%BC%9A"><span class="nav-text">文档开始：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-text">个人信息：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%86%85%E9%83%A8%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="nav-text">文档内部常用代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAPPT%E9%A1%B5%E9%9D%A2"><span class="nav-text">新建PPT页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%AE%9A%E7%90%86%E5%9D%97"><span class="nav-text">插入定理块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPT%E6%8E%92%E7%89%88%E4%B8%8E%E8%B0%83%E6%95%B4"><span class="nav-text">PPT排版与调整</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E9%A1%B6%E6%A0%BC%E5%BC%80%E5%A7%8B%E4%B9%A6%E5%86%99"><span class="nav-text">页面顶格开始书写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E9%97%B4%E8%B7%9D"><span class="nav-text">行间距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%A0%8F"><span class="nav-text">分栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F"><span class="nav-text">字体大小</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE%E6%96%87%E6%A1%A3"><span class="nav-text">结尾文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="babel"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">babel</p>
+  <div class="site-description" itemprop="description">无聊~聊~~~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://wushuangqaq.lofter.com/" title="Lofter → https:&#x2F;&#x2F;wushuangqaq.lofter.com&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-lofter fa-fw"></i>Lofter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/86354957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;86354957" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/babelqaq?spm=1011.2124.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;babelqaq?spm&#x3D;1011.2124.3001.5343" rel="noopener me" target="_blank"><i class="fa fa-CSDN fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mail%20to:babelqaq@gmail.com" title="E-Mail → mail to:babelqaq@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="babel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兀孀的个人博客">
+      <meta itemprop="description" content="无聊~聊~~~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LaTeX PPT常用代码 | 兀孀的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX PPT常用代码
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-15 14:33:37" itemprop="dateCreated datePublished" datetime="2023-10-15T14:33:37+08:00">2023-10-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-09 12:16:02" itemprop="dateModified" datetime="2025-01-09T12:16:02+08:00">2025-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BB%A3%E7%A0%81%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">代码工具</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在这里整理一些做LaTeX PPT常用的代码以便复制</p>
+<span id="more"></span>
+<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><h3 id="头文件加载及主题配置："><a href="#头文件加载及主题配置：" class="headerlink" title="头文件加载及主题配置："></a>头文件加载及主题配置：</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125; <span class="comment">% 文档类型为beamer,即幻灯片</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;beamerthemesplit&#125; <span class="comment">% 加载主题宏包</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;Warsaw&#125;<span class="comment">%主题（行名）</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>&#123;seahorse&#125;<span class="comment">%选择配色方案</span></span><br><span class="line"><span class="keyword">\usecolortheme</span>[RGB=&#123;218,112,214&#125;]&#123;structure&#125;<span class="comment">% 配色（列名）</span></span><br></pre></td></tr></table></figure>
+<h3 id="导入宏包："><a href="#导入宏包：" class="headerlink" title="导入宏包："></a>导入宏包：</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 导入所需的宏包</span></span><br><span class="line"><span class="keyword">\usepackage</span>[utf8]&#123;inputenc&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ctex&#125;<span class="comment">%中文字体设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;tikz&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;subfigure&#125;<span class="comment">%子图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;<span class="comment">%图片包</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[style=verbose-ibid,backend=biber]&#123;biblatex&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\addbibresource</span>&#123;XXX.bib&#125; <span class="comment">% 指定参考文献数据库</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="对主题进行微调："><a href="#对主题进行微调：" class="headerlink" title="对主题进行微调："></a>对主题进行微调：</h3><h4 id="调整格式细节："><a href="#调整格式细节：" class="headerlink" title="调整格式细节："></a>调整格式细节：</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setbeamerfont</span>&#123;caption&#125;&#123;size=<span class="keyword">\footnotesize</span>&#125;<span class="comment">%定义图例标题大小</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]  <span class="comment">%让插入的图片自动编号(beamer默认不编号)</span></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;   <span class="comment">%在公式中使用使用标准的Latex字体(有衬线的字体)，区分小的L和大写的I，beamer中默认使用Sans Serif字体，即没有衬线的字体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\AtBeginSubsection</span>[]<span class="comment">%在每个章节前显示目录</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">		<span class="keyword">\transfade</span><span class="comment">%淡入淡出效果</span></span><br><span class="line"><span class="keyword">\tableofcontents</span>[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]</span><br><span class="line">		<span class="keyword">\addtocounter</span>&#123;framenumber&#125;&#123;-1&#125;  <span class="comment">%目录页不计算页码</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]<span class="comment">%在每个章节前显示目录</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">		<span class="keyword">\transfade</span><span class="comment">%淡入淡出效果</span></span><br><span class="line"><span class="keyword">\tableofcontents</span>[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]</span><br><span class="line">		<span class="keyword">\addtocounter</span>&#123;framenumber&#125;&#123;-1&#125;  <span class="comment">%目录页不计算页码</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自定义颜色："><a href="#自定义颜色：" class="headerlink" title="自定义颜色："></a>自定义颜色：</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%\definecolor&#123;自定义颜色名&#125;&#123;颜色代码格式，可用HTML，RGB&#125;&#123;颜色代码&#125;</span></span><br><span class="line"><span class="comment">%注意：给自定义颜色命名时，请勿使用已有的颜色名，如red,blue等</span></span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mpurple&#125;&#123;HTML&#125;&#123;d9b8f1&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mlightpurple&#125;&#123;HTML&#125;&#123;F5F2FF&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mblue&#125;&#123;HTML&#125;&#123;b8f1ed&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mlightblue&#125;&#123;HTML&#125;&#123;F2FFFE&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mgreen&#125;&#123;HTML&#125;&#123;b8f1cc&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mlightgreen&#125;&#123;HTML&#125;&#123;F2FFF6&#125;</span><br><span class="line"><span class="comment">%RGB定义法：</span></span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mblue&#125;&#123;RGB&#125;&#123;0,0,225&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自定义块及列表样式："><a href="#自定义块及列表样式：" class="headerlink" title="自定义块及列表样式："></a>自定义块及列表样式：</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%自定义定理块</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block body&#125;&#123;fg=black,bg=mlightpurple&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block title&#125;&#123;fg=black,bg=mpurple&#125;</span><br><span class="line"><span class="comment">%自定义重点块</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block body alerted&#125;&#123;fg=black,bg=mlightblue&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block title alerted&#125;&#123;fg=black,bg=mblue&#125;</span><br><span class="line"><span class="comment">%自定义举例块</span></span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block body example&#125;&#123;fg=black,bg=mlightgreen&#125;</span><br><span class="line"><span class="keyword">\setbeamercolor</span>&#123;block title example&#125;&#123;fg=black,bg=mgreen&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%列表样式</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;enumerate items&#125;[circle]</span><br></pre></td></tr></table></figure>
+<h3 id="页脚："><a href="#页脚：" class="headerlink" title="页脚："></a>页脚：</h3><h4 id="三段式页脚"><a href="#三段式页脚" class="headerlink" title="三段式页脚"></a>三段式页脚</h4><p>包含：作者，标题，页码</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\defbeamertemplate</span>&#123;footline&#125;&#123;NGEGFootlineTemplate&#125;&#123;<span class="comment">%设置页脚</span></span><br><span class="line">	<span class="keyword">\leavevmode</span><span class="comment">% 离开vmode，也就是离开竖直模式，进入水平模式</span></span><br><span class="line">	<span class="keyword">\hbox</span>&#123; <span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;author in head/foot&#125;<span class="keyword">\insertshortauthor</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.6<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;title in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\usebeamerfont</span>&#123;title in head/foot&#125;<span class="keyword">\insertshorttitle</span><span class="keyword">\fi</span></span><br><span class="line">		<span class="keyword">\end</span>&#123;beamercolorbox&#125;<span class="comment">%</span></span><br><span class="line">		<span class="keyword">\begin</span>&#123;beamercolorbox&#125;[wd=0.2<span class="keyword">\paperwidth</span>,ht=2.25ex,dp=1ex,center]&#123;author in head/foot&#125;<span class="comment">%</span></span><br><span class="line">			<span class="keyword">\ifnum</span> <span class="keyword">\the</span><span class="keyword">\value</span>&#123;page&#125;&gt;1 <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\fi</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;beamercolorbox&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="comment">%	\vskip0pt%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;[NGEGFootlineTemplate]</span><br></pre></td></tr></table></figure>
+<h4 id="简介页脚"><a href="#简介页脚" class="headerlink" title="简介页脚"></a>简介页脚</h4><p>只含右下角页码，以便给脚注留出空间</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\footnotesize</span>&#125;&#123;<span class="keyword">\tiny</span>&#125;<span class="comment">% 重新定义脚注的字体大小</span></span><br><span class="line"><span class="comment">% 自定义底部导航栏</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;footline&#125;&#123;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\hfill</span><span class="comment">%</span></span><br><span class="line">  <span class="keyword">\insertframenumber</span>&#123;&#125; / <span class="keyword">\inserttotalframenumber</span><span class="keyword">\hspace</span>*&#123;2ex&#125;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\vskip</span>6pt <span class="comment">% 调整此处的距离来改变页码与底部的间距</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文档开始："><a href="#文档开始：" class="headerlink" title="文档开始："></a>文档开始：</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125; </span><br></pre></td></tr></table></figure>
+<h3 id="个人信息："><a href="#个人信息：" class="headerlink" title="个人信息："></a>个人信息：</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\title</span>&#123;XXX&#125; <span class="comment">%标题</span></span><br><span class="line"><span class="keyword">\author</span>[XXX]&#123;XXX&#125;<span class="comment">%作者 中括号里写的内容&quot;[]&quot;会呈现在页面左下角；大括号里写的内容&quot;&#123;&#125;&quot;会呈现在标题下面</span></span><br><span class="line"><span class="keyword">\institute</span>[*]&#123;XX大学XX系&#125;<span class="comment">%单位和邮箱，用&quot;\institute[]&#123;&#125;&quot;命令,&quot;\\&quot;为换行</span></span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"><span class="comment">%%%%生成首页</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">  <span class="keyword">\titlepage</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="comment">%%%%生成目录页</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">  <span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文档内部常用代码"><a href="#文档内部常用代码" class="headerlink" title="文档内部常用代码"></a>文档内部常用代码</h2><h3 id="新建PPT页面"><a href="#新建PPT页面" class="headerlink" title="新建PPT页面"></a>新建PPT页面</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;XXX&#125;<span class="comment">%一级标题</span></span><br><span class="line"><span class="keyword">\subsection</span>&#123;XXX&#125;<span class="comment">%次级标题</span></span><br><span class="line"><span class="keyword">\frametitle</span>&#123;XXX&#125;<span class="comment">%该页PPT标题</span></span><br></pre></td></tr></table></figure>
+<h3 id="插入定理块"><a href="#插入定理块" class="headerlink" title="插入定理块"></a>插入定理块</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;block&#125;&#123;定理标题&#125;</span><br><span class="line"> 定理内容</span><br><span class="line"><span class="keyword">\end</span>&#123;block&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;alertblock&#125;&#123;定理标题&#125;</span><br><span class="line">定理内容</span><br><span class="line"><span class="keyword">\end</span>&#123;alertblock&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;exampleblock&#125;&#123;定理标题&#125;</span><br><span class="line">定理内容</span><br><span class="line"><span class="keyword">\end</span>&#123;exampleblock&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=<span class="keyword">\textwidth</span>]&#123;figure1.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">可选：</span><br><span class="line">	<span class="comment">% 原图</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;test&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>&#123;logo&#125; 	<span class="comment">% \includegraphics[可选参数]&#123;文件名&#125;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定缩放</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.3]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[scale=0.03]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定高度比例 宽度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[height=0.01<span class="keyword">\textheight</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=2cm]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 指定宽度比例 高度自动调整</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[width=0.01<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">% 同时指定旋转角度、宽度</span></span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;test&#125;</span><br><span class="line">	<span class="keyword">\includegraphics</span>[angle=-45,width=0.2<span class="keyword">\textwidth</span>]&#123;logo&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%插入子图</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;<span class="comment">%插入子图</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.45<span class="keyword">\columnwidth</span>]&#123;figure1.png&#125;<span class="comment">%定义图片高度（height）栏长占比（0.45\columnwidth） 插入图片figure1.png（这个图片和该文档一个目录，如果建立子目录文件夹需要引用子目录）</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;subfigure&#125;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.45<span class="keyword">\columnwidth</span>]&#123;figure4.png&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;XXX&#125;<span class="comment">%子图标题</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;subfigure&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br><span class="line"></span><br><span class="line">插入子图：</span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[!h]<span class="comment">%插入图片</span></span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>1D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>2D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\subfigure</span>[子图名]&#123;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.3<span class="keyword">\textwidth</span>]&#123;Brange<span class="built_in">_</span>3D.png&#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">\caption</span>&#123;图标题&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+<p>常用词汇：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\text</span></span><br><span class="line"><span class="keyword">\column</span></span><br><span class="line">height</span><br><span class="line">width</span><br></pre></td></tr></table></figure>
+<p>脚注</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%脚注标记</span></span><br><span class="line"><span class="keyword">\footnotemark</span></span><br><span class="line"><span class="comment">%脚注内容</span></span><br><span class="line"><span class="keyword">\footnotetext</span></span><br><span class="line"><span class="comment">%脚注显示引用</span></span><br><span class="line"><span class="keyword">\footnotetext</span>&#123;<span class="keyword">\fullcite</span>&#123;XXX&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>公式</p>
+<p>子编号公式</p>
+<p>like：(1a)、(1b)</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;subequations&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">公式a</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">公式b</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;subequations&#125;</span><br></pre></td></tr></table></figure>
+<p>特殊符号：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">花体：<span class="keyword">\mathcal</span>&#123;&#125;</span><br><span class="line">空心加粗：<span class="keyword">\mathbb</span>&#123;&#125;</span><br><span class="line">倒A：<span class="keyword">\forall</span></span><br></pre></td></tr></table></figure>
+<h3 id="PPT排版与调整"><a href="#PPT排版与调整" class="headerlink" title="PPT排版与调整"></a>PPT排版与调整</h3><h4 id="页面顶格开始书写"><a href="#页面顶格开始书写" class="headerlink" title="页面顶格开始书写"></a>页面顶格开始书写</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t]</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;setspace&#125;<span class="comment">%行间距宏包</span></span><br><span class="line"><span class="keyword">\singlespacing</span><span class="comment">% 单倍行距</span></span><br><span class="line"><span class="keyword">\onehalfspacing</span><span class="comment">% 1.5倍行距</span></span><br><span class="line"><span class="keyword">\doublespacing</span><span class="comment">% 双倍行距</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\linespread</span>&#123;1.5&#125;<span class="comment">% 全局设置1.5倍行距</span></span><br><span class="line"><span class="keyword">\vspace</span>&#123;20pt&#125;<span class="comment">%插入行距</span></span><br><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\baselineskip</span>&#125;&#123;1.5<span class="keyword">\baselineskip</span>&#125;<span class="comment">% 设定整段行距为1.5</span></span><br><span class="line"><span class="keyword">\hspace</span>&#123;20pt&#125;<span class="comment">%插入指定间距的空格</span></span><br></pre></td></tr></table></figure>
+<h4 id="分栏"><a href="#分栏" class="headerlink" title="分栏"></a>分栏</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\column</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;<span class="comment">%分栏 0.5是文本宽度（textwidth）的1/2</span></span><br><span class="line"><span class="keyword">\end</span>&#123;columns&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="keyword">\tiny</span> 小小&#125;</span><br><span class="line">&#123;<span class="keyword">\scriptsize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\footnotesize</span> 脚注&#125;</span><br><span class="line">&#123;<span class="keyword">\small</span> 小&#125;</span><br><span class="line">&#123;<span class="keyword">\normalsize</span> 正常&#125;</span><br><span class="line">&#123;<span class="keyword">\large</span> 大&#125;</span><br><span class="line">&#123;<span class="keyword">\Large</span> 更大&#125;</span><br><span class="line">&#123;<span class="keyword">\LARGE</span> 极大&#125;</span><br><span class="line">&#123;<span class="keyword">\huge</span> 巨大&#125;</span><br><span class="line">&#123;<span class="keyword">\Huge</span> 宇宙&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结尾文档"><a href="#结尾文档" class="headerlink" title="结尾文档"></a>结尾文档</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\textsuperscript</span>&#123;<span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;&#125;<span class="comment">%上标引文</span></span><br><span class="line"><span class="keyword">\cite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%齐平引文</span></span><br><span class="line"><span class="keyword">\footfullcite</span>&#123;<span class="built_in">_</span>2006<span class="built_in">_</span>&#125;<span class="comment">%脚注引文</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\appendix</span><span class="comment">%附录（附录不在前面的页头标题栏中显示）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t, allowframebreaks]&#123;References&#125;<span class="comment">%参考文献</span></span><br><span class="line"><span class="keyword">\small</span><span class="comment">%修改参考文献字号</span></span><br><span class="line"><span class="keyword">\printbibliography</span><span class="comment">% 生成参考文献列表</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag"><i class="fa fa-tag"></i> 代码</a>
+              <a href="/tags/LaTeX/" rel="tag"><i class="fa fa-tag"></i> LaTeX</a>
+              <a href="/tags/PPT/" rel="tag"><i class="fa fa-tag"></i> PPT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E6%9D%8E%E6%9D%A8%E9%9B%B6Fisher%E9%9B%B6-%E6%96%87%E7%8C%AE%E9%80%9F%E8%AE%B0/" rel="prev" title="李杨零/Fisher零-文献速记">
+                  <i class="fa fa-chevron-left"></i> 李杨零/Fisher零-文献速记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/%E4%B8%BA%E5%94%90%E6%B0%8F%E7%BB%BC%E5%90%88%E5%BE%81%E5%84%BF%E7%AB%A5%E7%88%B6%E6%AF%8D%E6%8F%90%E4%BE%9B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/" rel="next" title="为唐氏综合征儿童父母提供的读书笔记：写在前面">
+                  为唐氏综合征儿童父母提供的读书笔记：写在前面 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">babel</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-bice-three.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"在这里评论吧~暂时需要科学上网","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/LaTeX-PPT%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

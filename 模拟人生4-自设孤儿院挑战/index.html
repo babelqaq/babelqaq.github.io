@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e468f6"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#e468f6">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="规则总览本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成 人物寿命需设置为普通 初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟人生4-自设孤儿院挑战">
+<meta property="og:url" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/index.html">
+<meta property="og:site_name" content="兀孀的个人博客">
+<meta property="og:description" content="规则总览本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成 人物寿命需设置为普通 初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/3.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/4.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/5.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/6.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/7.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day1-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-3.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-4.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-5.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day2-6.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day3-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day4-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day5-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-4.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day6-3.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day8-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day9-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day10-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day11-3.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day13-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day15-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day16-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-1.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-2.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day17-3.PNG">
+<meta property="og:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/day19-1.PNG">
+<meta property="article:published_time" content="2024-03-02T09:11:40.000Z">
+<meta property="article:modified_time" content="2024-06-30T09:55:13.727Z">
+<meta property="article:author" content="babel">
+<meta property="article:tag" content="自用">
+<meta property="article:tag" content="模拟人生4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/1.PNG">
+
+
+<link rel="canonical" href="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/","path":"模拟人生4-自设孤儿院挑战/","title":"模拟人生4-自设孤儿院挑战"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>模拟人生4-自设孤儿院挑战 | 兀孀的个人博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-bice-three.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">兀孀的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">关于一些无聊小说以及物理，还有乱七八糟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%84%E5%88%99%E6%80%BB%E8%A7%88"><span class="nav-text">规则总览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%89%A9%E8%A7%84%E5%88%99"><span class="nav-text">人物规则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Adam%EF%BC%88%E5%90%B4%E9%93%AE%EF%BC%89"><span class="nav-text">1 Adam（吴铮）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Charles%EF%BC%88%E9%BD%90%E5%BD%AD%E6%AE%87%EF%BC%89"><span class="nav-text">2 Charles（齐彭殇）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Polaris%EF%BC%88%E5%BC%A0%E7%B4%AB%E8%96%87%EF%BC%89"><span class="nav-text">3 Polaris（张紫薇）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Ocrea%EF%BC%88%E9%AB%98%E7%A7%8B%EF%BC%89"><span class="nav-text">4 Ocrea（高秋）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Sirius%EF%BC%88%E5%BC%A0%E7%8B%82%EF%BC%89"><span class="nav-text">5 Sirius（张狂）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Jasmine%EF%BC%88%E9%92%9F%E4%B8%8D%E9%81%87%EF%BC%89"><span class="nav-text">6 Jasmine（钟不遇）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Michael%EF%BC%88%E9%92%9F%E4%B8%8D%E6%83%91%EF%BC%89"><span class="nav-text">7 Michael（钟不惑）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Lucius%EF%BC%88%E8%AE%B8%E5%92%8C%E5%85%89%EF%BC%89"><span class="nav-text">8 Lucius（许和光）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Cacao%EF%BC%88%E5%91%A8%E5%8F%AF%E5%8F%AF%EF%BC%89"><span class="nav-text">9 Cacao（周可可）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Raven%EF%BC%88%E5%94%90%E7%AF%81%EF%BC%89"><span class="nav-text">10 Raven（唐篁）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E8%BF%87%E7%A8%8B%E7%89%B9%E5%BE%81%E7%AE%80%E8%AE%B0"><span class="nav-text">游戏过程特征简记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Adam"><span class="nav-text">1 Adam</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Charles"><span class="nav-text">2 Charles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Polaris"><span class="nav-text">3 Polaris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Ocrea"><span class="nav-text">4 Ocrea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Sirius"><span class="nav-text">5 Sirius</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Jasmine"><span class="nav-text">6 Jasmine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Michael"><span class="nav-text">7 Michael</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E8%BF%87%E7%A8%8B%E7%AE%80%E8%AE%B0"><span class="nav-text">游戏过程简记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E4%B8%80%EF%BC%89"><span class="nav-text">第1天（夏·周一）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E4%BA%8C%EF%BC%89"><span class="nav-text">第2天（夏·周二）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E4%B8%89%EF%BC%89"><span class="nav-text">第3天（夏·周三）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E5%9B%9B%EF%BC%89"><span class="nav-text">第4天（夏·周四）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E4%BA%94%EF%BC%89"><span class="nav-text">第5天（夏·周五）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E5%85%AD%EF%BC%89"><span class="nav-text">第6天（夏·周六）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E5%A4%A9%EF%BC%88%E5%A4%8F%C2%B7%E5%91%A8%E6%97%A5%EF%BC%89"><span class="nav-text">第7天（夏·周日）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E4%B8%80%EF%BC%89"><span class="nav-text">第8天（秋·周一）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E4%BA%8C%EF%BC%89"><span class="nav-text">第9天（秋·周二）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC10%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E4%B8%89%EF%BC%89"><span class="nav-text">第10天（秋·周三）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC11%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E5%9B%9B%EF%BC%89"><span class="nav-text">第11天（秋·周四）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC12%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E4%BA%94%EF%BC%89"><span class="nav-text">第12天（秋·周五）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC13%E5%A4%A9%EF%BC%88%E7%A7%8B%C2%B7%E5%91%A8%E5%85%AD%EF%BC%89"><span class="nav-text">第13天（秋·周六）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC14%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E6%97%A5%EF%BC%89"><span class="nav-text">第14天（冬·周日）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC15%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E4%B8%80%EF%BC%89"><span class="nav-text">第15天（冬·周一）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC16%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E4%BA%8C%EF%BC%89"><span class="nav-text">第16天（冬·周二）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC17%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E4%B8%89%C2%B7%E5%9C%A3%E8%AF%9E%E8%8A%82%EF%BC%89"><span class="nav-text">第17天（冬·周三·圣诞节）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC18%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E5%9B%9B%C2%B7%E5%9C%A3%E8%AF%9E%E8%8A%82%EF%BC%89"><span class="nav-text">第18天（冬·周四·圣诞节）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC19%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E4%BA%94%EF%BC%89"><span class="nav-text">第19天（冬·周五）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC20%E5%A4%A9%EF%BC%88%E5%86%AC%C2%B7%E5%91%A8%E5%85%AD%EF%BC%89"><span class="nav-text">第20天（冬·周六）</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="babel"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">babel</p>
+  <div class="site-description" itemprop="description">无聊~聊~~~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://wushuangqaq.lofter.com/" title="Lofter → https:&#x2F;&#x2F;wushuangqaq.lofter.com&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-lofter fa-fw"></i>Lofter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/86354957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;86354957" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/babelqaq?spm=1011.2124.3001.5343" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;babelqaq?spm&#x3D;1011.2124.3001.5343" rel="noopener me" target="_blank"><i class="fa fa-CSDN fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mail%20to:babelqaq@gmail.com" title="E-Mail → mail to:babelqaq@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="babel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兀孀的个人博客">
+      <meta itemprop="description" content="无聊~聊~~~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="模拟人生4-自设孤儿院挑战 | 兀孀的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          模拟人生4-自设孤儿院挑战
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-03-02 17:11:40" itemprop="dateCreated datePublished" datetime="2024-03-02T17:11:40+08:00">2024-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-06-30 17:55:13" itemprop="dateModified" datetime="2024-06-30T17:55:13+08:00">2024-06-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%87%AA%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">自用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%87%AA%E7%94%A8/Sims-4/" itemprop="url" rel="index"><span itemprop="name">Sims 4</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>14k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>26 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="规则总览"><a href="#规则总览" class="headerlink" title="规则总览"></a>规则总览</h1><p>本挑战具有十个固定设定的人物，每个人物需达成指定挑战，全部达成则挑战完成</p>
+<p>人物寿命需设置为普通</p>
+<p>初始房子推荐选择较大地块，初始具有一个孤儿院建筑（所有设备尽量精简低级），除Adam之外，其他孩子都使用集体宿舍及上下铺（可以男女分开或者不分），家庭初始资金为1000模拟币。</p>
+<span id="more"></span>
+<p>所有人物（除Adam之外）找到相应工作且完成要求后需搬出原始家庭成为与原始家庭同一地段的租户。</p>
+<p>必须接受所有游戏过程中自动出现的偏好，性格转变及生活方式。</p>
+<p>玩家只能操纵Adam与Charles完成家务。</p>
+<p>玩家可以进行Polaris，Jasmine，Michael，Cacao奇想中的友情/浪漫交互，Ocrea可任意与非家庭中的异性进行友情/浪漫交互，Adam可任意与其他人物进行亲情交互。除此之外，玩家不得操控其他人物进行友情/浪漫交互。</p>
+<p>每个节日假期必须出门旅行</p>
+<p>Ocrea接受所有外出邀请，Jasmine接受所有异性外出邀请，Adam接受所有来自家人的外出邀请，Raven拒绝所有外出邀请，其他外出邀请则通过随机数决定。</p>
+<p> Polaris与Sirius应设置为姐弟关系，Jasmine与Michael应设置为姐弟关系</p>
+<h1 id="人物规则"><a href="#人物规则" class="headerlink" title="人物规则"></a>人物规则</h1><h2 id="1-Adam（吴铮）"><a href="#1-Adam（吴铮）" class="headerlink" title="1 Adam（吴铮）"></a>1 Adam（吴铮）</h2><p>初始年龄：青年</p>
+<p>初始性格特征：秋之子，好人，乐于助人的</p>
+<p>要求：</p>
+<ol>
+<li>赚钱方式只能选择写作/绘画，且不得外出工作</li>
+<li>完成畅销作家的全部抱负内容并完成一本人生之书</li>
+<li>对所有儿童都采取鼓励式教育，冷静/坚定地告诫（不得使用严厉的告诫），以及拥抱和家人亲吻</li>
+<li>达成写作/绘画十级</li>
+<li>在每位家人离开家前为他们绘制一副肖像画</li>
+<li>在所有孩子离开家前与他们成为好朋友</li>
+</ol>
+<h2 id="2-Charles（齐彭殇）"><a href="#2-Charles（齐彭殇）" class="headerlink" title="2 Charles（齐彭殇）"></a>2 Charles（齐彭殇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：洁癖，有能力的（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>完成所有作业及加分作业，以A类学生从高中毕业</li>
+<li>在保证A类学生的前提下在学校尽可能多地交朋友</li>
+<li>具有一份青少年兼职并从不缺席</li>
+<li>获得政治学大学学位并完成学术的全部抱负</li>
+<li>具有负责任的奖励特征</li>
+</ol>
+<p>职业：政治家</p>
+<h2 id="3-Polaris（张紫薇）"><a href="#3-Polaris（张紫薇）" class="headerlink" title="3 Polaris（张紫薇）"></a>3 Polaris（张紫薇）</h2><p>初始年龄：青少年</p>
+<p>初始性格特征：天才，夏之子（青少年）</p>
+<p>要求：</p>
+<ol>
+<li>将灵魂伴侣作为终身抱负</li>
+<li>若与Charles具有浪漫关系，则与Charles约会至少一次</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：特工</p>
+<h2 id="4-Ocrea（高秋）"><a href="#4-Ocrea（高秋）" class="headerlink" title="4 Ocrea（高秋）"></a>4 Ocrea（高秋）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：甜言蜜语（儿童）不愿承诺（青少年）物质主义（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花抱负</li>
+<li>魅力五级及以上</li>
+<li>每次上学都选择交朋友</li>
+<li>加入一个俱乐部并与俱乐部里每位异性发展浪漫关系</li>
+<li>去至少两次夜店</li>
+<li>抱负选择连环浪漫，在搬出家前至少拥有3段感情，若双方浪漫值出现下降，则立刻分手（若与Sirius具有浪漫关系，在离开家前不与Sirius分手）</li>
+</ol>
+<p>职业：商业</p>
+<h2 id="5-Sirius（张狂）"><a href="#5-Sirius（张狂）" class="headerlink" title="5 Sirius（张狂）"></a>5 Sirius（张狂）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：极客（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>编程五级及以上</li>
+<li>参加一次极客会展并乘坐火箭来到外星</li>
+</ol>
+<p>职业：科技达人</p>
+<h2 id="6-Jasmine（钟不遇）"><a href="#6-Jasmine（钟不遇）" class="headerlink" title="6 Jasmine（钟不遇）"></a>6 Jasmine（钟不遇）</h2><p>初始年龄：儿童</p>
+<p>初始性格特征：拘谨的（儿童），难以伺候（青少年），悲伤（青年）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才抱负</li>
+<li>烹饪及通灵五级及以上</li>
+<li>至少交五个异性朋友</li>
+<li>若有异性提出交往/求婚，则立刻同意</li>
+</ol>
+<p>职业：</p>
+<p>若与他人发展出浪漫关系，则不选择职业，成年后立刻与其结婚，抱负改为欢乐大家庭</p>
+<p>若无浪漫关系，则选择职业为主厨</p>
+<h2 id="7-Michael（钟不惑）"><a href="#7-Michael（钟不惑）" class="headerlink" title="7 Michael（钟不惑）"></a>7 Michael（钟不惑）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：粘人精（幼儿）令人难忘的（儿童）</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成艺术天才及调皮蛋抱负（艺术天才优先）</li>
+<li>在离开家前可以与其他人发展浪漫关系，但不与任何人确认成为恋人</li>
+<li>和一个玩偶熊/鬼魂成为朋友</li>
+<li>在网络上拥有至少一千位追随者</li>
+<li>魅力及健身三级及以上</li>
+<li>成为二星名人及以上</li>
+</ol>
+<p>职业：模特</p>
+<p><strong>以下家庭成员在Charles及Polaris搬出家庭后搬入：</strong></p>
+<h2 id="8-Lucius（许和光）"><a href="#8-Lucius（许和光）" class="headerlink" title="8 Lucius（许和光）"></a>8 Lucius（许和光）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：独立（幼儿）独行侠（儿童），刻薄，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>小提琴五级及以上</li>
+<li>除Cacao外不与其他任何人成为好朋友</li>
+</ol>
+<p>职业：</p>
+<p>若名声为好/中等：医生</p>
+<p>若坏名声大于三级：罪犯</p>
+<h2 id="9-Cacao（周可可）"><a href="#9-Cacao（周可可）" class="headerlink" title="9 Cacao（周可可）"></a>9 Cacao（周可可）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：万人迷（幼儿）欢乐，外向，音乐爱好者，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成交际花及调皮蛋抱负（交际花优先），尝试和床下怪物成为朋友</li>
+<li>加入童子军</li>
+<li>完成世界之友抱负</li>
+<li>吉他五级及以上</li>
+</ol>
+<p>职业：演艺人员</p>
+<h2 id="10-Raven（唐篁）"><a href="#10-Raven（唐篁）" class="headerlink" title="10 Raven（唐篁）"></a>10 Raven（唐篁）</h2><p>初始年龄：幼儿</p>
+<p>初始性格特征：好奇宝宝（幼儿）古怪，懒惰，</p>
+<p>要求：</p>
+<ol>
+<li>儿童时期完成神童抱负</li>
+<li>完成诡奇小镇抱负</li>
+<li>逻辑五级及以上</li>
+</ol>
+<p>职业：警探</p>
+<h1 id="游戏过程特征简记"><a href="#游戏过程特征简记" class="headerlink" title="游戏过程特征简记"></a>游戏过程特征简记</h1><h2 id="1-Adam"><a href="#1-Adam" class="headerlink" title="1 Adam"></a>1 Adam</h2><p>初始设定特征：秋之子，好人，乐于助人的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ESTP（实干家）：聪明，富有活力，极其敏锐的人，享受生活的各个方面，热爱运动</p>
+<p>沉思者：更容易发展精神技能</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决</p>
+<p>+出乎意料的成功者（day3）</p>
+<p>+欢乐：这类模拟市民很容易感到快乐（day12）</p>
+<p>+制造者：这类模拟市民喜欢制作东西（day15）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/1.PNG" alt=""></p>
+<h2 id="2-Charles"><a href="#2-Charles" class="headerlink" title="2 Charles"></a>2 Charles</h2><p>初始设定特征：洁癖，有能力的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENFP（竞选者）：热情而富有创造力，在写作及艺术方面具有天分</p>
+<p>快速学习者：学习技能更快</p>
+<p>发痒：这类模拟人生的身体经常发痒而且无法解决（被上面那位传染的？？）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/2.PNG" alt=""></p>
+<h2 id="3-Polaris"><a href="#3-Polaris" class="headerlink" title="3 Polaris"></a>3 Polaris</h2><p>初始设定特征：天才，夏之子</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ISFJ（守卫者）：具有献身精神与温暖的人，喜欢烹饪，绘画，自然…会支持一切她爱的人的活动和兴趣</p>
+<p>天赐创造力：在写作，艺术，烹饪方面格外有天赋</p>
+<p>迷人的：她在浪漫关系方面比别人更成功（lucky！）</p>
+<p>+喜欢咯咯咯地傻笑（day7）</p>
+<p>+害怕壮志未酬（day11）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/3.PNG" alt=""></p>
+<h2 id="4-Ocrea"><a href="#4-Ocrea" class="headerlink" title="4 Ocrea"></a>4 Ocrea</h2><p>初始设定特征：甜言蜜语</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INFJ（提倡者）：安静，神秘，富有精神力，喜欢文化，读书与听音乐（你最好真的是）</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉的随机属性）</p>
+<p>普通自信→高度自信（day3）</p>
+<p>+刻薄倾向：这类模拟市民总是喜欢对别人刻薄（day6）</p>
+<p>害怕失败：当她失去自信时她很容易紧张，容易因为批评或者没拿奖而尴尬（day6）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/4.PNG" alt=""></p>
+<h2 id="5-Sirius"><a href="#5-Sirius" class="headerlink" title="5 Sirius"></a>5 Sirius</h2><p>初始设定特征：极客</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>INTJ（建筑师）：图像和直觉思维，擅长给每件事做计划</p>
+<p>不太有能力：在每件事上都做得很缓慢（倒霉x2，但CP就应该整整齐齐）</p>
+<p>背痛：背部疼痛</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+刻薄倾向（day7）</p>
+<p>+黏人，害怕失败（day13）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/5.PNG" alt=""></p>
+<h2 id="6-Jasmine"><a href="#6-Jasmine" class="headerlink" title="6 Jasmine"></a>6 Jasmine</h2><p>初始设定特征：拘谨的</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>ENTJ（总经理）：好的领导者，喜欢社交与运动，集中于他们的职业生涯</p>
+<p>→INFP（调停者）：可爱，诗意，利他主义者。</p>
+<p>普通自信→高度自信（day2）</p>
+<p>+害怕失败（day8）</p>
+<p>+叛逆（day13）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/6.PNG" alt=""></p>
+<h2 id="7-Michael"><a href="#7-Michael" class="headerlink" title="7 Michael"></a>7 Michael</h2><p>初始设定特征：粘人精</p>
+<p>进入游戏后获得附加随机特征：</p>
+<p>害怕溺水：不知为何他害怕溺水，避免泳池和海洋（Michael在原始人设里确实很怕水，因为到水里会失去五感，我觉得这个设定不是很必要就没有作为初始设定强制加入，结果自己出现了）</p>
+<p>健康：他没有任何身体问题真的很幸运（何止是健康，长大可以去当超人）</p>
+<p>→过敏（day2）→胃胀气（day8）</p>
+<p>小歌唱家：这孩子喜欢随时随地唱歌</p>
+<p>好胃口：他吃的很快，甚至会去吃掉在地板上的食物…他有点被宠坏了（他确实是。喂！不要随便在地上捡垃圾吃啊！）</p>
+<p>+讨厌起床（day2）</p>
+<p>儿童</p>
+<p>+ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>+高度自信</p>
+<p>+令人难忘的（设定特征）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/7.PNG" alt=""></p>
+<h1 id="游戏过程简记"><a href="#游戏过程简记" class="headerlink" title="游戏过程简记"></a>游戏过程简记</h1><h2 id="第1天（夏·周一）"><a href="#第1天（夏·周一）" class="headerlink" title="第1天（夏·周一）"></a>第1天（夏·周一）</h2><p>孩子们一直在地上制造脏乱，但因为Adam没有育儿技能无法管教他们（啊这…）</p>
+<p>第一顿饭是Polaris做的，看起来她挺喜欢烹饪（但只做了4份）Charles快饿死了但没吃到饭</p>
+<p>大家似乎都很喜欢Michael，Jasmine和Micheal的姐弟关系相当不错</p>
+<p>Charles一直在卫生间对着镜子练习辩论，看样子他很适合当个政治家。（后来发现可能是因为他的学术抱负需要辩论等级，第一天直接练到三级。卷王开卷。）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day1-1.PNG" alt=""></p>
+<p>Adam抱着Michael走到卫生间上厕所，把Charles赶出去了。迷惑的操作，可能是他打算抱着Michael上楼睡觉，走到一半想上厕所（？）虽然但是，我还是要强调，你把Charles赶出去了，Michael还在厕所里(*´・ｖ・)</p>
+<p>最后Polaris去把Michael抱上床睡觉了（听我说，谢谢你）</p>
+<p>Charles问Adam学校很蠢，能不上学直接工作吗？（别问了，问就是回去上学）</p>
+<p>Sirius问Adam自己在学校和别人因为给什么东西起名（没仔细看）发生了争执，哪个更好？Adam：一样好（经典端水）Sirius对Adam产生情绪：友善的建议者（Adam总会倾听他的问题并给出深思熟虑过的建议）</p>
+<h2 id="第2天（夏·周二）"><a href="#第2天（夏·周二）" class="headerlink" title="第2天（夏·周二）"></a>第2天（夏·周二）</h2><p>Charles在早上六点完成了他的作业。通宵当卷王当的爽吗？</p>
+<p>Sirius不知道什么时候写完了他的作业（兄弟你偷偷卷？）昨天一直看他的状态都是背痛写不了作业/玩电脑游戏/玩毛绒熊。你到底是什么时候写的作业？？？</p>
+<p>Jasmine昨天中规中矩地写完了作业。其他人都没有完成作业。Ocrea好像写了一半，Polaris一直在做家务，根本没写。</p>
+<p>Adam终于在写稿子了，不记得他什么时候睡过了，睡眠条还是满的。（好神奇哦，到底是什么时候睡过了）</p>
+<p>Sirius在一个人下象棋，Adam在写稿子，其他人都在睡觉。</p>
+<p>Adam结束了他的写稿，获得186模拟币。</p>
+<p>Jasmine的床底下有怪物，Ocrea把Charles和Polaris都叫起来了（虽然但是，Adam就在旁边坐着）Sirius突然怕黑了（可能是因为目睹怪物）</p>
+<p>Ocrea在学校收到了一封情书，可能是新来的学生给她的。选择当面对质，新来的学生说是因为自己没什么朋友，希望Ocrea为此事保密</p>
+<p>Michael真的很好带，哥哥姐姐出门上学的时候他都在睡觉zzz，完全不用操心</p>
+<p>Ocrea在学校认识了多丽丝和哈蒂。</p>
+<p>记录一点校园爱情的开端（你最好是）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-1.PNG" alt=""></p>
+<p>Polaris在这写作业，Charles带她玩手机（？）而且天上还在下雨</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-2.PNG" alt=""></p>
+<p>Sirius和Jasmine都因为完成家庭作业被老师表扬变成<strong>高度自信</strong>了</p>
+<p>Charles和Sirius都想和彼此做朋友，Ocrea想和Adam做朋友，Michael想和Ocrea做朋友。Polaris想进行浪漫交互，但没说是谁。</p>
+<p>Michael从阁楼上醒了一直在哭，因为床不舒服，昨晚上没睡好。但阁楼上没人，所以决定宝宝玩具熊QAQ. 获得了特征：<strong>讨厌起床</strong>。失去特征健康，获得特征：<strong>过敏</strong>。春天和夏天的时候晚上会呼吸不畅（果然这个环境是没法让人健康的。）</p>
+<p>Micheal通过自言自语升到了语言三级（喂！）然后开始自己跳舞玩（说好的粘人精呢？）</p>
+<p>Polaris问Adam我觉得我已经足够大了，你能像大人一样对我吗？Adam应该会说你永远是我的宝贝。</p>
+<p>Michael一直在阁楼上走来走去和玩玩具熊，我觉得他可能是不会下楼梯（虽然但是，他之前是自己爬上来的）我决定还是让Adam上来看看。不然Michael一直很难过。</p>
+<p>Michael和他的玩具小熊↓</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-3.PNG" alt=""></p>
+<p>记录一点校园爱情故事x2</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-4.PNG" alt=""></p>
+<p>外面在下雷雨，Adam把Michael一个人扔在阳台上自己下楼了（你小子）</p>
+<p>Polaris不知道是不是刚才在镜子前面练习了一下告白，然后自己觉得很尴尬：我真的能成功吗？（这很Polaris）</p>
+<p>Charles做了完美的蔬菜卷饼</p>
+<p>误会解除，Michael是会自己爬楼梯的。他只是真的很爱玩具熊。太好带了，宝贝。他甚至会自己爬下三楼去吃厨房的剩菜（膝盖还好吗？宝贝）这孩子一直因为雷阵雨很害怕，但一直没在哭（不会是被吓傻了吧）</p>
+<p>截一张很有睡美人感觉的Jasmine姐姐</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-5.PNG" alt=""></p>
+<p>妈！（发现Adam带孩子都是把孩子抱起来讲话的，别太宠孩子了）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day2-6.PNG" alt=""></p>
+<p>Michael因为交了一个新朋友很开心，不过通知里并没有显示他和谁成为了朋友。可能是Adam（或者他的熊）目前他和Adam，姐姐Jasmine还有熊都是朋友。</p>
+<p>一直以为Polaris和Charles的关系应该挺不错的，结果发现他们的关系目前只是认识（？）Polaris只和弟弟Sirius是朋友。Ocrea和Sirius不知道为什么都和玩具熊看不顺眼（？？）</p>
+<p>Michael白天一直睡觉，晚上根本睡不着。Adam几次想睡觉，几次被Michael打断施法（泪目）最后他很无语地把Michael抱到阁楼上玩，自己睡觉了（坏消息，他的床也在阁楼上，不过起码不用担心Michael去吵别人了）</p>
+<p>Michael爬下楼把Charles和Ocrea吵起来了（果然不能随便立flag），然后爬上楼去找玩具熊玩（小朋友害人不浅）</p>
+<h2 id="第3天（夏·周三）"><a href="#第3天（夏·周三）" class="headerlink" title="第3天（夏·周三）"></a>第3天（夏·周三）</h2><p>凌晨两点，大家都醒了。</p>
+<p>Ocrea不断制造脏乱又自己拖地之后，莫名其妙成为了<strong>高度自信</strong>（完成了自循环）</p>
+<p>Charles也在镜子前面练习了一下调情，并且陷入和Polaris一样的尴尬：我真的能成功吗？（校园爱情故事继续入股）并且感到脸红和我真是个蠢人（莎士比亚是吧？你们怎么都是些蠢人！）</p>
+<p><strong>Polaris对Charles产生了情绪：亲近</strong>。Polaris真的很感激Charles与她花时间共度美好时光。花时间在一起使得他们更加亲近。但Charles对Polaris并没有特别的感情。</p>
+<p>Polaris，Sirius和Ocrea突然都因为脑海里思绪过多很不舒服（出现了人传人现象）Polaris因为皮肤发红有些不太舒服。</p>
+<p>Charles因对俄罗斯方块一见钟情决定承认自己喜欢玩游戏（喂！）</p>
+<p>Polaris不知道为什么在学校变成了挑逗状态，但设置的状态是好好学习（？）</p>
+<p>学校休息时间，Jasmine画了不合适的画给大家传阅。出于必须鼓励规则，Adam应该会说，我们鼓励创意。</p>
+<p>Jasmine在学校认识了塞西尔和泰瑞沙。</p>
+<p>Ocrea在学校认识了贾思琳</p>
+<p>每个人都被邀请去参加某朋友的生日聚会，除了Sirius。他该怎么办？Adam或许会让他去问问朋友是不是忘记邀请他了。——朋友只是耸耸肩作为回答，并且之后都躲着Sirius。</p>
+<p>Adam写完了童书《老虎不会小憩》（什么怪书）出版。获得了特征：<strong>出乎意料的成功者</strong>（这确实很公主）他们无论是提升技能还是完成任务都比别人更快，但有点儿难和朋友独处</p>
+<p>今天决定让Ocrea和Jasmine各叫一位在学校认识的小朋友来家里玩。Ocrea和新来的小朋友塞西尔聊天，感觉十分无聊。</p>
+<p>Charles和Polaris拥抱了一下，并且用一种好哥们的姿势打招呼（你们到底是什么关系）Polaris从Charles那里学到怎么辨识脂鲤（什么东西？）</p>
+<h2 id="第4天（夏·周四）"><a href="#第4天（夏·周四）" class="headerlink" title="第4天（夏·周四）"></a>第4天（夏·周四）</h2><p>Polaris做了一个白蛋糕放在桌上，短短一晚上Micheal一个人吃了两份。</p>
+<p>突然发现Jasmine的社交已经6级了（怎么做到的）</p>
+<p>Charles在和Michael玩</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day3-1.PNG" alt=""></p>
+<p>Ocrea上床睡觉了，坚持不去上学（上学哪有睡觉要紧）看样子我不用操控她逃学，她自己会逃。</p>
+<p>Polaris在学校认识了托米和穆丽尔。</p>
+<p>Jasmine在学校认识了布鲁诺。</p>
+<p>Polaris在学校应该选择更容易的任务取得好成绩还是选更难的任务学到更多？按Polaris的个性应该会选更难的——她得到的成绩不佳，表现略为降低了。</p>
+<p>Polaris和同学在走廊上大家，是应该说让他们自己解决还是没人受伤吗？那很好。感觉Adam会说后一个。</p>
+<p>Michael一直一直在吃蛋糕，爱吃糖的宝宝，不吃糖就会，愤怒。</p>
+<p>Charles的成绩提升了，现在是B级学生。</p>
+<p>索菲亚邀请Sirius加入模范公社俱乐部（Sirius什么时候认识索菲亚的？）随机数说同意。这个俱乐部鼓励对叛徒刻薄；喝咖啡；换装。看起来并不是很适合Sirius的俱乐部…</p>
+<p>截一张Adam小憩的图，感觉Adam…你别说，你真别说，真挺好看的。（兄弟你好香。）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day4-1.PNG" alt=""></p>
+<p>哈蒂约Ocrea去咖啡店（小小年纪就咖啡店约会？这么优雅？）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day4-2.PNG" alt=""></p>
+<p>Polaris做了汉堡蛋糕（这个家没你做饭得散）</p>
+<p>Ocrea问Adam学校有人欺负她的朋友怎么办？Adam应该会鼓励她为朋友挺身而出。</p>
+<h2 id="第5天（夏·周五）"><a href="#第5天（夏·周五）" class="headerlink" title="第5天（夏·周五）"></a>第5天（夏·周五）</h2><p>我决定加入洗衣盆和吸尘器，不然家里的家务太少了没什么挑战性（？）</p>
+<p>Polaris喜欢健身。</p>
+<p>Adam把电脑玩坏了。替换需要700元（有点太贵了）只能维修，希望他不要把自己电死。</p>
+<p>Charles和Adam成为了好朋友（虽然他们俩一个在修电脑一个在看书，但在一个空间怎么不能用意念成为好朋友呢？(￣▽￣)~*哥，你和我在一个房间，一定是爱我。）</p>
+<p>Charles跑到卫生间喷古龙水（你小子怪讲究的嘞）而且他真的很爱俄罗斯方块，我哭死。我想让他写一下加分作业，结果他一直在和Adam聊天。从Adam那里学到了辨识大盖巨脂鲤（他笔记本里有两条鱼，还有一只玻璃梭鲈。到底是哪里学来的啊！）</p>
+<p>Polaris因为泡澡变得非常挑逗（挠头）</p>
+<p>两天前Charles在手机上发消息问Adam怎么了，Polaris给Charles发短信说：“你的风格就是一切，教我怎么像你那样生活。”还有“是先有鸡还是先有蛋，我会告诉你。（是什么冷笑话吗？）”Adam五小时之前发消息说，Charles，我们有空可以出去玩。</p>
+<p>好精彩的短信往来（汗流浃背）</p>
+<p>Charles在社交兔上新增的追随者是79个，Polaris是13个。</p>
+<p>我决定这个周末让大家都去雪山度假。585一天，家庭资金只够住一天（泪目）Polaris来了雪山之后就耳朵疼，可能是太冷了。Michael因为做噩梦一直很难过。Ocrea自己去滑雪了。Jasmine和Michael的家庭关系变成了喜欢互相开玩笑。</p>
+<p>Polaris觉得没人喜欢她。Adam感觉会说我永远爱你。</p>
+<p>Ocrea突然换牙了。Michael发挥了他人见人爱的特性，有个怀孕的陌生人阿姨要教他玩识字卡（虽然他现在因为做噩梦非常难过）</p>
+<p>Sirius也去滑雪了，然后也换牙了。换牙到底和滑雪有什么微妙的联系，还是说Sirius和Ocrea冥冥之中的情侣趋同性（flag+1，要是最后没在一起岂不是很打脸）</p>
+<p>Charles在洗澡，Adam突然进去和他说话。但居然没出现尴尬buff。</p>
+<p>哈蒂约Ocrea去家里玩。这家伙好像是狼人，一来就看见他奶奶正在从狼变成人（好超前的艺术）不知道为什么两个小朋友都很不舒服，Ocrea一直想去长椅上小睡。</p>
+<p>Adam给自己做了一份沙拉。一份…你小子。Polaris又在做蛋糕。她真的很爱蛋糕，我哭死。Michael吃多了糖牙疼了。Charles一直在抱他，不过好像他不是很喜欢Charles抱（可能是因为他手摸过食物有点脏，他现在尴尬了。）</p>
+<p>Charles在教Michael玩识字卡</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day5-1.PNG" alt=""></p>
+<p>Adam在手机上发短信问Polaris要不要试着去学吉他？我觉得你可能会喜欢。Adam现在已经有好名声了。</p>
+<p>我决定让Adam带大家去温泉玩一下。虽然现在是午夜十二点。来都来了。</p>
+<p>Charles问Adam说我给别人发消息别人一直没回怎么办？Adam应该会建议再发一次。Charles对Adam现在有了一个特殊感受：友善的建议者。</p>
+<p>Michael一直想和Ocrea开玩笑。满足了一下他的奇想，现在他想和Sirius表示友善了（看样子很喜欢张家姐弟嘛）我决定让他去给Sirius讲个故事（？）</p>
+<p>Charles想和Adam当朋友，然后想和Polaris眺望星空。Polaris一直想解决一个难题（我不知道怎么实现她这个奇想），然后想和一个人约会。不过现在她还没有和别人有浪漫条。Adam想让别人高兴起来，不过没说是谁。Sirius想和Adam当朋友，Jasmine想给弟弟Michael一个拥抱。</p>
+<p>先让Charles和Adam聊聊今天过的怎么样满足第一个奇想好了。不知道为什么Adam刻薄了一下Charles，Charles觉得很受伤。然后Adam还对Charles说谎了一下自己的职业（师傅你是做什么工作的？）Charles上楼喝茶了，他和Adam友善的奇想还是没有完成（为什么啊！！！）</p>
+<p>Charles因为Adam很受伤，要去被子里大哭。（呜呜呜我的宝宝）Adam在社交兔上发动态说：“枕头大战应该是缓解压力的，为什么我这么紧张呢？”Charles立刻私聊他说：“Adam，你怎么了？”（我哭死。）</p>
+<h2 id="第6天（夏·周六）"><a href="#第6天（夏·周六）" class="headerlink" title="第6天（夏·周六）"></a>第6天（夏·周六）</h2><p>结束度假了！Charles回来因为从Adam那里受伤非常愤怒，决定给玩具熊两拳（熊熊——）然后上楼找到玩具熊之后又取消了这种想法。</p>
+<p>Jasmine说别的小朋友不和她玩。Adam应该会说让她试着加入其他小朋友而不是告老师。对Adam产生情绪：友善的建议者。</p>
+<p>Jasmine<strong>喜欢健身</strong>了。并且想要Sirius成为朋友。</p>
+<p>ocrea产生了新的特征：刻薄倾向；害怕失败。</p>
+<p>Adam想要提升写作技能。我让他去写短篇故事。名字叫《矮子的伟大故事》（？）</p>
+<p>有个人（不知道是谁，可能是她在学校认识的朋友）问Polaris要不要去海港玩？随机数说OK。（但不知道为什么没有去成。可能是因为她在和Charles聊天）</p>
+<p>高中舞会开始了。Polaris和Charles都很困。Charles在和杰斯sweetheart dance （不是兄弟你谁啊？）Charles甚至根本不认识这人。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day6-1.PNG" alt=""></p>
+<p>Polaris也在和一个不认识的女生跳舞。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day6-2.PNG" alt=""></p>
+<p>Polaris发动态说：“给你找个像Charles一样的闺蜜，但不能和他合法地生活在一起(?)get you a bestie like him. legit can’t live with them”</p>
+<p>Charles和Polaris都没有成为舞会女王（其实我不知道这个玩法怎么玩）</p>
+<p>Polaris要和Charles一起拍大头贴（so cute）Charles觉得这照拍的很痛苦（？可能是他本来状态就不太好，太困了）Polaris觉得很高兴。她还化了妆。</p>
+<p>超可爱的拍立得，不过拍的时候Polaris好像有点长痘</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day6-4.PNG" alt=""></p>
+<p>有人问Polaris要不要参加after party。随机数说她想参加，还想带朋友。虽然她现在真的很困困困困困困。</p>
+<p>Charles终于完成和Polaris一起眺望星空的奇想了。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day6-3.PNG" alt=""></p>
+<h2 id="第7天（夏·周日）"><a href="#第7天（夏·周日）" class="headerlink" title="第7天（夏·周日）"></a>第7天（夏·周日）</h2><p>Michael和Jasmine的姐弟关系变成不太和谐了。可能是因为刚才Ocrea刻薄了一下他们。（不知道说了什么，难道是挑拨离间）他们姐弟都想和Sirius玩，不过Sirius觉得他们太吵了（喂！）</p>
+<p>Jasmine对Sirius现在有情绪：<strong>不断恶化的怨恨</strong>。泪目了。你们到底聊了什么。Jasmine和Sirius互相大喊大叫了一下（打起来打起来）Sirius觉得很愤怒，Jasmine倒没什么特别的感觉。</p>
+<p>Sirius也有<strong>喜欢刻薄</strong>的特征了。</p>
+<p>不知道是因为什么冲突，Charles没法去上班。先辞职为敬。Charles自己去洗衣服了。在家打工也是打工。</p>
+<p>哈蒂又约Ocrea去他家玩。Ocrea又很困（啊啊啊啊啊，这该死的睡眠条）</p>
+<p>回来之后Adam太困了直接晕倒，但是冰箱还是没修好。</p>
+<p>Adam给Polaris发消息说发明自动纠错的人今天去世了（什么怪新闻分享）</p>
+<p>Charles想给Michael读故事哄他睡觉。</p>
+<p>Polaris多了一个特征，<strong>喜欢咯咯咯地傻笑</strong>。</p>
+<p>Polaris对Sirius的关系也变成<strong>困难</strong>了。并且都对彼此感觉受伤。果然喜欢刻薄害人害己。Sirius不要跟Ocrea学啊！！！</p>
+<p>Charles想和Max聊天（好像是高中舞会认识的一个人），想和Adam淘气。他还是因为被亲近的人伤害特别难过（啊！）明明都已经没有受伤的情绪了。</p>
+<h2 id="第8天（秋·周一）"><a href="#第8天（秋·周一）" class="headerlink" title="第8天（秋·周一）"></a>第8天（秋·周一）</h2><p>Adam在给Michael讲故事</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day8-1.PNG" alt=""></p>
+<p>Michael的过敏变成<strong>胃胀气</strong>了，可能是因为他吃多了蛋糕。</p>
+<p>Jasmine的老师发短信说在她抽屉里发现了她给老师的情书（喂！别人放课桌里你怎么会知道啊！）感觉Adam应该会说和她谈谈而不是骂她。</p>
+<p>糟糕，付不起账单。为什么低端税要5k啊！！！</p>
+<p>Adam和Michael成为了好朋友。</p>
+<p>Jasmine邀请安娜贝尔来家里玩。Sirius现在是B级学生了。Charles的朋友托米来家里玩了（真别说这小伙子挺好看的）Ocrea说想成为忍者（挠头）</p>
+<p>让Adam写一本新书，叫做《sims城市英雄:Candid Portraits and Tales》</p>
+<p>Jasmine和Michael成为了好朋友。</p>
+<p>Sirius好像和Jasmine真的很合不来，他们俩一直互相恶作剧。Jasmine现在也<strong>害怕失败</strong>了。Polaris不知道和谁吵架也很生气。</p>
+<p>我希望Charles在大学之前把家里的椅子全修好。看起来是不太可能了。</p>
+<h2 id="第9天（秋·周二）"><a href="#第9天（秋·周二）" class="headerlink" title="第9天（秋·周二）"></a>第9天（秋·周二）</h2><p>Ocrea要去和Charles恶作剧说点禁忌的话（？）Charles觉得很好笑。好了，现在孩子们都开始疯狂互相恶作剧了。</p>
+<p>今天Sirius得了流感，请病假不上学。突然发现Ocrea也没去上学。你为什么不上学！！！</p>
+<p>Charles现在是A级学生了。回来在看爱情小说《心之背叛》（？）</p>
+<p>Polaris莫名其妙问了一下Ocrea叫什么名字（？）</p>
+<p>Charles也<strong>喜欢健身</strong>了。为什么我老觉得他之前就喜欢健身？</p>
+<p>Jasmine一个人在玩弹珠游戏</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day9-1.PNG" alt=""></p>
+<p>托米又来家里找Charles了！开始我还以为托米是男的，她戴礼帽的那个装扮真的很像男的ovo</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day9-2.PNG" alt=""></p>
+<p>Charles想和Adam眺望白云（兄弟你除了看天空没有别的idea吗）</p>
+<p>决定让Charles给家里的厨房洗手池升一下级。</p>
+<h2 id="第10天（秋·周三）"><a href="#第10天（秋·周三）" class="headerlink" title="第10天（秋·周三）"></a>第10天（秋·周三）</h2><p>Adam从Charles那里学会了怎么辨识鲈鱼（？）</p>
+<p>Charles在写作业，Adam过来和他聊天，然后Michael跑过来在两个人中间唱歌，Adam坐立难安地换了两个位置之后，选择把Michael抱起来（你小子是懂争宠的）</p>
+<p>Charles对Adam说：“你真的很有魅力，我希望你意识到这一点。”（男同发言）</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day10-1.PNG" alt=""></p>
+<p>Adam聊着聊着感觉对Jasmine很受伤，可能是因为Jasmine刻薄他了（自从Ocrea喜欢刻薄别人，我们这个家永无宁日）</p>
+<p>Ocrea和Jasmine一直在吵架（你们干脆打一架吧！！！）</p>
+<p>Charles莫名其妙又很受伤（日常受伤想起受伤的回忆的一人）</p>
+<p>Polaris的学习成绩不太好（可能是因为她一直不想写家庭作业）她应该退学吗？反正Adam肯定不会让她退学的。</p>
+<p>Polaris给Adam发消息说我们有空可以出去玩（什么三角恋故事）</p>
+<p>Adam想去吃饭，走到一楼又被Michael小朋友哭回来了。他想睡觉。</p>
+<p>托米来找Adam玩了。等等，你不用上学吗？Adam了解到托米的特征：有创意。</p>
+<p>Charles请同学塞西尔来家里玩了。这家伙一直试图裸奔，然后到床边上又突然穿上衣服（？)后来发现他是要在床上干点手艺活（？？？）Charles想和塞西尔调情（好超前的艺术）我觉得还是不要了。这人是有点变态在身上的。</p>
+<p>一直有人坐在Jasmine的床上聊天，她根本没法睡觉。呃啊啊啊啊啊。我让她在Polaris的床上睡一会，Michael还把她吵起来了。</p>
+<p>Polaris也不知道为什么觉得很受伤（被Charles传染了？）</p>
+<p>Sirius向Adam问朋友被欺负怎么办？Adam劝他为朋友挺身而出。Sirius现在对Adam有些崇拜。</p>
+<h2 id="第11天（秋·周四）"><a href="#第11天（秋·周四）" class="headerlink" title="第11天（秋·周四）"></a>第11天（秋·周四）</h2><p>今天是Michael的生日！！！（然后卡住了时间倒回礼拜三下午）</p>
+<p>让Charles给Michael洗了个澡，Adam实在是太困了。发现Charles今天早上起来居然长胡子了</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day11-1.PNG" alt=""></p>
+<p>Sirius喜欢愚蠢行为（？？？没关系，傻傻的也很可爱）</p>
+<p>Charles发短信给Polaris说你看起来像只没毛的羊驼（啊？？？）Polaris回了个翻白眼。</p>
+<p>托米发短信给Adam说自己爱上了雅各布。Adam应该会让她试试看。现在他们在一起了。（好好好）</p>
+<p>Michael除了思考都是满级了。一个不擅长思考的小孩。</p>
+<p>Polaris突然很害怕壮志未酬。</p>
+<p>Michael这孩子好像天生长得就很好看（未整容版）。我决定还是把他嘴巴上面的痣取消掉。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day11-2.PNG" alt=""></p>
+<p>他长大了还是那么爱他的小猫，我哭死</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day11-3.PNG" alt=""></p>
+<p>Michael是ESFJ（执政官），这类模拟市民喜欢社交，关心他人，组织活动。</p>
+<p>Jasmine说塞林很有魅力，不过不知道塞林到底是谁的朋友。可能是Polaris的吧。</p>
+<h2 id="第12天（秋·周五）"><a href="#第12天（秋·周五）" class="headerlink" title="第12天（秋·周五）"></a>第12天（秋·周五）</h2><p>Adam不知道为什么突然去指出Michael的缺点，Michael感觉很<strong>受伤</strong>（我们这个家到底是怎么了！）Adam又指出了Charles的缺点（一人给一拳）</p>
+<p>Jasmine现在有好名声了。</p>
+<p>Jasmine不知道和Michael说了什么，Jasmine觉得很尴尬：为什么我要这么说？Michael觉得很生气。Jasmine对Michael有一个<strong>不断恶化的怨恨</strong>。</p>
+<p>Adam不知道为什么对Michael很<strong>崇拜</strong>，因为Michael知道他要做什么，而Adam不知道（？什么小孩哥）今天Michael不用去上学，可能是因为他刚长大。</p>
+<p>今天不知道为什么Charles也不想去上学。Ocrea日常不想上学。</p>
+<p>Adam获得了特征：<strong>欢乐</strong>。</p>
+<p>Michael一直在和Adam聊天，虽然但是，宝宝你该睡觉了。困得要死，但非要聊天。</p>
+<p>Jasmine很<strong>崇拜</strong>Adam。Jasmine真的很喜欢玩弹珠，经常看见她一个人在玩。其实我觉得Ocrea和Sirius有点排挤Jasmine，他们俩和Jasmine的关系都很差。</p>
+<p>托米邀请Charles去她家玩。随机数说去并且带上一位朋友。决定带上Polaris。不知道为什么Polaris一来就情绪失控并且非常愤怒，难道是因为托米是女生（挠头）但是托米不是和雅各布在一起了吗？</p>
+<p>我现在才发现原来通知栏有的时候会提醒我课程表不是自己提醒的，是Charles一直在查课程表（我哭死，他好爱学习）</p>
+<h2 id="第13天（秋·周六）"><a href="#第13天（秋·周六）" class="headerlink" title="第13天（秋·周六）"></a>第13天（秋·周六）</h2><p>Jasmine变得很<strong>叛逆</strong>。她现在变成INFP（调停者）了。诗意，可爱，无私的人（但一直和同龄小伙伴关系不太好）她现在和Ocrea，Sirius都是红条了（我们这个家早晚要散）</p>
+<p>今天决定去乡下旅游。</p>
+<p>Sirius多了一个特征：<strong>黏人</strong>。只有在照料者在一起才感觉安全。</p>
+<p>Adam<strong>喜欢闲聊</strong>。Ocrea和Adam有一个情绪，共度亲密时光。</p>
+<p>Michael对Charles说：你真的很好。+你真的很有趣，我很享受和你在一起的时候，希望你也一样。</p>
+<p>托米约Adam来参加绘画展（我以为是浪漫庆典，挠头）好像就是浪漫庆典。</p>
+<p>一起喝樱花茶，Jasmine把杯子掉茶喷泉里了。</p>
+<p>Adam在画浪漫的画</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day13-1.PNG" alt=""></p>
+<p>本来打算通过浪漫庆典来点感情进展，但Polaris太困了，让Adam画完画就直接回来了（等等，好像画没拿回来，啊啊啊啊啊）</p>
+<p>Adam，Charles和Polaris因为喝了樱花茶都有挑逗的状态，Polaris太困睡觉去了，Adam决定自己来点手艺活（？？？）Charles本来打算和Adam聊天，然后取消了去和Michael抱怨不公平的生活（好混乱的关系）Charles对Michael说：你真的太棒了。</p>
+<p>Michael和Adam成为最好的朋友了，Michael对Adam有一个情绪：深深的链接。但不知道为什么Michael突然感觉被Adam深深的伤害了，可能是因为Ocrea在说离开家的事情。</p>
+<h2 id="第14天（冬·周日）"><a href="#第14天（冬·周日）" class="headerlink" title="第14天（冬·周日）"></a>第14天（冬·周日）</h2><p>Ocrea也很崇拜Michael。</p>
+<p>Sirius的奇想里说想和Jasmine做朋友，我决定让他先去给Jasmine道个歉。</p>
+<p>Michael觉得对Jasmine很受伤。突然发现Polaris和Sirius不知道为什么也是红条，而且Polaris感觉对Sirius很受伤（虽然这个情绪已经快降完了）</p>
+<p>企图让Jasmine喝有灵感的药水完成在有灵感状态下画两幅画的抱负要求。不知道为什么画完了但是没有显示完成。</p>
+<p>Polaris给Adam发消息说希望你今天过得好。Charles给Adam分享了一个专辑。</p>
+<h2 id="第15天（冬·周一）"><a href="#第15天（冬·周一）" class="headerlink" title="第15天（冬·周一）"></a>第15天（冬·周一）</h2><p>为了快点完成Ocrea的抱负，决定让她和Sirius多说点话。因为她的友情条和Sirius比较高。Sirius喜欢讨论兴趣爱好。Ocrea对Sirius有了一个崇拜的情绪。Polaris对Charles非常崇拜。</p>
+<p>Sirius和Ocrea一起堆雪人。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day15-1.PNG" alt=""></p>
+<p>突然发现Michael不知道为什么和托米关系不太好（挠头）我以为托米和大家关系都很好。</p>
+<p>抽象雪人</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day15-2.PNG" alt=""></p>
+<p>好好好，今天大家都去上学了。Sirius是A类学生了。</p>
+<p>Charles对Polaris说我很高兴你不觉得我的羊驼笑话太老，你真的很懂我（咯咯咯，发出听见冷笑话的笑声）</p>
+<p>Adam写科幻小说写着写着突然觉得自己喜欢制造东西了（？）</p>
+<p>Michael因为自己和自己下棋没下过感觉不舒服（？）然后又想起被姐姐伤害的事，现在难过了。</p>
+<p>Polaris做饭叫大家来吃了。</p>
+<p>Michael想和Ocrea做朋友，Ocrea想和Jasmine做朋友。Ocrea先和Michael成为了朋友。不知道为什么，Ocrea和Jasmine做朋友真的很难。</p>
+<p>Michael说自己收到了朋友的礼物，应不应该把礼物转赠他人。Adam应该会让他留着礼物。</p>
+<h2 id="第16天（冬·周二）"><a href="#第16天（冬·周二）" class="headerlink" title="第16天（冬·周二）"></a>第16天（冬·周二）</h2><p>小朋友们早上在做学校实践作业。Charles似乎是第一次作业还没写。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day16-1.PNG" alt=""></p>
+<p>今天Ocrea和Polaris都不想去上学（喵喵喵？）</p>
+<p>Michael<strong>喜欢开玩笑</strong>。</p>
+<p>刷友好度好难，感觉要晕过去了。难道是我装了什么mod吗？友好度加的超级慢。</p>
+<p>Charles帮Michael写作业了，Charles和Michael成为了好朋友。Michael觉得自己<strong>喜欢感情</strong>。</p>
+<p>Jasmine不喜欢做决定，那太难了。</p>
+<p>Charles在圣诞节礼物里面放了恶作剧礼物（喂！！！）</p>
+<p>Jasmine掉牙了，但是没有得到牙仙证书（奇怪）</p>
+<p>不知道谁把Michael的实践作业踹翻了（啊啊啊啊啊NOOOOOO）坏了，他睡觉起来发现自己的作业被人踢了。</p>
+<h2 id="第17天（冬·周三·圣诞节）"><a href="#第17天（冬·周三·圣诞节）" class="headerlink" title="第17天（冬·周三·圣诞节）"></a>第17天（冬·周三·圣诞节）</h2><p>终于给我们家装上灯和白色地板了。</p>
+<p>Michael不知道为什么真的很生气，然后自己去洗澡了。</p>
+<p>一起装饰圣诞树。圣诞快乐！</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day17-1.PNG" alt="day17-1"></p>
+<p>不得不说，托米真的很好看。我现在宣布，托米是我们这个家的一份子。</p>
+<p>Ocrea居然要和Michael说你是我的最爱~果然这个家最讨人喜欢的是弟弟。</p>
+<p>sweet hug</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day17-2.PNG" alt="day17-2"></p>
+<p>Adam从圣诞老人那里得到了一个平板，Charles得到了一个世代灯塔奖（什么东西？），Polaris得到了一幅画，Ocrea得到了一个巨大的三叶虫化石（？）Ocrea居然很喜欢。Jasmine得到了黏土块，Michael得到了泡泡水。Michael特别喜欢泡泡水。圣诞节结束了，但是Sirius还没有得到他的礼物！！！</p>
+<p>让大家一起打开圣诞树下的礼物。Ocrea拿到了一个空盒子。</p>
+<p>Jasmine<strong>喜欢讨论兴趣</strong></p>
+<h2 id="第18天（冬·周四·圣诞节）"><a href="#第18天（冬·周四·圣诞节）" class="headerlink" title="第18天（冬·周四·圣诞节）"></a>第18天（冬·周四·圣诞节）</h2><p>Adam解锁了生活方式：喜欢独处</p>
+<p>Adam好像很喜欢赛琳，他们很契合，并且Adam想和赛琳调情。我觉得可以让他去了解一下赛琳。</p>
+<p>Ocrea选择的特征是物质主义，抱负是连环浪漫。ocrea真的超级瘦。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day17-3.PNG" alt="day17-3"></p>
+<p>Sirius选择的特征是客观主义，抱负是聪明的大脑。</p>
+<p>Jasmine选择的特征是移动感情的，抱负是主厨。</p>
+<p>突然发现赛琳怀孕了（？？？）难道她已经结婚了？</p>
+<h2 id="第19天（冬·周五）"><a href="#第19天（冬·周五）" class="headerlink" title="第19天（冬·周五）"></a>第19天（冬·周五）</h2><p>Michael掉牙了。</p>
+<p>家里很脏。Jasmine忘记睡过头，忘记去上学了。在家里看了两本小说，然后再写作业。</p>
+<p>Charles好像被虫子叮了。</p>
+<p>Sirius在学校得了奖。感觉他应该会把这个奖牌自己收藏不给别人炫耀？一个内敛的小孩。</p>
+<p>Charles被询问他的成绩很好，是否需要更早的从高中毕业？我感觉他可能会说是的。我希望他能够现在去申请大学，因为他要获得政治学的学位。</p>
+<p><img src="模拟人生4-自设孤儿院挑战/day19-1.PNG" alt="day19-1"></p>
+<p>托米过来找Jasmine玩了。</p>
+<p>Sirius现在喜欢恶作剧。</p>
+<p>Micheal对Jasmine大喊大叫了，现在Jasmine觉得很受伤。Jasmine不知道什么时候给自己画了一个妆。</p>
+<h2 id="第20天（冬·周六）"><a href="#第20天（冬·周六）" class="headerlink" title="第20天（冬·周六）"></a>第20天（冬·周六）</h2><p>不知道为什么大家突然开始喝酒了。可能因为今天晚上是除夕。</p>
+<p>托米和美穗小野在一起了，这又是谁？但好像是Adam给他们牵的线。</p>
+<p>Ocrea和布鲁诺还有塞西尔是情人。</p>
+<p>Charles很喜欢Ocrea，我让他们在毕业舞会上跳了一次舞，现在他们有浪漫关系。</p>
+<p>嗯，嗯，我让Ocrea在Charles面前和Sirius调情 ，看上去Charles没有什么太大的反应。</p>
+<p>Charles想和Polaris约会。但不知道为什么一直被拒绝。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%87%AA%E7%94%A8/" rel="tag"><i class="fa fa-tag"></i> 自用</a>
+              <a href="/tags/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4/" rel="tag"><i class="fa fa-tag"></i> 模拟人生4</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E9%82%A3%E8%A5%BF%E7%B4%A2%E4%BA%9A%E6%95%85%E4%BA%8B%E4%BA%BA%E7%89%A9%E8%AE%BE%E5%AE%9A%E9%9B%86/" rel="prev" title="那西索亚故事人物设定集">
+                  <i class="fa fa-chevron-left"></i> 那西索亚故事人物设定集
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024-04%E6%91%B8%E9%B1%BC%E6%97%A5%E5%BF%97/" rel="next" title="2024：4月摸鱼日志">
+                  2024：4月摸鱼日志 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">babel</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-bice-three.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"在这里评论吧~暂时需要科学上网","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4-%E8%87%AA%E8%AE%BE%E5%AD%A4%E5%84%BF%E9%99%A2%E6%8C%91%E6%88%98/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
