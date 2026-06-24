@@ -28,8 +28,132 @@ export class App {
             ORANGE: '#E67E22'
         };
         
+        // 新增配色主题
+        this.THEMES = {
+            classic: {
+                name: 'classic',
+                colors: {
+                    bg1: '#FAF8F3',
+                    bg2: '#F2EEE6',
+                    gray1: '#E3E3E3',
+                    gray2: '#CFCFCF',
+                    gray3: '#A9A9A9',
+                    gray4: '#6A6A6A',
+                    gray5: '#404040',
+                    gray6: '#1F1F1F',
+                    cream: '#F7E8B6',
+                    sage: '#DCE6C7'
+                }
+            },
+            sakura: {
+                name: 'sakura',
+                colors: {
+                    bg1: '#FFE6EC',      // 樱花白
+                    bg2: '#FFD1DD',      // 雾粉
+                    pink1: '#FFB8C9',    // 浅樱粉
+                    pink2: '#FF9DB5',    // 樱花粉
+                    pink3: '#FF85A1',    // 蜜桃粉
+                    pink4: '#F76C8A',    // 珊瑚粉
+                    lavender: '#CFA6E8', // 淡紫
+                    cream: '#FFF0C9',    // 奶油黄
+                    mint: '#7FD6B4',     // 薄荷绿
+                    sky: '#7DBAF8'       // 天空蓝
+                }
+            },
+            Aqua: {
+                name: 'Aqua',
+                colors: {
+                    bg1: '#F7FCFD',
+                    blue1: '#DDF1F7',
+                    blue2: '#BEE7F7',
+                    blue3: '#8FD3F4',
+                    green1: '#B8E5E0',
+                    green2: '#A8E6CF',
+                    green3: '#D6E9B7',
+                    sand: '#F5EACF',
+                    coral: '#F9E2D0',
+                    shell: '#F4EBEE'
+                }
+            }
+        };
+        this.currentTheme = 'classic';
+        
         this.initScale();
         this.init();
+    }
+    
+    applyTheme(themeKey) {
+        const theme = this.THEMES[themeKey];
+        if (!theme) return;
+        
+        // 将主题颜色映射到COLORS对象（关键修复）
+        const colorMap = {
+            classic: {
+                BEIGE_BG: '#F7E8B6',
+                PURPLE_BG: '#9B59B6',
+                RED_BROWN: '#8B0000',
+                WHITE: '#FFFFFF',
+                BROWN: '#404040',
+                GREEN: '#2ECC71',
+                BLUE: '#3498DB',
+                ORANGE: '#E67E22'
+            },
+            sakura: {
+                BEIGE_BG: '#FFF0C9',     // 奶油黄
+                PURPLE_BG: '#FF9DB5',    // 樱花粉
+                RED_BROWN: '#F76C8A',    // 珊瑚粉
+                WHITE: '#FFFFFF',
+                BROWN: '#5D4E5D',
+                GREEN: '#7FD6B4',        // 薄荷绿
+                BLUE: '#7DBAF8',         // 天空蓝
+                ORANGE: '#FFB8C9'        // 浅樱粉
+            },
+            Aqua: {
+                BEIGE_BG: '#B8E5E0',
+                PURPLE_BG: '#8FD3F4',
+                RED_BROWN: '#E8A87C',
+                WHITE: '#FFFFFF',
+                BROWN: '#2D5A5A',
+                GREEN: '#8FD3F4',
+                BLUE: '#4ECDC4',
+                ORANGE: '#FF9F43'
+            }
+        };
+        
+        // 更新COLORS对象
+        Object.assign(this.COLORS, colorMap[themeKey]);
+        
+        // 应用主题背景
+        document.body.style.background = theme.colors.bg1;
+        
+        // 保存主题
+        localStorage.setItem('crossword_theme', themeKey);
+        this.currentTheme = themeKey;
+        
+        // 重新渲染当前界面以应用新配色
+        this.reRenderCurrentScreen();
+    }
+    
+    reRenderCurrentScreen() {
+        if (document.body.className === 'menu') {
+            // 如果在菜单界面，重新创建开始屏幕
+            const currentScreen = this.container.querySelector('.start-screen, .difficulty-screen');
+            if (currentScreen) {
+                if (currentScreen.classList.contains('difficulty-screen')) {
+                    this.chooseDifficulty();
+                } else {
+                    this.createStartScreen();
+                }
+            }
+        } else if (document.body.className === 'game') {
+            // 如果在游戏界面，重新创建游戏
+            if (this.game) {
+                const mode = this.mode;
+                const difficulty = this.difficulty;
+                this.stopGameLoop();
+                this.initGame(mode, difficulty);
+            }
+        }
     }
     
     initScale() {
@@ -53,6 +177,11 @@ export class App {
     }
     
     init() {
+        // 加载保存的主题或使用默认主题
+        const savedTheme = localStorage.getItem('crossword_theme') || 'classic';
+        this.currentTheme = savedTheme;
+        this.applyTheme(savedTheme);
+        
         this.container.innerHTML = '';
         this.createStartScreen();
     }
@@ -60,6 +189,7 @@ export class App {
     createStartScreen() {
         document.body.className = 'menu';
         this.container.innerHTML = '';
+        
         const startDiv = document.createElement('div');
         startDiv.style.cssText = `
             display: flex;
@@ -107,11 +237,11 @@ export class App {
         pveBtn.addEventListener('click', () => this.chooseDifficulty());
         startDiv.appendChild(pveBtn);
         
-        const tutorialBtn = document.createElement('button');
-        tutorialBtn.textContent = 'Game Guide';
-        tutorialBtn.style.cssText = buttonStyle;
-        tutorialBtn.addEventListener('click', () => this.showTutorial());
-        startDiv.appendChild(tutorialBtn);
+        const settingsBtn = document.createElement('button');
+        settingsBtn.textContent = 'Settings';
+        settingsBtn.style.cssText = buttonStyle;
+        settingsBtn.addEventListener('click', () => this.showSettings());
+        startDiv.appendChild(settingsBtn);
         
         this.container.appendChild(startDiv);
     }
@@ -268,7 +398,7 @@ export class App {
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(155, 89, 182, 1.0);
+            background: ${this.COLORS.PURPLE_BG};
             border-radius: 15px;
             z-index: 100;
             display: ${this.hideMode ? 'flex' : 'none'};
@@ -301,6 +431,274 @@ export class App {
         if (this.aiCover) {
             this.aiCover.style.display = this.hideMode ? 'flex' : 'none';
         }
+    }
+    
+    showSettings() {
+        document.body.className = 'menu';
+        this.container.innerHTML = '';
+        
+        const settingsDiv = document.createElement('div');
+        settingsDiv.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        `;
+        
+        const title = document.createElement('h2');
+        title.textContent = 'Settings';
+        title.style.cssText = `
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 32px;
+            color: ${this.COLORS.RED_BROWN};
+            margin-bottom: 30px;
+        `;
+        settingsDiv.appendChild(title);
+        
+        // 界面缩放控制区域
+        const scaleSection = document.createElement('div');
+        scaleSection.style.cssText = `
+            background: ${this.COLORS.WHITE};
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            text-align: center;
+        `;
+        
+        const scaleTitle = document.createElement('h3');
+        scaleTitle.textContent = 'Screen Zoom';
+        scaleTitle.style.cssText = `
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 20px;
+            color: ${this.COLORS.PURPLE_BG};
+            margin-bottom: 15px;
+        `;
+        scaleSection.appendChild(scaleTitle);
+        
+        // 当前缩放显示
+        const currentScaleDisplay = document.createElement('span');
+        const currentTransform = this.container.style.transform;
+        const match = currentTransform.match(/scale\(([\d.]+)\)/);
+        const currentScale = match ? parseFloat(match[1]) : 1;
+        currentScaleDisplay.textContent = `${Math.round(currentScale * 100)}%`;
+        currentScaleDisplay.style.cssText = `
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 24px;
+            font-weight: bold;
+            color: ${this.COLORS.BROWN};
+            display: block;
+            margin-bottom: 15px;
+        `;
+        scaleSection.appendChild(currentScaleDisplay);
+        
+        // 缩放控制按钮
+        const scaleControls = document.createElement('div');
+        scaleControls.style.cssText = `
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        `;
+        
+        const zoomInBtn = document.createElement('button');
+        zoomInBtn.textContent = '+';
+        zoomInBtn.style.cssText = `
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            font-weight: bold;
+            background: ${this.COLORS.GREEN};
+            color: ${this.COLORS.WHITE};
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        `;
+        zoomInBtn.addEventListener('click', () => {
+            const currentTransform = this.container.style.transform;
+            const match = currentTransform.match(/scale\(([\d.]+)\)/);
+            const currentScale = match ? parseFloat(match[1]) : 1;
+            const newScale = Math.min(currentScale + 0.1, 2);
+            this.container.style.transform = `scale(${newScale})`;
+            currentScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
+        });
+        zoomInBtn.addEventListener('mouseenter', () => {
+            zoomInBtn.style.transform = 'scale(1.1)';
+        });
+        zoomInBtn.addEventListener('mouseleave', () => {
+            zoomInBtn.style.transform = 'scale(1)';
+        });
+        scaleControls.appendChild(zoomInBtn);
+        
+        const zoomOutBtn = document.createElement('button');
+        zoomOutBtn.textContent = '-';
+        zoomOutBtn.style.cssText = `
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            font-weight: bold;
+            background: ${this.COLORS.RED_BROWN};
+            color: ${this.COLORS.WHITE};
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        `;
+        zoomOutBtn.addEventListener('click', () => {
+            const currentTransform = this.container.style.transform;
+            const match = currentTransform.match(/scale\(([\d.]+)\)/);
+            const currentScale = match ? parseFloat(match[1]) : 1;
+            const newScale = Math.max(currentScale - 0.1, 0.5);
+            this.container.style.transform = `scale(${newScale})`;
+            currentScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
+        });
+        zoomOutBtn.addEventListener('mouseenter', () => {
+            zoomOutBtn.style.transform = 'scale(1.1)';
+        });
+        zoomOutBtn.addEventListener('mouseleave', () => {
+            zoomOutBtn.style.transform = 'scale(1)';
+        });
+        scaleControls.appendChild(zoomOutBtn);
+        
+        const resetBtn = document.createElement('button');
+        resetBtn.textContent = '⟲';
+        resetBtn.style.cssText = `
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+            background: ${this.COLORS.BROWN};
+            color: ${this.COLORS.WHITE};
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        `;
+        resetBtn.addEventListener('click', () => {
+            this.container.style.transform = 'scale(1)';
+            currentScaleDisplay.textContent = '100%';
+        });
+        resetBtn.addEventListener('mouseenter', () => {
+            resetBtn.style.transform = 'scale(1.1)';
+        });
+        resetBtn.addEventListener('mouseleave', () => {
+            resetBtn.style.transform = 'scale(1)';
+        });
+        scaleControls.appendChild(resetBtn);
+        scaleSection.appendChild(scaleControls);
+        settingsDiv.appendChild(scaleSection);
+        
+        // 新增配色主题选择区域
+        const themeSection = document.createElement('div');
+        themeSection.style.cssText = `
+            background: ${this.COLORS.WHITE};
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            text-align: center;
+        `;
+        
+        const themeTitle = document.createElement('h3');
+        themeTitle.textContent = 'Color Theme';
+        themeTitle.style.cssText = `
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 20px;
+            color: ${this.COLORS.PURPLE_BG};
+            margin-bottom: 15px;
+        `;
+        themeSection.appendChild(themeTitle);
+        
+        const themeButtons = document.createElement('div');
+        themeButtons.style.cssText = `
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        `;
+        
+        Object.keys(this.THEMES).forEach((themeKey) => {
+            const theme = this.THEMES[themeKey];
+            const themeBtn = document.createElement('button');
+            themeBtn.textContent = theme.name;
+            themeBtn.style.cssText = `
+                padding: 10px 20px;
+                font-family: 'Comic Sans MS', cursive;
+                font-size: 16px;
+                background: ${themeKey === this.currentTheme ? this.COLORS.PURPLE_BG : this.COLORS.WHITE};
+                color: ${themeKey === this.currentTheme ? this.COLORS.WHITE : this.COLORS.BROWN};
+                border: 2px solid ${this.COLORS.PURPLE_BG};
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            `;
+            themeBtn.addEventListener('click', () => {
+                this.currentTheme = themeKey;
+                this.applyTheme(themeKey);
+                // 更新按钮样式
+                Object.keys(this.THEMES).forEach((key) => {
+                    const btn = themeButtons.querySelector(`[data-theme="${key}"]`);
+                    if (btn) {
+                        btn.style.background = key === themeKey ? this.COLORS.PURPLE_BG : this.COLORS.WHITE;
+                        btn.style.color = key === themeKey ? this.COLORS.WHITE : this.COLORS.BROWN;
+                    }
+                });
+            });
+            themeBtn.setAttribute('data-theme', themeKey);
+            themeBtn.addEventListener('mouseenter', () => {
+                themeBtn.style.transform = 'scale(1.05)';
+            });
+            themeBtn.addEventListener('mouseleave', () => {
+                themeBtn.style.transform = 'scale(1)';
+            });
+            themeButtons.appendChild(themeBtn);
+        });
+        
+        themeSection.appendChild(themeButtons);
+        settingsDiv.appendChild(themeSection);
+        
+        // 游戏引导入口
+        const tutorialBtn = document.createElement('button');
+        tutorialBtn.textContent = 'Game Guide';
+        tutorialBtn.style.cssText = `
+            width: 220px;
+            height: 55px;
+            margin-bottom: 15px;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 18px;
+            background: ${this.COLORS.ORANGE};
+            color: ${this.COLORS.WHITE};
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        `;
+        tutorialBtn.addEventListener('click', () => this.showTutorial());
+        settingsDiv.appendChild(tutorialBtn);
+        
+        // 返回主菜单按钮
+        const backBtn = document.createElement('button');
+        backBtn.textContent = 'Back to Menu';
+        backBtn.style.cssText = `
+            width: 220px;
+            height: 55px;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 18px;
+            background: ${this.COLORS.PURPLE_BG};
+            color: ${this.COLORS.WHITE};
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        `;
+        backBtn.addEventListener('click', () => this.createStartScreen());
+        settingsDiv.appendChild(backBtn);
+        
+        this.container.appendChild(settingsDiv);
     }
     
     showTutorial() {
@@ -375,7 +773,7 @@ export class App {
             border-radius: 10px;
             cursor: pointer;
         `;
-        backBtn.addEventListener('click', () => this.createStartScreen());
+        backBtn.addEventListener('click', () => this.showSettings());
         tutorialDiv.appendChild(backBtn);
         
         this.container.appendChild(tutorialDiv);
@@ -430,6 +828,103 @@ export class App {
             this.initGame();
         });
         menuWindow.appendChild(newGameBtn);
+        
+        // 缩放控制按钮
+        const zoomBtn = document.createElement('button');
+        zoomBtn.textContent = 'Screen Zoom';
+        zoomBtn.style.cssText = buttonStyle + `background: ${this.COLORS.BLUE};`;
+        
+        // 缩放控件弹窗
+        let scalePopup = null;
+        
+        zoomBtn.addEventListener('click', () => {
+            if (scalePopup) {
+                scalePopup.remove();
+                scalePopup = null;
+                return;
+            }
+            
+            scalePopup = document.createElement('div');
+            scalePopup.style.cssText = `
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${this.COLORS.WHITE};
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                z-index: 300;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 5px;
+            `;
+            
+            const popupZoomOutBtn = document.createElement('button');
+            popupZoomOutBtn.textContent = '-';
+            popupZoomOutBtn.style.cssText = `
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                font-weight: bold;
+                background: ${this.COLORS.RED_BROWN};
+                color: ${this.COLORS.WHITE};
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+            `;
+            popupZoomOutBtn.addEventListener('click', () => {
+                const currentTransform = this.container.style.transform;
+                const match = currentTransform.match(/scale\(([\d.]+)\)/);
+                const currentScale = match ? parseFloat(match[1]) : 1;
+                const newScale = Math.max(currentScale - 0.1, 0.5);
+                this.container.style.transform = `scale(${newScale})`;
+                popupScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
+            });
+            scalePopup.appendChild(popupZoomOutBtn);
+            
+            const popupScaleDisplay = document.createElement('span');
+            const currentTransform = this.container.style.transform;
+            const match = currentTransform.match(/scale\(([\d.]+)\)/);
+            const currentScale = match ? parseFloat(match[1]) : 1;
+            popupScaleDisplay.textContent = `${Math.round(currentScale * 100)}%`;
+            popupScaleDisplay.style.cssText = `
+                font-family: 'Comic Sans MS', cursive;
+                font-size: 14px;
+                font-weight: bold;
+                color: ${this.COLORS.BROWN};
+                min-width: 45px;
+                text-align: center;
+            `;
+            scalePopup.appendChild(popupScaleDisplay);
+            
+            const popupZoomInBtn = document.createElement('button');
+            popupZoomInBtn.textContent = '+';
+            popupZoomInBtn.style.cssText = `
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                font-weight: bold;
+                background: ${this.COLORS.GREEN};
+                color: ${this.COLORS.WHITE};
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+            `;
+            popupZoomInBtn.addEventListener('click', () => {
+                const currentTransform = this.container.style.transform;
+                const match = currentTransform.match(/scale\(([\d.]+)\)/);
+                const currentScale = match ? parseFloat(match[1]) : 1;
+                const newScale = Math.min(currentScale + 0.1, 2);
+                this.container.style.transform = `scale(${newScale})`;
+                popupScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
+            });
+            scalePopup.appendChild(popupZoomInBtn);
+            
+            menuWindow.appendChild(scalePopup);
+        });
+        menuWindow.appendChild(zoomBtn);
         
         // PVE模式下显示隐藏模式选项
         if (this.mode === 'PVE') {

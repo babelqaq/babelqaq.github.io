@@ -112,9 +112,9 @@ export class GameBoard {
         const colScoresDiv = document.createElement('div');
         colScoresDiv.style.cssText = `
             display: flex;
-            gap: 4px;
+            gap: 2px;
             margin-top: 5px;
-            margin-left: 2px;
+            margin-left: -30px;
         `;
         for (let i = 0; i < 5; i++) {
             const label = document.createElement('span');

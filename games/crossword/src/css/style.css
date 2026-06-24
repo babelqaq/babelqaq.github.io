@@ -32,11 +32,11 @@ body {
 }
 
 body.menu #bg {
-    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background: transparent;
 }
 
 body.game #bg {
-    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background: transparent;
 }
 
 /* SCALE ROOT（唯一布局中心） */
