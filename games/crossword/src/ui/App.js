@@ -551,7 +551,7 @@ export class App {
             const currentTransform = this.container.style.transform;
             const match = currentTransform.match(/scale\(([\d.]+)\)/);
             const currentScale = match ? parseFloat(match[1]) : 1;
-            const newScale = Math.max(currentScale - 0.1, 0.5);
+            const newScale = Math.max(currentScale - 0.1, 0.1);
             this.container.style.transform = `scale(${newScale})`;
             currentScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
         });
@@ -878,7 +878,7 @@ export class App {
                 const currentTransform = this.container.style.transform;
                 const match = currentTransform.match(/scale\(([\d.]+)\)/);
                 const currentScale = match ? parseFloat(match[1]) : 1;
-                const newScale = Math.max(currentScale - 0.1, 0.5);
+                const newScale = Math.max(currentScale - 0.1, 0.1);
                 this.container.style.transform = `scale(${newScale})`;
                 popupScaleDisplay.textContent = `${Math.round(newScale * 100)}%`;
             });
