@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" width="260" height="320" role="img" aria-label="示例照片 工作室一角 1961">
+  <rect width="260" height="320" fill="#efe9db"/>
+  <rect x="12" y="12" width="236" height="296" fill="#cabfae"/>
+  <g fill="#6b6455" opacity=".6">
+    <rect x="40" y="196" width="180" height="12"/>
+    <rect x="52" y="208" width="10" height="60"/>
+    <rect x="198" y="208" width="10" height="60"/>
+    <rect x="74" y="150" width="52" height="46"/>
+    <rect x="140" y="132" width="38" height="64"/>
+  </g>
+  <g stroke="#5c5548" stroke-width="2.5" opacity=".5" fill="none">
+    <circle cx="100" cy="96" r="30"/>
+  </g>
+  <rect x="12" y="12" width="236" height="296" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+</svg>

@@ -1,0 +1,202 @@
+{
+  "docs": [
+    {
+      "id": "A-001",
+      "category": "about",
+      "title": "基金项目声明",
+      "file": "/archive/content/about/%E5%9F%BA%E9%87%91%E9%A1%B9%E7%9B%AE%E5%A3%B0%E6%98%8E.md",
+      "ready": true
+    },
+    {
+      "id": "MO-001",
+      "category": "mona",
+      "title": "示例 MONÂ 档案",
+      "file": "/archive/content/mona/MO-001.md",
+      "ready": true
+    },
+    {
+      "id": "OT-001",
+      "category": "other",
+      "title": "示例其他档案",
+      "file": "/archive/content/other/OT-001.md",
+      "ready": true
+    },
+    {
+      "id": "PG-000I",
+      "category": "persons",
+      "title": "钟不惑",
+      "file": "/archive/content/persons/PG-000I.md",
+      "ready": true
+    },
+    {
+      "id": "PH-647I",
+      "category": "persons",
+      "title": "钟声晚",
+      "file": "/archive/content/persons/PH-647I.md",
+      "ready": true
+    },
+    {
+      "id": "PH-671B",
+      "category": "persons",
+      "title": "吴铮",
+      "file": "/archive/content/persons/PH-671B.md",
+      "ready": true
+    },
+    {
+      "id": "PN-001K-a",
+      "category": "persons",
+      "title": "齐山海",
+      "file": "/archive/content/persons/PN-001K-a.md",
+      "ready": true
+    },
+    {
+      "id": "PN-001K-b",
+      "category": "persons",
+      "title": "齐若烟",
+      "file": "/archive/content/persons/PN-001K-b.md",
+      "ready": true
+    },
+    {
+      "id": "PN-639B",
+      "category": "persons",
+      "title": "高雅",
+      "file": "/archive/content/persons/PN-639B.md",
+      "ready": true
+    },
+    {
+      "id": "PN-645D",
+      "category": "persons",
+      "title": "齐之巽",
+      "file": "/archive/content/persons/PN-645D.md",
+      "ready": true
+    },
+    {
+      "id": "PN-670D",
+      "category": "persons",
+      "title": "许同尘",
+      "file": "/archive/content/persons/PN-670D.md",
+      "ready": true
+    },
+    {
+      "id": "PN-678K",
+      "category": "persons",
+      "title": "齐彭殇",
+      "file": "/archive/content/persons/PN-678K.md",
+      "ready": true
+    },
+    {
+      "id": "PL-001",
+      "category": "places",
+      "title": "示例地点档案",
+      "file": "/archive/content/places/PL-001.md",
+      "ready": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "about",
+      "en": "关于",
+      "cn": "关于",
+      "color": "beige",
+      "files": [
+        {
+          "id": "A-001",
+          "title": "基金项目声明",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "en": "OTHER",
+      "cn": "其他",
+      "color": "blue",
+      "files": [
+        {
+          "id": "OT-001",
+          "title": "示例其他档案",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": "mona",
+      "en": "MONÂ",
+      "cn": "MONÂ",
+      "color": "black",
+      "files": [
+        {
+          "id": "MO-001",
+          "title": "示例 MONÂ 档案",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": "places",
+      "en": "PLACES",
+      "cn": "地点",
+      "color": "green",
+      "files": [
+        {
+          "id": "PL-001",
+          "title": "示例地点档案",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": "persons",
+      "en": "PERSONS",
+      "cn": "人物",
+      "color": "red",
+      "files": [
+        {
+          "id": "PG-000I",
+          "title": "钟不惑",
+          "ready": true
+        },
+        {
+          "id": "PH-647I",
+          "title": "钟声晚",
+          "ready": true
+        },
+        {
+          "id": "PH-671B",
+          "title": "吴铮",
+          "ready": true
+        },
+        {
+          "id": "PN-001K-a",
+          "title": "齐山海",
+          "ready": true
+        },
+        {
+          "id": "PN-001K-b",
+          "title": "齐若烟",
+          "ready": true
+        },
+        {
+          "id": "PN-639B",
+          "title": "高雅",
+          "ready": true
+        },
+        {
+          "id": "PN-645D",
+          "title": "齐之巽",
+          "ready": true
+        },
+        {
+          "id": "PN-670D",
+          "title": "许同尘",
+          "ready": true
+        },
+        {
+          "id": "PN-678K",
+          "title": "齐彭殇",
+          "ready": true
+        }
+      ]
+    }
+  ]
+}

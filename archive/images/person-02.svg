@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" width="340" height="260" role="img" aria-label="示例照片 建筑工地 1953">
+  <defs>
+    <linearGradient id="p2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6cebd"/>
+      <stop offset="1" stop-color="#9d9686"/>
+    </linearGradient>
+  </defs>
+  <rect width="340" height="260" fill="#efe9db"/>
+  <rect x="12" y="12" width="316" height="236" fill="url(#p2)"/>
+  <!-- 抽象建筑立面 + 脚手架 -->
+  <g fill="#6b6455" opacity=".65">
+    <rect x="40" y="90" width="70" height="130"/>
+    <rect x="120" y="60" width="86" height="160"/>
+    <rect x="216" y="110" width="64" height="110"/>
+  </g>
+  <g stroke="#5c5548" stroke-width="3" opacity=".55" fill="none">
+    <path d="M30 96 H310 M30 150 H310 M30 200 H310"/>
+    <path d="M64 60 V230 M150 40 V230 M244 78 V230"/>
+  </g>
+  <rect x="12" y="12" width="316" height="236" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="2"/>
+</svg>

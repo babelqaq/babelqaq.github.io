@@ -1,0 +1,657 @@
+/* ===========================================================
+   兀孀的个人博客 · 互动主页样式（阶段3）
+   作用范围：source/index.md 内的 #ws-home
+   与 styles.styl 共用 :root 里的 --ws-* 调色板
+   =========================================================== */
+
+/* 主页所在的 post-block 去掉外壳，避免"卡片套卡片"。
+   .ws-home-block 由 ws-home.js 添加（主力），:has() 为纯 CSS 兜底 */
+.post-block.ws-home-block,
+.post-block:has(#ws-home) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.post-block.ws-home-block .post-title,
+.post-block.ws-home-block .post-meta-container,
+.post-block.ws-home-block .post-header,
+.post-block:has(#ws-home) .post-title,
+.post-block:has(#ws-home) .post-meta-container,
+.post-block:has(#ws-home) .post-header {
+  display: none !important;
+}
+/* 主页隐藏站点副标题（已清空，避免留空白行） */
+.ws-is-home .site-subtitle { display: none !important; }
+/* 主页不需要正文的段落缩进等文章排版 */
+.ws-home { margin: 0 auto; }
+.ws-home p { text-indent: 0; }
+
+/* ---------- 通用区块 ---------- */
+.ws-sec { margin: 34px 0 0; }
+.ws-sec-title {
+  font-family: var(--ws-font-title);
+  font-size: 21px;
+  color: var(--ws-pink-deep);
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+.ws-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #FFD9E7, #F3D6FA);
+  color: #fff;
+  font-size: 15px;
+  box-shadow: 0 3px 0 var(--ws-key-shadow);
+}
+.ws-sec-sub {
+  margin: -8px 0 14px;
+  font-size: 13px;
+  color: var(--ws-text-soft);
+}
+
+/* 「去哪里逛逛」：标题下的虚线分隔，黑色档案馆入口位于虚线正下方 */
+#ws-sec-cats .ws-sec-title {
+  padding-bottom: 12px;
+  border-bottom: 1.5px dashed rgba(237, 147, 177, .45);
+}
+
+/* ---------- Hero 简介卡片 ---------- */
+.ws-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 34px 24px 28px;
+  border-radius: 24px;
+  background: linear-gradient(150deg, #FFF4F8 0%, #FFEAF2 45%, #F3EDFD 100%);
+  border: 2px solid #fff;
+  box-shadow: var(--ws-shadow);
+}
+.ws-hero-deco {
+  position: absolute;
+  font-size: 76px;
+  color: rgba(237, 147, 177, .16);
+  pointer-events: none;
+  line-height: 1;
+}
+.ws-hero-deco-1 { top: -12px; left: -6px; transform: rotate(-18deg); }
+.ws-hero-deco-2 {
+  bottom: -20px;
+  right: -4px;
+  font-size: 96px;
+  color: rgba(206, 203, 246, .20);
+  transform: rotate(14deg);
+}
+.ws-hero-avatar {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--ws-pink), var(--ws-lav));
+  box-shadow: 0 6px 18px rgba(225, 119, 212, .36);
+}
+.ws-hero-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #fff;
+  transition: transform .5s ease;
+}
+.ws-hero-avatar:hover img { transform: rotate(8deg) scale(1.05); }
+.ws-hero-name {
+  font-family: var(--ws-font-title);
+  font-size: 30px;
+  color: var(--ws-pink-deep);
+  margin: 0 0 6px;
+  letter-spacing: 2px;
+  border: none;
+}
+.ws-hero-typing {
+  min-height: 24px;
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--ws-text);
+}
+.ws-caret {
+  display: inline-block;
+  color: var(--ws-pink);
+  animation: ws-blink 1s step-end infinite;
+  font-weight: 700;
+}
+@keyframes ws-blink { 50% { opacity: 0; } }
+.ws-hero-desc {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ws-text-soft);
+  margin: 0 auto 16px;
+  max-width: 520px;
+}
+.ws-hero-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.ws-social-btn {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--ws-pink-deep) !important;
+  background: linear-gradient(180deg, #fff, #FFEFF5);
+  border: 1.5px solid #fff;
+  box-shadow: 0 3px 0 var(--ws-key-shadow);
+  transition: transform .14s ease, box-shadow .14s ease;
+  text-decoration: none !important;
+}
+.ws-social-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ws-key-shadow); }
+.ws-social-btn:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ws-key-shadow); }
+
+/* 站点统计 */
+.ws-hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ws-stat {
+  min-width: 76px;
+  padding: 9px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .78);
+  border: 1.5px solid #fff;
+  box-shadow: 0 3px 10px rgba(237, 147, 177, .14);
+}
+.ws-stat b {
+  display: block;
+  font-family: var(--ws-font-title);
+  font-size: 22px;
+  color: var(--ws-pink-deep);
+  line-height: 1.2;
+}
+.ws-stat span { font-size: 11px; color: var(--ws-text-soft); }
+
+/* ---------- 分类快捷入口 ---------- */
+.ws-cat-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.ws-cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff, #FFF2F7);
+  border: 1.5px solid #fff;
+  box-shadow: 0 4px 0 var(--ws-key-shadow);
+  color: var(--ws-text) !important;
+  font-size: 13px;
+  text-decoration: none !important;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.ws-cat-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ws-key-shadow); }
+.ws-cat-chip:active { transform: translateY(4px); box-shadow: 0 0 0 var(--ws-key-shadow); }
+.ws-cat-icon { color: var(--ws-pink); font-size: 14px; }
+.ws-cat-count {
+  background: var(--ws-pink-soft);
+  color: #fff;
+  border-radius: 9px;
+  padding: 1px 7px;
+  font-size: 11px;
+}
+
+/* ---------- 玩点什么 ---------- */
+.ws-play-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.ws-play-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 14px;
+  border-radius: 20px;
+  background: #fff;
+  border: 2px solid #FFE6EF;
+  box-shadow: 0 6px 18px rgba(237, 147, 177, .14);
+  cursor: pointer;
+  text-decoration: none !important;
+  color: var(--ws-text) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  outline: none;
+}
+.ws-play-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ws-pink-soft);
+  box-shadow: 0 12px 26px rgba(237, 147, 177, .24);
+}
+.ws-play-card:focus-visible { border-color: var(--ws-pink); }
+.ws-play-emoji { font-size: 30px; line-height: 1; margin-bottom: 10px; }
+.ws-play-body h3 {
+  font-family: var(--ws-font-title);
+  font-size: 17px;
+  color: var(--ws-pink-deep);
+  margin: 0 0 6px;
+  border: none;
+}
+.ws-play-body p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--ws-text-soft);
+  margin: 0;
+  min-height: 42px;
+}
+.ws-play-go {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ws-pink);
+  font-weight: 700;
+}
+.ws-play-random { background: linear-gradient(160deg, #fff, #FFF6FA); }
+.ws-play-tarot { background: linear-gradient(160deg, #fff, #F8F5FF); }
+.ws-tarot-name {
+  display: none;
+  font-family: var(--ws-font-title);
+  font-size: 14px;
+  color: var(--ws-pink-deep);
+  margin: 3px 0 4px;
+  border: none;
+}
+.ws-tarot-pos {
+  display: none;
+  font-size: 11px;
+  padding: 1px 9px;
+  border-radius: 9px;
+  margin-bottom: 6px;
+  width: fit-content;
+  font-weight: 700;
+}
+.ws-tarot-pos.up { background: #E4F5EC; color: #3E9E6B; }
+.ws-tarot-pos.rev { background: #F3E7FB; color: #9B5BC0; }
+.ws-tarot-done .ws-tarot-name,
+.ws-tarot-done .ws-tarot-pos { display: block; }
+.ws-tarot-done .ws-play-body p { color: var(--ws-text); font-weight: 400; }
+.ws-tarot-redraw {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 5px 12px;
+  border-radius: 11px;
+  border: 1.5px solid #fff;
+  background: linear-gradient(180deg, #fff, #FFF2F7);
+  box-shadow: 0 3px 0 var(--ws-key-shadow);
+  color: var(--ws-pink-deep);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--ws-font-body);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.ws-tarot-redraw:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ws-key-shadow); }
+.ws-tarot-redraw:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ws-key-shadow); }
+.ws-spin .ws-play-emoji { animation: ws-spin-emoji .8s linear infinite; }
+@keyframes ws-spin-emoji { to { transform: rotate(360deg); } }
+.ws-flip .ws-play-emoji { animation: ws-flip-emoji .6s ease; }
+@keyframes ws-flip-emoji { 50% { transform: rotateY(90deg) scale(1.2); } }
+.ws-shake { animation: ws-shake-x .45s ease; }
+@keyframes ws-shake-x {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ---------- 创作月历（可切换年份 / 月份） ---------- */
+.ws-cal-wrap {
+  background: #fff;
+  border: 2px solid #FFE6EF;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(237, 147, 177, .12);
+}
+.ws-cal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.ws-cal-nav {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #FFD9E7, #F3D6FA);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--ws-key-shadow);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.ws-cal-nav:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ws-key-shadow); }
+.ws-cal-nav:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ws-key-shadow); }
+.ws-cal-nav:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 3px 0 var(--ws-key-shadow);
+}
+.ws-cal-sel {
+  font-family: var(--ws-font-title);
+  font-size: 14px;
+  color: var(--ws-pink-deep);
+  border: 2px solid #FFE6EF;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background: #fff;
+  cursor: pointer;
+}
+.ws-cal-head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.ws-cal-head span { text-align: center; font-size: 11px; color: var(--ws-text-soft); }
+.ws-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.ws-cal-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  padding: 5px 6px;
+  font-size: 12px;
+  color: var(--ws-text);
+  transition: transform .12s ease;
+}
+.ws-cal-cell .ws-cal-d { font-weight: 600; line-height: 1; }
+.ws-cal-cell.empty { background: transparent; }
+.ws-cal-cell.lv0 { background: #FBE8EF; }
+.ws-cal-cell.lv1 { background: #FCC9DC; }
+.ws-cal-cell.lv2 { background: #F7A3C2; }
+.ws-cal-cell.lv3 { background: #EE7CA6; }
+.ws-cal-cell.lv4 { background: #DB4F84; }
+.ws-cal-cell.lv3 .ws-cal-d,
+.ws-cal-cell.lv4 .ws-cal-d { color: #fff; }
+.ws-cal-cell.today { outline: 2px solid var(--ws-pink); outline-offset: 1px; }
+.ws-cal-cell:hover { transform: scale(1.05); }
+.ws-cal-summary { flex: 1 1 auto; min-width: 0; }
+.ws-heat-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--ws-text-soft);
+}
+.ws-heat-scale { display: inline-flex; align-items: center; gap: 3px; }
+.ws-heat-scale i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.ws-heat-scale i.lv0 { background: #FBE8EF; }
+.ws-heat-scale i.lv1 { background: #FCC9DC; }
+.ws-heat-scale i.lv2 { background: #F7A3C2; }
+.ws-heat-scale i.lv3 { background: #EE7CA6; }
+.ws-heat-scale i.lv4 { background: #DB4F84; }
+
+/* ---------- 备忘录 ---------- */
+.ws-wish-form { display: flex; gap: 9px; margin-bottom: 16px; }
+#ws-wish-input {
+  flex: 1;
+  padding: 9px 15px;
+  border-radius: 14px;
+  border: 2px solid #FFE0EC;
+  background: #fff;
+  font-family: var(--ws-font-body);
+  font-size: 13.5px;
+  color: var(--ws-text);
+  outline: none;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+#ws-wish-input:focus {
+  border-color: var(--ws-pink-soft);
+  box-shadow: 0 0 0 3px rgba(237, 147, 177, .14);
+}
+#ws-wish-input::placeholder { color: #D6C3CC; }
+#ws-wish-add {
+  padding: 9px 20px;
+  border-radius: 14px;
+  border: 1.5px solid #fff;
+  background: linear-gradient(180deg, var(--ws-pink), var(--ws-pink-deep));
+  color: #fff;
+  font-family: var(--ws-font-title);
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 0 #C9527A;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+#ws-wish-add:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #C9527A; }
+#ws-wish-add:active { transform: translateY(4px); box-shadow: 0 0 0 #C9527A; }
+.ws-wish-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 14px;
+}
+.ws-wish-note {
+  position: relative;
+  padding: 16px 14px 26px;
+  border-radius: 4px 4px 12px 12px;
+  min-height: 104px;
+  box-shadow: 0 4px 12px rgba(90, 74, 82, .12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.ws-wish-note::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 13px;
+  background: rgba(255, 255, 255, .66);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(90, 74, 82, .14);
+}
+.ws-wish-note:hover {
+  transform: translateY(-4px) rotate(0deg) !important;
+  box-shadow: 0 10px 20px rgba(90, 74, 82, .18);
+}
+.ws-wish-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #6B5A62;
+  word-break: break-word;
+}
+.ws-wish-date {
+  position: absolute;
+  left: 14px;
+  bottom: 9px;
+  font-size: 10.5px;
+  color: rgba(107, 90, 98, .55);
+}
+.ws-wish-del {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 19px;
+  height: 19px;
+  line-height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .6);
+  color: #B99AA6;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .16s ease, background .16s ease;
+}
+.ws-wish-note:hover .ws-wish-del { opacity: 1; }
+.ws-wish-del:hover { background: var(--ws-pink); color: #fff; }
+.ws-wish-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--ws-text-soft);
+  font-size: 13px;
+  padding: 18px 0;
+}
+.ws-pop { animation: ws-pop-in .5s cubic-bezier(.34, 1.56, .64, 1); }
+@keyframes ws-pop-in {
+  0% { transform: scale(.5) rotate(-8deg); opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ---------- 最新文章卡片 ---------- */
+.ws-post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: 14px;
+}
+.ws-post-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 13px;
+  border-radius: 18px;
+  background: #fff;
+  border: 2px solid #FFECF3;
+  box-shadow: 0 5px 16px rgba(237, 147, 177, .12);
+  text-decoration: none !important;
+  color: var(--ws-text) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.ws-post-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ws-pink-soft);
+  box-shadow: 0 12px 24px rgba(237, 147, 177, .22);
+}
+.ws-post-cat {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #FFDCE8, #EFE4FB);
+  color: var(--ws-pink-deep);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.ws-post-title {
+  font-family: var(--ws-font-title);
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ws-text);
+  margin: 0 0 7px;
+  border: none;
+}
+.ws-post-card:hover .ws-post-title { color: var(--ws-pink-deep); }
+.ws-post-excerpt {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--ws-text-soft);
+  margin: 0 0 10px;
+  flex: 1;
+}
+.ws-post-date { font-size: 11px; color: #C8B4BE; }
+.ws-more-wrap {
+  text-align: center;
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ws-more-btn {
+  display: inline-block;
+  padding: 9px 26px;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #fff, #FFEFF5);
+  border: 1.5px solid #fff;
+  box-shadow: 0 4px 0 var(--ws-key-shadow);
+  color: var(--ws-pink-deep) !important;
+  font-family: var(--ws-font-title);
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.ws-more-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ws-key-shadow); }
+.ws-more-btn:active { transform: translateY(4px); box-shadow: 0 0 0 var(--ws-key-shadow); }
+.ws-noscript { text-align: center; color: var(--ws-text-soft); padding: 20px; }
+
+/* ---------- 档案馆入口（黑色，严肃，独立于甜粉主题） ---------- */
+.archive-module{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  /* 位于「去哪里逛逛」虚线下方、分类标签上方，通栏与内容区左右边缘对齐 */
+  margin: 16px 0 18px;
+  padding: 22px 18px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none !important;
+  color: #e9e4dc !important;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.archive-module:hover{ border-color: rgba(255, 255, 255, .5); transform: translateY(-2px); }
+.archive-module__cn{
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 18px;
+  letter-spacing: .22em;
+  text-indent: .22em;
+}
+.archive-module__en{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: .42em;
+  color: rgba(233, 228, 220, .55);
+  text-indent: .42em;
+}
+
+/* ---------- 移动端（≤767px） ---------- */
+@media (max-width: 767px) {
+  .ws-hero { padding: 26px 16px 22px; border-radius: 20px; }
+  .ws-hero-avatar { width: 76px; height: 76px; }
+  .ws-hero-name { font-size: 25px; }
+  /* 打字机最长一行约 266px，窄屏 14px 易换行；降到 12.5px 保证单行 */
+  .ws-hero-typing { font-size: 12.5px; min-height: 22px; }
+  .ws-sec { margin-top: 26px; }
+  .ws-sec-title { font-size: 18px; }
+  .ws-play-grid { grid-template-columns: 1fr; }
+  .ws-post-grid { grid-template-columns: 1fr; }
+  .ws-wish-wall { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 11px; }
+  /* 修复：原本写成 .ws-heat-wrap（该类不存在），月历容器移动端内边距从未生效 */
+  .ws-cal-wrap { padding: 12px 10px; }
+  .ws-cal-cell { font-size: 11px; min-height: 30px; padding: 4px 4px; }
+  .ws-hero-stats .ws-stat { min-width: 66px; padding: 7px 10px; }
+  .ws-stat b { font-size: 19px; }
+}
+
+/* ---------- 超小屏（≤480px，如 iPhone SE） ---------- */
+@media (max-width: 480px) {
+  .ws-hero { padding: 22px 12px 18px; }
+  .ws-hero-name { font-size: 22px; }
+  .ws-hero-typing { font-size: 12px; }
+  .ws-sec-title { font-size: 17px; }
+  .ws-cal-head span { font-size: 10px; }
+  .ws-cal-cell { font-size: 10.5px; min-height: 28px; }
+  .ws-cat-chip { font-size: 12.5px; padding: 7px 12px; }
+  .ws-hero-social { gap: 8px; }
+  .ws-social-btn { padding: 6px 13px; font-size: 12.5px; }
+  .ws-wish-input, #ws-wish-input { font-size: 13px; }
+}

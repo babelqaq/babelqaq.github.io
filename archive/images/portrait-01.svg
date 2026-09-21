@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400" role="img" aria-label="档案肖像">
+  <defs>
+    <linearGradient id="pt1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d3cbb9"/>
+      <stop offset="1" stop-color="#a1978a"/>
+    </linearGradient>
+    <filter id="pgrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+  <rect width="300" height="400" fill="#f0eadc"/>
+  <rect x="12" y="12" width="276" height="376" fill="url(#pt1)" filter="url(#pgrain)"/>
+  <circle cx="150" cy="156" r="56" fill="#6b6355" opacity=".74"/>
+  <path d="M150 222 C100 222 74 262 68 322 L232 322 C226 262 200 222 150 222 Z" fill="#5b5345" opacity=".74"/>
+  <rect x="12" y="12" width="276" height="376" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+</svg>

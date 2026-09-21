@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5x5 Crossword Game</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <!-- 背景层 - 彻底独立 -->
+    <div id="bg"></div>
+    
+    <!-- 缩放根容器 -->
+    <div id="scale-root">
+        <!-- 游戏主容器 -->
+        <div id="gameContainer"></div>
+    </div>
+    
+    <!-- 引入游戏模块 -->
+    <script type="module">
+        // 游戏入口
+        import { App } from './src/ui/App.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('gameContainer');
+            new App(container);
+        });
+    </script>
+</body>
+</html>

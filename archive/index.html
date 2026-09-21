@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>那西索亚故事集 · NASSISRI STORY</title>
+<meta name="description" content="那西索亚故事集档案馆">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/archive.css?v=20260921a">
+</head>
+<body class="archive-body">
+<div class="archive-stage" id="archiveStage">
+
+  <div class="archive-starfield" aria-hidden="true"></div>
+
+  <!-- 右上角：返回博客主页 -->
+  <a class="archive-home-link" href="/" aria-label="返回博客主页">
+    <svg class="archive-home-link__eye" viewBox="0 0 30 22" aria-hidden="true">
+      <g class="eye--lashes-up">
+        <path d="M8.4 6.6 L5.2 3.2"></path>
+        <path d="M15 5.4 L15 1.6"></path>
+        <path d="M21.6 6.6 L24.8 3.2"></path>
+      </g>
+      <g class="eye--open">
+        <ellipse cx="15" cy="11.5" rx="7.4" ry="5"></ellipse>
+        <circle cx="15" cy="11.5" r="2" fill="currentColor" stroke="none"></circle>
+      </g>
+      <g class="eye--closed">
+        <path d="M7.8 11.5 Q15 17 22.2 11.5"></path>
+      </g>
+      <g class="eye--lashes-down">
+        <path d="M9.8 13.2 L8.2 17"></path>
+        <path d="M15 14.4 L15 18.4"></path>
+        <path d="M20.2 13.2 L21.8 17"></path>
+      </g>
+    </svg>
+    <span class="archive-home-link__txt">
+      <span class="archive-home-link__main">
+        <span class="archive-home-link__cn">入梦</span>
+        <span class="archive-home-link__en">Dream</span>
+      </span>
+      <span class="archive-home-link__alt">
+        <span class="archive-home-link__cn">清醒</span>
+        <span class="archive-home-link__en">AWAKEN</span>
+      </span>
+    </span>
+  </a>
+
+  <!-- 档案馆首页：四个竖向叠放的档案夹 -->
+  <main class="archive-home" id="archiveHome">
+    <header class="archive-masthead">
+      <h1 class="archive-title">那西索亚故事集</h1>
+      <p class="archive-title-en">NASSISRI STORY</p>
+    </header>
+
+    <div class="archive-stack" id="archiveStack" role="list" aria-label="档案分类"></div>
+
+    <p class="archive-hint" aria-hidden="true">点击任意档案夹，将其取出并翻开</p>
+  </main>
+
+  <!-- 打开后的左右双页阅读器 -->
+  <section class="archive-reader" id="archiveReader" aria-hidden="true">
+    <button class="archive-back" id="archiveBack" type="button">← 返回</button>
+    <div class="archive-book" id="archiveBook">
+      <div class="archive-page archive-page--left" id="archiveLeft"></div>
+      <div class="archive-page archive-page--right" id="archiveRight"></div>
+      <div class="archive-cover" id="archiveCover" aria-hidden="true">
+        <span class="archive-cover__front">
+          <span class="archive-cover__en"></span>
+          <span class="archive-cover__files"></span>
+        </span>
+        <span class="archive-cover__back"></span>
+      </div>
+      <div class="archive-book__foot" id="archiveFoot"></div>
+    </div>
+    <nav class="archive-pager" id="archivePager" aria-label="目录翻页">
+      <button class="archive-pager-btn" id="archivePrev" type="button" disabled>← 上一页</button>
+      <span class="archive-pager-num" id="archivePageNum"></span>
+      <button class="archive-pager-btn" id="archiveNext" type="button" disabled>下一页 →</button>
+    </nav>
+  </section>
+
+</div>
+<noscript><div class="archive-noscript">那西索亚故事集需要启用 JavaScript 才能浏览档案。</div></noscript>
+<script src="/js/archive.js?v=20260921a" defer></script>
+</body>
+</html>

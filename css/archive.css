@@ -1,0 +1,495 @@
+/* ===========================================================
+   那西索亚故事集 · 档案馆（独立视觉系统）
+   全部使用 .archive- 命名空间，不依赖博客主题，不污染其他页面
+   =========================================================== */
+
+:root{
+  --folder-red:   #7f292b;
+  --folder-green: #465b46;
+  --folder-black: #111111;
+  --folder-blue:  #314b67;
+  --folder-beige: #e8dfcd;
+  --fw: 340px;   /* 文件夹宽度（A4 比例 ≈0.708） */
+  --fh: 480px;   /* 文件夹高度 */
+  --ov-x: 3px;   /* 每层水平偏移（原 6px 的一半） */
+  --ov-y: 11px;  /* 每层垂直偏移（原 22px 的一半） */
+  --label-w: 46px;
+  --label-h: 76px;   /* 标签基准高；实际高度与纵向起点由 JS 按分类数量自适应（更紧凑） */
+  --label-gap: 8px;
+  --label-fs: 15px;  /* 标签字号：随标签高度自适应（JS 在变矮时下调） */
+}
+
+/* 注意：这是 body 的全局规则（body.archive-body），与书页 .archive-book .archive-page 无关 */
+.archive-body{
+  margin: 0;
+  background: #000;
+  color: #e9e4dc;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ---------- 星空背景（克制，静态） ---------- */
+.archive-starfield{
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-color: #000;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.55), transparent),
+    radial-gradient(1px 1px at 28% 62%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1.4px 1.4px at 44% 28%, rgba(255,255,255,.50), transparent),
+    radial-gradient(1px 1px at 63% 12%, rgba(255,255,255,.40), transparent),
+    radial-gradient(1px 1px at 78% 40%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1.3px 1.3px at 88% 70%, rgba(255,255,255,.40), transparent),
+    radial-gradient(1px 1px at 18% 84%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 55% 88%, rgba(255,255,255,.40), transparent),
+    radial-gradient(1.2px 1.2px at 92% 20%, rgba(255,255,255,.40), transparent),
+    radial-gradient(1px 1px at 36% 92%, rgba(255,255,255,.30), transparent),
+    radial-gradient(1px 1px at 70% 78%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1.1px 1.1px at 8% 48%, rgba(255,255,255,.40), transparent);
+}
+
+.archive-stage{
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
+  padding: 6vh 16px 8vh;
+  box-sizing: border-box;
+}
+
+/* ---------- 标题（克制，不夸张） ---------- */
+.archive-home{
+  width: 100%;               /* 撑满 stage，使档案堆的右对齐/边距相对整个视口生效 */
+  display: flex; flex-direction: column; /* 让子元素的 align-self / 边距生效 */
+}
+.archive-masthead{ text-align: center; margin-bottom: 5vh; }
+.archive-title{
+  font-weight: 600; font-size: 26px; letter-spacing: .32em;
+  margin: 0; color: #e9e4dc; text-indent: .32em;
+}
+.archive-title-en{
+  margin: 10px 0 0; font-size: 12px; letter-spacing: .5em;
+  color: rgba(233,228,220,.5); text-indent: .5em;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* ---------- 文件夹堆 ---------- */
+.archive-stack{
+  position: relative;
+  width: calc(var(--fw) + 64px);
+  height: var(--fh);
+  align-self: flex-end;
+  margin: 0 10vw 0 0;
+  perspective: 1500px;
+  transition: opacity .45s ease;
+}
+
+.archive-folder{
+  position: absolute; bottom: 0; left: 14px;
+  width: var(--fw); height: var(--fh);
+  padding: 0; border: none; background: none; cursor: pointer;
+  transform: translate(calc(var(--i) * var(--ov-x) * -1), calc(var(--i) * var(--ov-y) * -1));
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform .42s cubic-bezier(.22,.61,.36,1), box-shadow .42s ease, filter .42s ease, opacity .35s ease;
+  /* 阴影向左下偏移并收紧：若用居中大模糊，上方档案夹的投影会向右洒在下层标签上，
+     在标签与夹身的衔接处拉出一条约 25px 的暗色坡（读作"断口"） */
+  box-shadow: -10px 16px 26px -8px rgba(0,0,0,.55);
+  z-index: calc(10 + var(--i));
+}
+/* 文件夹正面（纸板质感） */
+.archive-folder__face{
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.16), rgba(255,255,255,0) 42%),
+    linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,0) 60%),
+    var(--folder-color);
+  border-radius: 3px 3px 4px 4px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 26px 22px; overflow: hidden;
+  transform: rotateY(0deg);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  transition: transform .42s cubic-bezier(.22,.61,.36,1);
+}
+/* 左侧装订脊 */
+.archive-folder__face::before{
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px;
+  background: linear-gradient(90deg, rgba(0,0,0,.30), rgba(0,0,0,0) 92%);
+}
+/* MONÂ 文件夹接近纯黑，加细边使其在黑底上可辨 */
+.archive-folder--black .archive-folder__face{
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+}
+/* 米色文件夹（关于）：浅底改用棕色字，并加淡描边与黑底区分 */
+.archive-folder--beige .archive-folder__face{
+  box-shadow: inset 0 0 0 1px rgba(107,84,58,.22);
+}
+.archive-folder--beige .archive-folder__en{ color: #6b543a; }
+.archive-folder--beige .archive-folder__files{ color: rgba(107,84,58,.72); }
+.archive-folder--beige .archive-folder__tab{
+  /* 只描右/上/下三边：标签左缘压在封面渐变区上，左描边会在交界处形成一条断线 */
+  box-shadow: inset -1px 0 0 rgba(107,84,58,.2),
+              inset 0 1px 0 rgba(107,84,58,.2),
+              inset 0 -1px 0 rgba(107,84,58,.2);
+}
+.archive-folder--beige .archive-folder__tab-cn{ color: #6b543a; }
+.archive-folder__en{
+  font-family: "IBM Plex Mono", monospace; font-size: 15px; letter-spacing: .18em;
+  color: rgba(255,255,255,.92);
+}
+.archive-folder__files{
+  font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .12em;
+  color: rgba(255,255,255,.62);
+}
+/* 右侧标签：与封面连成一体的竖向长方形（高:宽 = 2:1） */
+.archive-folder__tab{
+  position: absolute;
+  /* 抵消文件夹层叠位移，使各标签在右侧排成不重叠的纵列；
+     --label-offset 由 JS 计算，使整列在档案夹高度内垂直居中（更紧凑，不再撑满） */
+  top: calc(var(--label-offset, 0px) + var(--li) * (var(--label-h) + var(--label-gap)) + var(--i) * var(--ov-y));
+  right: -40px;
+  width: var(--label-w); height: var(--label-h);
+  /* 与封面同色同层：无渐变、无边框、无投影，读作与封面一体的延伸 */
+  /* 关键：标签叠在封面之上（左侧压在封面边缘上），但封面正面有"高光 + 底部压暗"
+     两层渐变，纯色标签与被压暗的封面在交界处会形成一条亮色断口。
+     修法：给标签叠加与封面完全相同的两层渐变，且渐变按「夹身坐标系」渲染——
+     background-size = 夹身尺寸、position = 标签相对夹身的偏移取负，交界处颜色逐像素连续。 */
+  background-color: var(--folder-color);
+  background-image:
+    linear-gradient(160deg, rgba(255,255,255,.16), rgba(255,255,255,0) 42%),
+    linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,0) 60%);
+  background-repeat: no-repeat;
+  /* 压暗层（0deg 是垂直渐变）：按标签宽度渲染、纵向对齐夹身坐标 → 整条标签横向均匀，
+     且与夹身同一高度的压暗量逐像素一致（伸出夹身外的部分也连续）；
+     高光层（160deg）：按夹身坐标渲染，标签位于夹身右缘处其贡献≈0，仅用于重叠区完全一致 */
+  background-size: var(--fw) var(--fh), 100% var(--fh);
+  background-position: calc(-1 * (var(--fw) - var(--tab-overlap, 6px))) var(--tab-y, 0px),
+                       0 var(--tab-y, 0px);
+  --tab-y: calc(-1 * (var(--label-offset, 0px) + var(--li) * (var(--label-h) + var(--label-gap)) + var(--i) * var(--ov-y)));
+  border-radius: 0 4px 4px 0;
+  /* 与文件夹外阴影同系的柔和投影，避免标签在黑底上像被"剪"出来 */
+  box-shadow: 10px 14px 26px -10px rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center;
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-size: var(--label-fs); letter-spacing: .14em; color: rgba(255,255,255,.92);
+  transition: transform .42s cubic-bezier(.22,.61,.36,1), filter .42s ease, opacity .25s ease;
+}
+.archive-folder__tab-cn{ font-size: var(--label-fs); color: rgba(255,255,255,.92); letter-spacing: .14em; }
+
+/* hover：只加深阴影，不做任何位移（位移会让档案夹偏离初始位置，破坏与阅读器第一帧的对齐） */
+.archive-folder:hover,
+.archive-folder:focus-visible{
+  z-index: 60;
+  box-shadow: -10px 24px 34px -10px rgba(0,0,0,.6);
+  outline: none;
+}
+.archive-folder:hover .archive-folder__tab,
+.archive-folder:focus-visible .archive-folder__tab{ transform: none; }
+.archive-folder:focus-visible .archive-folder__face{
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.5);
+}
+.archive-folder--beige:focus-visible .archive-folder__face{
+  box-shadow: inset 0 0 0 2px rgba(107,84,58,.6);
+}
+
+/* 点击：被点击者轻轻拿起并微转（像要翻开），其余后退，不再“悬浮到最前” */
+/* 点击后不再抬起/倾斜：阅读器第一帧必须与档案夹的初始位置严格重合，任何位移都会表现为跳变 */
+.archive-folder.is-extract{
+  z-index: 80;
+  box-shadow: 0 30px 60px rgba(0,0,0,.65);
+}
+.archive-folder.is-recede{
+  transform: translate(calc(var(--i) * var(--ov-x) * -1 + 6px), calc(var(--i) * var(--ov-y) * -1 + 14px)) scale(.97);
+  filter: brightness(.6);
+  box-shadow: 0 8px 18px rgba(0,0,0,.5);
+}
+
+.archive-hint{ margin-top: 5vh; text-align: center; font-size: 12px; letter-spacing: .16em; color: rgba(233,228,220,.4); }
+
+/* 阅读态：隐藏首页 */
+.archive-stage.is-reading .archive-home{ opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s ease; }
+/* 侧标签先一步隐去，避免书体滑向中央时标签显得"脱落" */
+.archive-stage.is-reading .archive-folder__tab{ opacity: 0; transition: opacity .16s ease; }
+
+/* ---------- 双页阅读器 ---------- */
+.archive-reader{
+  position: fixed; inset: 0; z-index: 5;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 5vh 16px; box-sizing: border-box;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .4s ease, visibility 0s linear .4s;
+}
+.archive-reader.is-active{
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity .4s ease, visibility 0s;
+}
+
+.archive-back{
+  position: absolute; top: 62px; left: 26px;
+  background: none; border: 1px solid rgba(233,228,220,.35); color: #e9e4dc;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .18em;
+  padding: 8px 16px; border-radius: 2px; cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+.archive-back:hover{ background: rgba(233,228,220,.1); border-color: rgba(233,228,220,.6); }
+
+/* ---------- 右上角：返回博客主页（闭眼 / 睁眼） ---------- */
+.archive-home-link{
+  position: absolute; top: 20px; left: 26px; z-index: 7;
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: #e9e4dc;
+  opacity: .78;
+  transition: opacity .25s ease;
+}
+.archive-home-link:hover,
+.archive-home-link:focus-visible{ opacity: 1; outline: none; }
+.archive-home-link__eye{
+  width: 28px; height: 21px; flex: none;
+  stroke: #e9e4dc; stroke-width: 1.8; fill: none;
+  stroke-linecap: round; stroke-linejoin: round; overflow: visible;
+}
+.archive-home-link__eye .eye--open,
+.archive-home-link__eye .eye--lashes-up{ opacity: 0; }
+.archive-home-link__eye .eye--closed,
+.archive-home-link__eye .eye--lashes-down{ opacity: 1; }
+.archive-home-link:hover .archive-home-link__eye .eye--open,
+.archive-home-link:hover .archive-home-link__eye .eye--lashes-up,
+.archive-home-link:focus-visible .archive-home-link__eye .eye--open,
+.archive-home-link:focus-visible .archive-home-link__eye .eye--lashes-up{ opacity: 1; }
+.archive-home-link:hover .archive-home-link__eye .eye--closed,
+.archive-home-link:hover .archive-home-link__eye .eye--lashes-down,
+.archive-home-link:focus-visible .archive-home-link__eye .eye--closed,
+.archive-home-link:focus-visible .archive-home-link__eye .eye--lashes-down{ opacity: 0; }
+.archive-home-link__eye .eye--open,
+.archive-home-link__eye .eye--closed,
+.archive-home-link__eye .eye--lashes-up,
+.archive-home-link__eye .eye--lashes-down{ transition: opacity .25s ease; }
+
+.archive-home-link__txt{ display: flex; flex-direction: column; line-height: 1.15; }
+.archive-home-link__main,
+.archive-home-link__alt{ display: flex; flex-direction: column; }
+.archive-home-link__alt{ display: none; }
+.archive-home-link:hover .archive-home-link__main,
+.archive-home-link:focus-visible .archive-home-link__main{ display: none; }
+.archive-home-link:hover .archive-home-link__alt,
+.archive-home-link:focus-visible .archive-home-link__alt{ display: flex; }
+.archive-home-link__cn{ font-size: 14px; letter-spacing: .12em; }
+.archive-home-link__en{
+  font-size: 9px; letter-spacing: .32em; margin-top: 3px;
+  color: rgba(233,228,220,.6);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.archive-book{
+  position: relative; display: flex;
+  perspective: 1800px;
+  opacity: 0;
+  transition: opacity .12s ease, transform .45s cubic-bezier(.2,.7,.2,1);
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,.6));
+}
+.archive-book.is-open{ opacity: 1; }
+/* 从正文页「返回」目录：瞬间呈现，跳过翻开 / 淡入动画
+   （仅 folderEl 为 null 的返回场景启用，一帧后移除以恢复后续交互的过渡） */
+.archive-book.is-instant,
+.archive-reader.is-instant,
+.archive-book.is-instant *,
+.archive-reader.is-instant *{ transition: none !important; }
+.archive-book .archive-page{
+  width: auto;
+  height: min(var(--fh), calc(100vh - 250px));
+  aspect-ratio: 17 / 24; /* 单页 A4：宽:高 = 340:480，摊开 = 高A4长边 × 宽2短边 */
+  background: #efe7d4;
+  color: #2a2620;
+  /* 内边距随视口高度自适应：矮屏时自动收紧，保证满 6 条也不越出页框 */
+  padding: clamp(16px, 3.2vh, 34px) clamp(18px, 2.2vw, 30px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.archive-page--left{
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity .4s ease .9s;
+}
+.archive-book.is-open .archive-page--left{ opacity: 1; }
+/* 第一跨左页 = 摊开的档案夹内侧：满幅纯色、无文字、无内框 */
+.archive-book .archive-page--cover{
+  background: var(--folder-color);
+  padding: 0;
+  box-shadow: none;
+}
+/* 后续跨左页 = 上一页的空白背面：与正文同色米白纸，无内容，仅在装订侧留内阴影 */
+.archive-book .archive-page--blank{
+  background: #efe7d4;
+  box-shadow: inset -18px 0 30px rgba(0,0,0,.10);
+}
+.archive-page--right{
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 18px 0 30px rgba(0,0,0,.12);
+}
+
+/* 封面翻板：盖在右页上，绕左侧装订线一次性从右向左翻开 180°（单一连续动作） */
+.archive-cover{
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 50%;
+  z-index: 2;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform .65s cubic-bezier(.4,.08,.18,1) .7s;
+  pointer-events: none;
+}
+.archive-book.is-open .archive-cover{ transform: rotateY(-180deg); }
+.archive-cover__front,
+.archive-cover__back{
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.archive-cover__front{
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.16), rgba(255,255,255,0) 42%),
+    linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,0) 60%),
+    var(--folder-color);
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 26px 22px; box-sizing: border-box;
+}
+/* 装订脊 */
+.archive-cover__front::before{
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px;
+  background: linear-gradient(90deg, rgba(0,0,0,.30), rgba(0,0,0,0) 92%);
+}
+.archive-cover__en{
+  font-family: "IBM Plex Mono", monospace; font-size: 15px; letter-spacing: .18em;
+  color: rgba(255,255,255,.92);
+}
+.archive-cover__files{
+  font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .12em;
+  color: rgba(255,255,255,.62);
+}
+/* 浅色分类（米色）：封面翻板上的文字改棕色 */
+.archive-cover[data-color="beige"] .archive-cover__en{ color: #6b543a; }
+.archive-cover[data-color="beige"] .archive-cover__files{ color: rgba(107,84,58,.72); }
+/* 翻板背面：封面内侧。第 1 跨与左页同色（摊开的档案夹内侧）；
+   翻过目录首页后（.is-past-cover）变成「细书脊 + 米白纸背」，露出下面的空白左页 */
+.archive-cover__back{
+  transform: rotateY(180deg);
+  background: var(--folder-color);
+  border-radius: 3px 0 0 3px;
+  transition: background .3s ease;
+}
+/* 翻板翻开 -180° 后，背面预旋转的 180° 与之抵消（净旋转 0），故不是镜像：
+   本地左缘 = 视觉左缘。书脊红条写在渐变起点（to right = 从左边起），
+   装订侧内阴影用负偏移（视觉右缘）。 */
+.archive-book.is-past-cover .archive-cover__back{
+  background: linear-gradient(to right, var(--folder-color) 12px, #efe7d4 12px);
+  box-shadow: inset -18px 0 30px rgba(0,0,0,.12);
+}
+
+.archive-book__foot{
+  position: absolute; left: 0; right: 0; bottom: -30px;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .3em;
+  color: rgba(233,228,220,.5);
+}
+
+/* 右页 / 续页：米白 A4 索引 */
+.archive-index{ height: 100%; display: flex; flex-direction: column; }
+.archive-index__en{ font-family: "IBM Plex Mono", monospace; font-size: 20px; letter-spacing: .14em; color: #3a322a; }
+.archive-index__cn{ font-size: 15px; letter-spacing: .18em; color: #6a5d4f; margin-top: 4px; }
+/* 中文副标题：位于英文 ARCHIVE INDEX 之上 */
+.archive-index__sub-cn{ font-size: clamp(12px, 1.7vh, 13px); letter-spacing: .22em; color: #6a5d4f; }
+.archive-index__sub{ font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .34em; color: #9a8a76; margin-top: 5px; }
+.archive-index__rule{ height: 1px; background: linear-gradient(90deg, #b9a988, #e7ddc8, #b9a988); margin: 10px 0 12px; opacity: .7; }
+/* 列表高度受 A4 页框约束：min-height:0 + overflow:hidden，保证满 6 条也不越界 */
+.archive-index__list{ display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; }
+
+/* 条目：弹性均分列表剩余高度，填满整页；max-height 防止条目过少时被拉得过高 */
+.archive-row{
+  flex: 1 1 0; min-height: 0; max-height: 84px;
+  display: flex; align-items: center; gap: 14px; padding: 0 2px;
+  border-bottom: 1px dotted rgba(120,104,82,.32);
+}
+/* 已进入正文档案阅读器的条目：可点击，悬停仅轻微加深，不做卡片化 */
+.archive-row--link{ text-decoration: none; color: inherit; cursor: pointer; transition: background .18s ease; }
+.archive-row--link:hover{ background: rgba(120,104,82,.09); }
+.archive-row--link:hover .archive-row__id{ color: #4a3f31; }
+/* 刚从正文返回的条目：极轻的标记，帮助定位（不卡片化） */
+.archive-row--current{
+  background: rgba(120,104,82,.07);
+  box-shadow: inset 3px 0 0 rgba(120,104,82,.35);
+}
+/* ID 列：等宽定宽（--id-w 由 JS 按分类最长 ID 计算），保证第二列人名左端严格对齐 */
+.archive-row__id{
+  font-family: "IBM Plex Mono", monospace; font-size: clamp(12.5px, 1.5vh, 13.5px); color: #7a6a55;
+  flex: none; width: var(--id-w, 9ch); white-space: nowrap;
+}
+.archive-row__body{ display: flex; flex-direction: column; }
+.archive-row__title{ font-size: clamp(13.5px, 1.75vh, 15.5px); color: #2a2620; }
+.archive-row__sub{ font-family: "IBM Plex Mono", monospace; font-size: clamp(8.5px, 1.15vh, 9.5px); letter-spacing: .2em; color: #a7967f; margin-top: 2px; }
+
+/* 翻页 */
+.archive-pager{
+  display: flex; align-items: center; gap: 20px; margin-top: 48px; font-family: "IBM Plex Mono", monospace;
+  opacity: 0; transition: opacity .3s ease .7s; /* 书体滑到中央后再浮现 */
+}
+.archive-reader.is-active .archive-pager{ opacity: 1; }
+.archive-pager-btn{
+  background: none; border: 1px solid rgba(233,228,220,.3); color: #e9e4dc;
+  font-size: 12px; letter-spacing: .12em; padding: 7px 16px; border-radius: 2px; cursor: pointer;
+  transition: background .2s ease, opacity .2s ease;
+}
+.archive-pager-btn:hover:not(:disabled){ background: rgba(233,228,220,.1); }
+.archive-pager-btn:disabled{ opacity: .3; cursor: not-allowed; }
+.archive-pager-num{ font-size: 11px; letter-spacing: .2em; color: rgba(233,228,220,.6); }
+
+.archive-noscript{
+  position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: #e9e4dc; font-family: "IBM Plex Mono", monospace; letter-spacing: .1em;
+}
+
+@keyframes archive-fade{ from{ opacity: .3; } to{ opacity: 1; } }
+
+/* ---------- 响应式：手机端只保留右页（单页） ---------- */
+@media (max-width: 760px){
+  :root{
+    --fw: 222px; --fh: 314px;
+    --label-w: 40px; --label-h: 58px; --label-gap: 6px; --label-fs: 13px;
+    --tab-overlap: 12px;   /* right:-34px、宽 46px → 标签左侧压入夹身 12px */
+  }
+  .archive-stack{ width: calc(var(--fw) + 52px); align-self: center; margin: 0 auto; }
+  .archive-folder__tab{ right: -34px; }
+  .archive-folder__tab-cn{ letter-spacing: .12em; }
+
+  .archive-page--left{ display: none; }
+  .archive-cover{ display: none; }
+  .archive-page--right{ border-radius: 3px; }
+  /* 手机端页框更小：字号略降，条目靠弹性均分仍填满整页 */
+  .archive-book .archive-page{ padding: clamp(12px, 2.6vh, 24px) 16px; }
+  .archive-index__rule{ margin: 7px 0 9px; }
+  .archive-index__sub{ margin-top: 3px; }
+  .archive-index__sub-cn{ font-size: 11.5px; }
+  .archive-row{ gap: 10px; max-height: 64px; }
+  .archive-row__title{ font-size: 13px; }
+  .archive-row__sub{ font-size: 8.5px; }
+  .archive-back{ top: 16px; left: 16px; padding: 7px 12px; }
+  .archive-pager{ margin-top: 40px; }
+}
+
+/* ---------- 降低动效偏好 ---------- */
+@media (prefers-reduced-motion: reduce){
+  .archive-folder,
+  .archive-folder__tab,
+  .archive-page--right,
+  .archive-page--left,
+  .archive-book,
+  .archive-reader{ transition: none !important; }
+  .archive-cover{ transition: none !important; }
+  .archive-page--left{ opacity: 1 !important; }
+  .archive-book{ transform: none !important; opacity: 1 !important; }
+  .archive-folder.is-extract,
+  .archive-folder.is-recede{ transform: none !important; filter: none !important; }
+  .archive-folder.is-extract .archive-folder__face{ transform: none !important; }
+}

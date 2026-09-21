@@ -1,0 +1,368 @@
+/* ===========================================================
+   那西索亚故事集 · 正文档案阅读器（第二阶段）
+   命名空间 .ar- ，与博客主题及第一阶段 .archive- 完全隔离
+   =========================================================== */
+
+:root{
+  --ar-paper:      #eee9dc;   /* A4 米白 */
+  --ar-paper-edge: #ded7c6;
+  --ar-ink:        #24211d;   /* 正文 */
+  --ar-ink-soft:   #686258;   /* 辅助文字 */
+  --ar-ink-faint:  #8b8272;   /* 编号 / 页码 */
+  --ar-folder-red:   #7f292b;
+  --ar-folder-green: #465b46;
+  --ar-folder-black: #111111;
+  --ar-folder-blue:  #314b67;
+}
+
+.ar-body{
+  margin: 0; height: 100vh; height: 100dvh;
+  background: #000; color: #e9e4dc;
+  font-family: "EB Garamond", "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;              /* 指南 §7：禁止纵向无限滚动 */
+}
+.ar-starfield{
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 14% 22%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 31% 68%, rgba(255,255,255,.32), transparent),
+    radial-gradient(1.3px 1.3px at 52% 16%, rgba(255,255,255,.46), transparent),
+    radial-gradient(1px 1px at 69% 44%, rgba(255,255,255,.36), transparent),
+    radial-gradient(1.2px 1.2px at 84% 74%, rgba(255,255,255,.40), transparent),
+    radial-gradient(1px 1px at 22% 88%, rgba(255,255,255,.30), transparent),
+    radial-gradient(1.1px 1.1px at 91% 26%, rgba(255,255,255,.34), transparent);
+}
+
+/* ---------- 顶部：极少量档案信息（§66） ---------- */
+.ar-topbar{
+  position: fixed; z-index: 40; top: 18px; left: 22px; right: 22px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ar-back{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px; letter-spacing: .18em;
+  color: rgba(233,228,220,.62); text-decoration: none;
+  border: 1px solid rgba(233,228,220,.28); border-radius: 2px;
+  padding: 7px 13px; transition: color .2s ease, border-color .2s ease;
+}
+.ar-back:hover{ color: #e9e4dc; border-color: rgba(233,228,220,.6); }
+.ar-stamp{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .26em; color: rgba(233,228,220,.42);
+}
+
+/* ---------- 阅读舞台 ---------- */
+.ar-stage{
+  position: relative; z-index: 1;
+  height: 100vh; height: 100dvh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 74px 16px 40px; box-sizing: border-box;
+}
+.ar-spread{
+  position: relative; display: flex;
+  height: min(78vh, 860px, 66vw);   /* A4：高度随视口，宽度按 210/297 推导 */
+  perspective: 1600px;
+  filter: drop-shadow(0 26px 44px rgba(0,0,0,.62));
+  touch-action: pan-y;
+}
+
+/* ---------- A4 纸 ---------- */
+.ar-page{
+  position: relative;
+  height: 100%; aspect-ratio: 210 / 297;   /* 固定比例，绝不因内容变长 */
+  background: var(--ar-paper);
+  color: var(--ar-ink);
+  overflow: hidden;
+}
+/* 纸张：极轻噪点 + 极淡边缘暗化（§10，不做强纹理） */
+.ar-page::after{
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 30;
+  background:
+    radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 62%, rgba(90,76,52,.10) 100%),
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 22%);
+  mix-blend-mode: multiply;
+}
+.ar-page--right{
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 16px 0 26px rgba(120,100,64,.14);   /* 装订侧暗部 */
+}
+.ar-page--left{
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset -14px 0 24px rgba(120,100,64,.10);
+}
+/* 第 0 跨：左页 = 档案夹内侧（满幅分类色） */
+.ar-page--left.is-interior{
+  background: var(--ar-folder-color, var(--ar-folder-red));
+  box-shadow: none;
+}
+.ar-page--left.is-interior::after{ display: none; }
+/* 后续跨：左页 = 上一页 A4 的纯米色背面，左侧露出一线封面色（§4） */
+.ar-page--left:not(.is-interior)::before{
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3.2%; background: var(--ar-folder-color, var(--ar-folder-red));
+  z-index: 2;
+}
+
+/* ---------- 正文流（安全区 §52） ---------- */
+.ar-flow{
+  position: relative; z-index: 10;
+  height: 100%; box-sizing: border-box;
+  padding: 11% 12% 13%;
+  overflow: hidden;                 /* 溢出不撑破 A4，交由 debug 提示（§53） */
+  /* A4 高度随视口变化，字号温和跟随（15–17px 区间），避免小窗口溢出 */
+  font-size: clamp(13.5px, 1.85vh, 17px); line-height: 1.86;
+  letter-spacing: .01em;
+}
+.ar-flow > p{
+  margin: 0 0 .82em;
+  text-align: justify;            /* 两端对齐，版心更规整 */
+  text-justify: inter-ideograph; /* CJK 按字距拉伸，而非只在词间 */
+  text-align-last: left;          /* 末行左对齐，不被强行拉伸 */
+  text-wrap: pretty;              /* 自动规避末行只剩 1–2 字的孤行 */
+}
+.ar-flow p:last-child{ margin-bottom: 0; }
+/* 参考文献为短行，两端对齐会产生难看空隙，保持左对齐 */
+.ar-flow > p.ar-ref{ text-align: left; }
+
+/* 年份（§14：档案不使用现代大标题，年份即分节） */
+.ar-year{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px; letter-spacing: .3em; color: var(--ar-ink-soft);
+  margin: 1.5em 0 .7em;
+}
+.ar-year:first-child{ margin-top: 0; }
+.ar-h{
+  font-size: 17px; font-weight: 600; letter-spacing: .12em;
+  margin: 0 0 1em; color: var(--ar-ink);
+}
+
+/* identity：人物信息放左侧边栏（§20，参照 mosbyfiles） */
+.ar-identity{
+  float: left; width: 30%; margin: 0 5% 1.2em 0;
+  padding-right: 5%; border-right: 1px solid rgba(140,124,92,.34);
+  font-size: 13px; line-height: 1.7; color: var(--ar-ink-soft);
+}
+.ar-identity__name{
+  font-size: 19px; font-weight: 600; letter-spacing: .1em;
+  color: var(--ar-ink); margin-bottom: .35em;
+}
+/* 有肖像时：肖像独占左栏，姓名 / 生卒 / 编号移到右侧栏（贯穿页宽） */
+.ar-identity.has-photo{
+  float: none; width: 100%; margin: 0 0 1.2em; padding-right: 0;
+  border-right: 0;
+  display: flex; align-items: stretch; gap: 0;
+}
+.ar-identity__body{ flex: 1 1 0; min-width: 0; position: relative; }
+.ar-identity.has-photo .ar-identity__body{
+  padding-left: 7%;
+  transform: translateX(-20px);   /* 竖线 + 右栏整体左移 20px，左栏肖像不动 */
+}
+/* 竖分隔线：比肖像略长，上下各留 8px 呼吸感 */
+.ar-identity.has-photo .ar-identity__body::before{
+  content: ""; position: absolute; left: 0; top: -8px;
+  width: 1px; height: calc(100% + 16px);
+  background: rgba(140,124,92,.34);
+}
+
+/* 人物肖像：像直接贴在纸上 —— 无白边、无阴影、不可点击、不可拖动 */
+.ar-identity__photo{
+  flex: 0 0 40%; margin: 0; padding: 0;
+  display: flex; align-items: flex-start; justify-content: flex-start;
+  background: none; border: 0; box-shadow: none;
+  cursor: default; user-select: none; -webkit-user-select: none;
+}
+/* 肖像自动缩放：仅占左栏 70%，右侧留白与竖线拉开距离，绝不撑破版心 */
+.ar-identity__photo img{
+  display: block; width: 70%; height: auto;
+  max-height: 38vh; object-fit: contain; object-position: left top;
+  pointer-events: none;
+}
+.ar-identity__meta{ font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .14em; }
+.ar-identity__no{
+  margin-top: .8em; font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .22em; color: var(--ar-ink-faint);
+}
+
+/* facts 表：表头与内容统一为同一套样式（§60，不再区分） */
+.ar-facts{
+  width: 100%; border-collapse: collapse;
+  margin: 0 0 1.3em;
+}
+.ar-facts th, .ar-facts td{
+  text-align: left; padding: 4px 8px 4px 0;
+  border-bottom: 1px solid rgba(140,124,92,.22);
+  color: var(--ar-ink-faint); font-weight: 400;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .16em;
+}
+.ar-facts th{ width: 30%; }
+.ar-facts tr:last-child th, .ar-facts tr:last-child td{ border-bottom: 0; }
+
+/* note：整理者旁注，小字、纸边感，禁止彩色提示框（§36） */
+.ar-note{
+  display: block; margin: 1.1em 0; padding-left: 10px;
+  border-left: 1px solid rgba(140,124,92,.45);
+  font-size: 12px; line-height: 1.7; color: var(--ar-ink-soft); font-style: italic;
+}
+/* quote：书信 / 口述（§37） */
+.ar-quote{
+  margin: 1.4em 0 1.4em 1.1em; padding-left: 1em;
+  border-left: 2px solid rgba(140,124,92,.4);
+  font-size: 12px; line-height: 1.85; color: var(--ar-ink);
+}
+.ar-quote cite{
+  display: block; margin-top: .5em; font-style: normal;
+  font-size: 11.5px; letter-spacing: .14em; color: var(--ar-ink-faint);
+}
+/* references */
+.ar-ref{ font-size: 12.5px; color: var(--ar-ink-soft); margin: 0 0 .5em; }
+
+/* 脚注 */
+.ar-fn{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px; vertical-align: super; color: var(--ar-ink-faint);
+  cursor: help; padding: 0 1px;
+}
+.ar-fnlist{
+  position: absolute; left: 12%; right: 12%; bottom: 6.5%;
+  font-size: 10.5px; line-height: 1.6; color: var(--ar-ink-faint);
+  border-top: 1px solid rgba(140,124,92,.28); padding-top: 6px;
+}
+.ar-fnlist p{ margin: 0 0 .3em; }
+
+/* 页码：极小、居中于右页底部（§9） */
+.ar-foot{
+  position: absolute; z-index: 25; left: 75%; bottom: 3.2%;
+  transform: translateX(-50%); pointer-events: none;
+}
+.ar-pagenum{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .3em; color: var(--ar-ink-faint);
+}
+
+/* ---------- 图片独立图层（§24 / §25 / §32） ---------- */
+.ar-layer{ position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+.ar-photo{
+  position: absolute; pointer-events: auto;
+  margin: 0; padding: 0; background: none;
+  border: 0; box-shadow: none;
+  cursor: grab; user-select: none; -webkit-user-select: none;
+  transition: box-shadow .2s ease;
+  touch-action: none;
+}
+.ar-photo:hover{ box-shadow: none; }   /* 浮动状态纯图，无外框、不发光 */
+.ar-photo.is-dragging{ z-index: 100 !important; cursor: grabbing; box-shadow: 0 22px 34px rgba(0,0,0,.55); }
+.ar-photo img{ display: block; width: 100%; height: auto; pointer-events: none; }
+.ar-photo figcaption{
+  display: none;   /* 浮动状态不显示文字信息，点开放大时才显示 */
+}
+.ar-photo--doc{ padding: 0; background: none; }
+
+/* 浮动标签卡（§35：参照 mosbyfiles 的低饱和纯色块，圆角、文字直嵌） */
+.ar-card{
+  position: absolute; pointer-events: auto; margin: 0;
+  width: fit-content; max-width: 42%;
+  padding: 12px 15px; border-radius: 13px;
+  background-color: rgba(232,223,205,.9);   /* 默认 beige，统一 90% 不透明 */
+  /* 极轻纸张纹理：内联 SVG 噪点，无外部资源（§35 增强） */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  color: #24211d;
+  font-family: "EB Garamond","Noto Serif SC","Source Han Serif SC","Songti SC",serif;
+  font-size: 13px; line-height: 1.62; letter-spacing: .01em;
+  text-align: justify;            /* 卡片文字同样两端对齐 */
+  text-justify: inter-ideograph;
+  text-align-last: left;
+  text-wrap: pretty;
+  box-shadow: 0 9px 18px rgba(0,0,0,.20);
+  cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none;
+  transition: box-shadow .2s ease;
+}
+.ar-card.is-dragging{ z-index: 100 !important; cursor: grabbing; box-shadow: 0 22px 32px rgba(0,0,0,.5); }
+.ar-card strong{ font-weight: 600; }
+.ar-card em{ font-style: italic; }
+.ar-card a{ color: inherit; text-decoration: underline; }
+.ar-card sup{ font-family: "IBM Plex Mono",ui-monospace,monospace; font-size: 10px; vertical-align: super; color: #5b5446; cursor: help; }
+/* 低饱和调色板（固定指令 color: yellow|red|blue|green|beige），统一 90% 不透明 */
+.ar-card--yellow{ background-color: rgba(231,215,163,.9); }
+.ar-card--red{ background-color: rgba(216,167,154,.9); }
+.ar-card--blue{ background-color: rgba(166,192,214,.9); }
+.ar-card--green{ background-color: rgba(180,200,164,.9); }
+.ar-card--beige{ background-color: rgba(232,223,205,.9); }
+
+/* ---------- 放大查看（§34） ---------- */
+.ar-lightbox{
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.86);
+  display: flex; align-items: center; justify-content: center; padding: 5vh 4vw;
+}
+.ar-lightbox[hidden]{ display: none; }
+.ar-lightbox__inner{ position: relative; max-width: 1080px; width: 100%; }
+.ar-lightbox__close{
+  position: absolute; top: -34px; right: 0; background: none; border: 0;
+  color: rgba(233,228,220,.7); font-size: 26px; line-height: 1; cursor: pointer;
+}
+.ar-lightbox__fig{ margin: 0; display: flex; gap: 26px; align-items: flex-start; justify-content: center; }
+.ar-lightbox__fig img{ max-width: 62%; max-height: 74vh; background: #fbf7ee; padding: 8px; }
+.ar-lightbox__fig figcaption{ display: flex; flex-direction: column; gap: 9px; max-width: 300px; }
+.ar-lightbox__fig-no{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .3em; color: rgba(233,228,220,.5);
+}
+.ar-lightbox__caption{ font-size: 15px; letter-spacing: .06em; }
+.ar-lightbox__desc{ font-size: 13px; line-height: 1.8; color: rgba(233,228,220,.68); }
+.ar-lightbox__src{
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .14em; color: rgba(233,228,220,.45);
+}
+
+/* ---------- 翻页动画（§42 / §43：克制，550ms） ---------- */
+@keyframes arTurnNext{
+  0%   { transform: translateX(5%) rotateY(-9deg); opacity: .10; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes arTurnPrev{
+  0%   { transform: translateX(-5%) rotateY(9deg); opacity: .10; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes arFadeIn{ 0%{ opacity: .12 } 100%{ opacity: 1 } }
+.ar-anim-next{ animation: arTurnNext .55s cubic-bezier(.22,.61,.36,1); transform-origin: left center; }
+.ar-anim-prev{ animation: arTurnPrev .55s cubic-bezier(.22,.61,.36,1); transform-origin: left center; }
+.ar-anim-fade{ animation: arFadeIn .5s ease; }
+
+/* ---------- 开发提示（§54） ---------- */
+.ar-debug{
+  position: fixed; z-index: 60; left: 22px; bottom: 18px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .12em; color: #ffb4b4;
+  background: rgba(0,0,0,.6); border: 1px solid rgba(255,180,180,.35);
+  padding: 7px 11px; border-radius: 2px; max-width: 46vw;
+}
+.ar-loading{
+  position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center;
+  color: rgba(233,228,220,.6); letter-spacing: .2em; font-size: 13px;
+}
+
+/* ---------- 手机端：只显示右页（§55 / §56） ---------- */
+@media (max-width: 760px){
+  .ar-stage{ padding: 66px 12px 28px; }
+  .ar-spread{ height: min(72vh, 640px, 128vw); }
+  .ar-page--left{ display: none; }
+  .ar-page--right{ border-radius: 3px; box-shadow: none; }
+  .ar-foot{ left: 50%; }
+  .ar-flow{ padding: 11% 11% 13%; font-size: 15px; }
+  .ar-identity{ float: none; width: 100%; margin: 0 0 1.1em; padding: 0 0 .9em; border-right: 0; border-bottom: 1px solid rgba(140,124,92,.34); }
+  .ar-identity.has-photo{ width: 100%; gap: 0; }
+  .ar-identity.has-photo .ar-identity__photo{ flex: 0 0 38%; }
+  .ar-lightbox__fig{ flex-direction: column; align-items: center; }
+  .ar-lightbox__fig img{ max-width: 100%; max-height: 46vh; }
+  .ar-topbar{ top: 14px; left: 14px; right: 14px; }
+  .ar-card{ max-width: 60%; font-size: 14px; }
+}
+
+/* ---------- 降低动效偏好 ---------- */
+@media (prefers-reduced-motion: reduce){
+  .ar-anim-next, .ar-anim-prev, .ar-anim-fade{ animation: none !important; }
+  .ar-photo{ transition: none; }
+}

@@ -1,0 +1,167 @@
+/* ============================================================
+   兀孀的个人博客 · 全站猫主题（软萌 Kawaii）
+   元素：爪印肉垫点缀 + 卡通猫插画 + 猫主题图标
+   作用范围：NexT 主题元素（文章页 / 侧边栏 / 页脚 / 404 / 导航）
+   互动主页(#ws-home)的 NexT 外壳已被隐藏，不会受影响
+   ============================================================ */
+
+:root{
+  --cat-pink:#F7A8C4;
+  --cat-deep:#E0668F;
+  --cat-blush:#FF9DBB;
+  --cat-dark:#6B5563;
+  --cat-cream:#FFF3F7;
+}
+
+/* ---------- 1) 导航菜单：保持简洁，按需求去除爪印 ---------- */
+
+/* ---------- 2) 文章标题：居中放大 + 虚线下沿（无猫头图标） ---------- */
+.post-title{
+  text-align:center;
+  font-size:1.9em;
+  padding-bottom:.3em;
+  border-bottom:2px dotted var(--ws-pink-soft);
+}
+
+/* ---------- 3) 章节标题 h2/h3：虚线小标题（无爪印） ---------- */
+.post-body h2{
+  margin-top:1.8em;
+  padding-bottom:.25em;
+  border-bottom:2px dotted var(--ws-pink-soft);
+}
+.post-body h3{
+  margin-top:1.4em;
+  color:var(--cat-deep);
+}
+
+/* ---------- 4) 引用块：粉色猫爪边框 ---------- */
+.post-body blockquote{
+  border-left:4px solid var(--cat-pink);
+  background:var(--ws-pink-bg);
+  border-radius:0 var(--ws-radius) var(--ws-radius) 0;
+  padding:.7em 1em .7em 1.1em;
+  position:relative;
+}
+
+/* ---------- 5) 代码块：保留简洁（已去除探头小猫） ---------- */
+
+/* ---------- 6) 侧边栏：作者头像描边 + 站点状态爪印 ---------- */
+.site-author-image{
+  border-radius:50%!important;
+  box-shadow:0 0 0 3px #fff, 0 0 0 6px var(--cat-pink);
+}
+.site-state-item::before{
+  content:"";
+  display:inline-block;
+  width:13px;height:13px;
+  margin-right:5px;
+  vertical-align:-1px;
+  background:url(/images/ws-cat/cat-paw.svg) center/contain no-repeat;
+  opacity:.75;
+}
+.sidebar-toc-active .nav .active>a,
+.sidebar-nav-toc,
+.sidebar-nav-overview{
+  /* 目录切换小爪印占位，保持粉色调 */
+}
+
+/* ---------- 7) 分类 / 标签页：链接前小爪印 ---------- */
+.category-list-link::before,
+.tag-list-link::before,
+.post-tags .post-tag::before{
+  content:"";
+  display:inline-block;
+  width:12px;height:12px;
+  margin-right:4px;
+  vertical-align:-1px;
+  background:url(/images/ws-cat/cat-paw.svg) center/contain no-repeat;
+  opacity:.7;
+}
+
+/* ---------- 8) 文章分页 / 上一篇下一篇：爪印点缀 ---------- */
+.post-nav .post-nav-prev a::before,
+.post-nav .post-nav-next a::after{
+  content:"🐾";
+  opacity:.55;
+  font-size:.9em;
+}
+
+/* ---------- 9) 页脚感谢语（由 ws-cat.js 注入） ---------- */
+.ws-cat-footer{
+  text-align:center;
+  margin:0 auto 10px;
+  line-height:1.6;
+}
+.ws-cat-footer span{
+  font-size:14px;
+  color:var(--ws-pink-deep);
+  font-family:var(--ws-font-body);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.ws-cat-paw-inline{
+  width:18px;
+  height:18px;
+  vertical-align:-3px;
+}
+.footer-inner{ padding-top:0; }
+
+/* ---------- 10) 404 真空区域 ---------- */
+.ws-cat-404{
+  text-align:center;
+  padding:48px 18px 16px;
+  max-width:520px;
+  margin:0 auto;
+}
+.ws-cat-404 h1{
+  font-family:var(--ws-font-title);
+  color:var(--cat-deep);
+  font-size:1.9em;
+  margin:.2em 0 1em;
+}
+.ws-cat-404-btn{
+  display:inline-block;
+  padding:9px 22px;
+  border-radius:14px;
+  background:linear-gradient(180deg, var(--ws-pink), var(--ws-pink-deep));
+  color:#fff;
+  font-family:var(--ws-font-body);
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 4px 0 #C9527A;
+  transition:transform .14s ease, box-shadow .14s ease;
+}
+.ws-cat-404-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 0 #C9527A; }
+.ws-cat-404-btn:active{ transform:translateY(3px); box-shadow:0 0 0 #C9527A; }
+
+/* ---------- 11) 文章小节之间的爪印分隔线（由 ws-cat.js 插入） ---------- */
+.ws-paw-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:28px 0;
+  opacity:.6;
+}
+.ws-paw-divider::before,
+.ws-paw-divider::after{
+  content:"";
+  height:1px;
+  flex:1;
+  max-width:120px;
+  background:repeating-linear-gradient(90deg, var(--ws-pink-soft) 0 6px, transparent 6px 12px);
+}
+.ws-paw-divider i{
+  width:20px;height:20px;
+  background:url(/images/ws-cat/cat-paw.svg) center/contain no-repeat;
+  display:block;
+  flex:none;
+}
+
+/* ---------- 移动端：稍微收敛 ---------- */
+@media (max-width: 767px){
+  /* 文章标题在窄屏避免与左右边距贴太近 */
+  .post-title{ font-size:1.5em; }
+  .ws-paw-divider{ gap:10px; margin:22px 0; }
+}

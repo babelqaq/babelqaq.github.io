@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>档案 · 那西索亚故事集</title>
+<meta name="description" content="那西索亚故事集 · 正文档案阅读器">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/archive-reader.css?v=20260919p">
+</head>
+<body class="ar-body">
+
+  <div class="ar-starfield" aria-hidden="true"></div>
+
+  <!-- 极少量档案信息（指南 §66） -->
+  <header class="ar-topbar">
+    <a class="ar-back" href="/archive/" id="arBack">← 返回</a>
+    <span class="ar-stamp" id="arStamp"></span>
+  </header>
+
+  <main class="ar-stage" id="arStage">
+    <div class="ar-spread" id="arSpread">
+      <div class="ar-page ar-page--left" id="arLeft" aria-hidden="true"></div>
+      <div class="ar-page ar-page--right" id="arRight"></div>
+      <!-- 图片独立图层（指南 §24）：位于文字之上，可跨越左右页 -->
+      <div class="ar-layer" id="arLayer"></div>
+      <div class="ar-foot" aria-hidden="true">
+        <span class="ar-pagenum" id="arPageNum"></span>
+      </div>
+    </div>
+
+    <div class="ar-debug" id="arDebug" hidden></div>
+  </main>
+
+  <!-- 点击照片：放大 + 说明（指南 §34 / §35） -->
+  <div class="ar-lightbox" id="arLightbox" hidden>
+    <div class="ar-lightbox__inner" role="dialog" aria-modal="true" aria-label="档案图片">
+      <button class="ar-lightbox__close" id="arLightboxClose" type="button" aria-label="关闭">×</button>
+      <figure class="ar-lightbox__fig">
+        <img id="arLightboxImg" src="" alt="">
+        <figcaption>
+          <span class="ar-lightbox__fig-no" id="arLightboxNo"></span>
+          <span class="ar-lightbox__caption" id="arLightboxCaption"></span>
+          <span class="ar-lightbox__desc" id="arLightboxDesc"></span>
+          <span class="ar-lightbox__src" id="arLightboxSrc"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="ar-loading" id="arLoading">正在取出档案…</div>
+
+<script src="/js/archive-reader.js?v=20260919p"></script>
+</body>
+</html>
