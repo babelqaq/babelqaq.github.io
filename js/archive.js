@@ -90,11 +90,6 @@
       + '</div>';
   }
 
-  function interiorHtml(cat) {
-    // 摊开后左页 = 档案夹内侧：满幅纯色，无文字、无内嵌封面
-    return '';
-  }
-
   // 双页模型：第 0 跨左=文件夹内侧，右=索引首页；后续跨左=空白米白背面，右=索引续页
   function buildSpreads(cat) {
     var files = cat.files.slice().sort(sortById); // 按编号排序：数字在前、字母在后，从左到右逐字符
@@ -115,7 +110,7 @@
     if (sp.left === 'interior') {
       leftEl.className = 'archive-page archive-page--left archive-page--cover';
       leftEl.style.setProperty('--folder-color', 'var(' + COLORVAR[cat.color] + ')');
-      leftEl.innerHTML = interiorHtml(cat);
+      leftEl.innerHTML = '';
     } else {
       // 非首跨：左页 = 空白的米白纸背面（与正文用纸同色），可点击回上一跨
       leftEl.className = 'archive-page archive-page--left archive-page--blank';
@@ -238,7 +233,6 @@
     el.style.animation = 'archive-fade .4s ease';
     setTimeout(function () { el.style.animation = ''; }, 420);
   }
-  function bumpRight() { bumpEl(rightEl); }
 
   function go(delta) {
     var next = state.page + delta;

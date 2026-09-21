@@ -345,13 +345,8 @@
     el.style.transform = 'rotate(' + item.rotation + 'deg)';
   }
 
-  function hit(a, b) {
-    return !(a.right <= b.left + 1 || a.left >= b.right - 1 || a.bottom <= b.top + 1 || a.top >= b.bottom - 1);
-  }
-
   /* 照片与身份区（:::identity）分属两个独立图层，互不干涉、互不避让。
-     定位完全由 Markdown 的 (A, B) 中心点决定，越界时由 place() 钳制到画布内。
-     hit() 仅保留给 checkOverflow 越界检测使用。 */
+     定位完全由 Markdown 的 (A, B) 中心点决定，越界时由 place() 钳制到画布内。 */
   function pxToGeom(item, el) {
     var L = els.layer.clientWidth, H = els.layer.clientHeight;
     var P = isMobile() ? L : L / 2;

@@ -397,7 +397,6 @@
 
 /* 右页 / 续页：米白 A4 索引 */
 .archive-index{ height: 100%; display: flex; flex-direction: column; }
-.archive-index__en{ font-family: "IBM Plex Mono", monospace; font-size: 20px; letter-spacing: .14em; color: #3a322a; }
 .archive-index__cn{ font-size: 15px; letter-spacing: .18em; color: #6a5d4f; margin-top: 4px; }
 /* 中文副标题：位于英文 ARCHIVE INDEX 之上 */
 .archive-index__sub-cn{ font-size: clamp(12px, 1.7vh, 13px); letter-spacing: .22em; color: #6a5d4f; }
