@@ -14,6 +14,8 @@
 
   var els = {};
   var state = { doc: null, pages: [], page: 0, defs: {}, fnOrder: {}, fnCount: 0, figs: {}, figCount: 0 };
+  // 浮动图层 z-index 计数器：被拖动过的照片/文本块置顶于此，松手后仍保留最上层（§58）
+  var topZ = 1;
 
   /* ---------- 工具 ---------- */
   function esc(s) {
@@ -22,7 +24,6 @@
     });
   }
   function pad2(n) { return String(n).padStart(2, '0'); }
-  function isMobile() { return window.matchMedia('(max-width: 760px)').matches; }
 
   // 兼容 Markdown 图片语法：photo/src 写成 ![alt](url) 也能识别
   function imgVal(v) {
@@ -316,7 +317,7 @@
   // 中心点 (cx, cy) + 尺寸 w → 整张跨页画布上的像素位置，并做边界钳制
   function place(item, el) {
     var L = els.layer.clientWidth, H = els.layer.clientHeight;
-    var P = isMobile() ? L : L / 2;                 // 单页宽度，size 语义仍按“占满单页页宽 100%”
+    var P = L / 2;                                  // 单页宽度（桌面/移动端一致：双页摊开，size 按“占满单页页宽 100%”）
     var w, h;
     if (item.kind === 'document') {
       // 卡片：宽度自适应内容（CSS fit-content + max-width 上限），高度随文字量；同步即可测得
@@ -349,7 +350,7 @@
      定位完全由 Markdown 的 (A, B) 中心点决定，越界时由 place() 钳制到画布内。 */
   function pxToGeom(item, el) {
     var L = els.layer.clientWidth, H = els.layer.clientHeight;
-    var P = isMobile() ? L : L / 2;
+    var P = L / 2;
     var w = el.offsetWidth, h = el.offsetHeight;
     var cx = parseFloat(el.style.left) + w / 2;
     var cy = parseFloat(el.style.top) + h / 2;
@@ -654,6 +655,9 @@
       if (!drag || e.pointerId !== drag.id) return;
       el.classList.remove('is-dragging');
       lastMoved = drag.moved;
+      // 真正发生过拖动 → 永久置顶（松手后也位于所有照片/文本块最上层）；
+      // 仅轻点未移动则不重排，避免误触。topZ 单调递增，最后拖动的块永远在最上。
+      if (drag.moved) el.style.zIndex = ++topZ;
       drag = null;
       if (!lastMoved && item.kind !== 'document') openLightbox(item);   // 卡片点击不放大；点击照片 = 放大查看（§34）
     }

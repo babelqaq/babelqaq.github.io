@@ -344,21 +344,22 @@
   color: rgba(233,228,220,.6); letter-spacing: .2em; font-size: 13px;
 }
 
-/* ---------- 手机端：只显示右页（§55 / §56） ---------- */
+/* ---------- 移动端：与桌面端完全一致（双页摊开），仅竖屏时强制横屏 ---------- */
+/* 双页尺寸按手机短边（vmin 在横竖屏下均为短边）自适应，书本自然摊开并居中 */
 @media (max-width: 760px){
-  .ar-stage{ padding: 66px 12px 28px; }
-  .ar-spread{ height: min(72vh, 640px, 128vw); }
-  .ar-page--left{ display: none; }
-  .ar-page--right{ border-radius: 3px; box-shadow: none; }
-  .ar-foot{ left: 50%; }
-  .ar-flow{ padding: 11% 11% 13%; font-size: 15px; }
-  .ar-identity{ float: none; width: 100%; margin: 0 0 1.1em; padding: 0 0 .9em; border-right: 0; border-bottom: 1px solid rgba(140,124,92,.34); }
-  .ar-identity.has-photo{ width: 100%; gap: 0; }
-  .ar-identity.has-photo .ar-identity__photo{ flex: 0 0 38%; }
-  .ar-lightbox__fig{ flex-direction: column; align-items: center; }
-  .ar-lightbox__fig img{ max-width: 100%; max-height: 46vh; }
-  .ar-topbar{ top: 14px; left: 14px; right: 14px; }
-  .ar-card{ max-width: 60%; font-size: 14px; }
+  .ar-spread{ height: min(94vmin, 680px); }
+  .ar-stage{ padding: 56px 8px 22px; }
+}
+/* 竖屏：旋转 90° 强制横屏，使双页书本沿手机长边摊开；横屏时无需旋转（与桌面同） */
+@media (max-width: 760px) and (orientation: portrait){
+  .ar-rotate{
+    position: fixed; top: 0; left: 0;
+    width: 100vh; height: 100vw;          /* 旋转后 = 屏幕长边 × 短边 */
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100vw);
+    overflow: hidden;
+  }
+  .ar-stage{ height: 100%; width: 100%; }
 }
 
 /* ---------- 降低动效偏好 ---------- */
